@@ -8,10 +8,10 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "/" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
-# Author Settings
-author: f@N # add your name
+# Author Setting
+author: f@N studio# add your name
 author-img: david-freeman.jpg # add your photo
-about-author: It's OK. # add description
+about-author: Life is short and beautiful. There are times that life might be painful for people, but ... it's really OK, just live a simple life and love it.  # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: wowfrank # add your Github handle
