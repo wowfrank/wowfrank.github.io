@@ -15,9 +15,9 @@ banner-desc: # add banner description
 
 # Author settings
 author-pic: face.jpg # your photo
-author-name: '小野'# your name
-about-author: 'joking, and it's funny'# about author
-email: 'frank.qf.cn@gmail.com' # your email
+author-name: 小野# your name
+about-author: joking, and it's funny# about author
+email: frank.qf.cn@gmail.com # your email
 phone: (496)-169-6557 # your pnone number
 website: https://dwayne.example.com # you website
 
