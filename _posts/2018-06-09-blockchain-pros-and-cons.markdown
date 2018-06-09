@@ -2,7 +2,7 @@
 layout: post
 title: 2018 Blockchain Tech Pros and Cons Analysis
 date: 2018-06-09 13:00:20 +0300
-description: This post is mainly describing the pros and cons of the currently very hot technology: BLOCKCHAIN. # Add post description (optional)
+description: This post is mainly describing the pros and cons of the currently very hot technology: BLOCKCHAIN. 
 img: blockchain-pros-cons-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Tech]
