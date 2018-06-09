@@ -1,13 +1,12 @@
 ---
 layout: post
-title: 2018 Blockchain Tech Pros and Cons Analysis
-date: 2018-06-09 13:00:20 +0300
-description: This post is mainly describing the pros and cons of the currently very hot technology: BLOCKCHAIN. 
+title: Blockchain Pros and Cons Analysis
+date: 2018-06-10 13:02:20 +0300
+description: This post is mainly describing the pros and cons of the currently very hot technology - BLOCKCHAIN. # Add post description (optional)
 img: blockchain-pros-cons-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Tech]
 ---
-
 If you look past the incredible hype around blockchain and cryptocurrencies at the start of 2018, you’ll see a relatively immature technology platform. Some have likened the current state of blockchain to the mid-1990s, when early Web businesses were trying to emulate the offline world on the new-fangled WWW. The implication being: blockchain is potentially as revolutionary as the World Wide Web.
 
 But should we even be comparing blockchain technology to the Web? Opinions vary wildly on this. Some people argue that blockchain apps will replace legacy web applications, including huge companies like eBay and Facebook. Others say that the blockchain is little more than a glorified database – and one with significant technical limitations, at that. Let’s look at both those viewpoints…
@@ -35,6 +34,3 @@ Benet noted there are already academic results that show this type of scaling is
 In conclusion, clearly there is a lot of hype around blockchains at this time – and much of it is hot air. But the same thing was true about Dot Com, Web 2.0 and cloud computing in the early days of those eras. However, in each of those technological eras huge value was eventually created.
 
 Of course it’s too early to tell if blockchain will ramp up in a similar pattern. But that’s one reason why Blocksplain was created: to track these developments over time.
-
- 
-
