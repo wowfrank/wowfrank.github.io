@@ -26,17 +26,17 @@ Answer: 区块链技术本身是非常高效率的，但是，是的，在解密
 ### __到底什么是区块链技术呢？__
 区块链技术其实是由不可更改的记录组成的去中心化的分布式数据库（Decentralized Distributed Database)，这些记录中的交易由很强的加密算法（Cryptographic Algorithms）进行保护，而网络状态由共识算法（Consensus Algorithm）进行维护。
 简单一点的说法，它就是包含了信息的区块组成的链接。
-![blockchian-1](/assets/img/blockchain-1.png)
+![blockchian-1]({{site.baseurl}}/assets/img/blockchain-1.png)
 
 ### __那么，它的工作原理又是怎么样的？__
 专业的过程，就还是跳过吧，反正我也不懂，更解释不清楚。这里还是打一个比较贴切的比方吧，如下图：
-![How Blockchiain Works](/assets/img/blockchain-how-it-works-1.png)
+![How Blockchiain Works]({{site.baseurl}}/assets/img/blockchain-how-it-works-1.png)
 桌上有4个互不认识的人（网络中的节点），每个人手中都拿着一本账本（DLT账本）。
 * 每个人手中的账本的记录都保持一致；
 * 每次有人花了钱，该笔交易记录就被广播到了桌上的每个人；
 * 桌上的几个人互相对比账本中的记录以核实该笔交易记录是否有效；
 * 如果交易被广播后发现桌上四个人的账本都对不上，那么该交易无效；
-![How Blockchiain Works](/assets/img/blockchain-how-it-works-2.png)
+![How Blockchiain Works]({{site.baseurl}}/assets/img/blockchain-how-it-works-2.png)
 大致上，区块链技术就是这样一回事情。它用这种不可修改的去快链技术保证了去中心化以及去第三方化，所有的原始记录均被__不可修改__的保存下来了。
 
 ### __区块链技术中比较重要的一个概念：Proof-of-Work(PoW)__
