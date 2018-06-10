@@ -26,7 +26,7 @@ Answer: 区块链技术本身是非常高效率的，但是，是的，在解密
 ### __到底什么是区块链技术呢？__
 区块链技术其实是由不可更改的记录组成的去中心化的分布式数据库（Decentralized Distributed Database)，这些记录中的交易由很强的加密算法（Cryptographic Algorithms）进行保护，而网络状态由共识算法（Consensus Algorithm）进行维护。
 简单一点的说法，它就是包含了信息的区块组成的链接。
-![blockchian-1](/assets/img/blockchain-1.png)
+![blockchian-1](../assets/img/blockchain-1.png)
 
 ### __那么，它的工作原理又是怎么样的？__
 专业的过程，就还是跳过吧，反正我也不懂，更解释不清楚。这里还是打一个比较贴切的比方吧，如下图：
