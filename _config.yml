@@ -35,6 +35,3 @@ paginate: 10
 paginate_path: "/page/:num"
 
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
-
-# define excerpt separator
-excerpt_separator: <!--more-->
