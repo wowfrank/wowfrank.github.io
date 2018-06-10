@@ -1,40 +1,54 @@
 ---
 layout: post
-title: Blockchain Pros and Cons Analysis
+title: 区块链技术的通用解释
 date: 2018-06-10 13:02:20 +0300
-description: This post is mainly describing the pros and cons of the currently very hot technology - BLOCKCHAIN. # Add post description (optional)
+description: 这个帖子的目的主要是解释一下区块链这个含金量较高的词语，解释一下这一领域中很多为人所不知的“挖矿”、“矿场”等的意思. # Add post description (optional)
 img: blockchain-pros-cons-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [Blockchain,Tech]
+tags: [Blockchain,Bitcoin,Tech]
 ---
-最近感觉区块链技术越来越红火了，其实我本人对区块链技术最早听说已经是5年前的事情了，因为比特币才听说的区块链。然而我还是太天真，根本对于这项新兴的东西没有任何感觉，主要当时觉得这个并非什么新科技或者新技术，其核心归结起来无非就是P2P网络技术、加密解密技术以及分布式存储技术的组合而已。很难想象这样的一个组合如今把整个互联网的圈子搞得天翻地覆了，好在大部分技术人员目前对此比较一致的共识就是，区块链技术目前还是处于起步阶段，想要真的广泛的应用于市场还需要很长一段时间的重新设计和更多合理技术的参与。
+最近感觉区块链技术越来越红火了，其实我本人对区块链技术最早听说已经是5年前的事情了，因为比特币才听说的区块链。然而当时的我还是太天真，根本对于这项新兴的东西没有任何感觉，主要觉得：首先这个并非什么新科技或者新技术，其核心归结起来无非就是P2P网络技术、加密解密技术以及分布式存储技术的组合而已；其次，电子货币在我的概念中跟虚拟货币没啥区别，直接费这么大劲整出来的Bitcoin到底应不应该值钱，所以我的观点跟如今的巴菲特差不多吧。
+
+很难想象这样的一个组合如今把整个互联网的圈子搞得天翻地覆了，好在大部分高端互联网技术人员目前对此比较一致的共识就是，区块链技术目前还是处于起步阶段，想要真的广泛的应用于市场还需要很长一段时间的重新设计和更多成熟技术的参与。
 
 这段时间也看了很多网上关于区块链技术的文章和各类讨论。至于区块链技术，有着比较多的专业性术语，而这些专业性术语也让很多对这技术不了解的人更难进入这一领域，比如“挖矿”、“矿场”这类字眼。其实这些也不算什么专业术语吧，只是一类比喻比较合理。我想在这里稍微解释一下这些不是很了解的术语到底说的是什么，那么最好就是从区块链的工作原理开始解释吧。
 
-If you look past the incredible hype around blockchain and cryptocurrencies at the start of 2018, you’ll see a relatively immature technology platform. Some have likened the current state of blockchain to the mid-1990s, when early Web businesses were trying to emulate the offline world on the new-fangled WWW. The implication being: blockchain is potentially as revolutionary as the World Wide Web.
+### __首先回答几个FAQ__
+#### 1. 比特币就是区块链嘛？
+Answer: 不是，区块链技术是比特币背后的技术，比特币是使用区块链技术所创造出来的一种经过加密的电子货币（电子口令）。
+#### 1. 区块链技术是否解决了目前互联网的所有难题？
+Answer: 不是，归根到底，它仅仅是个数据库而已。
+#### 1. 它100%安全吗？
+Answer: 它更多注重的是数据的完整性，而非机密性或者保密性。
+#### 1. 它消耗电量真的那么大吗？
+Answer: 区块链技术本身是非常高效率的，但是，是的，在解密过程中，它会消耗大量的电能。
 
-But should we even be comparing blockchain technology to the Web? Opinions vary wildly on this. Some people argue that blockchain apps will replace legacy web applications, including huge companies like eBay and Facebook. Others say that the blockchain is little more than a glorified database – and one with significant technical limitations, at that. Let’s look at both those viewpoints…
+### __到底什么是区块链技术呢？__
+区块链技术其实是由不可更改的记录组成的去中心化的分布式数据库（Decentralized Distributed Database)，这些记录中的交易由很强的加密算法（Cryptographic Algorithms）进行保护，而网络状态由共识算法（Consensus Algorithm）进行维护。
+简单一点的说法，它就是包含了信息的区块组成的链接。
+![blockchian-1](/blockchain-1.png)
 
-Firstly, the pro side of blockchains. William Mougayar argued in his 2016 book, The Business Blockchain, that the blockchain “is at the same level as the World Wide Web in terms of importance, and arguably might give us back the Internet, in the way it was supposed to be: more decentralized, more open, more secure, more private, more equitable, and more accessible.” Mougayar went on to suggest that “many blockchain applications also have a shot at replacing legacy Web applications.”
+### __那么，它的工作原理又是怎么样的？__
+专业的过程，就还是跳过吧，反正我也不懂，更解释不清楚。这里还是打一个比较贴切的比方吧，如下图：
+![How Blockchiain Works](/blockchain-how-it-works-1.png)
+桌上有4个互不认识的人（网络中的节点），每个人手中都拿着一本账本（DLT账本）。
+* 每个人手中的账本的记录都保持一致；
+* 每次有人花了钱，该笔交易记录就被广播到了桌上的每个人；
+* 桌上的几个人互相对比账本中的记录以核实该笔交易记录是否有效；
+* 如果交易被广播后发现桌上四个人的账本都对不上，那么该交易无效；
+大致上，区块链技术就是这样一回事情。它用这种不可修改的去快链技术保证了去中心化以及去第三方化，所有的原始记录均被__不可修改__的保存下来了。
 
-In 3 Web Giants That Could Be Decentralized on a Blockchain, CoinDesk contributor Brady Dale listed several of these blockchain apps with big ambitions. What they all have in common is an attempt to cut out the middleman – for example, directly connect a buyer and seller of a product via a blockchain without having eBay as the middleman. OpenBazaar, a purported eBay killer, has been trying to do this since 2016. The problem is, it has a very limited stock of products for sale right now. But again, it’s early days.
+### __区块链技术中比较重要的几个概念__
+#### __Proof-of-Work(PoW)__
+这个概念也是最终理解“挖矿”等词语的关键概念。
+PoW其实是一个网络协议。该协议的主要目的是为了阻止网络攻击，例如：DDoS（分布式拒绝攻击）这样的发送大量伪请求至服务器而将服务器的资源消耗殆尽的攻击方式。
+在比特币协议中，该算法被用于确认交易和生成新的区块到区块链中。也是在这个过程中，出现了Mining“挖矿”这个过程。所谓的“矿工”或者“矿机”，就是在这个过程中来解密算法的节点电脑或者服务器，由于解密的时候计算机平均每秒要尝试百万甚至上亿次的计算，因此会消耗大量的电源和电脑资源。此前由于比特币的升值，导致“矿机”的大量出现，就形成的“矿场”。
 
-Now for the con side of blockchains. In his recent book Attack of the 50 Foot Blockchain, David Gerard literally says that blockchain is a con. “Everything to do with cryptocurrencies and blockchains is the domain of fast-talking conmen,” he writes at the end of the book. So what’s his problem? Basically, Gerard thinks that blockchain technology has very limited use cases:
+### __区块链技术的未来__
+* 区块链技术1.0：电子货币（目前状态）；
+* 区块链技术2.0：电子智能合约；
+* 区块链技术3.0：DApps（基于去中心化开发的应用）；
 
-> In the real world, nobody outside the cryptocurrency subculture uses blockchains proper, because they are ridiculously impractical and the most prominent one [Bitcoin] uses as much electricity as all of Ireland.
+小结，个人认为虽然现在区块链技术火的貌似已经成为了未来，但是它其实也仅仅是一个数据库，左右互联网发展方向的因素还有很多，而且它所面临需要解决的问题也还有很多，在这些问题没有得到合理觉得之前，它都只是在前期阶段，随时都有被新兴技术取代的可能。
 
-In a nutshell, Gerard claims that “decentralisation is very expensive and doesn’t get you much, at the loss of efficiency and control.” He thinks a centralised database is better for most use cases.
-
-There’s no doubt that blockchain technology is currently immature and has weaknesses. In particular, in regards to scalability. Probably the most popular blockchain app so far has been CryptoKitties, a game that experienced a brief craze at the end of last year. Unfortunately though, CryptoKitties clogged up the Ethereum blockchain. By some accounts, CryptoKitties was responsible for 17 per cent of all Ethereum network traffic at one point. That had the effect of slowing down the network and driving up transaction costs. It’s that kind of scaling problem that continues to dog blockchains at this time.
-
-So David Gerard and other skeptics are right to point out the flaws in blockchain technology. But defenders of blockchain say we’re still in the “infrastructure building” phase of the blockchain era, as it was put in an a16z podcast at the end of last year.
-
-Andreessen Horowitz (a16z), a leading Silicon Valley VC firm, is actively investing in startups building out the infrastructure for blockchain. One of those startups is Protocol Labs, the company behind a new decentralized file storage system called Filecoin. Its founder and CEO, Juan Benet, addressed some of the current criticisms of blockchain in the podcast:
-
-> The point [of blockchain] was to establish this different kind of computing context, where you have public verifiability and immutability, and once you show that’s possible, then you apply all the standard techniques for scaling this kind of thing – parallelism, hierarchy and so on. And you can build up something that’s really high throughput by either moving the competition off-chain, by having faster blockchains, and all that kind of stuff. So expect that to happen over the next year or two.
-
-Benet noted there are already academic results that show this type of scaling is “not only possible, but provably so.”
-
-In conclusion, clearly there is a lot of hype around blockchains at this time – and much of it is hot air. But the same thing was true about Dot Com, Web 2.0 and cloud computing in the early days of those eras. However, in each of those technological eras huge value was eventually created.
-
-Of course it’s too early to tell if blockchain will ramp up in a similar pattern. But that’s one reason why Blocksplain was created: to track these developments over time.
+例如最直接现实的难题：所有原始记录一成不变的记录方式，势必会让每个节点保存的那本账本越来越大，这样处理真的合理吗？
