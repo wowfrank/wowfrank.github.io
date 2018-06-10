@@ -7,10 +7,6 @@ img: blockchain-pros-cons-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Tech]
 ---
-最近感觉区块链技术越来越红火了，其实我本人对区块链技术最早听说已经是5年前的事情了，因为比特币才听说的区块链。然而当时的我还是太天真，根本对于这项新兴的东西没有任何感觉，主要觉得：首先这个并非什么新科技或者新技术，其核心归结起来无非就是P2P网络技术、加密解密技术以及分布式存储技术的组合而已；其次，电子货币在我的概念中跟虚拟货币没啥区别，直接费这么大劲整出来的Bitcoin到底应不应该值钱，所以我的观点跟如今的巴菲特差不多吧。
-
-最近感觉区块链技术越来越红火了，其实我本人对区块链技术最早听说已经是5年前的事情了，因为比特币才听说的区块链。然而当时的我还是太天真，根本对于这项新兴的东西没有任何感觉，主要觉得：首先这个并非什么新科技或者新技术，其核心归结起来无非就是P2P网络技术、加密解密技术以及分布式存储技术的组合而已；其次，电子货币在我的概念中跟虚拟货币没啥区别，直接费这么大劲整出来的Bitcoin到底应不应该值钱，所以我的观点跟如今的巴菲特差不多吧。
-
 If you look past the incredible hype around blockchain and cryptocurrencies at the start of 2018, you’ll see a relatively immature technology platform. Some have likened the current state of blockchain to the mid-1990s, when early Web businesses were trying to emulate the offline world on the new-fangled WWW. The implication being: blockchain is potentially as revolutionary as the World Wide Web.
 
 But should we even be comparing blockchain technology to the Web? Opinions vary wildly on this. Some people argue that blockchain apps will replace legacy web applications, including huge companies like eBay and Facebook. Others say that the blockchain is little more than a glorified database – and one with significant technical limitations, at that. Let’s look at both those viewpoints…
