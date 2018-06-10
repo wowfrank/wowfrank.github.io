@@ -3,7 +3,7 @@ layout: post
 title: 区块链技术的通用解释
 date: 2018-06-10 13:02:20 +0300
 description: 这个帖子的目的主要是解释一下区块链这个含金量较高的词语，解释一下这一领域中很多为人所不知的“挖矿”、“矿场”等的意思. # Add post description (optional)
-img: blockchain-pros-cons-1.jpg # Add image post (optional)
+img: blockchain-mining-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Bitcoin,Tech]
 ---
@@ -36,6 +36,7 @@ Answer: 区块链技术本身是非常高效率的，但是，是的，在解密
 * 每次有人花了钱，该笔交易记录就被广播到了桌上的每个人；
 * 桌上的几个人互相对比账本中的记录以核实该笔交易记录是否有效；
 * 如果交易被广播后发现桌上四个人的账本都对不上，那么该交易无效；
+![How Blockchiain Works](/blockchain-how-it-works-2.png)
 大致上，区块链技术就是这样一回事情。它用这种不可修改的去快链技术保证了去中心化以及去第三方化，所有的原始记录均被__不可修改__的保存下来了。
 
 ### __区块链技术中比较重要的几个概念__
