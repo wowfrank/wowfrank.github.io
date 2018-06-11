@@ -3,7 +3,7 @@ layout: post
 title: 区块链技术的通用解释
 date: 2018-06-10 13:02:20 +0300
 description: 这个帖子的目的主要是解释一下区块链这个含金量较高的词语，解释一下这一领域中很多为人所不知的“挖矿”、“矿场”等的意思. # Add post description (optional)
-img: blockchain-mining-1.jpg # Add image post (optional)
+img: blockchain-block-chain.jpeg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Bitcoin,Tech]
 ---
