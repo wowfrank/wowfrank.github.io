@@ -10,7 +10,7 @@ layout: main
   <div class="post-content">
     <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
     {% if post.content contains '<!--more-->' %}
-        <p>{{ post.excerpt | strip_html }}</p>
+        <p>{{ post.excerpt | strip_html }}...</p>
     {% else %}
        <!-- Case for when no excerpt is defined -->
        <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
