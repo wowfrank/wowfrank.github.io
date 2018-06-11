@@ -95,3 +95,5 @@ In the network, a branch that lasts longer remains, and shorter one is rejected.
 Following these steps, the attackers can reverse transactions.
 
 51 percent attack is not a profitable option. It requires an enormous amount of mining power. And once it gets public exposure, the network is considered compromised, which leads to the outflow of users. This will inevitably move the cryptocurrency price down. All consequently, the funds lose their value.
+
+### **__此文源于Andrew Tar于2018.1.17写的[《Proof-of-Work, Explained》](https://cointelegraph.com/explained/proof-of-work-explained)__**
