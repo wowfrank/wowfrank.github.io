@@ -32,7 +32,7 @@ The answer to the PoW problem or mathematical equation is called hash.
 
 As the network is growing, it is facing more and more difficulties. The algorithms need more and more hash power to solve. So, the complexity of the task is a sensitive issue.
 
-### 3. _How come?_
+### 3. **How come?**
 Accurate work and speed of Blockchain system depend on it.
 
 But the problem shouldn’t be too complicated. If it is, the block generation takes a lot of time. The transactions are stuck without execution and as a result, the workflow hangs for some time. If the problem cannot be solved in a definite time frame, block generation will be kind of a miracle.
@@ -43,7 +43,7 @@ The solution needs to be easily checked. Otherwise, not all nodes are capable of
 
 Then you will have to trust other nodes and it violates one of the most important features of Blockchain - transparency.
 
-### 4. _How is this algorithm implemented in Blockchain?_
+### 4. **How is this algorithm implemented in Blockchain?**
 Miners solve the puzzle, form the new block and confirm the transactions.
 
 How complex a puzzle is depends on the number of users, the current power and the network load. The hash of each block contains the hash of the previous block, which increases security and prevents any block violation.
@@ -52,21 +52,21 @@ How complex a puzzle is depends on the number of users, the current power and th
 If a miner manages to solve the puzzle, the new block is formed. The transactions are placed in this block and considered confirmed.
 ![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-puzzle.jpg)
 
-### 5. _And where PoW is usually implemented?_
+### 5. **And where PoW is usually implemented?**
 Proof-of-Work is used in a lot of cryptocurrencies.
 
 The most famous application of PoW is Bitcoin. It was Bitcoin that laid the foundation for this type of consensus. The puzzle is Hashcash. This algorithm allows changing the complexity of a puzzle based on the total power of the network. The average time of block formation is 10 minutes. Bitcoin-based cryptocurrencies, such as Litecoin, have the similar system.
 
 Another large project with PoW is Ethereum. Given that almost three of four projects are implemented on Ethereum platform, it’s safe to say that the majority of Blockchain applications use PoW consensus model.
 
-### 6. _Why use a PoW consensus algorithm in the first place?_
+### 6. **Why use a PoW consensus algorithm in the first place?**
 The main benefits are the anti-DoS attacks defense and low impact of stake on mining possibilities.
 
 Defense from DoS attacks.  PoW imposes some limits on actions in the network. They need a lot of efforts to be executed. Efficient attack requires a lot of computational power and a lot of time to do the calculations. Therefore, the attack is possible but kind of useless since the costs are too high.
 
 Mining possibilities. It doesn’t matter how much money you have in your wallet. What matters is to have large computational power to solve the puzzles and form new blocks. Thus, the holders of huge amounts of money are not in charge of making decisions for the entire network.
 
-### 7. _Any flaws in the PoW consensus algorithm?_
+### 7. **Any flaws in the PoW consensus algorithm?**
 The main disadvantages are huge expenditures, “uselessness” of computations and 51 percent attack.
 
 Huge expenditures. Mining requires highly specialized computer hardware to run the complicated algorithms. The costs are unmanageable Mining is becoming available only for special mining pools. These specialized machines consume large amounts of power to run that increase costs. Large costs threaten centralization of the system since it benefits. It is easy to see in the case of Bitcoin.
@@ -74,7 +74,7 @@ Huge expenditures. Mining requires highly specialized computer hardware to run t
 
 “Uselessness” of computations. Miners do a lot of work to generate blocks and consume a lot of power. However, their calculations are not applicable anywhere else. They guarantee the security of the network but cannot be applied to business, science or any other field.
 
-### 8. _51% attack, what are you talking about?_
+### 8. **51% attack, what are you talking about?**
 A 51 percent attack, or majority attack, is a case when a user or a group of users control the majority of mining power.
 
 The attackers get enough power to control most events in the network.
@@ -96,4 +96,4 @@ Following these steps, the attackers can reverse transactions.
 
 51 percent attack is not a profitable option. It requires an enormous amount of mining power. And once it gets public exposure, the network is considered compromised, which leads to the outflow of users. This will inevitably move the cryptocurrency price down. All consequently, the funds lose their value.
 
-### **__此文源于Andrew Tar于2018.1.17写的[《Proof-of-Work, Explained》](https://cointelegraph.com/explained/proof-of-work-explained)__**
+### **__ 此文源于Andrew Tar于2018.1.17写的[《Proof-of-Work, Explained》](https://cointelegraph.com/explained/proof-of-work-explained) __**
