@@ -43,7 +43,11 @@ tags: [Pure Electric Car,Tech]
 ### 2. _优优EV235_
 #### _车型展示_
 
-![新能源车型优优EV235]({{site.baseurl}}/assets/img/image_not_available.jpg)
+![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-正面.jpg)
+![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-侧面.jpg)
+![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-后观.jpg)
+![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-外观.jpg)
+![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-内观.jpg)
 
 #### _车辆参数_
 
