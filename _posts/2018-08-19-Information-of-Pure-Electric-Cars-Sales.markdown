@@ -1,21 +1,14 @@
 ---
 layout: post
-title: Proof-of-Work, Explained!
-date: 2018-06-11 121:02:20 +0300
-description: 这个帖子的目的主要是解释一下区块链技术中那个非常关键的技术“Proof-of-Work“. # Add post description (optional)
-img: blockchain-pow-1.jpg # Add image post (optional)
+title: Information of Pure Electric Cars Sales
+date: 2018-08-19 121:02:20 +0300
+description: 这个帖子的目的主要是记录汇创新能源车型汇总. # Add post description (optional)
+img: tesla-model-3-review-01.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [Blockchain,Proof-of-Work,Tech]
+tags: [Pure Electric Car,Tech]
 ---
-### 1. _What is Proof-of-Work?_
-Proof-of-Work, or PoW, is the original consensus algorithm in a Blockchain network.
-
-In Blockchain, this algorithm is used to confirm transactions and produce new blocks to the chain. With PoW, miners compete against each other to complete transactions on the network and get rewarded.
-
-In a network users send each other digital tokens. A decentralized ledger gathers all the transactions into blocks. However, care should be taken to confirm the transactions and arrange blocks.
-
-This responsibility bears on special nodes called miners, and a process is called mining.
-
+### 1. _DD6610EV12 _
+上牌时间：2016.12
 The main working principles are a complicated mathematical puzzle and a possibility to easily prove the solution.
 ![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
 
