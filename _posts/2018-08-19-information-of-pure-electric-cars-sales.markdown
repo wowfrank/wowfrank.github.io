@@ -5,7 +5,7 @@ date: 2018-08-19 121:02:20 +0300
 description: 这个帖子的目的主要是记录汇创新能源车型汇总. # Add post description (optional)
 img: tesla-model-3-review-01.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [Pure Electric Car,Tech]
+tags: [Pure Electric Car,New Enegy,新能源]
 ---
 ### 1. _DD6610EV12_
 #### _车型展示_
