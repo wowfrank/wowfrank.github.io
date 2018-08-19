@@ -7,10 +7,24 @@ img: tesla-model-3-review-01.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Pure Electric Car,Tech]
 ---
-### 1. _DD6610EV12 _
-上牌时间：2016.12
-The main working principles are a complicated mathematical puzzle and a possibility to easily prove the solution.
+### 1. _DD6610EV12_
+#### _车型展示_
 ![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
+![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
+#### _车辆参数_
+|----------|:-------------:|------:|----------|:-------------:|------:|
+| 长       |    6015mm     |  宽 |  2025mm  |      高      |  2650mm |
+| 轴距     |  left-aligned | $1600 |col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |col 3 is | right-aligned |    $1 |
+
+
+#### _车辆销售方式_
+| 上牌时间   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
 
 ### 2. _What do you mean a “mathematical puzzle?”_
 It’s an issue that requires a lot of computational power to solve.
