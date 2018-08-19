@@ -29,11 +29,16 @@ tags: [Pure Electric Car,Tech]
 
 
 #### _车辆销售方式_
-| 上牌时间   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+
+|     车型     	|         DD6610EV12         	|    宽    	|
+|:------------:	|:--------------------------:	|:--------:	|
+|   上牌时间   	|         2016年12月         	|          	|
+|   以租代售   	|           保证金           	|     ~    	|
+|              	|            租金            	|     ~    	|
+| 经销商销售价 	|           16.8万           	| 保修政策 	|
+|     置换     	|           保证金           	|    5万   	|
+|              	|           置换额           	|   60万   	|
+|     备注     	| 只含第一年交强险可直接过户 	|          	|
 
 ### 2. _What do you mean a “mathematical puzzle?”_
 It’s an issue that requires a lot of computational power to solve.
