@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Information of Pure Electric Cars Sales
+title: 惠创新能源车型汇总
 date: 2018-08-19 121:02:20 +0300
 description: 这个帖子的目的主要是记录汇创新能源车型汇总. # Add post description (optional)
 img: tesla-model-3-review-01.jpg # Add image post (optional)
@@ -9,8 +9,9 @@ tags: [Pure Electric Car,Tech]
 ---
 ### 1. _DD6610EV12_
 #### _车型展示_
-![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
-![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
+
+![新能源车型DD6610EV12]({{site.baseurl}}/assets/img/image_not_available.jpg)
+
 #### _车辆参数_
 
 |          |      | |           |           |  |                |       |
@@ -27,7 +28,6 @@ tags: [Pure Electric Car,Tech]
 |  布置形式  |    纵置    | |  布置位置   |        前置        | |                    |                 |
 |  冷却方式  |    水冷    | |电机控制型号 |       CU5012       | | 电机控制器生产厂家 |     北京精进    |
 
-
 #### _车辆销售方式_
 
 |          	|                 	|     	|
@@ -40,18 +40,38 @@ tags: [Pure Electric Car,Tech]
 |              	|           置换额           	|   60万   	|
 |     备注     	| 只含第一年交强险可直接过户 	|          	|
 
-### 2. _What do you mean a “mathematical puzzle?”_
-It’s an issue that requires a lot of computational power to solve.
+### 2. _优优EV235_
+#### _车型展示_
 
-There are a lot of them, for instance:
+![新能源车型优优EV235]({{site.baseurl}}/assets/img/image_not_available.jpg)
 
-* hash function, or how to find the input knowing the output.
-* integer factorization, in other words, how to present a number as a multiplication of two other numbers.
-* guided tour puzzle protocol. If the server suspects a DoS attack, it requires a calculation of hash functions, for some nodes in a defined order. In this case, it’s a ‘how to find a chain of hash function values’ problem.
+#### _车辆参数_
 
-The answer to the PoW problem or mathematical equation is called hash.
+|          |      | |
+|:----------:|:----------:|:-:|
+|     整车产品名称     |   纯电动厢式运输车   | |
+|    动力电池类型-总储电量（kwh）    |   三元锂离子电池34.1   |三元锂离子电池40.2 |
+|  载货质量  |   660kg（额定载货530kg）   | 660kg（额定载货530kg） |
+| 内部空间容积  |    4.7立方米   | | 
+|  最高车速  | 100km/h |110km/h |
+|  0-50km/h加速时间  |    <=8s   | <=8s|
+|    工况法续航里程    |  >=235km  | >=275km |
+|  最小离地间隙  |     >=155mm    | |
+|  最小转弯半径  |     <=5.25m    | |
+|  涉水深度  |    >=300mm    | |
 
-As the network is growing, it is facing more and more difficulties. The algorithms need more and more hash power to solve. So, the complexity of the task is a sensitive issue.
+#### _车辆销售方式_
+
+|          	|                 	|     	|
+|:------------:	|:--------------------------:	|:--------:	|
+|   上牌时间   	|         2017年12月         	|          	|
+|   以租代售   	|           保证金           	|     1万    	|
+|              	|            租金            	|     1900元/月（季付）含保险及运费4年以租代售    	|
+| 经销商销售价 	|           6万（不含运费）           	| 保修政策 	|
+|     置换     	|           保证金           	|    ~   	|
+|              	|           置换额           	|   ~   	|
+|     备注     	|   	|          	|
+
 
 ### 3. **How come?**
 Accurate work and speed of Blockchain system depend on it.
