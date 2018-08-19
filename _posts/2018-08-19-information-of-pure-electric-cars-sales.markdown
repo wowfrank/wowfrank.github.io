@@ -77,16 +77,46 @@ tags: [Pure Electric Car,New Enegy,新能源]
 |     备注     	|   	|          	|
 
 
-### 3. **How come?**
-Accurate work and speed of Blockchain system depend on it.
+### 3. **K50EV**
+#### _车型展示_
 
-But the problem shouldn’t be too complicated. If it is, the block generation takes a lot of time. The transactions are stuck without execution and as a result, the workflow hangs for some time. If the problem cannot be solved in a definite time frame, block generation will be kind of a miracle.
+![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-正面.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-侧面.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-后观.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-外观.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-内观.jpg)
 
-But if the problem is too easy it is prone to vulnerabilities, DoS attacks and spam.
+#### _车辆参数_
+|          基本参数          	|                                   	|
+|:--------------------------:	|:---------------------------------:	|
+| 整车主要参数（长*宽*高）mm 	|           4450*1760*1790          	|
+|       整备质量（kg）       	|                1550               	|
+|           轴距mm           	|                2755               	|
+|         爬坡度（%）        	|                 25                	|
+|          最高车速          	|              110km/h              	|
+|    续航里程数（工况法）    	|               255km               	|
+|          动力总成          	|                                   	|
+| 电池类型                   	| 三元锂电池                        	|
+| 电机类型                   	| 永磁同步电机                      	|
+| 电池电量（kwh）            	| 45                                	|
+| 峰值功率kw                 	| 41.8                              	|
+| 峰值扭矩N.m                	| 150                               	|
+| 充电时间                   	| 快充1.5H，慢充10H                 	|
+| 制动、悬架、驱动方式       	|                                   	|
+| 驱动形式                   	| 前置前驱                          	|
+| 制动系统（前/后）          	| 盘式/盘式                         	|
+| 悬架系统（前/后）          	| 麦弗逊式独立悬架/扭转梁式螺旋弹簧 	|
 
-The solution needs to be easily checked. Otherwise, not all nodes are capable of analyzing if the calculations are correct.
+#### _车辆销售方式_
 
-Then you will have to trust other nodes and it violates one of the most important features of Blockchain - transparency.
-
+|          	|                 	|     	|
+|:------------:	|:--------------------------:	|:--------:	|
+|   上牌时间   	|         2017年12月         	|          	|
+|   以租代售   	|           保证金           	|     2万    	|
+|              	|            租金            	|     3200元/月（季付）含保险及运费4年以租代售    	|
+| 经销商销售价 	|           11万（不含运费）           	|  	|
+|     置换     	|           保证金           	|    2万   	|
+|              	|           置换额           	|   35万   	|
+|     备注     	|   	|          	|
 
 ### **__ 此文源于Andrew Tar于2018.1.17写的[《Proof-of-Work, Explained》](https://cointelegraph.com/explained/proof-of-work-explained) __**
