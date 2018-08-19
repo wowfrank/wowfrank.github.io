@@ -124,4 +124,3 @@ tags: [Pure Electric Car,New Enegy,新能源]
 |              	|           置换额           	|   35万   	|
 |     备注     	|   	|          	|
 
-### **__ 此文源于Andrew Tar于2018.1.17写的[《Proof-of-Work, Explained》](https://cointelegraph.com/explained/proof-of-work-explained) __**
