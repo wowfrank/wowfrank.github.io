@@ -12,8 +12,9 @@ tags: [Pure Electric Car,Tech]
 ![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
 ![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
 #### _车辆参数_
-|     长     |   6015mm   |      宽      |       2025mm       |         高         |      2650mm     |
+|     参数     |   值   |      参数      |       值       |         参数         |      值     |
 |:----------:|:----------:|:------------:|:------------------:|:------------------:|:---------------:|
+|     长     |   6015mm   |      宽      |       2025mm       |         高         |      2650mm     |
 |    轴距    |   3715mm   |              |                    |      最高车速      |     100km/h     |
 |  整备质量  |   2985kg   |  最大总质量  |       4460kg       |       座位数       |       10座      |
 | 续航里程数 |    210km   |   充电方式   | 快充，先恒流后恒压 |                    |                 |
