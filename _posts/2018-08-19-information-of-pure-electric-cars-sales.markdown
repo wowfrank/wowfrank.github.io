@@ -80,11 +80,15 @@ tags: [Pure Electric Car,New Enegy,新能源]
 ### 3. **K50EV**
 #### _车型展示_
 
-![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-正面.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-侧面.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-后观.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-外观.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/优优EV235-内观.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-front.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-back.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-01.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-02.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-03.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-04.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-05.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-06.jpg)
+![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-engine.jpg)
 
 #### _车辆参数_
 |          基本参数          	|                                   	|
