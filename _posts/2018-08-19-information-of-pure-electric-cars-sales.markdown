@@ -12,6 +12,14 @@ tags: [Pure Electric Car,Tech]
 ![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
 ![Chain of Blocks]({{site.baseurl}}/assets/img/blockchain-pow-confirmation.jpg)
 #### _车辆参数_
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
 |     参数     |   值   |      参数      |       值       |         参数         |      值     |
 |:----------:|:----------:|:------------:|:------------------:|:------------------:|:---------------:|
 |     长     |   6015mm   |      宽      |       2025mm       |         高         |      2650mm     |
@@ -27,11 +35,7 @@ tags: [Pure Electric Car,Tech]
 |  布置形式  |    纵置    |   布置位置   |        前置        |                    |                 |
 |  冷却方式  |    水冷    | 电机控制型号 |       CU5012       | 电机控制器生产厂家 |     北京精进    |
 ....
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+
 
 #### _车辆销售方式_
 | 上牌时间   |      Are      |  Cool |
