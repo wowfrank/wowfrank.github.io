@@ -10,6 +10,21 @@ tags: [Pure Electric Car,New Enegy,新能源]
 ### 1. _DD6610EV12_
 #### _车型展示_
 
+```php
+<?php
+    phpinfo();
+?>
+```
+
+```python
+#!/usr/bin/python
+
+import math
+
+define myFunction():
+    suite
+````
+
 ![新能源车型DD6610EV12]({{site.baseurl}}/assets/img/image_not_available.jpg)
 
 #### _车辆参数_
