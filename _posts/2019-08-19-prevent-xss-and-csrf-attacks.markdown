@@ -216,4 +216,4 @@ All of the above has nothing to do with forged requests coming directly from an 
 
 Both attacks have in common that they are client-side attacks and need some action of the end user, such as clicking on a link or visiting a web site. XSS executes a malicious script in your browser, CSRF sends a malicious request on your behalf.
 
-###### _本文转载自Sergey Podgornyy的[《Prevent XSS and CSRF attacks on your website》](https://blog.larapulse.com/security/prevent-xss-csrf-attacks){:target="_blank"}_
+###### **本文转载自Sergey Podgornyy的[《Prevent XSS and CSRF attacks on your website》](https://blog.larapulse.com/security/prevent-xss-csrf-attacks){:target="_blank"}**
