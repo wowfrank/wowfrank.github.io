@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 「视频直播技术详解」系列之五：延迟优化
+title: 「视频直播技术详解」系列之六：延迟优化
 date: 2019-09-08 121:02:20 +0300
-description: 「视频直播技术详解」系列之五：延迟优化 # Add post description (optional)
+description: 「视频直播技术详解」系列之六：延迟优化 # Add post description (optional)
 img: live-streaming-collection.jpg # Add image post (optional)
 fig-caption: none # Add figcaption (optional)
 tags: [视频直播技术详解, 采集, 视频直播]

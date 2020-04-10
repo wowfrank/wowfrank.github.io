@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 「视频直播技术详解」系列之二：处理
+title: 「视频直播技术详解」系列之三：处理
 date: 2019-10-02 121:02:20 +0300
 description:  # Add post description (optional)
 img: live-streaming-collection.jpg # Add image post (optional)
@@ -10,7 +10,7 @@ categories: [blog，live-streaming]
 excerpt_separator: <!--more-->
 ---
 
-## **「视频直播技术详解」系列之二：处理**
+## **「视频直播技术详解」系列之三：处理**
 
 七牛云于6月底发布了一个针对视频直播的实时流网络LiveNet和完整的直播云解决方案，很多开发者对这个网络和解决方案的细节<!--more-->和使用场景非常感兴趣。
 
@@ -57,7 +57,7 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 
 美颜的主要原理是通过「磨皮+美白」来达到整体美颜的效果。磨皮的技术术语是「去噪」，也即对图像中的噪点进行去除或者模糊化处理，常见的去噪算法有均值模糊、高斯模糊和中值滤波等。当然， 由于脸部的每个部位不尽相同，脸上的雀斑可能呈现出眼睛黑点的样子，对整张图像进行「去噪」处理的时候不需要将眼睛也去掉，因此这个环节中也涉及到人脸和皮肤检测技术。
 
-在我们的直播系统中提供的 iOS 和 Android 推流 SDK 中内置了美颜功能，你可以根据自己的需要选择开关美颜功能，并且能够自由调节包括美颜，美白，红润等在内的参数。其中 iOS 端 SDK PLCameraStreamingKit 的参数设置如下：
+在我们的直播系统中提供的iOS和Android推流SDK中内置了美颜功能，你可以根据自己的需要选择开关美颜功能，并且能够自由调节包括美颜，美白，红润等在内的参数。其中iOS端SDK PLCameraStreamingKit的参数设置如下：
 
 * 1）按照默认参数开启或关闭美颜：
 
@@ -90,7 +90,7 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 
 视频水印包括播放器水印和视频内嵌水印两种方式可供选择，对于播放器水印来说，如果没有有效的防盗措施，对于没有播放鉴权的推流，客户端拿到直播流之后可以在任何一个不带水印的播放器里面播放，因此也就失去了视频保护的能力。综合考虑云端录制对于水印的需求，我们一般会选择「视频内嵌水印」的方式打水印。
 
-在我们的直播系统中提供的 iOS 和 Android 推流 SDK 中也内置了水印功能，你可以根据自己的需要添加水印或移除水印，并且能够自由设置水印的大小和位置。其中 iOS 端 SDK PLCameraStreamingKit 的参数设置如下：
+在我们的直播系统中提供的iOS和Android推流SDK中也内置了水印功能，你可以根据自己的需要添加水印或移除水印，并且能够自由设置水印的大小和位置。其中iOS端SDK PLCameraStreamingKit的参数设置如下：
 
 * 1）添加水印
 
@@ -98,7 +98,7 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 -(void)setWaterMarkWithImage:(UIImage *)wateMarkImage position:(CGPoint)position;
 ```
 
-该方法将为直播流添加一个水印，水印的大小由 wateMarkImage 的大小决定，位置由 position 决定，需要注意的是这些值都是以采集数据的像素点为单位的。例如我们使用AVCaptureSessionPreset1280x720 进行采集，同时 wateMarkImage.size 为 (100, 100) 对应的origin 为 (200, 300)，那么水印的位置将在大小为 1280x720 的采集画幅中位于 (200, 300) 的位置，大小为 (100, 100)。
+该方法将为直播流添加一个水印，水印的大小由wateMarkImage的大小决定，位置由position决定，需要注意的是这些值都是以采集数据的像素点为单位的。例如我们使用AVCaptureSessionPreset1280x720进行采集，同时wateMarkImage.size为 (100, 100)对应的origin为(200, 300)，那么水印的位置将在大小为1280x720的采集画幅中位于(200, 300)的位置，大小为(100, 100)。
 
 * 2）移除水印
 
@@ -108,13 +108,13 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 
 #### **3.滤镜**
 
-除了上面提到的美颜和水印之外，视频中还有很多其它的处理效果也在这个环节完成。七牛直播云提供的 SDK 在开放性设计基础之上，通过数据源回调接口，可以支持各种自定义滤镜的接入。
+除了上面提到的美颜和水印之外，视频中还有很多其它的处理效果也在这个环节完成。七牛直播云提供的SDK在开放性设计基础之上，通过数据源回调接口，可以支持各种自定义滤镜的接入。
 
-为了实现丰富的滤镜效果，在 iOS 端可以考虑使用 GPUImage 这个库，这是一个开源的基于GPU的图片或视频的处理框架，内置了多达120多种常见的滤镜效果。有了它，添加实时的滤镜只需要简单地添加几行代码，还可以基于这个库自己写算法实现更丰富端效果。GPUImage 地址：[GitHub - BradLarson/GPUImage: An open source iOS framework for GPU-based image and video processing](https://link.zhihu.com/?target=https%3A//github.com/BradLarson/GPUImage){:target="_blank"}
+为了实现丰富的滤镜效果，在iOS端可以考虑使用GPUImage这个库，这是一个开源的基于GPU的图片或视频的处理框架，内置了多达120多种常见的滤镜效果。有了它，添加实时的滤镜只需要简单地添加几行代码，还可以基于这个库自己写算法实现更丰富端效果。GPUImage 地址：[GitHub - BradLarson/GPUImage: An open source iOS framework for GPU-based image and video processing](https://link.zhihu.com/?target=https%3A//github.com/BradLarson/GPUImage){:target="_blank"}
 
-除了 iOS 端之外，Android 也有 GPUImage 这个库的移植：[GitHub - CyberAgent/android-gpuimage: Android filters based on OpenGL (idea from GPUImage for iOS)](https://link.zhihu.com/?target=https%3A//github.com/CyberAgent/android-gpuimage){:target="_blank"}
+除了iOS端之外，Android也有GPUImage这个库的移植：[GitHub - CyberAgent/android-gpuimage: Android filters based on OpenGL (idea from GPUImage for iOS)](https://link.zhihu.com/?target=https%3A//github.com/CyberAgent/android-gpuimage){:target="_blank"}
 
-同时，Google 官方也开源了一个伟大的库，覆盖了 Android 上面很多多媒体和图形图像相关的处理：[GitHub - google/grafika: Grafika test app](https://link.zhihu.com/?target=https%3A//github.com/google/grafika){:target="_blank"}
+同时，Google官方也开源了一个伟大的库，覆盖了Android上面很多多媒体和图形图像相关的处理：[GitHub - google/grafika: Grafika test app](https://link.zhihu.com/?target=https%3A//github.com/google/grafika){:target="_blank"}
 
 4.连麦
 
@@ -131,22 +131,24 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 
 * 3）音视频实时合成：其他观众需要实时观看到对话结果，因此需要在客户端或者服务端将画面和声音实时合成，然后以低成本高品质的方式传输观众端。
 
-在视频和电话会议领域，目前比较成熟的方案是使用思科或者 WebEx 的方案，但这些商用的方案一不开源，二比较封闭，三成本比较高。对于互动人数比较少的互动直播，目前市场上比较成熟的方案是使用基于 WebRTC 的实时通讯方案。
+在视频和电话会议领域，目前比较成熟的方案是使用思科或者WebEx的方案，但这些商用的方案一不开源，二比较封闭，三成本比较高。对于互动人数比较少的互动直播，目前市场上比较成熟的方案是使用基于WebRTC的实时通讯方案。
 
 ![WebRTC协议]({{site.baseurl}}/assets/img/live-streaming-proceed-3.png)
 
-上图是一个基于 WebRTC 协议实现多方实时通讯的示意图，本地用户（主播）和远程用户（连麦观众）之间的连接通过 RTCPeerConnection API 管理，这个 API 包装了底层流管理和信令控制相关的细节。基于该方案可以轻松实现多人（14 人以下）的多方实时通信，如下图所示：
+上图是一个基于WebRTC协议实现多方实时通讯的示意图，本地用户（主播）和远程用户（连麦观众）之间的连接通过RTCPeerConnection API管理，这个API包装了底层流管理和信令控制相关的细节。基于该方案可以轻松实现多人（14人以下）的多方实时通信，如下图所示：
 
 ![多方通信]({{site.baseurl}}/assets/img/live-streaming-proceed-4.png)
 
-当然，在通信人数少的情况下，其复杂度相对简单，如 2 人情况下。但人数增多至 4 人之后，其可选的网络结构就增多了，如上图所示，可以每个点之间形成自组织网络的方式通信，也可以以 1 人为中心形成星型通信网络，还可以让大家都通过一个集中式的服务端进行通信。
+当然，在通信人数少的情况下，其复杂度相对简单，如2人情况下。但人数增多至4人之后，其可选的网络结构就增多了，如上图所示，可以每个点之间形成自组织网络的方式通信，也可以以1人为中心形成星型通信网络，还可以让大家都通过一个集中式的服务端进行通信。
 
 ![星形通信网络]({{site.baseurl}}/assets/img/live-streaming-proceed-5.png)
 
-作为一个高性能、可伸缩的直播基础服务提供商，七牛直播云经过评估选择了以主播为中心形成星形通信网络，支持主播和多个观众之间的互动质量。同时，为了保证合成后的音视频实时传输到其他观众端，这里采用经过改造的 UDP 协议传输：
+作为一个高性能、可伸缩的直播基础服务提供商，七牛直播云经过评估选择了以主播为中心形成星形通信网络，支持主播和多个观众之间的互动质量。同时，为了保证合成后的音视频实时传输到其他观众端，这里采用经过改造的UDP协议传输：
 
-* 通过 UDP 降低传输延迟。
+* 通过UDP降低传输延迟。
 
-* 在 UDP 之上进行传输控制，保证用户互动体验 QoS。
+* 在UDP之上进行传输控制，保证用户互动体验QoS。
 
 在下一篇连载中，我们将详细介绍编码和封装。
+
+##### 此系列文章均转载自**[牛七云](https://www.qiniu.com/){:target="_blank"}**！
