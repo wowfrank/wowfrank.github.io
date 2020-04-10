@@ -176,8 +176,8 @@ There are two possible values for the same-site attribute:
 
 | request type | html code example | cookie type |
 |:------------------:|:--------------------:|:---------------------:|
-| link | <a href="...">...</a> | normal, lax |
-| prerender | <link rel="prerender" href="..." /> | normal, lax |
+| link | &lt;a href="..."> | normal, lax |
+| prerender | &lt;link rel="prerender" href="..." /> | normal, lax |
 | form GET | <form action="..."> | normal, lax |
 | form POST | <form method="post" action="..."> | normal |
 | iframe | <iframe src=...> | normal |
