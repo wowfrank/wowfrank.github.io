@@ -36,8 +36,8 @@ section {
   display: block;
 }
 
-a:hover, a:visited, a:link, a:active {
-  color: #FFFFFF;
+a {
+  color: #fb5524;
   text-decoration: none;
 }
 
