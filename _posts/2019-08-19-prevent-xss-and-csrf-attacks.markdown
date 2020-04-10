@@ -174,9 +174,8 @@ There are two possible values for the same-site attribute:
 * Strict: the cookie is withheld with any cross-site usage. Even when the user follows a link to another website the cookie is not sent.
 * Lax: some cross-site usage is allowed. Specifically, if the request is a GET request and the request is top-level. Top-level means that the URL in the address bar changes because of this navigation. This is not the case for iframes, images or XMLHttpRequests.
 
-|       		     |     		  	 	    |            		    |
-|:------------------:|:--------------------:|:---------------------:|
 | request type | html code example | cookie type |
+|:------------------:|:--------------------:|:---------------------:|
 | link | <a href="..."> | normal, lax |
 | prerender | <link rel="prerender" href="..."> | normal, lax |
 | form GET | <form action="..."> | normal, lax |
@@ -184,3 +183,35 @@ There are two possible values for the same-site attribute:
 | iframe | <iframe src=...> | normal |
 | image | <img src=...> | normal |
 | AJAX | fetch('...') (JavaScript) | normal |
+
+This table shows what cookies are sent with cross-origin requests. As you can see cookies without a same-site attribute (indicated by "normal") are always sent. **Strict cookies are never sent. Lax cookies are only send with a top-level get request.**
+
+As you would expect strict mode gives better security, but breaks some functionality. Links to protected resources won't work from other sites. Even if you are logged in and have access to some resource, your strict cookies won't be sent when coming from another site. With lax mode, this still works, while providing decent security by blocking cross-site post requests.
+
+The same-site attribute is a good method to protect against CSRF attacks, because it seems to the attacker as though you are no longer logged in to the website under attack.
+
+##### **Using Referer, Origin, Host and X-Requested-With headers**
+
+X-Requested-With: XMLHttpRequest HTTP header can prevent CSRF attacks because this header cannot be added to the AJAX request cross domain without the consent of the server via CORS. Without CORS it is not possible to add X-Requested-With to a cross domain XHR request. Only the following headers are allowed cross domain:
+
+* Accept
+* Accept-Language
+* Content-Language
+* Last-Event-ID
+* Content-Type
+
+Referer header tells server from where the request has originated. If the request is coming from unauthorized domain, then Referer header will contain that value and server can simply reject that request.
+
+_These headers are great to additional check against CSRF attack, but do not rely only on them._
+
+**Misunderstanding the Same Origin Policy (aka SOP) and what Cross-origin resource sharing (aka CORS) brings to the table**
+
+All the SOP does, is prevent the response from being read by another domain (aka origin). This is irrelevant to whether a CSRF attack is successful or not. The only time the SOP comes into play with CSRF is to prevent any token from being read by a different domain.
+
+CORS does not increase security, it simply allows some exceptions to take place. Some browsers with partial CORS support allow cross site XHR requests (e.g. IE 10 and earlier), however they do not allow custom headers to be appended. In CORS supported browsers the Origin header cannot be set, preventing an attacker from spoofing this.
+
+All of the above has nothing to do with forged requests coming directly from an attacker. Remember, the attacker needs to use the victim's browser for their attack. They need the browser to automatically send its cookies. This cannot be achieved by a direct curl request as this would only be authenticating the attacker in this type of attack scenario (the category known as "client-side attacks").
+
+### **Conclusion**
+
+Both attacks have in common that they are client-side attacks and need some action of the end user, such as clicking on a link or visiting a web site. XSS executes a malicious script in your browser, CSRF sends a malicious request on your behalf.
