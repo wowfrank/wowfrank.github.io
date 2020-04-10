@@ -240,7 +240,7 @@ ffmpeg -codecs | grep 264
 输出：
 
 ```bash
- DEV.LS h264 H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 (decoders: h264 h264_vda ) (encoders: libx264 libx264rgb )
+DEV.LS h264 H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 (decoders: h264 h264_vda ) (encoders: libx264 libx264rgb)
 ```
 
 查看当前的VP8编解码器：
@@ -254,7 +254,7 @@ ffmpeg -codecs | grep vp8
 输出：
 
 ```bash
-  DEV.L. vp8                  On2 VP8 (decoders: vp8 libvpx ) (encoders: libvpx )
+  DEV.L. vp8 On2 VP8 (decoders: vp8 libvpx ) (encoders: libvpx)
 ```
 
 可以选择用vp8或者h264做编码器
