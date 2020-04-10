@@ -16,19 +16,21 @@ excerpt_separator: <!--more-->
 
 本系列文章大纲如下：
 
-（一）采集
+[（一）开篇](https://wowfrank.github.io/live-streaming-opening/)
 
-[（二）处理](https://wowfrank.github.io/live-streaming-proceed/)
+（二）采集
 
-[（三）编码和封装](https://wowfrank.github.io/live-streaming-code-and-encapsulation/)
+[（三）处理](https://wowfrank.github.io/live-streaming-proceed/)
 
-[（四）推流和传输](https://wowfrank.github.io/live-streaming-push-and-transport/)
+[（四）编码和封装](https://wowfrank.github.io/live-streaming-code-and-encapsulation/)
 
-[（五）延迟优化](https://wowfrank.github.io/live-streaming-optimize-latency/)
+[（五）推流和传输](https://wowfrank.github.io/live-streaming-push-and-transport/)
 
-[（六）现代播放器原理](https://wowfrank.github.io/live-streaming-theory-of-modern-player/)
+[（六）延迟优化](https://wowfrank.github.io/live-streaming-optimize-latency/)
 
-[（七）SDK 性能测试模型](https://wowfrank.github.io/live-streaming-model-of-sdk-testing/)
+[（七）现代播放器原理](https://wowfrank.github.io/live-streaming-theory-of-modern-player/)
+
+[（八）SDK 性能测试模型](https://wowfrank.github.io/live-streaming-model-of-sdk-testing/)
 
 ![总流程]({{site.baseurl}}/assets/img/live-streaming-collection-1.jpeg)
 

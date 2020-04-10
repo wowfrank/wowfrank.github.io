@@ -6,11 +6,13 @@ description: # Add post description (optional)
 img: live-streaming-code-encapsulation.jpg # Add image post (optional)
 fig-caption: none # Add figcaption (optional)
 tags: [视频直播技术详解, 编码和封装, 视频直播]
+categories: [blog，live-streaming]
+excerpt_separator: <!--more-->
 ---
 
 ## **「视频直播技术详解」系列之三：编码和封装**
 
-关于直播的技术文章不少，成体系的不多。我们将用七篇文章，更系统化地介绍当下大热的视频直播各环节的关键技术，帮助视频直播创业者们更全面、深入地了解视频直播技术，更好地技术选型。
+关于直播的技术文章不少，成体系的不多。我们将用七篇文章，更系统化地介绍当下大热的视频直播各环节的关键技术<!--more-->，帮助视频直播创业者们更全面、深入地了解视频直播技术，更好地技术选型。
 
 视频编码是视频直播技术系列文章的第三篇，是本系列一个非常重要的部分，是移动开发必修的基础课程，本篇文章从理论到实践一网打尽主流编码器。
 
@@ -18,19 +20,21 @@ tags: [视频直播技术详解, 编码和封装, 视频直播]
 
 本系列文章大纲如下，想复习之前文章的直接点击直达链接：
 
-[（一）采集](https://wowfrank.github.io/live-streaming-collection/)
+[（一）开篇](https://wowfrank.github.io/live-streaming-opening/)
 
-[（二）处理](https://wowfrank.github.io/live-streaming-proceed/)
+[（二）采集](https://wowfrank.github.io/live-streaming-collection/)
 
-（三）编码和封装
+[（三）处理](https://wowfrank.github.io/live-streaming-proceed/)
 
-[（四）推流和传输](https://wowfrank.github.io/live-streaming-push-and-transport/)
+（四）编码和封装
 
-[（五）延迟优化](https://wowfrank.github.io/live-streaming-optimize-latency/)
+[（五）推流和传输](https://wowfrank.github.io/live-streaming-push-and-transport/)
 
-[（六）现代播放器原理](https://wowfrank.github.io/live-streaming-theory-of-modern-player/)
+[（六）延迟优化](https://wowfrank.github.io/live-streaming-optimize-latency/)
 
-[（七）SDK 性能测试模型](https://wowfrank.github.io/live-streaming-model-of-sdk-testing/)
+[（七）现代播放器原理](https://wowfrank.github.io/live-streaming-theory-of-modern-player/)
+
+[（八）SDK 性能测试模型](https://wowfrank.github.io/live-streaming-model-of-sdk-testing/)
 
 ### **视频编码的意义**
 
