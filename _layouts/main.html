@@ -11,15 +11,15 @@ layout: default
       <div class="author-name">{{site.author}}</div>
       <!-- <p>{{site.about-author}}</p> -->
       <div id="archives">
-{% for category in site.categories %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <a name="{{ category_name | slugize }}">
-      <h3 class="category-head">{{ category_name }}</h3>
-    </a>
-  </div>
-{% endfor %}
-</div>
+        <ul>
+        {% for category in site.categories %}
+          {% capture category_name %}{{ category | first }}{% endcapture %}
+          <li><a name="{{ category_name | slugize }}">
+            <h3 class="category-head">{{ category_name }}</h3>
+          </a></li>
+        {% endfor %}
+        </ul>
+      </div>
     </div>
   </header> <!-- End Header -->
   <footer>
