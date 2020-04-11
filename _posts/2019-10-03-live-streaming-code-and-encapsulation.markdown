@@ -78,9 +78,9 @@ ffmpeg -i tutudebug2.mp4 'tutunormal-%03d.bmp'
 
 除了空间冗余和时间冗余的压缩，主要还有编码压缩和视觉压缩，下面是一个编码器主要的流程图：
 
-<div markdown='1' align="center">
+<div align="center"><div markdown='1'>
 ![帧内编码图]({{site.baseurl}}/assets/img/live-streaming-code-encapsulation-3.jpeg)
-</div>
+</div></div>
 
 图3：帧内编码图
 
