@@ -6,7 +6,7 @@ description: 「视频直播技术详解」系列之五：推流和传输 # Add 
 img: live-streaming-push-transport.jpg # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之五：推流和传输 # Add figcaption (optional)
 tags: [视频直播技术详解,推流和传输,视频直播,推送协议]
-categories: [blog,live-streaming]
+categories: ['blog','live-streaming']
 excerpt_separator: <!--more-->
 ---
 
