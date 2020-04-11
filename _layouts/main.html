@@ -10,11 +10,34 @@ layout: default
       </div>
       <div class="author-name">{{site.author}}</div>
       <!-- <p>{{site.about-author}}</p> -->
+      <div>
+        <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+        {% if page.categories %}
+        <span> Posted in: </span>
+        {% for category in page.categories %}
+        <span>
+          <a href="/categories/{{ category }}">{{ category }}</a
+          >{% if forloop.last==false %}, {% endif %}
+        </span>
+        {% endfor %} {% endif %}
+
+        <br />
+
+        {% if page.tags %}
+        <span> Tagged: </span>
+        {% for tag in page.tags %}
+        <span>
+          <a href="/tags/{{ tag }}">{{ tag }}</a
+          >{% if forloop.last==false %}, {% endif %}
+        </span>
+        {% endfor %} {% endif %}
+      </div>
     </div>
   </header> <!-- End Header -->
   <footer>
     <section class="contact">
-      <h3 class="contact-title">Contact me</h3>
+      <h3 class="contact-title">Contact Me</h3>
       <ul>
         {% if site.social-twitter %}
           <li><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
