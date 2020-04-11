@@ -13,10 +13,7 @@ layout: default
       <div id="archives">
         <ul>
         {% for category in site.categories %}
-          {% capture category_name %}{{ category | first }}{% endcapture %}
-          <li><a name="{{ category_name | slugize }}">
-            <h3 class="category-head">{{ category_name }}</h3>
-          </a></li>
+            <li><h3 class="category-head">{{ category_name }}</h3></li>
         {% endfor %}
         </ul>
       </div>
