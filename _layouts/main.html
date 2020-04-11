@@ -9,7 +9,17 @@ layout: default
         <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
       </div>
       <div class="author-name">{{site.author}}</div>
-      <p>{{site.about-author}}</p>
+      <!-- <p>{{site.about-author}}</p> -->
+      <div>
+        {% for category in site.categories %}
+          <h2>{{ category[0] }}</h2>
+          <ul>
+            {% for post in category[1] %}
+              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </div>
     </div>
   </header> <!-- End Header -->
   <footer>
