@@ -56,15 +56,19 @@ excerpt_separator: <!--more-->
 
 视频本质上讲是一系列图片连续快速的播放，最简单的压缩方式就是对每一帧图片进行压缩，例如比较古老的MJPEG编码就是这种编码方式，这种编码方式只有帧内编码，利用空间上的取样预测来编码。形象的比喻就是把每帧都作为一张图片，采用JPEG的编码格式对图片进行压缩，这种编码只考虑了一张图片内的冗余信息压缩，如图1，绿色的部分就是当前待编码的区域，灰色就是尚未编码的区域，绿色区域可以根据已经编码的部分进行预测（绿色的左边，下边，左下等）。
 
+<div align="center"><div markdown='1'>
 ![例图]({{site.baseurl}}/assets/img/live-streaming-code-encapsulation-1.jpeg)
 
 图1
+</div></div>
 
 但是帧和帧之间因为时间的相关性，后续开发出了一些比较高级的编码器可以采用帧间编码，简单点说就是通过搜索算法选定了帧上的某些区域，然后通过计算当前帧和前后参考帧的向量差进行编码的一种形式，通过下面两个图2连续帧我们可以看到，滑雪的同学是向前位移的，但实际上是雪景在向后位移，P帧通过参考帧（I或其他P帧）就可以进行编码了，编码之后的大小非常小，压缩比非常高。
 
+<div align="center"><div markdown='1'>
 ![例图]({{site.baseurl}}/assets/img/live-streaming-code-encapsulation-2.jpeg)
 
 图2
+</div></div>
 
 可能有同学对这两张图片怎么来的感兴趣，这里用了FFmpeg的两行命令来实现，具体FFmpeg的更多内容请看后续章节：
 
@@ -80,13 +84,15 @@ ffmpeg -i tutudebug2.mp4 'tutunormal-%03d.bmp'
 
 <div align="center"><div markdown='1'>
 ![帧内编码图]({{site.baseurl}}/assets/img/live-streaming-code-encapsulation-3.jpeg)
-</div></div>
 
 图3：帧内编码图
+</div></div>
 
+<div align="center"><div markdown='1'>
 ![帧间编码图]({{site.baseurl}}/assets/img/live-streaming-code-encapsulation-4.jpeg)
 
 图4：帧间编码图
+</div></div>
 
 图3、图4两个流程，图3是帧内编码，图4是帧间编码，从图上看到的主要区别就是第一步不相同，其实这两个流程也是结合在一起的，我们通常说的I帧和P帧就是分别采用了帧内编码和帧间编码。
 
