@@ -78,7 +78,9 @@ ffmpeg -i tutudebug2.mp4 'tutunormal-%03d.bmp'
 
 除了空间冗余和时间冗余的压缩，主要还有编码压缩和视觉压缩，下面是一个编码器主要的流程图：
 
+<div align="center">
 ![帧内编码图]({{site.baseurl}}/assets/img/live-streaming-code-encapsulation-3.jpeg)
+</div>
 
 图3：帧内编码图
 
@@ -348,7 +350,7 @@ ffplay rtmp://127.0.0.1/live/test
 
 * Matroska 格式（后缀为 .MKV）:是一种新的多媒体封装格式，这个封装格式可把多种不同编码的视频及16条或以上不同格式的音频和语言不同的字幕封装到一个Matroska Media档内。它也是其中一种开放源代码的多媒体封装格式。Matroska同时还可以提供非常好的交互功能，而且比MPEG的方便、强大。
 
-* MPEG2-TS 格式 (后缀为 .ts)（Transport Stream“传输流”；又称MTS、TS）是一种传输和存储包含音效、视频与通信协议各种数据的标准格式，用于数字电视广播系统，如DVB、ATSC、IPTV等等。MPEG2-TS定义于MPEG-2第一部分，系统（即原来之ISO/IEC标准13818-1或ITU-T Rec. H.222.0）。Media Player Classic、VLC多媒体播放器等软件可以直接播放MPEG-TS文件。
+* MPEG2-TS 格式 (后缀为 .ts)（Transport Stream“传输流”；又称MTS、TS）是一种传输和存储包含音效、视频与通信协议各种数据的标准格式，用于数字电视广播系统，如DVB、ATSC、IPTV等等。MPEG2-TS定义于MPEG-2第一部分，系统（即原来之ISO/IEC标准13818-1或ITU-TRec. H.222.0）。Media Player Classic、VLC多媒体播放器等软件可以直接播放MPEG-TS文件。
 
 目前，我们在流媒体传输，尤其是直播中主要采用的就是FLV和MPEG2-TS格式，分别用于RTMP/HTTP-FLV和HLS协议。
 

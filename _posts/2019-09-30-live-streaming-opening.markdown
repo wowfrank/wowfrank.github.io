@@ -38,7 +38,7 @@ excerpt_separator: <!--more-->
 
 本文是《解密视频直播技术》系列之一：开篇，我们将从整体介绍直播中的各个环节。
 
-![总流程]({{site.baseurl}}/assets/img/live-streaming-opening.webp)
+![总流程]({{site.baseurl}}/assets/img/live-streaming-opening.webp){.center}
 
 ### **1.采集**
 
