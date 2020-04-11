@@ -77,12 +77,10 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 -(void)setWhiten:(CGFloat)whiten;
 ```
 
-
 * 4）设置红润程度，范围为 0 ~ 1
 ```java
 -(void)setRedden:(CGFloat)redden;
 ```
-
 
 #### **2.视频水印**
 
