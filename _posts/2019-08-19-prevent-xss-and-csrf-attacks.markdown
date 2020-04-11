@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Prevent XSS and CSRF attacks on your website
-date: 2019-08-19 121:02:20 +0300
+date: 2019-08-19 00:00:00 +0300
 description: what are xss and csrf attacks and how can we prevent them? # Add post description (optional)
 img: prevent-xss-csrf.png # Add image post (optional)
 fig-caption: none # Add figcaption (optional)

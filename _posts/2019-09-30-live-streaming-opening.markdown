@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 「视频直播技术详解」系列之一：开篇
-date: 2019-09-30 121:02:20 +0300
+date: 2019-09-30 00:00:00 +0300
 description: 「视频直播技术详解」系列之一：开篇 #(optional)
 img: live-streaming-opening.webp # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之一：开篇 # Add figcaption (optional)

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 「视频直播技术详解」系列之二：采集
-date: 2019-10-01 121:02:20 +0300
+date: 2019-10-01 00:00:00 +0300
 description: 「视频直播技术详解」系列之二：采集 #(optional)
 img: live-streaming-collection.jpg # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之二：采集 # Add figcaption (optional)

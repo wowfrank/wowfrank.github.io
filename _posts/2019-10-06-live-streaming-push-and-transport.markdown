@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 「视频直播技术详解」系列之五：推流和传输
-date: 2019-10-06 121:02:20 +0300
+date: 2019-10-06 00:00:00 +0300
 description: 「视频直播技术详解」系列之五：推流和传输 # Add post description (optional)
 img: live-streaming-push-transport.jpg # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之五：推流和传输 # Add figcaption (optional)

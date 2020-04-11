@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Proof-of-Work, Explained!
-date: 2018-06-11 121:02:20 +0300
+date: 2018-06-11 00:00:00 +0300
 description: 这个帖子的目的主要是解释一下区块链技术中那个非常关键的技术“Proof-of-Work“. # Add post description (optional)
 img: blockchain-pow-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
