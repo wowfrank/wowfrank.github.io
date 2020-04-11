@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Streaming Protocols: Everything You Need to Know
+title: Everything You Need to Know About Streaming Protocols
 date: 2019-10-20 00:00:00 +0300
-description: Streaming Protocols: Everything You Need to Know # Add post description (optional)
+description: Everything You Need to Know About Streaming Protocols (optional)
 img: Streaming-Protocols-Everything-You-Need-to-Know.png # Add image post (optional)
-fig-caption: Streaming Protocols: Everything You Need to Know # Add figcaption (optional)
+fig-caption: Everything You Need to Know About Streaming Protocols # Add figcaption (optional)
 tags: [Streaming Protocols, TCP, UDP, RTMP, RTSP/RTP, Apple-HLS, MPEG-DASH, WebRTC, SRT]
 categories: [blog，live-streaming]
 ---
