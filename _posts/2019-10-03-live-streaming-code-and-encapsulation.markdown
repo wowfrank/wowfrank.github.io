@@ -4,7 +4,7 @@ title: 「视频直播技术详解」系列之四：编码和封装
 date: 2019-10-03 121:02:20 +0300
 description: 「视频直播技术详解」系列之四：编码和封装 # Add post description (optional)
 img: live-streaming-code-encapsulation.jpg # Add image post (optional)
-fig-caption: none # Add figcaption (optional)
+fig-caption: 「视频直播技术详解」系列之四：编码和封装 # Add figcaption (optional)
 tags: [视频直播技术详解, 编码和封装, 视频直播]
 categories: [blog，live-streaming]
 excerpt_separator: <!--more-->

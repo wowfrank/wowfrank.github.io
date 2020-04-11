@@ -4,7 +4,7 @@ title: 「视频直播技术详解」系列之五：推流和传输
 date: 2019-10-06 121:02:20 +0300
 description: 「视频直播技术详解」系列之五：推流和传输 # Add post description (optional)
 img: live-streaming-push-transport.jpg # Add image post (optional)
-fig-caption: none # Add figcaption (optional)
+fig-caption: 「视频直播技术详解」系列之五：推流和传输 # Add figcaption (optional)
 tags: [视频直播技术详解, 推流和传输, 视频直播, 推送协议]
 categories: [blog，live-streaming]
 excerpt_separator: <!--more-->

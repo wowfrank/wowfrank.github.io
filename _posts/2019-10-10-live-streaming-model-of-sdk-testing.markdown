@@ -1,16 +1,16 @@
 ---
 layout: post
-title: 「视频直播技术详解」系列之八：直播云 SDK 性能测试模型
+title: 「视频直播技术详解」系列之八：直播云SDK性能测试模型
 date: 2019-10-10 121:02:20 +0300
-description: 「视频直播技术详解」系列之八：直播云 SDK 性能测试模型 # Add post description (optional)
+description: 「视频直播技术详解」系列之八：直播云SDK性能测试模型 # Add post description (optional)
 img: live-streaming-sdk-testing.jpg # Add image post (optional)
-fig-caption: none # Add figcaption (optional)
+fig-caption: 「视频直播技术详解」系列之八：直播云SDK性能测试模型 # Add figcaption (optional)
 tags: [视频直播技术详解, 采集, 视频直播]
 categories: [blog，live-streaming]
 excerpt_separator: <!--more-->
 ---
 
-## **「视频直播技术详解」系列之八：直播云 SDK 性能测试模型**
+## **「视频直播技术详解」系列之八：直播云SDK性能测试模型**
 
 关于直播的技术文章不少，成体系的不多。我们将用七篇文章，更系统化地介绍当下大热的视频直播各环节的关键技术<!--more-->，帮助视频直播创业者们更全面、深入地了解视频直播技术，更好地技术选型。
 
