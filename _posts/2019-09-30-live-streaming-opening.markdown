@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 「视频直播技术详解」系列之一：开篇
-date: 2019-10-01 121:02:20 +0300
-description:  #(optional)
+date: 2019-09-30 121:02:20 +0300
+description: 「视频直播技术详解」系列之一：开篇 #(optional)
 img: live-streaming-opening.webp # Add image post (optional)
 fig-caption: none # Add figcaption (optional)
 tags: [视频直播技术详解, 开票, 视频直播]
