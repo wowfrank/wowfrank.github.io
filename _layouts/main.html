@@ -11,27 +11,15 @@ layout: default
       <div class="author-name">{{site.author}}</div>
       <!-- <p>{{site.about-author}}</p> -->
       <div>
-        <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+        {% assign categories = site.categories | sort %}
 
-        {% if page.categories %}
-        <span> Posted in: </span>
-        {% for category in page.categories %}
-        <span>
-          <a href="/categories/{{ category }}">{{ category }}</a
-          >{% if forloop.last==false %}, {% endif %}
-        </span>
-        {% endfor %} {% endif %}
-
-        <br />
-
-        {% if page.tags %}
-        <span> Tagged: </span>
-        {% for tag in page.tags %}
-        <span>
-          <a href="/tags/{{ tag }}">{{ tag }}</a
-          >{% if forloop.last==false %}, {% endif %}
-        </span>
-        {% endfor %} {% endif %}
+        {% for category in categories %}
+          <li class="post-list" style="font-size: {{ category | last | size | times: 400 | divided_by: categories.size }}%">
+            <a href="/categories/{{ category | first | slugize }}/">
+              {{ category | first }} ({{ category | last | size }})
+            </a>
+          </li>
+        {% endfor %}
       </div>
     </div>
   </header> <!-- End Header -->
