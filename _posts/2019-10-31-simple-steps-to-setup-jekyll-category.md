@@ -66,7 +66,8 @@ categories: [Tech, Personal]
 
 This is the page which will be shown when someone clicks on any category. Something like my jekyll tags page. Copy below code and paste it into a new file and name it categories.html.
 
-```liquid
+{% raw %}
+```html
 ---
 layout: page
 permalink: /categories/
@@ -92,6 +93,7 @@ title: Categories
 {% endfor %}
 </div>
 ```
+{% endraw %}
 
 The page will look like this. It will have all the categories listed out. One article can be listed in many categories. This happens when you use more than one category for a post.
 
