@@ -6,6 +6,7 @@ description: 这个帖子的目的主要是解释一下区块链这个含金量�
 img: blockchain-block-chain.jpeg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Bitcoin,Tech]
+categores: ['Blockchain']
 ---
 最近感觉区块链技术越来越红火了，其实我本人对区块链技术最早听说已经是5年前的事情了，因为比特币才听说的区块链。
 <!--more-->

@@ -6,8 +6,7 @@ description: 「视频直播技术详解」系列之一：开篇 #(optional)
 img: live-streaming-opening.webp # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之一：开篇 # Add figcaption (optional)
 tags: [视频直播技术详解,开票,视频直播]
-categories: [blog,live-streaming]
-excerpt_separator: <!--more-->
+categories: [live-streaming]
 ---
 
 随着互联网用户消费内容和交互方式的升级，支撑这些内容和交互方式的基础设施也正在悄悄发生变革。手机设备拍摄视频能力<!--more-->和网络的升级催生了大家对视频直播领域的关注，吸引了很多互联网创业者或者成熟企业进入该领域。

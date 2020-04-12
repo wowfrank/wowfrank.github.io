@@ -6,6 +6,7 @@ description: 这个帖子的目的主要是解释一下区块链技术中那个�
 img: blockchain-pow-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Proof-of-Work,Tech]
+categores: [Blockchain]
 ---
 ### 1. _What is Proof-of-Work?_
 Proof-of-Work, or PoW, is the original consensus algorithm in a Blockchain network.
