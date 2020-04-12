@@ -66,7 +66,7 @@ categories: [Tech, Personal]
 
 This is the page which will be shown when someone clicks on any category. Something like my jekyll tags page. Copy below code and paste it into a new file and name it categories.html.
 
- {% raw %}
+```liquid
 ---
 layout: page
 permalink: /categories/
@@ -91,7 +91,7 @@ title: Categories
     </div>
 {% endfor %}
 </div>
- {% endraw %}
+```
 
 The page will look like this. It will have all the categories listed out. One article can be listed in many categories. This happens when you use more than one category for a post.
 
@@ -99,7 +99,7 @@ If you want a simple list of all posts inside a certain category then use the be
 
 #### Personal
 
-```html
+```liquid
 {% for post in site.categories.Personal %}
 	<li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
@@ -107,7 +107,7 @@ If you want a simple list of all posts inside a certain category then use the be
 
 #### Tech
 
-```html
+```liquid
 {% for post in site.categories.Tech %}
 	<li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
@@ -119,7 +119,7 @@ It is better to show the categories to which the current article belongs to. And
 
 This can be done with the following liquid syntax. Copy this to post layout wherever you want to show the categories.
 
-```html
+```liquid
 <div class="post-categories">
 	{% if post %}
 		{% assign categories = post.categories %}
