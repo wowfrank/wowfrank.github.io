@@ -54,7 +54,8 @@ categories: Tech
 
 Post 3:
 
-```yaml---
+```yaml
+---
 layout: post
 title: New tech to organize your daily tasks.
 categories: [Tech, Personal]
