@@ -66,7 +66,7 @@ categories: [Tech, Personal]
 
 This is the page which will be shown when someone clicks on any category. Something like my jekyll tags page. Copy below code and paste it into a new file and name it categories.html.
 
-```html
+```php?start_inline=true
 ---
 layout: page
 permalink: /categories/
@@ -75,21 +75,21 @@ title: Categories
 
 
 <div id="archives">
-&#123;% for category in site.categories %&#1235;
+{% for category in site.categories %}
     <div class="archive-group">
-        &#123;% capture category_name %&#1235; &#123;&#123; category | first &#1235;&#1235; &#1233;% endcapture %&#1235;
-        <div id="#&#123;&#123; category_name | slugize &#1235;&#1235;"></div>
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <div id="#{{ category_name | slugize }}"></div>
         <p></p>
 
-        <h3 class="category-head">&#123;&#123; category_name &#1235;&#1235;</h3>
-        <a name="&#123;&#123; category_name | slugize &#1235;&#1235;"></a>
-        &#123;% for post in site.categories[category_name] %&#1235;
+        <h3 class="category-head">{{ category_name }}</h3>
+        <a name="{{ category_name | slugize }}"></a>
+        {% for post in site.categories[category_name] %}
             <article class="archive-item">
-                <h4><a href="&#123;&#123; site.baseurl &#1235;&#1235;&#123;&#123; post.url &#1235;&#1235;">&#123;&#123;post.title}}</a></h4>
+                <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
             </article>
-        &#123;% endfor %&#1235;
+        {% endfor %}
     </div>
-&#123;% endfor %&#1235;
+{% endfor %}
 </div>
 ```
 
