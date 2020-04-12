@@ -10,7 +10,7 @@ categories: ['Linux']
 ---
 
 
-### timedatectl
+## timedatectl
 
 In Ubuntu and most other Linux distributions, we can use the timedatectl command to display and set the current system’s time and timezone.
 
@@ -46,7 +46,7 @@ systemd-timesyncd.service active: yes
                  RTC in local TZ: no
 ```
 
-### find
+## find
 
 Similar to the locate command, using find also searches for files. The difference is, you use the find command to locate files within a given directory.
 
@@ -104,7 +104,7 @@ $ find . -type f -name "*.txt" -exec rm -f {} \;
 ![none]({{site.baseurl}}/assets/img/notes-of-linux-commands.png)
 </div></div>
 
-### grep
+## grep
 
 The grep utility searches for lines which contain a search pattern. When we looked at the alias command, we used grep to search through the output of another program, ps . The grep command can also search the contents of files. Here we’re searching for the word “train” in all text files in the current directory.
 
@@ -134,13 +134,13 @@ $ grep -l 'main' *.c
 $ grep --color vivek /etc/passwd
 ```
 
-### touch
+## touch
 
 ```bash
 $ touch -p /var/www/html/{laravel, zend, yii}.py 			# creates laravel.py, zend.py, and yii.py
 ```
 
-### uname
+## uname
 
 You can obtain some system information regarding the Linux computer you’re working on with the uname command.
 
@@ -156,11 +156,11 @@ $ uname -r
 $ uname -v
 ```
 
-### w
+## w
 
 The w command lists the currently logged in users.
 
-### diff
+## diff
 
 <div align="center"><div markdown='1'>
 ![none]({{site.baseurl}}/assets/img/notes-of-linux-commands-1.jpg)
