@@ -101,11 +101,13 @@ If you want a simple list of all posts inside a certain category then use the be
 
 #### Personal
 
+{% raw %}
 ```liquid
 {% for post in site.categories.Personal %}
 	<li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
 ```
+{% endraw %}
 
 #### Tech
 
