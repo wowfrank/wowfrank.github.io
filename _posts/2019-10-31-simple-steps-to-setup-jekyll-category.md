@@ -66,7 +66,7 @@ categories: [Tech, Personal]
 
 This is the page which will be shown when someone clicks on any category. Something like my jekyll tags page. Copy below code and paste it into a new file and name it categories.html.
 
-```html
+```php
 ---
 layout: page
 permalink: /categories/
