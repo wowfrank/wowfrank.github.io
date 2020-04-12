@@ -6,7 +6,7 @@ description: This post is mainly describing the pros and cons of the currently v
 img: blockchain-pros-cons-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Tech]
-categores: ['Blockchain']
+categories: ['Blockchain']
 ---
 If you look past the incredible hype around blockchain and cryptocurrencies at the start of 2018, you’ll see a relatively immature technology platform. Some have likened the current state of blockchain to the mid-1990s, when early Web businesses were trying to emulate the offline world on the new-fangled WWW. The implication being: blockchain is potentially as revolutionary as the World Wide Web.
 

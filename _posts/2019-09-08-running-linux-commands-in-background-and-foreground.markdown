@@ -6,7 +6,7 @@ description: Running Linux Commands to Bring Jobs Background and Foreground # Ad
 img: comands-background-foregound.jpg # Add image post (optional)
 fig-caption: none # Add figcaption (optional)
 tags: [commands,linux,backgound,foregound,process]
-categores: [Linux]
+categories: [Linux]
 ---
 
 Typically when you run a command in the terminal, you have to wait until the command finishes before you can enter another one. This is called running the command in the foreground or foreground process. When a process runs in the foreground, it occupies your shell, and you can interact with it using the input devices.

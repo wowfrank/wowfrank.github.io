@@ -6,7 +6,7 @@ description: what are xss and csrf attacks and how can we prevent them? # Add po
 img: prevent-xss-csrf.png # Add image post (optional)
 fig-caption: none # Add figcaption (optional)
 tags: [csrf,xss,browser,attack,xfs,security,web,hacking,cookies,website,svg]
-categores: [Security]
+categories: [Security]
 ---
 
 ### 1. **What is XSS: Cross-site scripting?**
