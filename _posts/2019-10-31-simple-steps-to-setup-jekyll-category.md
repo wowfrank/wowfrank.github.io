@@ -119,6 +119,7 @@ It is better to show the categories to which the current article belongs to. And
 
 This can be done with the following liquid syntax. Copy this to post layout wherever you want to show the categories.
 
+{% raw %}
 ```liquid
 <div class="post-categories">
 	{% if post %}
@@ -132,6 +133,7 @@ This can be done with the following liquid syntax. Copy this to post layout wher
 	{% endfor %}
 </div>
 ```
+{% endraw %}
 
 This can also be done using a simple piece of code if you just want to show categories without any link.
 
