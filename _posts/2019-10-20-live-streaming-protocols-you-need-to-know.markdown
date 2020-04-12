@@ -6,7 +6,7 @@ description: Everything You Need to Know About Streaming Protocols (optional)
 img: Streaming-Protocols-Everything-You-Need-to-Know.png # Add image post (optional)
 fig-caption: Everything You Need to Know About Streaming Protocols # Add figcaption (optional)
 tags: [Streaming Protocols, TCP, UDP, RTMP, RTSP/RTP, Apple-HLS, MPEG-DASH, WebRTC, SRT]
-categories: [live-streaming,networking]
+categories: ['Live Streaming', 'Networking']
 ---
 
 ## What Is a Protocol?

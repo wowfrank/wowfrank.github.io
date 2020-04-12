@@ -6,7 +6,7 @@ description: 「视频直播技术详解」系列之三：处理 # Add post desc
 img: live-streaming-collection.jpg # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之三：处理 # Add figcaption (optional)
 tags: [视频直播技术详解,处理,视频直播]
-categories: [live-streaming]
+categories: ['Live Streaming']
 ---
 
 七牛云于6月底发布了一个针对视频直播的实时流网络LiveNet和完整的直播云解决方案，很多开发者对这个网络和解决方案的细节<!--more-->和使用场景非常感兴趣。
