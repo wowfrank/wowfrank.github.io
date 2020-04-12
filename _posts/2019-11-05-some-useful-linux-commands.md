@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Notes of Some Useful Linux Commands Notes
+title: Notes of Some Useful Linux Commands
 date: 2019-11-05 00:00:00 +0300
-description: Notes of Some Useful Linux Commands Notes (optional)
+description: Notes of Some Useful Linux Commands # (optional)
 img: notes-of-linux-commands.jpg # Add image post (optional)
-fig-caption: Notes of Some Useful Linux Commands Notes # Add figcaption (optional)
+fig-caption: Notes of Some Useful Linux Commands # Add figcaption (optional)
 tags: [Linux,Commands]
 categories: ['Linux']
 ---
