@@ -67,7 +67,7 @@ categories: [Tech, Personal]
 This is the page which will be shown when someone clicks on any category. Something like my jekyll tags page. Copy below code and paste it into a new file and name it categories.html.
 
 {% raw %}
-```html
+```liquid
 ---
 layout: page
 permalink: /categories/
@@ -109,11 +109,13 @@ If you want a simple list of all posts inside a certain category then use the be
 
 #### Tech
 
+{% raw %}
 ```liquid
 {% for post in site.categories.Tech %}
 	<li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
 ```
+{% endraw %}
 
 Display categories on Jekyll posts.
 
