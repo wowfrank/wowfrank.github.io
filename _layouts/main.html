@@ -9,22 +9,8 @@ layout: default
                     <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
               </div>
               <div class="author-name">{{site.author}}</div>
-              <!-- <p>{{site.about-author}}</p> -->
-              <!-- Category List -->
-              <ul class="tag-box inline">
-                    {% assign tags_list = site.categories %}
-                    {% if tags_list.first[0] == null %}
-                    {% for tag in tags_list %}
-                    {{ tag | capitalize }} <span>{{ site.tags[tag].size }}</span>
-                    {% endfor %}
-                    {% else %}
-                    {% for tag in tags_list %}
-                    <div>{{ tag[0] | capitalize }} <span> ({{ tag[1].size }}) </span></div>
-                    {% endfor %}
-                    {% endif %}
-                    {% assign tags_list = nil %}
-              </ul>
-              <!-- End of Category -->
+              <p>{{site.about-author}}</p>
+              
         </div>
     </header> <!-- End Header -->
     <footer>
