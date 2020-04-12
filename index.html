@@ -10,14 +10,14 @@ layout: main
   <div class="post-content">
     <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
     {% if post.content contains '<!--more-->' %}
-        <p>{{ post.excerpt | strip_html }}</p>
+        <p>{{ post.excerpt | strip_html }}...</p>
     {% else %}
        <!-- Case for when no excerpt is defined -->
        <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
     {% endif %}
     <span class="post-date">{{post.date | date: '%Y, %b %d'}}
     {% if post.content contains '<!--more-->' %}
-       </span>
+       &nbsp;&nbsp;&nbsp;—&nbsp;</span><span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
     {% else %}
        &nbsp;&nbsp;&nbsp;—&nbsp;</span><span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
     {% endif %}
