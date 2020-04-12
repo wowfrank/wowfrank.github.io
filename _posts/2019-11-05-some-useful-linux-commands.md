@@ -175,6 +175,14 @@ $ diff -y -W 70 alpha1.txt alpha2.txt --suppress-common-lines
 
 The -y (side by side) option shows the line differences side by side. The -w (width) option lets you specify the maximum line width to use to avoid wraparound lines. The two files are called alpha1.txt and alpha2.txt in this example. The --suppress-common-lines prevents diff from listing the matching lines, letting you focus on the lines which have differences.
 
+## shutdown
+
+```bash
+$ sudo shutdown -h +5         # this will shutdown the server after 5 mins
+$ sudo shutdown -r 10:12      # this will restart the server at 10:12
+```
+
 <div align="center"><div markdown='1'>
 ![none]({{site.baseurl}}/assets/img/notes-of-linux-commands.webp)
 </div></div>
+
