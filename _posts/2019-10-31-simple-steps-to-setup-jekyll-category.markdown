@@ -5,7 +5,7 @@ date: 2019-10-31 00:00:00 +0300
 description: "3 Simple steps to setup Jekyll Categories and Tags"
 img: jekyll-categories.png 
 fig-caption: "Notes of Some Useful Linux Commands"
-tags: [Category,Jekyll]
+tags: ['Category','Jekyll']
 categories: ['Jekyll']
 ---
 

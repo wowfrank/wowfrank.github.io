@@ -5,7 +5,7 @@ date: 2019-10-02 00:00:00 +0300
 description: 「视频直播技术详解」系列之三：处理 # Add post description (optional)
 img: live-streaming-collection.jpg # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之三：处理 # Add figcaption (optional)
-tags: [视频直播技术详解,处理,视频直播]
+tags: ['视频直播技术详解','处理','视频直播']
 categories: ['Live Streaming']
 ---
 

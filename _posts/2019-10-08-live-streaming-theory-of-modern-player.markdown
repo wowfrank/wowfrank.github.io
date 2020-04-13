@@ -5,7 +5,7 @@ date: 2019-10-08 00:00:00 +0300
 description: 「视频直播技术详解」系列之七：现代播放器原理 # Add post description (optional)
 img: live-streaming-modern-player.jpg # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之七：现代播放器原理 # Add figcaption (optional)
-tags: [视频直播技术详解,现代播放器原理,视频直播]
+tags: ['视频直播技术详解','现代播放器原理','视频直播']
 categories: ['Live Streaming']
 ---
 

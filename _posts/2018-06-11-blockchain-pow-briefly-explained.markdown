@@ -5,8 +5,8 @@ date: 2018-06-11 00:00:00 +0300
 description:  # Add post description (optional)
 img: blockchain-pow-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [Blockchain,Proof-of-Work,Tech]
-categories: [Blockchain]
+tags: ['Blockchain','Proof-of-Work','Tech']
+categories: ['Blockchain']
 ---
 ### 1. _What is Proof-of-Work?_
 Proof-of-Work, or PoW, is the original consensus algorithm in a Blockchain network.

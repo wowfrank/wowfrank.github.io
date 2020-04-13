@@ -5,7 +5,7 @@ date: 2019-09-30 00:00:00 +0300
 description: 「视频直播技术详解」系列之一：开篇 #(optional)
 img: live-streaming-opening.webp # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之一：开篇 # Add figcaption (optional)
-tags: [视频直播技术详解,开票,视频直播]
+tags: ['视频直播技术详解','开票','视频直播']
 categories: ['Live Streaming']
 ---
 

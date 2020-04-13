@@ -5,7 +5,7 @@ date: 2019-10-07 00:00:00 +0300
 description: 「视频直播技术详解」系列之六：延迟优化 # Add post description (optional)
 img: live-streaming-optimize-latency.jpg # Add image post (optional)
 fig-caption: 「视频直播技术详解」系列之六：延迟优化 # Add figcaption (optional)
-tags: [视频直播技术详解,优化延迟,视频直播]
+tags: ['视频直播技术详解','优化延迟','视频直播']
 categories: ['Live Streaming']
 ---
 
