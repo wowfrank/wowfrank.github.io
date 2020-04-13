@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Blockchain Pros and Cons Analysis
+title: "Blockchain Pros and Cons Analysis"
 date: 2018-06-10 13:02:20 +0300
-description: This post is mainly describing the pros and cons of the currently very hot technology - BLOCKCHAIN. # Add post description (optional)
+description: "This post is mainly describing the pros and cons of the currently very hot technology - BLOCKCHAIN." # Add post description (optional)
 img: blockchain-pros-cons-1.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Blockchain,Tech]
