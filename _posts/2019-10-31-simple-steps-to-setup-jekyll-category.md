@@ -6,7 +6,6 @@ description: "3 Simple steps to setup Jekyll Categories and Tags" (optional)
 img: jekyll-categories.png # Add image post (optional)
 fig-caption: "3 Simple steps to setup Jekyll Categories and Tags" # Add figcaption (optional)
 tags: [Jekyll,Categories]
-categories: ['Jekyll']
 ---
 
 
