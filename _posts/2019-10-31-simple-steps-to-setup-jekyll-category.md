@@ -9,7 +9,6 @@ tags: [Jekyll,Categories]
 categories: ['Jekyll']
 ---
 
-
 ## Why Jekyll Categories or Tags?
 
 Imagine you have a blog where you discuss very different things all together. Many bloggers post their personal experiences along with some professional posts. Curating information is very important to make users browse through your website with ease. What if New York Times had no categories like Politics, Business, Tech etc..? How hard would it be to track what happened to last night’s football game? There should be a Sports category to make readers’ life easy.
