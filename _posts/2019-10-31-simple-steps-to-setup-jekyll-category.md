@@ -2,11 +2,7 @@
 layout: post
 title: "3 Simple steps to setup Jekyll Categories and Tags"
 date: 2019-10-31 00:00:00 +0300
-description: "3 Simple steps to setup Jekyll Categories and Tags" (optional)
-img: jekyll-categories.png # Add image post (optional)
-fig-caption: "3 Simple steps to setup Jekyll Categories and Tags" # Add figcaption (optional)
-tags: [Jekyll,Categories]
-categories: ['Jekyll']
+
 ---
 
 ## Why Jekyll Categories or Tags?
