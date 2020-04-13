@@ -4,6 +4,8 @@ title: "3 Simple Steps to Setup Jekyll Categories and Tags"
 date: 2019-10-31 00:00:00 +0300
 description: "3 Simple steps to setup Jekyll Categories and Tags" (optional)
 img: jekyll-categories.png # Add image post (optional)
+tags: [Category,Jekyll]
+categories: ['Jekyll']
 ---
 
 ## Why Jekyll Categories or Tags?
