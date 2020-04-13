@@ -139,15 +139,19 @@ This can be done with the following liquid syntax. Copy this to post layout wher
 
 This can also be done using a simple piece of code if you just want to show categories without any link.
 
+{% raw %}
 ```liquid
 {{page.categories | capitalize | join: ', '}}
 ```
+{% endraw %}
 
 or
 
+{% raw %}
 ```liquid
 {{page.tags | capitalize | join: ', '}}
 ```
+{% endraw %}
 
 This is how we can implement categories. If we want tags instead of categories then we should replace category with tag and categories with tags everywhere.
 
