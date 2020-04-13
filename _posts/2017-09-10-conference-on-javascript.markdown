@@ -2,7 +2,7 @@
 layout: post
 title: "Conference on Javascript"
 date: 2017-09-10 00:00:00 +0800
-description: "You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes."
+description: "You’ll find this post in your directory. Go ahead and edit it and re-build the site to see your changes."
 img: js-1.png
 tags: [Js, Conference]
 categories:[Javascript]
