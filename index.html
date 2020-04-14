@@ -17,7 +17,7 @@ layout: main
     {% endif %}
     <span class="post-date">{{post.date | date: '%Y, %b %d'}}
     {% if post.content contains '<!--more-->' %}
-       &nbsp;&nbsp;&nbsp;—&nbsp;</span><span class="post-words">{% capture words %}{{ post.content | strip_html | strip_newlines | split: "" | size }}{% endcapture %}{% unless words contains "-" %}{{words}} - {{ words | plus: 250 | divided_by: 150 | append: " minute read" }}{% endunless %}</span>
+       &nbsp;&nbsp;&nbsp;—&nbsp;</span><span class="post-words">{% capture words %}{{ "关于直播的技术文章不少，成体系的不多。我们将用七篇文章，更系统化地介绍当下大热的视频直播各环节的关键技术" | strip_html | strip_newlines | split: "" | size }}{% endcapture %}{% unless words contains "-" %}{{words}} - {{ words | plus: 250 | divided_by: 150 | append: " minute read" }}{% endunless %}</span>
     {% else %}
        &nbsp;&nbsp;&nbsp;—&nbsp;</span><span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
     {% endif %}
