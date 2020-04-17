@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Notes of Some Useful Linux Commands"
-date: 2019-11-05 00:00:00 +0300
+date: 2019-11-05 00:00:00 +0800   # +0800 --> Asia/Shanghai Timezone
 description: "Notes of Some Useful Linux Commands" # (optional)
 img: notes-of-linux-commands.jpg # Add image post (optional)
 fig-caption: "Notes of Some Useful Linux Commands" # Add figcaption (optional)
@@ -185,4 +185,13 @@ $ sudo shutdown -r 10:12      # this will restart the server at 10:12
 <div align="center"><div markdown='1'>
 ![none]({{site.baseurl}}/assets/img/notes-of-linux-commands.webp)
 </div></div>
+
+## lsb_release
+
+The lsb_release command displays LSB (Linux Standard Base) information about your specific Linux distribution, including version number, release codename, and distributor ID.
+
+```bash
+$ lsb_release -a
+$ lsb_release -a | grep Codename | awk '{print $2}'
+
 
