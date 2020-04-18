@@ -229,6 +229,9 @@ $ virtualenv -p python3 vtEnvProject
 $ source vtEnvProject/bin/activate
 
 $ python -m pip install Django
+or
+$ git clone https://github.com/django/django.git
+$ python -m pip install -e django/
 
 # Do your work inside the project directories. When you're done, use deactivate to exit the virtual environment.
 $ deactivate
