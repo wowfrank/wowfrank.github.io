@@ -233,6 +233,9 @@ or
 $ git clone https://github.com/django/django.git
 $ python -m pip install -e django/
 
+# Install Numpy
+$ pip3 install --index-url https://pypi.douban.com/simple/ numpy
+
 # Do your work inside the project directories. When you're done, use deactivate to exit the virtual environment.
 $ deactivate
 ```
