@@ -3,7 +3,7 @@ layout: post
 title: "安装Ubuntu19.10后的习惯性配置记录"
 date: 2019-11-15 00:00:00 +0800
 description: "安装Ubuntu19.10后的习惯性配置记录" # (optional)
-img: notes-of-linux-commands.jpg # Add image post (optional)
+img: Setup-a-Python-Virtual-Environment-on-Ubuntu.webp # Add image post (optional)
 fig-caption: "安装Ubuntu19.10后的习惯性配置记录" # Add figcaption (optional)
 tags: ['Linux','Ubuntu','Commands']
 categories: ['Linux']
