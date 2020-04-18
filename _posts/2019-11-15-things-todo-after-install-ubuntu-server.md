@@ -16,16 +16,16 @@ $ lsb_release -a
 $ cd /etc/apt
 $ sudo mv sources.list sources.list.bak
 $ sudo vi sources.list
-	deb http://mirrors.aliyun.com/ubuntu/ eoan main multiverse restricted universe
-	deb http://mirrors.aliyun.com/ubuntu/ eoan-backports main multiverse restricted universe
-	deb http://mirrors.aliyun.com/ubuntu/ eoan-proposed main multiverse restricted universe
-	deb http://mirrors.aliyun.com/ubuntu/ eoan-security main multiverse restricted universe
-	deb http://mirrors.aliyun.com/ubuntu/ eoan-updates main multiverse restricted universe
-	deb-src http://mirrors.aliyun.com/ubuntu/ eoan main multiverse restricted universe
-	deb-src http://mirrors.aliyun.com/ubuntu/ eoan-backports main multiverse restricted universe
-	deb-src http://mirrors.aliyun.com/ubuntu/ eoan-proposed main multiverse restricted universe
-	deb-src http://mirrors.aliyun.com/ubuntu/ eoan-security main multiverse restricted universe
-	deb-src http://mirrors.aliyun.com/ubuntu/ eoan-updates main multiverse restricted universe
+	deb http://mirrors.aliyun.com/ubuntu/ focal main multiverse restricted universe
+	deb http://mirrors.aliyun.com/ubuntu/ focal-backports main multiverse restricted universe
+	deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main multiverse restricted universe
+	deb http://mirrors.aliyun.com/ubuntu/ focal-security main multiverse restricted universe
+	deb http://mirrors.aliyun.com/ubuntu/ focal-updates main multiverse restricted universe
+	deb-src http://mirrors.aliyun.com/ubuntu/ focal main multiverse restricted universe
+	deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main multiverse restricted universe
+	deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main multiverse restricted universe
+	deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main multiverse restricted universe
+	deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main multiverse restricted universe
 $ sudo apt update
 ```
 
@@ -119,8 +119,8 @@ autocmd BufWinEnter *.* silent loadview"
 
 ```bash
 $ sudo apt -y install samba
-$ mkdir -p /var/www/html/share
-$ chmod -R 0777 /var/www/html/share
+$ sudo mkdir -p /var/www/html/share
+$ sudo chmod -R 0777 /var/www/html/share
 $ sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.backup
 $ sudo vi /etc/samba/smb.conf
 
@@ -159,3 +159,77 @@ $ sudo vi /etc/samba/smb.conf
 $ sudo systemctl restart smbd
 ```
 
+## 4. 安装Python3的PIP
+
+```bash
+$ sudo apt install python3-pip
+```
+
+## 5. 安装UFW
+
+```bash
+$ sudo apt update
+$ sudo apt install ufw
+$ sudo ufw status
+$ sudo ufw allow ssh
+$ sudo ufw allow from 192.168.1.0/24 to any
+$ sudo ufw enable
+$ sudo ufw status verbose
+```
+
+## 6. 安装LEMP
+
+```bash
+$ sudo apt install nginx
+$ sudo systemctl enable nginx
+$ sudo systemctl start nginx
+$ sudo systemctl status nginx
+$ nginx -v
+$ sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+$ sudo ufw allow http
+$ sudo ufw status verbose
+$ sudo apt install mariadb-server mariadb-client
+$ sudo systemctl start mariadb
+$ sudo systemctl enable mariadb
+$ sudo mysql_secure_installation
+MariaDB[(none)]> CREATE DATABASE `laravel`;
+MariaDB[(none)]> GRANT ALL ON `laravel`.* TO 'db_user'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+MariaDB[(none)]> FLUSH PRIVILEGES;
+MariaDB[(none)]> exit;
+$ mariadb -u db_user -p
+$ sudo apt install  -y php php-fpm php-mysql php-common php-cli php7.4-common \
+	php7.4-opcache php-readline php-mbstring php-xml php-gd php-curl \
+	php-json php-zip php-pear
+$ sudo systemctl start php7.4-fpm
+$ sudo systemctl enable php7.4-fpm
+$ systemctl status php7.4-fpm
+# configure nginx default configuration
+$ sudo nginx -t
+$ sudo ln -s /etc/nginx/sites-available/xxx.conf /etc/nginx/sites-enabled/xxx.conf
+$ sudo systemctl reload nginx
+```
+
+## 配置Python Virtual Environment, 原文[How to Set Up a Python Virtual Environment on Debian 10 Buster](https://linuxconfig.org/how-to-set-up-a-python-virtual-environment-on-debian-10-buster){:target="_blank"}
+
+```bash
+$ sudo apt install python3 python3-venv
+$ sudo apt install virtualenv python3-virtualenv
+
+# USE PYTHON3's VENV
+$ sudo mkdir -p /var/www/html/vt-env/
+$ sudo chown -R user:group /var/www/html/vt-env/
+$ cd /var/www/html/vt-env/
+# Now, you're working with the Python install from your virtual environment, instead of the system wide one. Anything you do now, should reside in your project folder. When you're done, just run deactivate to exit the virtual Python.
+$ python3 -m venv xxx-project
+$ source xxx-project/bin/activate
+
+# USE VIRTUALENV
+# To start, create your environment with the virtualenv command. You'll also need to tell it to use Python 3 with the -p flag.
+$ virtualenv -p python3 vtEnvProject
+$ source vtEnvProject/bin/activate
+
+$ python -m pip install Django
+
+# Do your work inside the project directories. When you're done, use deactivate to exit the virtual environment.
+$ deactivate
+```
