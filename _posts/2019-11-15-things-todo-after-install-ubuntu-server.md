@@ -211,7 +211,9 @@ $ sudo ln -s /etc/nginx/sites-available/xxx.conf /etc/nginx/sites-enabled/xxx.co
 $ sudo systemctl reload nginx
 ```
 
-## 配置Python Virtual Environment, 原文[How to Set Up a Python Virtual Environment on Debian 10 Buster](https://linuxconfig.org/how-to-set-up-a-python-virtual-environment-on-debian-10-buster){:target="_blank"}
+## 配置Python Virtual Environment 
+
+原文出处：[How to Set Up a Python Virtual Environment on Debian 10 Buster](https://linuxconfig.org/how-to-set-up-a-python-virtual-environment-on-debian-10-buster){:target="_blank"}
 
 ```bash
 $ sudo apt install python3 python3-venv
