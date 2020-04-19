@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "安装Ubuntu19.10后的习惯性配置记录"
+title: "安装Ubuntu20.04后的习惯性配置记录"
 date: 2019-11-15 00:00:00 +0800
-description: "安装Ubuntu19.10后的习惯性配置记录" # (optional)
+description: "安装Ubuntu20.04后的习惯性配置记录" # (optional)
 img: Setup-a-Python-Virtual-Environment-on-Ubuntu.jpg # Add image post (optional)
-fig-caption: "安装Ubuntu19.10后的习惯性配置记录" # Add figcaption (optional)
+fig-caption: "安装Ubuntu20.04后的习惯性配置记录" # Add figcaption (optional)
 tags: ['Linux','Ubuntu','Commands']
 categories: ['Linux']
 ---
@@ -192,10 +192,12 @@ $ sudo apt install mariadb-server mariadb-client
 $ sudo systemctl start mariadb
 $ sudo systemctl enable mariadb
 $ sudo mysql_secure_installation
+
 MariaDB[(none)]> CREATE DATABASE `laravel`;
 MariaDB[(none)]> GRANT ALL ON `laravel`.* TO 'db_user'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
 MariaDB[(none)]> FLUSH PRIVILEGES;
 MariaDB[(none)]> exit;
+
 $ mariadb -u db_user -p
 $ sudo apt install  -y php php-fpm php-mysql php-common php-cli php7.4-common \
 	php7.4-opcache php-readline php-mbstring php-xml php-gd php-curl \
