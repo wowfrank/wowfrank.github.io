@@ -80,6 +80,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 ## Creating systemd Socket and Service Files for Gunicorn
 
+### Option 1
+
 ```bash
 $ sudo nano /etc/systemd/system/gunicorn.socket
 . . .
@@ -116,7 +118,7 @@ $ sudo systemctl start gunicorn.socket
 $ sudo systemctl enable gunicorn.socket
 ```
 
-## Checking for the Gunicorn Socket File
+#### Checking for the Gunicorn Socket File
 
 ```bash
 $ sudo systemctl status gunicorn.socket
@@ -124,7 +126,7 @@ $ file /run/gunicorn.sock
 $ sudo journalctl -u gunicorn.socket
 ```
 
-## Testing Socket Activation
+#### Testing Socket Activation
 
 ```bash
 $ sudo systemctl status gunicorn
@@ -133,7 +135,7 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart gunicorn
 ```
 
-## Configure Nginx to Proxy Pass to Gunicorn
+#### Configure Nginx to Proxy Pass to Gunicorn
 
 ```bash
 $ sudo nano /etc/nginx/sites-available/myproject
@@ -155,5 +157,81 @@ $ sudo nano /etc/nginx/sites-available/myproject
     
 $ sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
 $ sudo nginx -t
+$ sudo systemctl restart nginx
+```
+
+## Creating systemd Socket and Service Files for Gunicorn
+
+### Option 2
+
+#### Configure Gunicorn
+
+The Gunicorn configuration is fairly simple, but it's still important to get done. Create a gunicorn directory in your site's root. You essentially need to tell it where to run its socket, how many workers to spawn, and where to log. Create a Python file called gunicorn-config.py, and make it look something like the one below.
+
+```python
+import multiprocessing
+
+bind = 'unix:/tmp/gunicorn.sock'
+workers = multiprocessing.cpu_count() * 2 + 1
+reload = True
+daemon = True
+accesslog = './access.log'
+errorlog = './error.log'
+```
+
+```bash
+$ gunicorn -c gunicorn/gunicorn-config.py your-project.wsgi
+```
+
+#### Configure Nginx
+
+```bash
+upstream your-gunicorn {
+    server unix:/tmp/gunicorn.sock fail_timeout=0;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    client_max_body_size 4G;
+    keepalive_timeout 70;
+
+    server_name project-index.local;
+    access_log /var/www/html/share/vt-env/myprojectDir/logs/access.log;
+    error_log /var/www/html/share/vt-env/myprojectDir/logs/error.log info;
+
+    root /var/www/html/share/vt-env/myprojectDir;
+
+    location /static/ {
+        autoindex on;
+        expires 1M;
+        access_log off;
+        add_header Cache-Control "public";
+        proxy_ignore_headers "Set-Cookie";
+        alias /var/www/html/share/vt-env/myprojectDir/static;
+    }
+
+    location @proxy_to_app {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass   http://your-gunicorn;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+    }
+
+    location / {
+        try_files $uri @proxy_to_app;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+
+$ sudo ln -s /etc/nginx/sites-available/project-index.local /etc/nginx/sites-enabled/
 $ sudo systemctl restart nginx
 ```
