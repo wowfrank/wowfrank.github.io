@@ -41,7 +41,7 @@ $ mkdir ~/myprojectdir
 $ cd ~/myprojectdir
 $ virtualenv myprojectenv
 $ source myprojectenv/bin/activate
-> Note: When the virtual environment is activated (when your prompt has (myprojectenv) preceding it), use pip instead of pip3, even if you are using Python 3. The virtual environment’s copy of the tool is always named pip, regardless of the Python version.
+# Note: When the virtual environment is activated (when your prompt has (myprojectenv) preceding it), use pip instead of pip3, even if you are using Python 3. The virtual environment’s copy of the tool is always named pip, regardless of the Python version.
 (myprojectenv) $ pip install django gunicorn psycopg2-binary
 ```
 
