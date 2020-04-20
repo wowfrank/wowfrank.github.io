@@ -137,22 +137,22 @@ $ sudo systemctl restart gunicorn
 
 ```bash
 $ sudo nano /etc/nginx/sites-available/myproject
-. . .
-server {
-    listen 80;
-    server_name server_domain_or_IP;
 
-    location = /favicon.ico { access_log off; log_not_found off; }
-    location /static/ {
-        root /home/sammy/myprojectdir;
-    }
+    server {
+        listen 80;
+        server_name server_domain_or_IP;
 
-    location / {
-        include proxy_params;
-        proxy_pass http://unix:/run/gunicorn.sock;
+        location = /favicon.ico { access_log off; log_not_found off; }
+        location /static/ {
+            root /home/sammy/myprojectdir;
+        }
+
+        location / {
+            include proxy_params;
+            proxy_pass http://unix:/run/gunicorn.sock;
+        }
     }
-}
-. . .
+    
 $ sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
 $ sudo nginx -t
 $ sudo systemctl restart nginx
