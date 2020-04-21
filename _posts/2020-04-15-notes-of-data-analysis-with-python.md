@@ -97,6 +97,14 @@ B.T @ A
 array([[36, 48, 60],
        [24, 33, 42]])
 '''
+x = np.array([
+		[1,2,3,4],
+		[5,6,7,8],
+		[9,10,11,12],
+		[13,14,15,16]
+	])
+x.sum(axis=0) # remember: axis=0 columns; axis=1 rows
+# output : array([28, 32, 36, 40])
 ```
 
 ### Useful Numpy Functions
