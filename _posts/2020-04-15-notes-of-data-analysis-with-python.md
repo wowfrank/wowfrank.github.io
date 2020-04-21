@@ -133,8 +133,9 @@ np.eye(8, 4, k=1)
 np.eye(8, 4, k=-3)
 "Hello World"[6]
 ```
-
+<div align="center"><div markdown='1'>
 ![NOTEBOOKS]({{site.baseurl}}/assets/img/notes-of-data-analysis-with-python.png)
+</div></div>
 
 ## What does a Data Scientist do?
 
@@ -162,7 +163,9 @@ The whole point of the analysis part is finding patterns in particular cases to 
 
 Perfect analyses and models are useless if they're not repeatable and scalable. This phase depends on your own models, but it'll usually imply a cloud provider. From simple reports (emailed every day at 3AM from an AWS Lambda) to a Machine Learning Model (built on top of Tensor Flow and deployed on Google's cloud infrastructure).
 
+<div align="center"><div markdown='1'>
 ![NOTEBOOKS]({{site.baseurl}}/assets/img/notes-of-data-analysis-with-python.jpg)
+</div></div>
 
 ## [FreeCodeCamp - Pandas Real Life Example](https://notebooks.ai/rmotr-curriculum/freecodecamp-pandas-real-life-example-24fa5bf8){target="_blank"}
 ## [Interactive JupyterLab Tutorial](https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f){target="_blank"}
