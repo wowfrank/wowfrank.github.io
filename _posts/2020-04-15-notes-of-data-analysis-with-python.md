@@ -171,7 +171,7 @@ Perfect analyses and models are useless if they're not repeatable and scalable. 
 
 [FreeCodeCamp - Pandas Real Life Example](https://notebooks.ai/rmotr-curriculum/freecodecamp-pandas-real-life-example-24fa5bf8){target="_blank"}
 
-## [Interactive JupyterLab Tutorial](https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f){target="_blank"}
+[Interactive JupyterLab Tutorial](https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f){target="_blank"}
 
 [Intro to Numpy](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74){target="_blank"}
 
