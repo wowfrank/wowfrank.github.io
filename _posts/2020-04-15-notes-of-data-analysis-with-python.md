@@ -169,22 +169,22 @@ Perfect analyses and models are useless if they're not repeatable and scalable. 
 
 ## Useful Links
 
-[FreeCodeCamp - Pandas Real Life Example](https://notebooks.ai/rmotr-curriculum/freecodecamp-pandas-real-life-example-24fa5bf8)
+[FreeCodeCamp - Pandas Real Life Example](https://notebooks.ai/rmotr-curriculum/freecodecamp-pandas-real-life-example-24fa5bf8){:target="_blank"}
 
-[Interactive JupyterLab Tutorial](https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f)
+[Interactive JupyterLab Tutorial](https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f){:target="_blank"}
 
-[Intro to Numpy](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74)
+[Intro to Numpy](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74){:target="_blank"}
 
-[Intro to Pandas](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b)
+[Intro to Pandas](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b){:target="_blank"}
 
-[Data Cleaning](https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59)
+[Data Cleaning](https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59){:target="_blank"}
 
-[Reading CSV and TXT files](https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46)
+[Reading CSV and TXT files](https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46){:target="_blank"}
 
-[RDP - Reading Data From Relational Databases](https://notebooks.ai/rmotr-curriculum/rdp-reading-data-from-relational-databases-2a3a889b)
+[RDP - Reading Data From Relational Databases](https://notebooks.ai/rmotr-curriculum/rdp-reading-data-from-relational-databases-2a3a889b){:target="_blank"}
 
-[RDP - Reading HTML Tables](https://notebooks.ai/rmotr-curriculum/rdp-reading-html-tables-eb9cca73)
+[RDP - Reading HTML Tables](https://notebooks.ai/rmotr-curriculum/rdp-reading-html-tables-eb9cca73){:target="_blank"}
 
-[RDP - Reading Excel Files](https://notebooks.ai/rmotr-curriculum/rdp-reading-excel-files-a6b99973)
+[RDP - Reading Excel Files](https://notebooks.ai/rmotr-curriculum/rdp-reading-excel-files-a6b99973){:target="_blank"}
 
-[Python Recap](https://notebooks.ai/rmotr-curriculum/python-under-10-minutes-15addcb2)
+[Python Recap](https://notebooks.ai/rmotr-curriculum/python-under-10-minutes-15addcb2){:target="_blank"}
