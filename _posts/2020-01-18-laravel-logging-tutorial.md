@@ -147,8 +147,8 @@ There’s only a small write-up about this in the official Laravel documentation
 
 ### Driver List
 
-| :Driver: | :Description: |
-|:---------|:--------------|
+| Driver | Description |
+|:-------|:------------|
 | stack | For creating “multi-channel” channels. |
 | single | For single-file or path-based logger channels. Uses Monolog’s StreamHandler. |
 | daily | For daily logs. Uses Monolog’s RotatingFileHandler. |
