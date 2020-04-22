@@ -9,6 +9,90 @@ tags: ['PHP','Laravel']
 categories: ['Programming', 'PHP']
 ---
 
+## Blade
+
+Note that views which extend a Blade layout simply **override** _sections_ from the layout.
+
+**Content** of the _layout_ can be included in a child view using the @parent directive in a _section_".
+
+So, if you already have a @section defined in the master layout, it will be **overriden** unless you specify @parent inside the child layout's @section.
+
+**But for @yield, it always gets the section from the child layout**.
+
+That means it always **overrides** the _@yield_ part, even if it has a default defined as @yield('section', 'Default Content') .
+
+Contrary to the previous example, this sidebar section ends with @endsection instead of @show. The @endsection directive will only define a section while @show will define and immediately yield the section.
+
+### Difference between @yield and @include
+
+@yield and @include look very similar and they serve almost the same purpose. Let’s see what are the differences between these two. We use @yield to define a section in a layout. You can define what should be placed in the section with @section when you extend the layout to other pages with @extend. The layout you define will contain the header, footer, head, body of HTML.
+
+```html
+<body>
+     @yield('content')
+</body>
+```
+
+@include is used like a PHP include. It is used for HTML that will be used again. It imports content of a different file into the file we want at the location in which it is placed.
+
+Example of @include:
+
+```html
+<div>
+    @include('include.file_name') // "include." indicates the subdirectory that the file is in.
+</div>
+```
+
+The included view will inherit all data available in the parent view, you may also pass an array of extra data to the included view:
+
+```html
+@include('view.name', ['some' => 'data'])
+@includeIf('view.name', ['some' => 'data'])
+@includeWhen($boolean, 'view.name', ['some' => 'data'])
+@includeUnless($boolean, 'view.name', ['some' => 'data'])
+@includeFirst(['custom.admin', 'admin'], ['some' => 'data'])
+```
+
+**You should avoid using the __DIR__ and __FILE__ constants in your Blade views, since they will refer to the location of the cached, compiled view.**
+
+### Displaying Unescaped Data
+
+Blade {{ }} statements are automatically sent through PHP's htmlspecialchars function to prevent XSS attacks.
+
+By default, Blade {{ }} statements are automatically sent through PHP's htmlspecialchars function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:
+
+```html
+Hello, {!! $name !!}.
+```
+
+Be very careful when echoing content that is supplied by users of your application. Always use the escaped, double curly brace syntax to prevent XSS attacks when displaying user supplied data.
+
+### @json directive
+
+Use @json instead of json_encode.
+
+```javascript
+<script>
+    var app = @json($array);
+
+    var app = @json($array, JSON_PRETTY_PRINT);
+</script>
+```
+
+You should only use the @json directive to render existing variables as JSON. The Blade templating is based on regular expressions and attempts to pass a complex expression to the directive may cause unexpected failures.
+
+### @verbatim directive
+
+If you are displaying JavaScript variables in a large portion of your template, you may wrap the HTML in the @verbatim directive so that you do not have to prefix each Blade echo statement with an @ symbol:
+
+```html
+@verbatim
+    <div class="container">
+        Hello, {{ name }}.
+    </div>
+@endverbatim
+```
+
 ## Laravel Request
 
 ### Creating Form Requests
