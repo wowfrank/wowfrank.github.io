@@ -172,7 +172,7 @@ The whole point of the analysis part is finding patterns in particular cases to 
 Perfect analyses and models are useless if they're not repeatable and scalable. This phase depends on your own models, but it'll usually imply a cloud provider. From simple reports (emailed every day at 3AM from an AWS Lambda) to a Machine Learning Model (built on top of Tensor Flow and deployed on Google's cloud infrastructure).
 
 <div align="center"><div markdown='1'>
-![NOTEBOOKS]({{site.baseurl}}/assets/img/notes-of-data-analysis-with-python.jpg)
+![NOTEBOOKS]({{site.baseurl}}/assets/img/notes-of-data-analysis-with-python.jpeg)
 </div></div>
 
 ## Useful Links
