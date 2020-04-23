@@ -178,7 +178,7 @@ Theano 是我们讲到的第一个 Python 深度学习库。看看 Theano 作者
 
 #### 2.Caffe
 
-链接：Caffe | Deep [Learning Framework](https://link.zhihu.com/?target=http%3A//caffe.berkeleyvision.org/)
+链接：[Caffe - Deep Learning Framework](https://link.zhihu.com/?target=http%3A//caffe.berkeleyvision.org/)
 
 另一个我们将测试驱动的库是 Caffe。再一次，让我们从作者开始：
 
