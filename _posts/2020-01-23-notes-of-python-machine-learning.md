@@ -51,7 +51,7 @@ KDnuggets 的 Zachary Lipton 已经指出：现在，人们评价一个「数据
 
 好消息是，对实践来说，你并不需要获得机器学习博士般的理论理解——就想要成为一个高效的程序员并不必要进行计算机科学理论的学习。
 
-人们对吴恩达在 Coursera 上的机器学习课程内容往往好评如潮；然而，我的建议是浏览前一个学生在线记录的课堂笔记。跳过特定于 Octave（一个类似于 Matlab 的与你 Python 学习无关的语言）的笔记。一定要明白这些都不是官方笔记，但是可以从它们中把握到吴恩达课程材料中相关的内容。当然如果你有时间和兴趣，你现在就可以去 Coursera 上学习吴恩达的机器学习课程：[Machine Learning - Stanford University | Coursera](https://link.zhihu.com/?target=http%3A//suo.im/2o1uD)
+人们对吴恩达在 Coursera 上的机器学习课程内容往往好评如潮；然而，我的建议是浏览前一个学生在线记录的课堂笔记。跳过特定于 Octave（一个类似于 Matlab 的与你 Python 学习无关的语言）的笔记。一定要明白这些都不是官方笔记，但是可以从它们中把握到吴恩达课程材料中相关的内容。当然如果你有时间和兴趣，你现在就可以去 Coursera 上学习吴恩达的机器学习课程：[Machine Learning - Stanford University \| Coursera](https://link.zhihu.com/?target=http%3A//suo.im/2o1uD)
 
 - 吴恩达课程的非官方笔记：[Machine Learning - complete course notes](https://link.zhihu.com/?target=http%3A//www.holehouse.org/mlclass/)
 
@@ -417,3 +417,5 @@ LDA 与方差分析（ANOVA）和回归分析密切相关，它同样尝试将�
 - 理解深度学习的 7 个步骤。地址：[7 Steps to Understanding Deep Learning](https://link.zhihu.com/?target=http%3A//suo.im/3QmEfV)
 
 - 机器学习关键术语及解释。地址：[Machine Learning Key Terms, Explained](https://link.zhihu.com/?target=http%3A//suo.im/2URQGm)
+
+本文转载自【[机器之心](https://zhuanlan.zhihu.com/jiqizhixin){:target="_blank"}】
