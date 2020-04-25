@@ -9,7 +9,7 @@ tags: ['Python','Laravel', 'Machine Learning']
 categories: ['Programming', 'Python']
 ---
 
-> Python 可以说是现在最流行的机器学习语言，而且你也能在网上找到大量的资源。你现在也在考虑从 Python 入门机器学习吗？本教程或许能帮你成功上手，从 0 到 1 掌握 Python 机器学习，至于后面再从 1 到 100 变成机器学习专家，就要看你自己的努力了。本教程原文分为两个部分，机器之心在本文中将其进行了整合，原文可参阅：[7 Steps to Mastering Machine Learning With Python](http://suo.im/KUWgl)和[7 More Steps to Mastering Machine Learning With Python](http://suo.im/96wD3)。本教程的作者为 KDnuggets 副主编兼数据科学家 Matthew Mayo。
+> Python 可以说是现在最流行的机器学习语言，而且你也能在网上找到大量的资源。你现在也在考虑从 Python 入门机器学习吗？<!--more-->本教程或许能帮你成功上手，从 0 到 1 掌握 Python 机器学习，至于后面再从 1 到 100 变成机器学习专家，就要看你自己的努力了。本教程原文分为两个部分，机器之心在本文中将其进行了整合，原文可参阅：[7 Steps to Mastering Machine Learning With Python](http://suo.im/KUWgl)和[7 More Steps to Mastering Machine Learning With Python](http://suo.im/96wD3)。本教程的作者为 KDnuggets 副主编兼数据科学家 Matthew Mayo。
 
 「开始」往往是最难的，尤其是当选择太多的时候，一个人往往很难下定决定做出选择。本教程的目的是帮助几乎没有 Python 机器学习背景的新手成长为知识渊博的实践者，而且这个过程中仅需要使用免费的材料和资源即可。这个大纲的主要目标是带你了解那些数量繁多的可用资源。毫无疑问，资源确实有很多，但哪些才是最好的呢？哪些是互补的呢？以怎样的顺序学习这些资源才是最合适的呢？
 
