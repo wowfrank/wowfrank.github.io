@@ -74,6 +74,9 @@ In your concrete example the alternative constructor doesn't actually do anythin
 
 ## Late static binding in PHP - What, How & When
 
+---
+---
+
 The inheritence tree in PHP quickly gets dirty if you’re using mix of static and non-static methods into your classes and the inheritence is deeply nested. Take from example here.
 
 ```php
