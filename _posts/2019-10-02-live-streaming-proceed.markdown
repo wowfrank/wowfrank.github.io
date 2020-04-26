@@ -38,7 +38,9 @@ categories: ['Live Streaming']
 
 ### **开放式设计**
 
+<div align="center"><div markdown='1'>
 ![处理流程]({{site.baseurl}}/assets/img/live-streaming-proceed-1.png)
+</div></div>
 
 如上图所示，处理环节中分为音频和视频处理，音频处理中具体包含混音、降噪和声音特效等处理，视频处理中包含美颜、水印、以及各种自定义滤镜等处理。对于七牛这样的直播云服务来说，为了满足所有客户的需求，除了要提供这些「标准」处理功能之外，我们还需要将该模块设计成可自由接入自定义处理功能的方式。
 
@@ -113,7 +115,9 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 
 4.连麦
 
+<div align="center"><div markdown='1'>
 ![连麦系统]({{site.baseurl}}/assets/img/live-streaming-proceed-2.jpg)
+</div></div>
 
 连麦是互动直播中常见的需求，其流程如上图所示。主播和部分观众之间可以进行实时互动，然后将互动结果实时播放给其他观众观看。
 
@@ -128,15 +132,21 @@ Android SDK 地址：[GitHub - pili-engineering/PLDroidMediaStreaming](https://l
 
 在视频和电话会议领域，目前比较成熟的方案是使用思科或者WebEx的方案，但这些商用的方案一不开源，二比较封闭，三成本比较高。对于互动人数比较少的互动直播，目前市场上比较成熟的方案是使用基于WebRTC的实时通讯方案。
 
+<div align="center"><div markdown='1'>
 ![WebRTC协议]({{site.baseurl}}/assets/img/live-streaming-proceed-3.png)
+</div></div>
 
 上图是一个基于WebRTC协议实现多方实时通讯的示意图，本地用户（主播）和远程用户（连麦观众）之间的连接通过RTCPeerConnection API管理，这个API包装了底层流管理和信令控制相关的细节。基于该方案可以轻松实现多人（14人以下）的多方实时通信，如下图所示：
 
+<div align="center"><div markdown='1'>
 ![多方通信]({{site.baseurl}}/assets/img/live-streaming-proceed-4.png)
+</div></div>
 
 当然，在通信人数少的情况下，其复杂度相对简单，如2人情况下。但人数增多至4人之后，其可选的网络结构就增多了，如上图所示，可以每个点之间形成自组织网络的方式通信，也可以以1人为中心形成星型通信网络，还可以让大家都通过一个集中式的服务端进行通信。
 
+<div align="center"><div markdown='1'>
 ![星形通信网络]({{site.baseurl}}/assets/img/live-streaming-proceed-5.png)
+</div></div>
 
 作为一个高性能、可伸缩的直播基础服务提供商，七牛直播云经过评估选择了以主播为中心形成星形通信网络，支持主播和多个观众之间的互动质量。同时，为了保证合成后的音视频实时传输到其他观众端，这里采用经过改造的UDP协议传输：
 
