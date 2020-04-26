@@ -26,16 +26,37 @@ php artisan make:model Video --migration --controller
 Since this is an example app, the database migration is quite simple.
 
 ```php
-Schema::create('videos', function (Blueprint $table) {
-    $table->increments('id');
-    $table->string('title');
-    $table->string('original_name');
-    $table->string('disk');
-    $table->string('path');
-    $table->datetime('converted_for_downloading_at')->nullable();
-    $table->datetime('converted_for_streaming_at')->nullable();
-    $table->timestamps();
-});
+class CreateVideosTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+    	Schema::create('videos', function (Blueprint $table) {
+		    $table->increments('id');
+		    $table->string('title');
+		    $table->string('original_name');
+		    $table->string('disk');
+		    $table->string('path');
+		    $table->datetime('converted_for_downloading_at')->nullable();
+		    $table->datetime('converted_for_streaming_at')->nullable();
+		    $table->timestamps();
+		});
+    }
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+	    Schema::dropIfExists('videos');
+	}
+}
 ```
 
 Personally I don't use Eloquent's mass-assignment protection so I define the $guarded property of the Video model as an empty array and fill the $dates property with the two datetime columns.
@@ -56,9 +77,12 @@ class Video extends Model
 
 Before we can start working on the controller, we need a form request class to validate the user's input. I prefer to keep validation rules out of the controllers but that's just a personal preference. You could perfectly put the validation logic in your controller. Besides the form request class, let's generate two job classes so we can queue some video processing.
 
+```bash
 php artisan make:request StoreVideoRequest
 php artisan make:job ConvertVideoForDownloading
 php artisan make:job ConvertVideoForStreaming
+```
+
 Make the authorize method of the StoreVideoRequest class returns true (or implement your own authorization logic) and fill the rules method with the necessary rules. Replace the mime types with the actual types you want to support.
 
 ```php
@@ -100,6 +124,96 @@ class VideoController extends Controller
         return response()->json([
             'id' => $video->id,
         ], 201);
+    }
+}
+```
+
+Add these routes to web.php file:
+
+```php
+Route::group(['middleware' => ['auth']], function(){
+ 
+    Route::get('/', 'VideoController@index');
+ 
+    Route::get('/uploader', 'VideoController@uploader')->name('uploader');
+ 
+    Route::post('/upload', 'VideoController@store')->name('upload');
+});
+```
+
+Create  uploader.blade.php under views directory.
+
+{% raw %}
+```liquid
+@extends('layouts.app')
+ 
+@section('content')
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 mr-auto ml-auto mt-5">
+        <h3 class="text-center">
+            Upload Video
+        </h3>
+        <form method="post" action="{{ route('upload') }}" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="video-title">Title</label>
+                <input type="text"
+                       class="form-control"
+                       name="title"
+                       placeholder="Enter video title">
+                @if($errors->has('title'))
+                    <span class="text-danger">
+                        {{$errors->first('title')}}
+                    </span>
+                @endif
+            </div>
+ 
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Video File</label>
+                <input type="file" class="form-control-file" name="video">
+ 
+                @if($errors->has('video'))
+                    <span class="text-danger">
+                        {{$errors->first('video')}}
+                    </span>
+                @endif
+            </div>
+ 
+            <div class="form-group">
+                <input type="submit" class="btn btn-default">
+            </div>
+ 
+            {{csrf_field()}}
+        </form>
+    </div>
+@endSection
+```
+{% endraw %}
+
+Also, create a StoreVideoRequest form request for validating uploader form input.
+
+```php
+class StoreVideoRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+ 
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'title' => 'required',
+            'video' => 'required|file|mimetypes:video/*',
+        ];
     }
 }
 ```
@@ -173,6 +287,11 @@ Now let's create the second job! The beauty of HLS is that you can specify multi
 
 The package handles all the playlist stuff for you. The only thing you have to do is specify the different formats.
 
+```bash
+composer require pbmedia/laravel-ffmpeg
+sudo apt-get install ffmpeg
+```
+
 ```php
 <?php
 
@@ -229,6 +348,20 @@ class ConvertVideoForStreaming implements ShouldQueue
         ]);
     }
 }
+```
+
+```php
+'providers' => [
+    ...
+    Pbmedia\LaravelFFMpeg\FFMpegServiceProvider::class,
+    ...
+];
+ 
+'aliases' => [
+    ...
+    'FFMpeg' => Pbmedia\LaravelFFMpeg\FFMpegFacade::class
+    ...
+];
 ```
 
 If you want to stream the HLS export in a browser, take a look at this package. It adds HLS support to the excellent Video.js HTML5 video player, even for browsers that don't support HLS natively. When the processing of the video is done you can easily create URLs of the downloadable and streamable versions:
