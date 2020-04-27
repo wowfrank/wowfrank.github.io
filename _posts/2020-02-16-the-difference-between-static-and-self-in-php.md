@@ -113,8 +113,6 @@ Ideally, if you run above code, you’d expect it to obviously print Beta but in
 
 > Late static bindings in PHP is a feature which can be used to reference the called class in a context of static inheritance.
 
-Essentially, late static bindings work by storing the class named in the last “non-forwarding call”. In case of static method calls, this is the class explicitly named (usually the one on the left of the :: operator); in case of non static method calls, it is the class of the object. A “forwarding call” is a static one that is introduced by self::, parent::, static::, or, if going up in the class hierarchy, forward_static_call(). The function get_called_class() can be used to retrieve a string with the name of the called class and static:: introduces its scope.
-
 Let’s see how we can apply late static binding in the previous example and get our desired result.
 
 ```php
@@ -212,3 +210,53 @@ Late static binding can be used for the following scenarios:
 - When you’ve a functionality in your application that varies over the class hierarchy.
 - When the methods in which the functionality is implemented has the same signature over the hierarchy.
 - It can be used to create static factory patterns using static method overloading to prevent requiring additional factory classes.
+
+---
+---
+
+## PHP RFC: Static return type
+---
+---
+
+The static special class name in PHP refers to the class a method was actually called on, even if the method is inherited. This is known as “late static binding” (LSB). This RFC proposes to make static also usable as a return type (next to the already usable self and parent types).
+
+There are a number of typical use-cases where static return types appear (currently in the form of @return static).
+
+One are named constructors:
+
+```php
+class Test {
+    public function createFromWhatever($whatever): static {
+        return new static($whatever);
+    }
+}
+```
+
+Here we want to specify that XXX::createFromWhatever() will always create an instance of XXX, not of some parent class.
+
+Another are withXXX() style interfaces for mutating immutable objects:
+
+```php
+class Test {
+    public function withWhatever($whatever): static {
+        $clone = clone $this;
+        $clone->whatever = $whatever;
+        return $clone;
+    }
+}
+```
+
+Here we want to specify that $foobar->withWhatever() will return a new object of class get_class($foobar), not of some parent class.
+
+Finally, the likely most common use case are fluent methods:
+
+```php
+class Test {
+    public function doWhatever(): static {
+        // Do whatever.
+        return $this;
+    }
+}
+```
+
+Here we actually have a stronger contract than in the previous two cases, in that we require not just an object of the same class to be returned, but exactly the same object. However, from the type system perspective, the important property we need is that the return value is an instance of the same class, not a parent class.
