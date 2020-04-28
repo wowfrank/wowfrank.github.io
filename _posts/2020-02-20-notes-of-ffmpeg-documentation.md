@@ -70,8 +70,8 @@ AVFilter库提供了一个通用的音频、视频、字幕等滤镜处理框架
 
 ![AVFilter使用样例]({{site.baseurl}}/assets/img/notes-of-ffmpeg-documentation5.png)
 
-- 相同的Filter线性链之间用逗号分隔
-- 不同的Filter线性链之间用分号分隔
+	- 相同的Filter线性链之间用逗号分隔
+	- 不同的Filter线性链之间用分号分隔
 
 * FFmpeg的视频图像转换计算模块swscale
 
