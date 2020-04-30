@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Analysis With Python的阅读笔记"
-date: 2020-04-15 00:00:00 +0800
+date: 2020-03-01 00:00:00 +0800
 description: "Data Analysis With Python的阅读笔记" # (optional)
 img: notes-of-data-analysis-with-python.jpg # Add image post (optional)
 fig-caption: "Data Analysis With Python的阅读笔记" # Add figcaption (optional)
