@@ -29,6 +29,13 @@ $ sudo vi sources.list
 $ sudo apt update
 ```
 
+如果aliyun的源出现问题，可以改用163的
+
+```bash
+$ vi /etc/apt/source.list
+:%s/aliyun/163/g
+```
+
 ## 2. 配置VI
 
 ```bash

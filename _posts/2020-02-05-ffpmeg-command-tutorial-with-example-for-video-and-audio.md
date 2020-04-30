@@ -219,7 +219,7 @@ We can cut video from specified time as specified time range. Original file will
 $ ffmpeg -i Funny.mkv -ss 00:00:20 -codec copy -t 15  Funny_cut.mkv
 ```
 
-- _–s_ – Indicates the starting time of the video clip. In our example, starting time is the 50th second.
+- _–s_ – Indicates the starting time of the video clip. In our example, starting time is the 20th second.
 - _-t_ – Indicates the total time duration.
 
 ## Trim Audio
