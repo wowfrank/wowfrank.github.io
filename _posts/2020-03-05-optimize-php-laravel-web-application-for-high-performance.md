@@ -302,7 +302,7 @@ If that’s not possible, use something like Cloudflare to cache and serve image
 
 And if even that is not possible, tweaking your web server software a little to compress assets and direct the visitor’s browser to cache things, makes a lot of difference. Here’s how a snippet of Nginx configuration would look like:
 
-```bash
+```sh
 server {
 
    # file truncated
