@@ -15,11 +15,6 @@ No PHP developer is untouched by Laravel these days. They’re either a junior o
 
 Either way, there’s no denying that Laravel has revitalized the PHP ecosystem (I, for sure, would’ve left the PHP world long ago if Laravel wasn’t there).
 
-<div align="center"><div markdown='1'>
-![A snippet of (somewhat justified) self-praise from Laravel]({{site.baseurl}}/assets/img/laravel-1-1091x628.webp)
-A snippet of (somewhat justified) self-praise from Laravel
-</div></div>
-
 However, since Laravel bends over backward to make things easy for you, it means that underneath it’s doing tons and tons of work to make sure you have a comfortable life as a developer. All the “magical” features of Laravel that just seem to work have layers upon layers of code that needs to be whipped up each time a feature runs. Even a simple Exception trace how deep the rabbit hole is (notice where the error starts, all the way down to the main kernel):
 
 <div align="center"><div markdown='1'>
