@@ -19,20 +19,19 @@ However, since Laravel bends over backward to make things easy for you, it means
 
 <div align="center"><div markdown='1'>
 ![]({{site.baseurl}}/assets/img/laravel-2-966x628.webp)
-
 </div></div>
 
 For what seems to be a compilation error in one of the views, there are 18 function calls to trace. I’ve personally come across 40, and there could easily be more if you’re using other libraries and plugins.
 
 Point being, by default this layers upon layers of code, make Laravel slow.
 
-How slow is Laravel?
+## How slow is Laravel?
 
 Honestly, it’s plain impossible to answer this question for several reasons.
 
-First, there’s no accepted, objective, sensible standard for measuring the speed of Web apps. Faster or slower compared to what? Under what conditions?
+**First**, there’s no accepted, objective, sensible standard for measuring the speed of Web apps. Faster or slower compared to what? Under what conditions?
 
-Second, a Web app depends on so many things (database, filesystem, network, cache, etc.) that it’s plain silly to talk about speed. A very fast Web app with a very slow database is a very slow web app. 🙂
+**Second**, a Web app depends on so many things (database, filesystem, network, cache, etc.) that it’s plain silly to talk about speed. A very fast Web app with a very slow database is a very slow web app. 🙂
 
 But this uncertainty is precisely why benchmarks are popular. Even though they mean nothing (see this and this), they provide some frame of reference and help us from going mad. Therefore, with several pinches of salt ready, let’s get a wrong, rough idea of speed among PHP frameworks.
 
@@ -58,10 +57,11 @@ Four types of optimizations
 
 In my opinion, optimization can be done on four distinct levels (when it comes to PHP applications, that is):
 
-Language-level: This means you use a faster version of the language and avoid specific features/styles of coding in the language that makes your code slow.
-Framework-level: These are the things we will be covering in this article.
-Infrastructure-level: Tuning your PHP process manager, web server, database, etc.
-Hardware-level: Moving to a better, faster, more powerful hardware hosting provider.
+- **Language-level**: This means you use a faster version of the language and avoid specific features/styles of coding in the language that makes your code slow.
+- **Framework-level**: These are the things we will be covering in this article.
+- **Infrastructure-level**: Tuning your PHP process manager, web server, database, etc.
+- **ardware-level**: Moving to a better, faster, more powerful hardware hosting provider.
+
 All of these types of optimizations have their place (for instance, php-fpm optimization is pretty critical and powerful). But the focus of this article will be optimizations purely of type 2: those related to the framework.
 
 By the way, there’s no rationale behind the numbering, and it’s not an accepted standard. I just made these up. Please don’t ever quote me and say, “We need type-3 optimization on our server,” or your team lead will kill you, find me, and then kill me as well. 😀
