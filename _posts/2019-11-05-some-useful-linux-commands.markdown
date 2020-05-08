@@ -193,5 +193,10 @@ The lsb_release command displays LSB (Linux Standard Base) information about you
 ```bash
 $ lsb_release -a
 $ lsb_release -a | grep Codename | awk '{print $2}'
+```
 
+## 确定CPU类型
 
+```bash
+cat /proc/cpuinfo | grep "model name" 
+```
