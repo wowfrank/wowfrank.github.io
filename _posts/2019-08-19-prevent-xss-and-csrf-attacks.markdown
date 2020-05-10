@@ -74,7 +74,7 @@ The level of the attack is based upon the level of privileges that the victim po
 
 #### **Using a GET request (rare case)**
 
-CSRF happens in authenticated sessions when the server trusts the user/browser. Let's consider an example when you are logged in into your banking site. An attacker can place a malicious link embedded in another link or zero byte image which can be like:
+CSRF happens in authenticated sessions when the server trusts the user\/browser. Let's consider an example when you are logged in into your banking site. An attacker can place a malicious link embedded in another link or zero byte image which can be like:
 
 ```html
 <img src=yourbanking.com/transfer.do?to_account={attackers_account}&amt=2500>
@@ -93,6 +93,7 @@ This attack requires the user to click the form button on hacker's website, then
     <input type=submit value="Click me to get your reward" />
 </form>
 ```
+
 After submitting the form user could figure out what happened, but it could be too late to revert or discard these changes.
 
 ![using a POST request ]({{site.baseurl}}/assets/img/prevent-xss-csrf-4.png)
