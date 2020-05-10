@@ -31,3 +31,7 @@ FV = PV * (1 + r/n)^n
 
 		意味着，FV = PV * e^r
 {% endraw %}
+
+## 对数
+
+![对数基本公式]({{site.baseurl}}/assets/img/properties-of-logarithms.png)
