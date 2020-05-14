@@ -9,6 +9,8 @@ tags: ['nginx', 'web']
 categories: ['nginx']
 ---
 
+这篇主要记录一些之前看过的，对于web的请求流程以及在各个流程中发生的关键处理技术讲述的比较清晰的系列文章。<!--more-->
+
 > 出自：[理解Nginx工作原理](https://www.jianshu.com/p/6215e5d24553)
 
 > 出自：[WEB请求处理一：浏览器请求发起处理](https://www.jianshu.com/p/558455228c43)
