@@ -3,7 +3,7 @@ layout: post
 title: 'SEO is Not Hard — A step-by-step SEO Tutorial for beginners that will get you ranked every single time'
 date: 2020-04-02 00:05:00 +0800
 description: 'SEO is Not Hard — A step-by-step SEO Tutorial for beginners that will get you ranked every single time' # Add post description (optional)
-img: web-request-procedure.webp # Add image post (optional)
+img: seo-tutorial-for-beginners.jpg # Add image post (optional)
 fig-caption: 'SEO is Not Hard — A step-by-step SEO Tutorial for beginners that will get you ranked every single time' # Add figcaption (optional)
 tags: ['seo', 'web']
 categories: ['seo', 'web']
