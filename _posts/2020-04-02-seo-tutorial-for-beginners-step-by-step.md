@@ -9,7 +9,7 @@ tags: ['seo', 'web']
 categories: ['seo', 'web']
 ---
 
-> Note: This one of one of the chapters of [Secret Sauce: A step-by-step growth hacking guide](https://www.secretsaucenow.com/){:target="_blank"}. Secret Sauce breaks down every channel just like this one, so if you think this is valuable check it out. It’s for sale now.
+> Note: This one of one of the chapters of [Secret Sauce: A step-by-step growth hacking guide](https://www.secretsaucenow.com/){:target="\_blank"}. Secret Sauce breaks down every channel just like this one, so if you think this is valuable check it out. It’s for sale now.
 
 ## SEO In One Day
 
