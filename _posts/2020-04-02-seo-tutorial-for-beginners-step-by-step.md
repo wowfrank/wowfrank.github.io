@@ -143,17 +143,12 @@ Go to SEMrush.com and enter your URL, looking at the total backlinks in the thir
 
 As a general rule (this may vary based on how old your site is, who the links are from, etc.), based on the number of links you have, this is the maximum level of “difficulty” you should go after.
 
-Number of Backlinks
-
-Maximum Difficulty
-
-< 30:<40
-
-<100:40–50
-
-<1000:50–70
-
-1000+:70+
+- Number of Backlinks
+- Maximum Difficulty
+- < 30:<40
+- <100:40–50
+- <1000:50–70
+- 1000+:70+
 
 Go ahead and sort the data by difficulty, and eliminate all of the stuff that is too high for your site (don’t worry, we’ll get those keywords later). For now you can simply delete those rows.
 
