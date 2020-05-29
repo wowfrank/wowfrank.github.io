@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Practical Oobject Caching In Laravel"
+title: "Practical Object Caching In Laravel"
 date: 2020-02-28 00:00:00 +0800
-description: "Practical Oobject Caching In Laravel" # (optional)
+description: "Practical Object Caching In Laravel" # (optional)
 img: practical-object-caching-in-laravel.jpg # Add image post (optional)
-fig-caption: "Practical Oobject Caching In Laravel" # Add figcaption (optional)
+fig-caption: "Practical Object Caching In Laravel" # Add figcaption (optional)
 tags: ['PHP', 'Laravel', 'Cache']
 categories: ['PHP', 'Programming']
 ---
