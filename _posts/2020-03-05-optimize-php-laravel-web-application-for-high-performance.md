@@ -60,7 +60,7 @@ In my opinion, optimization can be done on four distinct levels (when it comes t
 - **Language-level**: This means you use a faster version of the language and avoid specific features/styles of coding in the language that makes your code slow.
 - **Framework-level**: These are the things we will be covering in this article.
 - **Infrastructure-level**: Tuning your PHP process manager, web server, database, etc.
-- **ardware-level**: Moving to a better, faster, more powerful hardware hosting provider.
+- **Hardware-level**: Moving to a better, faster, more powerful hardware hosting provider.
 
 All of these types of optimizations have their place (for instance, php-fpm optimization is pretty critical and powerful). But the focus of this article will be optimizations purely of type 2: those related to the framework.
 
