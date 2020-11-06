@@ -8,6 +8,9 @@ fig-caption: "Build Your Own CAPTCHA Script with PHP" # Add figcaption (optional
 tags: ['PHP','Programming', 'Regex']
 categories: ['Programming', 'Regex']
 ---
+
+> Note: 一下这些都是一些非常常用的regex匹配规则，很多地方都可以直接调用，备忘一下。
+
 ### 匹配中文:
 
 [\u4e00-\u9fa5]
