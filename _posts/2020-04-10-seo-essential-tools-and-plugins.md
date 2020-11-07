@@ -3,7 +3,7 @@ layout: post
 title: 'SEO Essential Tools and Plugins (Notes)'
 date: 2020-04-10 00:05:00 +0800
 description: 'SEO Essential Tools and Plugins (Notes)' # Add post description (optional)
-img: seo-essential-tools-and-plugins.png # Add image post (optional)
+img: seo-essential-tools-and-plugins.jpg # Add image post (optional)
 fig-caption: 'SEO Essential Tools and Plugins (Notes)' # Add figcaption (optional)
 tags: ['seo', 'web']
 categories: ['seo', 'web']
