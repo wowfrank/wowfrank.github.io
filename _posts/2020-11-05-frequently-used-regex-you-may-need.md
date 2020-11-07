@@ -30,7 +30,7 @@ In addition, the symbols '\*', '+', and '?', denote the number of times a charac
 | "ab*"      | matches a string that has an a followed by zero or more b's ("ac", "abc", "abbc", etc ) |
 | "ab+"  |  same, but there's at least one b ("abc", "abbc", etc., but not "ac")   |
 |  "ab?" |  there might be a single b or not ("ac", "abc" but not "abbc").  |
-| "a?b+$"  |  a possible 'a' followed by one or more 'b's at the end of the string: Matches any string ending with "ab", "abb", "abbb" etc. or "b", "bb" etc. but not "aab", "aabb" etc  |
+| "a?b\+$"  |  a possible 'a' followed by one or more 'b's at the end of the string: Matches any string ending with "ab", "abb", "abbb" etc. or "b", "bb" etc. but not "aab", "aabb" etc  |
 
 ## Braces { }
 
