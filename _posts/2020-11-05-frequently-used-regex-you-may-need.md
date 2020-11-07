@@ -22,17 +22,17 @@ First of all, let's take a look at two special symbols: '^' and '$'. These symbo
 
 You can see that if you don't use either of these two characters, you're saying that the pattern may occur anywhere inside the string -- you're not "hooking" it to any of the edges.
 
-## '\*', '+', and '?'
+## '\*', '\+', and '?'
 
-In addition, the symbols '*', '+', and '?', denote the number of times a character or a sequence of characters may occur. What they mean is: "zero or more", "one or more", and "zero or one." Here are some examples:
+In addition, the symbols '\*', '+', and '?', denote the number of times a character or a sequence of characters may occur. What they mean is: "zero or more", "one or more", and "zero or one." Here are some examples:
 
 | :------------- |:-------------|
-| "ab*"      | matches a string that has an a followed by zero or more b's ("ac", "abc", "abbc", etc.) |
-| "ab+"  |  same, but there's at least one b ("abc", "abbc", etc., but not "ac")  |
-|  "ab?" |  there might be a single b or not ("ac", "abc" but not "abbc").  |
-| "a?b+$"  |  a possible 'a' followed by one or more 'b's at the end of the string: Matches any string ending with "ab", "abb", "abbb" etc. or "b", "bb" etc. but not "aab", "aabb" etc.  |
+| "ab\*"      | matches a string that has an a followed by zero or more b's \("ac", "abc", "abbc", etc \) |
+| "ab\+"  |  same, but there's at least one b \("abc", "abbc", etc., but not "ac") \  |
+|  "ab?" |  there might be a single b or not \("ac", "abc" but not "abbc"\).  |
+| "a?b\+$"  |  a possible 'a' followed by one or more 'b's at the end of the string: Matches any string ending with "ab", "abb", "abbb" etc. or "b", "bb" etc. but not "aab", "aabb" etc.  |
 
-## Braces { }
+## Braces \{ \}
 
 You can also use bounds, which appear inside braces and indicate ranges in the number of occurrences:
 
@@ -41,7 +41,7 @@ You can also use bounds, which appear inside braces and indicate ranges in the n
 | "ab{2,}" |  there are at least two b's ("abb", "abbbb", etc.)  |
 |  "ab{3,5}" |  from three to five b's ("abbb", "abbbb", or "abbbbb")  |
 
-Note that you must always specify the first number of a range (i.e., "{0,2}", not "{,2}"). Also, as you might have noticed, the symbols '*', '+', and '?' have the same effect as using the bounds "{0,}", "{1,}", and "{0,1}", respectively.
+Note that you must always specify the first number of a range (i.e., "{0,2}", not "{,2}"). Also, as you might have noticed, the symbols '\*', '\+', and '?' have the same effect as using the bounds "{0,}", "{1,}", and "{0,1}", respectively.
 
 Now, to quantify a sequence of characters, put them inside parentheses:
 
