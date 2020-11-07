@@ -4,7 +4,7 @@ title: "Frequent Used Regex that You May Need"
 date: 2020-11-06 00:01:00 +0800
 description: "Frequent Used Regex that You May Need" # (optional)
 img: Frequent-Used-Regex-that-You-May-Need.png # Add image post (optional)
-fig-caption: "Build Your Own CAPTCHA Script with PHP" # Add figcaption (optional)
+fig-caption: "Frequent Used Regex that You May Need" # Add figcaption (optional)
 tags: ['PHP','Programming', 'Regex']
 categories: ['Programming', 'Regex']
 ---
