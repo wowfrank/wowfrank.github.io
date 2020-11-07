@@ -30,7 +30,8 @@ In addition, the symbols '\*', '+', and '?', denote the number of times a charac
 | "ab*"      | matches a string that has an a followed by zero or more b's ("ac", "abc", "abbc", etc ) |
 | "ab+"  |  same, but there's at least one b ("abc", "abbc", etc., but not "ac")   |
 |  "ab?" |  there might be a single b or not ("ac", "abc" but not "abbc").  |
-| "a?b\+$"  |  a possible 'a' followed by one or more 'b's at the end of the string: Matches any string ending with "ab", "abb", "abbb" etc. or "b", "bb" etc. but not "aab", "aabb" etc  |
+| "a?b+$"  |  a possible 'a' followed by one or more 'b's at the end of the string: 
+Matches any string ending with "ab", "abb", "abbb" etc. or "b", "bb" etc. but not "aab", "aabb" etc  |
 
 ## Braces { }
 
@@ -51,12 +52,12 @@ Now, to quantify a sequence of characters, put them inside parentheses:
 
 ## '|' OR operator
 
-There's also the '|' symbol, which works as an OR operator:
+There's also the '\|' symbol, which works as an OR operator:
 
 | :------------- |:-------------|
-| "hi|hello"      | matches a string that has either "hi" or "hello" in it |
-| "(b|cd)ef" |  a string that has either "bef" or "cdef"  |
-| "(a|b)\*c" |  a string that has a sequence of alternating a's and b's ending in a c  |
+| "hi\|hello"      | matches a string that has either "hi" or "hello" in it |
+| "(b\|cd)ef" |  a string that has either "bef" or "cdef"  |
+| "(a\|b)\*c" |  a string that has a sequence of alternating a's and b's ending in a c  |
 
 ## ('.')
 
@@ -71,21 +72,21 @@ A period ('.') stands for any single character:
 specify which characters are allowed in a single position of a string:
 
 | :------------- |:-------------|
-| "[ab]"      | matches a string that has either an a or a b (that's the same as "a|b") |
-| "[a-d]" |  a string that has lowercase letters 'a' through 'd' (that's equal to "a|b|c|d" and even "[abcd]")  |
+| "[ab]"      | matches a string that has either an a or a b (that's the same as "a\|b") |
+| "[a-d]" |  a string that has lowercase letters 'a' through 'd' (that's equal to "a\|b\|c\|d" and even "[abcd]")  |
 | "^[a-zA-Z]" |  a string that starts with a letter  |
 | "[0-9]%" |  a string that has a single digit before a percent sign  |
 | ",[a-zA-Z0- 9]$" |  a string that ends in a comma followed by an alphanumeric character  |
 
-```text
 You can also list which characters you DON'T want -- just use a '^' as the first symbol in a bracket expression (i.e., "%[^a- zA-Z]%" matches a string with a character that is not a letter between two percent signs).
 
 In order to be taken literally, you must escape the characters "^.[$()|*+?{\" with a backslash ('\'), as they have special meaning. On top of that, you must escape the backslash character itself in PHP3 strings, so, for instance, the regular expression "(\$|A)[0-9]+" would have the function call: ereg("(\\$|A)[0-9]+", $str) (what string does that validate?)
 
 Just don't forget that bracket expressions are an exception to that rule--inside them, all special characters, including the backslash ('\'), lose their special powers (i.e., "[*\+?{}.]" matches exactly any of the characters inside the brackets). And, as the regex manual pages tell us: "To include a literal ']' in the list, make it the first character (following a possible '^'). To include a literal '-', make it the first or last character, or the second endpoint of a range."
 
-以下为一些非常常用的regex表达式
-```
+---
+
+## 以下为一些非常常用的regex表达式
 
 ### 匹配中文:
 
