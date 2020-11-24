@@ -23,7 +23,7 @@ categories: ['Streaming', 'SDK']
 |	文档更新时间 	| 2019-05-15	| 2019-04-03	| 2018-11-20	| 2018-05-30	| 018-12-18	| 2019-04-01	| 2019-05-15	|
 |	案例			| 龙珠直播、now直播、小程序,斗鱼	| 全民直播，好未来，淘宝网	| 网易云课堂	| 熊猫直播、全民直播、龙珠直播	| 今日头条、龙珠直播	| 陌陌，花椒直播，狼人杀，斗鱼直播，B站	| 花椒直播，映客直播 |
 |	直播推流	| RTMP，录屏推流	| RTMP	| RTMP	| RTMP	| RTMP | | |
-| 	直播播放	| RTMP、FLV 及 HLS	| RTMP、FLV及HLS	| RTMP、FLV及HLS	| RTMP-FLV、HTTP-FLV、HLS、HTTPS、mp4、mp4v	| RTMP/HTTP-FLV/HLS/HTTPS | | | |
+| 直播播放	| RTMP、FLV 及 HLS	| RTMP、FLV及HLS	| RTMP、FLV及HLS	| RTMP-FLV、HTTP-FLV、HLS、HTTPS、mp4、mp4v	| RTMP/HTTP-FLV/HLS/HTTPS | | |
 |	直播连麦	| 1对1、1对多、多对多	| N/A	| 支持4人同时语音、视频连麦互动并直播出去	| 1对1、1对多、	| 支持1对1连麦，1对多连麦处于开发中	| 1对1、1对多、多对多	| 业内首创 |
 |	AI美颜特效	| 支持	| 支持	| 支持	| 支持	| 支持	| 支持	| 支持 |
 |	H5页面及小程序播放	| 支持	| 支持	| 支持	| 支持	| 支持	| 支持	| 支持 |
