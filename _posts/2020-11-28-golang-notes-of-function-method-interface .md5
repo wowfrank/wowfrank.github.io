@@ -692,11 +692,11 @@ Like any other variable, an interface variable is represented by a type and valu
 
 See below diagram which illustrates what we mentioned above
 
-![an interface variable is represented by a type and value](go-notes-of-interface-001.jpg)
+![an interface variable is represented by a type and value]({{site.baseurl}}/assets/img/go-notes-of-interface-001.jpg)
 
 For eg in case of lion struct implementing the animal interface would be like below
 
-![an interface variable is represented by a type and value](go-notes-of-interface-002.jpg)
+![an interface variable is represented by a type and value]({{site.baseurl}}/assets/img/go-notes-of-interface-002.jpg)
 
 Golang provides format identifiers to print the underlying type and underlying value represented by the interface value.
 
