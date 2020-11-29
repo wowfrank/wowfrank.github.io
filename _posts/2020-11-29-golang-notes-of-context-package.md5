@@ -163,13 +163,13 @@ withValue(parent Context, key, val interface{}) (ctx Context)
 It takes in a parent context, key, value and returns a derived context  This derived context has key associated with the value. Here the parent context can be either context.Background() or any other context. Further, any context which is derived from this context will have this value.
 
 ```go
-\#Root Context
-ctxRoot := context.Background() - \#Root context 
+// Root Context
+ctxRoot := context.Background() - //Root context 
 
-\#Below ctxChild has acess to only one pair {"a":"x"}
+// Below ctxChild has acess to only one pair {"a":"x"}
 ctxChild := context.WithValue(ctxRoot, "a", "x") 
 
-\#Below ctxChildofChild has access to both pairs {"a":"x", "b":"y"} as it is derived from ctxChild
+// Below ctxChildofChild has access to both pairs {"a":"x", "b":"y"} as it is derived from ctxChild
 ctxChildofChild := context.WithValue(ctxChild, "b", "y") 
 ```
 
