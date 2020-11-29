@@ -126,7 +126,7 @@ In above:
 
 Above three-level tree would look like below
 
-![three-level tree](2020-11-29-golang-notes-of-context-001.jpg)
+![three-level tree]({{site.baseurl}}/assets/img/2020-11-29-golang-notes-of-context-001.jpg)
 
 As since it is a tree, it is also possible to create more childs for a particular node. For eg we can derive a new context **childCtx4** from **childCtx1**
 
@@ -136,7 +136,7 @@ childCtx4 := context.WithValue(childCtx1, "current_time", "some_time)
 
 Tree with above node added would like below:
 
-![multi-level tree](2020-11-29-golang-notes-of-context-002.jpg)
+![multi-level tree]({{site.baseurl}}/assets/img/2020-11-29-golang-notes-of-context-002.jpg)
 
 At this very moment, it might not be clear how WithValue() or WithCancel() function is used. Right now just understand that whenever using context, a context tree is created with root as the **emptyCtx** . These functions will get clear as we move on
 
@@ -409,6 +409,6 @@ Following is a list of best practices that you can follow while using a context.
 
 - Make sure in mind that context can only be canceled once, hence, therefore, deriving from already cancellation context using WithCancel(), WithTimeout() and WithDeadline() should be avoided. Basically do not create a context tree like below
 
-![context tree](2020-11-29-golang-notes-of-context-003.jpg)
+![context tree]({{site.baseurl}}/assets/img/2020-11-29-golang-notes-of-context-003.jpg)
 
 - Only the parent goroutine or function should be able to cancel the context. Therefore do not pass the cancelFunc to downstream goroutines or functions
