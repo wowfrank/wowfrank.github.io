@@ -149,7 +149,7 @@ Internally a slice is represented by three things.
 
 The Pointer field in the slice header is a pointer to the underlying array.  Len is the current length of the slice and Cap is the capacity of the slice. Similar to array a slice index starts from zero till length_of_slice-1. So a slice of 3 lengths and 5 capacity will look like below
 
-![a slice of 3 lengths and 5 capacity]({{site.baseurl}}/assets/img/2020-11-28-notes-of-golang-slice)
+![a slice of 3 lengths and 5 capacity]({{site.baseurl}}/assets/img/2020-11-28-notes-of-golang-slice-01.jpg)
 
 We also have two library functions provided by go which can be used to know the length and capacity of a slice.
 
