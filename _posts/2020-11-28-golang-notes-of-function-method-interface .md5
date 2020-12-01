@@ -9,6 +9,10 @@ tags: ['Programming', 'Golang']
 categories: ['Programming', 'Golang']
 ---
 
+> A function is a group of statements that perform a specific task. In GO functions are first-order variables. They can be passed around like any other variable. 
+A method in golang is nothing but a function with a receiver. A receiver is an instance of some specific type such as struct, but it can be an instance of any other custom type. 
+Interface is a type in Go which is a collection of method signatures.
+
 ## Function
 
 ### Defination
