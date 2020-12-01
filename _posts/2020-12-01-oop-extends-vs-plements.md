@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OOP: Extends VS Implements"
-date: 2020-12-01 00:01:00 +0800
+date: 2020-12-01 10:01:00 +0800
 description: "OOP: Extends VS Implements" # (optional)
 img: oop-implements-and-extends.jpg # Add image post (optional)
 fig-caption: "OOP: Extends VS Implements" # Add figcaption (optional)
