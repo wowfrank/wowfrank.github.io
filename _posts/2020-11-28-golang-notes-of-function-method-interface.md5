@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Frequent Used Regex that You May Need"
-date: 2020-11-06 00:01:00 +0800
-description: "Frequent Used Regex that You May Need" # (optional)
-img: Frequent-Used-Regex-that-You-May-Need.png # Add image post (optional)
-fig-caption: "Frequent Used Regex that You May Need" # Add figcaption (optional)
-tags: ['PHP','Programming', 'Regex']
-categories: ['Programming', 'Regex']
+title: "Go Notes of Function, Method and Interface (3)d"
+date: 2020-11-286 00:01:00 +0800
+description: "Go Notes of Function, Method and Interface" # (optional)
+img: cover-image-of-golang-notes-series.png # Add image post (optional)
+fig-caption: "Go Notes of Function, Method and Interfaced" # Add figcaption (optional)
+tags: ['Programming', 'Golang']
+categories: ['Programming', 'Golang']
 ---
 
 > A function is a group of statements that perform a specific task. In GO functions are first-order variables. They can be passed around like any other variable. <!--more-->A method in golang is nothing but a function with a receiver. A receiver is an instance of some specific type such as struct, but it can be an instance of any other custom type. Interface is a type in Go which is a collection of method signatures.
