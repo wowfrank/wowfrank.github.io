@@ -124,7 +124,7 @@ What is this blank import and why it is used. For this, you have to understand t
 
 1. About init function
 
-2. About blank identifier represented by an underscore (‘_‘)
+2. About blank identifier represented by an underscore (‘\_‘)
 
 So now a blank import of a package is used when
 
