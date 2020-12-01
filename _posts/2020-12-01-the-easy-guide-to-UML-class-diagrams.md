@@ -3,7 +3,7 @@ layout: post
 title: "The Easy Guide to UML Class Diagrams"
 date: 2020-12-01 00:06:00 +0800
 description: "The Easy Guide to UML Class Diagrams" # (optional)
-img: cover-image-types-of-UML-diagrams-1.jpg # Add image post (optional)
+img: cover-image-types-of-uml-diagrams-1.jpg # Add image post (optional)
 fig-caption: "The Easy Guide to UML Class Diagrams" # Add figcaption (optional)
 tags: ['Programming', 'UML']
 categories: ['Programming', 'UML']
