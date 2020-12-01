@@ -51,7 +51,7 @@ Hi from say function
 The color is Red
 ```
 
-One of the limitations of the above program is that you cannot pass the child type to a function that expects the base type as GO does not allow type inheritance. For example, the below code does not compile and gives an error – “**cannot use child (type *child) as type base in argument to check**”
+One of the limitations of the above program is that you cannot pass the child type to a function that expects the base type as GO does not allow type inheritance. For example, the below code does not compile and gives an error – “**cannot use child (type \*child) as type base in argument to check**”
 
 ```go
 package main
