@@ -2,11 +2,6 @@
 layout: post
 title: "Go Notes of Environment and Configuration"
 date: 2020-11-25 00:01:00 +0800
-description: "Go Notes of Environment and Configuration" # (optional)
-img: golang-environ-config-2020-11-28.jpg # Add image post (optional)
-fig-caption: "Go Notes of Environment and Configuration" # Add figcaption (optional)
-tags: ['Programming', 'Golang']
-categories: ['Programming', 'Golang']
 ---
 
 ## Golang Environment Configuration
