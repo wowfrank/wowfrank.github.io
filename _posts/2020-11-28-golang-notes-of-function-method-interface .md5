@@ -437,11 +437,11 @@ type myFloat float64
 
 ### Defination
 
-Interface is a type in Go which is a collection of method signatures. These collections of method signatures are meant to represent certain behaviour. The interface declares only the method set and any type which implements all methods of the interface is of that interface type.
+Interface is a **type** in Go which is **a collection of method signatures**. These collections of method signatures are meant to represent certain behaviour. The interface declares only the method set and any type which implements all methods of the interface is of that interface type.
 
 Interface lets you use duck typing in golang. Now, what is duck typing?
 
-Duck typing is a way in computer programming which lets you do duck test where we do not check type instead we check the only presence of some attributes or methods. So what really matters is whether an object has certain attributes and methods and not its type.
+**Duck typing is a way in computer programming which lets you do duck test where we do not check type instead we check the only presence of some attributes or methods.** So what really matters is whether an object has certain attributes and methods and not its type.
 
 Duck typing comes from the below phrase
 
@@ -449,7 +449,7 @@ Duck typing comes from the below phrase
 If it walks like a duck and quack like a duck then it must be duck
 ```
 
-Coming back to interface again. So what is interface?  As mentioned before also it is a collection of method signatures. It defines the exact set of methods that a type might have. Below is the signature of an interface, it has only method signatures
+Coming back to interface again. So what is interface?  As mentioned before also **it is a collection of method signatures**. **It defines the exact set of methods that a type might have**. Below is the signature of an interface, it has only method signatures
 
 ```go
 type name_of_interface interface{
