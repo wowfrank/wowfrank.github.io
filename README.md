@@ -29,3 +29,9 @@ Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is importa
 ### License
 
 GNU General Public License v3.0
+
+## site url
+
+```
+{{site.baseurl}}
+```
