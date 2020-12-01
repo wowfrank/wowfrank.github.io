@@ -1,14 +1,13 @@
 ---
 layout: post
-title: "Frequent Used Regex that You May Need"
-date: 2020-11-06 00:01:00 +0800
-description: "Frequent Used Regex that You May Need" # (optional)
-img: Frequent-Used-Regex-that-You-May-Need.png # Add image post (optional)
-fig-caption: "Frequent Used Regex that You May Need" # Add figcaption (optional)
-tags: ['PHP','Programming', 'Regex']
-categories: ['Programming', 'Regex']
+title: "Go Notes of Environment and Configuration"
+date: 2020-11-25 00:01:00 +0800
+description: "Go Notes of Environment and Configuration" # (optional)
+img: golang-environ-config-2020-11-28.jpg # Add image post (optional)
+fig-caption: "Go Notes of Environment and Configuration" # Add figcaption (optional)
+tags: ['Programming', 'Golang']
+categories: ['Programming', 'Golang']
 ---
-
 
 ## Golang Environment Configuration
 
