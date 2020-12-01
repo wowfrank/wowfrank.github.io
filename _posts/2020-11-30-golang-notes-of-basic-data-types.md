@@ -151,10 +151,8 @@ func main() {
         fmt.Println(event)
     }
 }
-```
 
-```go
-Output:
+// Output:
 
 a
 b
@@ -182,10 +180,8 @@ func sendEvents(eventsChan chan<- string) {
     eventsChan <- "c"
     close(eventsChan)
 }
-```
 
-```
-Output:
+// Output:
 
 a
 b
@@ -301,4 +297,3 @@ func main() {
 2
 3
 ```
-
