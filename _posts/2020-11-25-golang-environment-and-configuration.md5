@@ -1,13 +1,12 @@
-
 ---
 layout: post
-title: "第三方直播SDK对比"
-date: 2020-11-24 00:01:00 +0800
-description: "第三方直播SDK对比" # (optional)
-img: mobile-app-streaming-workflow-2280x828.png # Add image post (optional)
-fig-caption: "第三方直播SDK对比" # Add figcaption (optional)
-tags: ['Streaming', 'SDK']
-categories: ['Streaming', 'SDK']
+title: "Go Notes of Environment and Configuration"
+date: 2020-11-25 00:01:00 +0800
+description: "Go Notes of Environment and Configuration" # (optional)
+img: golang-environ-config-2020-11-28.jpg # Add image post (optional)
+fig-caption: "Go Notes of Environment and Configuration" # Add figcaption (optional)
+tags: ['Programming', 'Golang']
+categories: ['Programming', 'Golang']
 ---
 
 ## Golang Environment Configuration
