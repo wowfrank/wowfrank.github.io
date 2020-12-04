@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Go Notes of the Function With Examples (8)"
-date: 2020-11-30 10:30:00 +0800
+date: 2020-12-01 00:03:00 +0800
 description: "Go Notes of the Function With Examples" # (optional)
 img: cover-image-of-golang-notes-series.png # Add image post (optional)
 fig-caption: "Go Notes of the Function With Examples" # Add figcaption (optional)
