@@ -70,6 +70,7 @@ example.go:8: missing argument for Printf("%b"): format reads arg 2, have only 1
 ### _Default formats and type_
 
 - **Value: []int64{0, 1}**
+
 |	Format 	| 	Verb 	| 	Description 	|
 |:---------	|:---------	|:-----------------	|
 | [0 1] 	| %v 		| Default format 	|
