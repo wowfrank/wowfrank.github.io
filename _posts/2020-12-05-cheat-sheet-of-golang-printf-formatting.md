@@ -168,3 +168,4 @@ The escapes \u and \U represent Unicode code points.
 ```go
 fmt.Println("\\caf\u00e9") // Prints \café
 ```
+## [go-admin doc](https://doc.go-admin.dev/)
