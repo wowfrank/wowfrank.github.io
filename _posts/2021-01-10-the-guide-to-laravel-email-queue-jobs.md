@@ -455,3 +455,5 @@ And the ```queue:flush``` command will remove all the failed jobs.
 ### To wrap up
 
 Our guide may seem a long-read, but each code snippet is worth mentioning to clarify things. We’re glad to help you gain insight into email queues in Laravel. Also, we encourage you to take a deeper look at the Mailtrap blog for other email-centered articles. And many more are to come.
+
+##### 文章转载自**[MAILTRAP](https://blog.mailtrap.io/laravel-mail-queue/){:target="_blank"}**！
