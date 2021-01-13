@@ -186,14 +186,15 @@ Converting struct type value into other type requires that underlaying types are
 
 ```golang
 type T1 struct {
-    f int `json:"foo"`
-}
-    f int `json:"bar"`
-}
-t1 := T1{10}
-var t2 T2
-t2 = T2(t1)
-fmt.Println(t2) // {10}
+     f int `json:"foo"`
+ }
+ type T2 struct {
+     f int `json:"bar"`
+ }
+ t1 := T1{10}
+ var t2 T2
+ t2 = T2(t1)
+ fmt.Println(t2) // {10}
 ```
 
 > This behaviour has been introduced in Go 1.8 (proposal). In Go 1.7 and older above code could would throw a compile-time error.
