@@ -150,7 +150,7 @@ Here is an entity relationship diagram of our created database.
 
 Let us look at how to create, read, update, and delete data in a JSON field.
 
-![work with json in mysql - insert]({{site.baseurl}}/assets/img/2021-01-13/mysql-json-cover.png)
+![work with json in mysql - insert]({{site.baseurl}}/assets/img/2021-01-13/mysql-json-insert.png)
 
 ### Create
 
