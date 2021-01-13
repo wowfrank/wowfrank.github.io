@@ -67,7 +67,7 @@ For a start, our database will be named e_store and has three tables only named,
 
 Our brands and categories tables will be pretty similar, each having an id and a name field.
 
-```mysql
+```sql
 CREATE DATABASE IF NOT EXISTS `e_store`
 DEFAULT CHARACTER SET utf8
 DEFAULT COLLATE utf8_general_ci;
@@ -91,7 +91,7 @@ The objective of these two tables will be to house the product categories and th
 
 While we are at it, let us go ahead and seed some data into these tables to use later.
 
-```mysql
+```sql
 /* Brands */
 INSERT INTO `e_store`.`brands`(`name`)
 VALUES
@@ -123,7 +123,7 @@ Next, is the business area of this tutorial.
 
 We are going to create a products table with the id, name, brand_id, category_id, and attributes fields.
 
-```mysql
+```sql
 CREATE TABLE `e_store`.`products`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
     `name` VARCHAR(250) NOT NULL ,
@@ -158,7 +158,7 @@ Creating a record in the database with a JSON field is pretty simple.
 
 All you need to do is add valid JSON as the field value in your insert statement.
 
-```mysql
+```sql
 /* Let's sell some televisions */
 INSERT INTO `e_store`.`products`(
     `name` ,
@@ -230,7 +230,7 @@ Instead of laying out the JSON object yourself, you can also use the built-in JS
 
 The JSON_OBJECT function accepts a list of key/value pairs in the form JSON_OBJECT(key1, value1, key2, value2, ... key(n), value(n)) and returns a JSON object.
 
-```mysql
+```sql
 /* Let's sell some mobilephones */
 INSERT INTO `e_store`.`products`(
     `name` ,
@@ -381,7 +381,7 @@ Another function that we can use to create JSON objects is the JSON_MERGE functi
 
 The JSON_MERGE function takes multiple JSON objects and produces a single, aggregate object.
 
-```mysql
+```sql
 /* Let's sell some cameras */
 INSERT INTO `e_store`.`products`(
     `name` ,
@@ -487,7 +487,7 @@ In case of the JSON_MERGE function, if a key is repeated multiple times, it’s 
 
 A proof of concept is in order I suppose.
 
-```mysql
+```sql
 /* output: {"network": ["GSM", "CDMA", "HSPA", "EVDO"]} */
 SELECT JSON_MERGE(
     '{"network": "GSM"}' ,
@@ -499,7 +499,7 @@ SELECT JSON_MERGE(
 
 We can confirm all our queries were run successfully using the JSON_TYPE function which gives us the field value type.
 
-```mysql
+```sql
 /* output: OBJECT */
 SELECT JSON_TYPE(attributes) FROM `e_store`.`products`;
 ```
@@ -512,7 +512,7 @@ For typical MySQL values that are not of type JSON, a where clause is pretty str
 
 Heuristically, when working with JSON columns, this does not work.
 
-```mysql
+```sql
 /* It's not that simple */
 SELECT
     *
@@ -530,7 +530,7 @@ The second piece of the puzzle is the JSON_EXTRACT function which accepts a path
 
 Let us say we are interested in the range of televisions that have atleast a single USB and HDMI port.
 
-```mysql
+```sql
 SELECT
     *
 FROM
@@ -549,7 +549,7 @@ Also, the JSON_EXTRACT function has the alias -> that you can use to make your q
 
 Revising our previous query.
 
-```mysql
+```sql
 SELECT
     *
 FROM
@@ -568,7 +568,7 @@ The output of these functions is a valid JSON object with the changes applied.
 
 Let us modify all mobilephones to have a chipset property as well.
 
-```mysql
+```sql
 UPDATE `e_store`.`products`
 SET `attributes` = JSON_INSERT(
     `attributes` ,
@@ -583,7 +583,7 @@ The $.chipset path expression identifies the position of the chipset property to
 
 Let us update the chipset property to be more descriptive using the JSON_REPLACE function.
 
-```mysql
+```sql
 UPDATE `e_store`.`products`
 SET `attributes` = JSON_REPLACE(
     `attributes` ,
@@ -596,7 +596,7 @@ Easy peasy!
 
 Lastly, we have the JSON_SET function which we will use to specify our televisions are pretty colorful.
 
-```mysql
+```sql
 UPDATE `e_store`.`products`
 SET `attributes` = JSON_SET(
     `attributes` ,
@@ -625,7 +625,7 @@ Let us say we are no longer providing the mount_type information for cameras and
 
 We will do it using the JSON_REMOVE function which returns the updated JSON after removing the specified key based on the path expression.
 
-```mysql
+```sql
 UPDATE `e_store`.`products`
 SET `attributes` = JSON_REMOVE(`attributes` , '$.mount_type')
 WHERE
@@ -634,7 +634,7 @@ WHERE
 
 For the second case, we also do not provide mobilephones anymore that have the Jellybean version of the Android OS.
 
-```mysql
+```sql
 DELETE FROM `e_store`.`products`
 WHERE `category_id` = 2
 AND JSON_EXTRACT(`attributes` , '$.os') LIKE '%Jellybean%';
