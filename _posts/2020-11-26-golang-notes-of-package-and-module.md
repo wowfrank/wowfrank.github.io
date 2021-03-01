@@ -641,3 +641,14 @@ require (
 ```
 
 All other dependencies are suffixed by //indirect. Also check that all direct and indirect dependencies will be recorded in the go.sum file.
+
+## There are five kinds of identifier which can be exported or non-exported
+
+1. Structure
+
+1. Structure’s Method
+
+1. Structure’s Field
+
+1. Function
+1. Variable
