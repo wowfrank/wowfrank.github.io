@@ -388,7 +388,6 @@ struct Company
     Employee CEO{}; // Employee is a struct within the Company struct
     int numberOfEmployees{};
 };
- 
 ```
 
 ### Accessing structs across multiple files
