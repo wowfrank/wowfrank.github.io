@@ -5,8 +5,8 @@ date: 2021-02-28 00:07:00 +0800
 description: "Introduction of C++ Pragma Pack (7)" # (optional)
 img: 2021-02-28-cover-image-of-cpp-notes.jpg # Add image post (optional)
 fig-caption: "Introduction of C++ Pragma Pack (7)" # Add figcaption (optional)
-tags: ['Programming', 'C++']
-categories: ['Programming', 'C++']
+tags: ['Programming', 'Cpp']
+categories: ['Programming', 'Cpp']
 ---
 
 **\#pragma pack** instructs the compiler to pack structure members with particular alignment. Most compilers, when you declare a struct, will insert padding between members to ensure that they are aligned to appropriate addresses in memory (usually a multiple of the type's size). This avoids the performance penalty (or outright error) on some architectures associated with accessing variables that are not aligned properly. For example, given 4-byte integers and the following struct:
