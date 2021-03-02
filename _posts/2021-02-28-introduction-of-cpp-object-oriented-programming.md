@@ -5,8 +5,8 @@ date: 2021-02-28 00:03:00 +0800
 description: "Introduction of C++ Object Oriented Programming (3)" # (optional)
 img: 2021-02-28-cover-image-of-cpp-notes.jpg # Add image post (optional)
 fig-caption: "Introduction of C++ Object Oriented Programming (3)" # Add figcaption (optional)
-tags: ['Programming', 'C++']
-categories: ['Programming', 'C++']
+tags: ['Programming', 'Cpp']
+categories: ['Programming', 'Cpp']
 ---
 
 In the world of object-oriented programming, we often want our types to not only hold data, but provide functions that work with the data as well. In C++, this is typically done via the class keyword. The class keyword defines a new user-defined type called a class.
@@ -375,7 +375,7 @@ int main()
 
 ### Nested structs
 
-```cpp
+```c++
 struct Employee
 {
     int id{};
@@ -389,7 +389,6 @@ struct Company
     int numberOfEmployees{};
 };
  
-Company myCompany{{ 1, 42, 60000.0 }, 5 };
 ```
 
 ### Accessing structs across multiple files
