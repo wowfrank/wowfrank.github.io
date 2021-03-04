@@ -3,7 +3,7 @@ layout: post
 title: "Anatomy of Channels in Go - Concurrency in Go"
 date: 2021-03-04 00:07:00 +0800
 description: "Anatomy of Channels in Go - Concurrency in Go" # (optional)
-img: 2021-03-04-cover-image-of-anatomy-of-channels-in-go-concurrency.jpeg # Add image post (optional)
+img: 2021-03-04-cover-image-of-anatomy-of-channels-in-go-concurrency.jpg # Add image post (optional)
 fig-caption: "Anatomy of Channels in Go - Concurrency in Go" # Add figcaption (optional)
 tags: ['Programming', 'C++']
 categories: ['Programming', 'C++']
