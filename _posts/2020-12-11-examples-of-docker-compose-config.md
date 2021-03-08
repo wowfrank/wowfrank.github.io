@@ -13,7 +13,7 @@ categories: ['Programming', 'Docker']
 
 ### yml config file
 
-```yml
+```yaml
 version: '3'
 
 networks:
