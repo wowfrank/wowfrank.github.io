@@ -666,3 +666,121 @@ By default, whenever you bring down the Docker network, your MySQL data will be 
 volumes:
   - ./mysql:/var/lib/mysql
 ```
+
+## Database Docker Config
+
+path: databases/storage
+
+```yaml
+version: '3.9'
+
+networks:
+    shared:
+        # driver: bridge
+        # driver_opts:
+        #     com.docker.network.enable_ipv6: "false"
+        # ipam:
+        #     driver: bridge
+        #     config:
+        #         - subnet: 172.20.0.0/16
+        #         gateway: 172.20.0.1
+        external:
+            name: local-bridge-net
+
+services:
+    database:
+        image: mysql
+        container_name: db-mysql
+        restart: unless-stopped
+        tty: true
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_DATABASE: homestead
+            MYSQL_USER: homestead
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: secret
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        networks:
+            shared:
+                # ipv4_address: 172.20.0.10
+        expose:
+          # Opens port 3306 on the container
+          - 3306
+          # Where our data will be persisted
+        volumes:
+          - storage_mysql:/var/lib/mysql
+    redis:
+        image: redis
+        container_name: cache-redis
+        ports:
+            - 6379:6379
+        expose:
+          # Opens port 3306 on the container
+          - 6379
+        volumes:
+            - storage_redis:/data
+        networks:
+            shared:
+                # ipv4_address: 172.20.0.11
+    mongo:
+        image: mongo
+        container_name: cache-mongo
+        ports:
+            - 27017:27017
+        expose:
+          # Opens port 3306 on the container
+          - 27017
+        volumes:
+            - storage_mongo:/data
+        networks:
+            shared:
+                # ipv4_address: 172.20.0.12
+# Names our volume
+volumes:
+    storage_mysql:
+    storage_redis:
+    storage_mongo:
+```
+
+## Golang Docker Config
+
+path: golang/{data/{mongo,redis},go/{bin,src,pkg}}
+
+```yaml
+version: '3.9'
+
+networks:
+    shared:
+        external:
+            name: local-bridge-net
+        
+services:
+    app:
+        image: golang:latest
+        container_name: golang_app
+        working_dir: /go/src/
+        build:
+            context: ./go
+        volumes:
+            - ./go/:/go/
+        ports:
+            - "8000:8080"
+        environment:
+            WORKING_DIR: /go/src/
+        # command: go run /go/src/example.com/http_demo/main.go
+        tty: true 
+        networks:
+            - shared
+```
+  
+Dockerfile
+  
+```
+FROM golang:latest
+
+RUN apt-get update
+RUN apt-get install vim -y
+RUN go get "github.com/go-sql-driver/mysql"
+```
