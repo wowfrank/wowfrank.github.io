@@ -23,19 +23,19 @@ A key-value database structures data by applying a unique key to each data objec
 
 Redis keys are mapped to values by using one of seven different data types:
 
-- Strings
+- **Strings**
 
-- Lists
+- **Lists**
 
-- Hashes
+- **Hashes**
 
-- Sets
+- **Sets**
 
-- Sorted Sets
+- **Sorted Sets**
 
-- HyperLogLogs
+- **HyperLogLogs**
 
-- Bitmaps (BitStrings)
+- **Bitmaps (BitStrings)**
 
 Each Redis data type has its own set of commands for routine access patterns, transaction support, and bulk operations if you do not have Redis installed,  use our detailed guides to install Redis on Ubuntu or deploy Redis on Docker.
 
@@ -47,11 +47,11 @@ Databases using this type of data structure are often referred to as string-to-s
 
 With all the data in a single object, string operations in Redis are extremely fast. Basic Redis commands like SET, GET, and DEL allow you to perform essential operations on the string value.
 
-- SET key value – Sets the value for the specified key.
+- **SET key value** – Sets the value for the specified key.
 
-- GET key – Retrieves the value for the specified key.
+- **GET key** – Retrieves the value for the specified key.
 
-- DEL key – Deletes the value for the given key.
+- **DEL key** – Deletes the value for the given key.
 
 The following example illustrates how to use these straightforward commands within the redis-cli interactive shell. The SET command adds the value to the key while the GET command fetches and displays the value. If no value is mapped to the key, the GET command’s output is (nil).
 
@@ -65,15 +65,15 @@ If a value exists, the output for the DEL command shows the number of items bein
 
 Redis allows you to associate an ordered sequence of strings to a key. This linked list of strings lets you perform a set of operations such as:
 
-- LPUSH – Pushes the value to the left end of the list.
+- **LPUSH** – Pushes the value to the left end of the list.
 
-- RPUSH – Pushes the value to the tail end of the list.
+- **RPUSH** – Pushes the value to the tail end of the list.
 
-- LRANGE – Retrieves a range of items.
+- **LRANGE** – Retrieves a range of items.
 
-- LPOP/RPOP – Used to display and remove items from both ends.
+- **LPOP/RPOP** – Used to display and remove items from both ends.
 
-- LINDEX – Obtain a value from a specific position within the list.
+- **LINDEX** – Obtain a value from a specific position within the list.
 
 When adding values to a list with the LPUSH/RPUSH commands, the output provides the current number of items. You can then fetch the entire list using the LRANGE command with 0 as the start and -1 signifying the last index item.
 
@@ -91,13 +91,13 @@ A Redis hash stores an unordered mapping of key-value pairs. A hash-key is assoc
 
 Basic hash commands allow you to access and change individual or multiple fields independently.
 
-- HSET – Map a value to a key within the hash.
+- **HSET** – Map a value to a key within the hash.
 
-- HGET – Retrieves individual values associated with a key within the hash.
+- **HGET** – Retrieves individual values associated with a key within the hash.
 
-- HGETALL – Displays the entire hash content.
+- **HGETALL** – Displays the entire hash content.
 
-- HDEL – Removes an existing key-value pair from a hash.
+- **HDEL** – Removes an existing key-value pair from a hash.
 
 Each time an item is added to the hash with the HSET command, a return value (integer) n informs you if an entry already exists and the number of instances. This same information is provided when using the HDEL command.
 
@@ -111,13 +111,13 @@ A Redis set is an unordered collection of unique strings. As sets are not ordere
 
 Use the following commands to add, remove, retrieve, and inspect individual items of a set:
 
-- SADD – Add one or more items to a set.
+- **SADD** – Add one or more items to a set.
 
-- SISMEMBER – Find out if an item is part of a set.
+- **SISMEMBER** – Find out if an item is part of a set.
 
-- SMEMBERS – Retrieves all items from a set.
+- **SMEMBERS** – Retrieves all items from a set.
 
-- SREM – Removes an existing item from a set.
+- **SREM** – Removes an existing item from a set.
 
 Adding the same item multiple times to a set always produces a single copy. As a result, you do not need to use the SMEMBERS or SISMEMBER command to determine if an item is already a member of a set.
 
@@ -135,13 +135,13 @@ The value part of a sorted set key-value pair is composed of a unique string ele
 
 You can access items in sorted sets by member, sorted order, and by the score values. Basic commands allow you to fetch, add, remove individual values, or retrieve items based on member values and score ranges.
 
-- ZADD – Adds a member with a score to the sorted set.
+- **ZADD** – Adds a member with a score to the sorted set.
 
-- ZRANGE – Retrieves items based on their position in the sorted order. The withscores option produces the actual score values.
+- **ZRANGE** – Retrieves items based on their position in the sorted order. The withscores option produces the actual score values.
 
-- ZRANGEBYSCORE – Fetches items from the sorted set based on the defined score range. The withscores option produces the actual score values.
+- **ZRANGEBYSCORE** – Fetches items from the sorted set based on the defined score range. The withscores option produces the actual score values.
 
-- ZREM – Removes items from a sorted set.
+- **ZREM** – Removes items from a sorted set.
 
 Only the member value of the member-score pair is treated as unique. If you associate two different scores to the same member value, only the latest addition will be present in the sorted set. If two different members have the same score, Redis orders the values alphanumerically.
 
@@ -157,11 +157,11 @@ The HyperLogLog structure uses a much more efficient probabilistic algorithm tha
 
 HyperLogLog commands allow you to add items, retrieve an estimated count of unique items, and create a union of multiple HyperLogLogs.
 
-- PFADD – Add one or several elements to a HyperLogLog.
+- **PFADD** – Add one or several elements to a HyperLogLog.
 
-- PFCOUNT – Fetch an estimated count of unique items from a single HyperLogLog.
+- **PFCOUNT** – Fetch an estimated count of unique items from a single HyperLogLog.
 
-- PFMERGE – Merge different HyperLogLogs into a single HyperLogLog.
+- **PFMERGE** – Merge different HyperLogLogs into a single HyperLogLog.
 
 The accuracy of the results can vary based on the size of the collection. However, if you do not need an exact count of items, this probabilistic structure allows you to use only a fraction of the memory you would otherwise need.
 
@@ -171,15 +171,15 @@ The accuracy of the results can vary based on the size of the collection. Howeve
 
 A Redis string is a binary sequence with a maximum size of 512 megabytes. Bitmaps allow you to manipulate strings on the bit level by using the appropriate commands.
 
-- SETBIT – The bit is defined or cleared based on a 0 or 1 value.
+- **SETBIT** – The bit is defined or cleared based on a 0 or 1 value.
 
-- GETBIT – Retrieves the bit value for the string value specified by a key.
+- **GETBIT** – Retrieves the bit value for the string value specified by a key.
 
-- BITOP – Execute bitwise operations between strings.
+- **BITOP** – Execute bitwise operations between strings.
 
-- BITPOS – Locate the first bit set to 1 or 0 in a string.
+- **BITPO**S – Locate the first bit set to 1 or 0 in a string.
 
-- BITCOUNT – Count the number of bits set to 1 in a string.
+- **BITCOUNT** – Count the number of bits set to 1 in a string.
 
 Being able to manipulate bits of a string provides exceptional space-saving opportunities. It also provides a means to access and work on the data’s fundamental elements directly.
 
