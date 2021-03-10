@@ -294,12 +294,12 @@ If you have gone through the entire tutorial respectively, then you must know ho
 protected function schedule(Schedule $schedule)
 {
     $schedule->command('quote:daily')
-    ->daily();        
+        ->daily()
+        ->runInBackground();        
 }
 ```
 
 Here are the different Schedule Frequency options list that allows you to schedule your tasks with different rate of occurrences. It should be defined in the Kernel.php file.
-
 
 |	Method	|	description	|
 |:--------	|:-------------	|
@@ -345,7 +345,7 @@ php artisan schedule:run
 On successful execution of command you will receive the following output:
 
 ```sh
-Running scheduled command: '/usr/local/Cellar/php/7.4.7/bin/php' 'artisan' quote:daily > '/dev/null' 2>&1
+Running scheduled command: '/usr/local/bin/php' 'artisan' quote:daily > '/dev/null' 2>&1
 ```
 
 You can also verify the logs, the path of the logs is as follows **storage/logs/laravel.php**.
