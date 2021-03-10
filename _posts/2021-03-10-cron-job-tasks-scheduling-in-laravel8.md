@@ -140,9 +140,8 @@ Here is the app/Console/Commands/DailyQuote.php file, It seems when all the code
 <?php
 
 namespace App\Console\Commands;
+
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\SendMail;
 use App\Models\User;
 
 class DailyQuote extends Command
