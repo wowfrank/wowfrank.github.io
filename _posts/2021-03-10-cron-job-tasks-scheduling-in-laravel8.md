@@ -201,6 +201,8 @@ class DailyQuote extends Command
         }
          
         $this->info('Successfully sent daily quote to everyone.');
+        
+        return 0;
     }
 }
 ```
