@@ -370,4 +370,4 @@ Don’t forget to replace /path/to/artisan with the full path to the custom Arti
 
 ## Summary
 
-The primary focus of this tutorial is to understand the boundless opportunities of Laravel 7 Task Scheduler. It brings lots of options to the table, such as creating commands, building logics, and custom task schedulers. Laravel gives utmost precedence to almost every functionality which makes it a robust PHP framework in every sense.
+The primary focus of this tutorial is to understand the boundless opportunities of Laravel 8 Task Scheduler. It brings lots of options to the table, such as creating commands, building logics, and custom task schedulers. Laravel gives utmost precedence to almost every functionality which makes it a robust PHP framework in every sense.
