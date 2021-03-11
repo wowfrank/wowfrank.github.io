@@ -294,13 +294,13 @@ The following table illustrates the full-text search Boolean operators and their
 |   Operator    |   Description    |
 |:-------------:|:---------------  |
 |\+   |Include, the word must be present.|
-|\–   |Exclude, the word must not be present.|
+|–   |Exclude, the word must not be present.|
 |\>   |Include, and increase ranking value.|
 |\<   |Include, and decrease the ranking value.|
 |\(\)  |Group words into subexpressions (allowing them to be included, excluded, ranked, and so forth as a group).|
 |\~   |Negate a word’s ranking value.|
 |\*   |Wildcard at the end of the word.|
-|\“\”  |Defines a phrase (as opposed to a list of individual words, the entire phrase is matched for inclusion or exclusion).|
+|“”  |Defines a phrase (as opposed to a list of individual words, the entire phrase is matched for inclusion or exclusion).|
 
 The following examples illustrate how to use boolean full-text operators in the search query:
 
