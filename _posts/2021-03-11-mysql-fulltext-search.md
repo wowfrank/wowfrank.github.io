@@ -3,7 +3,7 @@ layout: post
 title: "MySQL Full-Text Search"
 date: 2021-03-11 00:07:00 +0800
 description: "MySQL Full-Text Search" # (optional)
-img: 2021-03-10-cover-image-of-cron-job-tasks-scheduling.png # Add image post (optional)
+img: 2021-03-11-cover-image-of-mysql-fulltext-search.jpg # Add image post (optional)
 fig-caption: "MySQL Full-Text Search" # Add figcaption (optional)
 tags: ['Programming', 'MySQL']
 categories: ['Programming', 'MySQL']
