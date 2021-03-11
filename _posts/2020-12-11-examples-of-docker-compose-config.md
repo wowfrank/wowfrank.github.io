@@ -14,10 +14,12 @@ categories: ['Programming', 'Docker']
 ### yml config file
 
 ```yaml
-version: '3'
+version: '3.9'
 
 networks:
-    golang:
+    shared:
+        external:
+            name: local-bridge-net
         
 services:
     app:
@@ -35,44 +37,7 @@ services:
         # command: go run /go/src/example.com/http_demo/main.go
         tty: true 
         networks:
-            - golang
-
-    mysql:
-        image: mysql:latest
-        container_name: golang_mysql
-        ports:
-            - "3306:3306"
-        # volumes:
-        #     - ./config/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
-        #     - ./data/mysql:/var/lib/mysql
-        environment:
-            MYSQL_DATABASE: homestead
-            MYSQL_USER: homestead
-            MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: secret
-            TZ: 'Asia/Shanghai'
-        networks:
-            - golang
-
-    mongo:
-        image: mongo:latest
-        container_name: golang_mongo
-        ports:
-            - "27017:27017"
-        volumes:
-            - ./data/mongo:/data/db
-        networks:
-            - golang
-
-    redis:
-        image: redis:alpine
-        container_name: golang_redis
-        ports:
-            - "6379:6379"
-        volumes:
-            - ./data/redis:/data
-        networks:
-            - golang
+            - shared
 ```
 
 ### Dockerfile
@@ -90,102 +55,93 @@ RUN go get "github.com/go-sql-driver/mysql"
 ### yml config file
 
 ```yml
-version: '3'
+version: '3.9'
 
 networks:
-    laravel:
+    shared:
+        external:
+            name: local-bridge-net
 
 services:
     site:
         build:
             context: .
             dockerfile: nginx.dockerfile
-        container_name: nginx
+        container_name: nginx_shared
         ports:
-            - "8080:80"
+            - "8088:80"
+        # expose:
+        #   # Opens port 3306 on the container
+        #   - 8088
         volumes:
             - ./src:/var/www/html:delegated
         depends_on:
             - php
-            - mysql
         networks:
-            - laravel
+            - shared
 
-    mysql:
-        image: mysql:5.7.29
-        container_name: mysql
-        restart: unless-stopped
-        tty: true
-        ports:
-            - "3306:3306"
-        environment:
-            MYSQL_DATABASE: homestead
-            MYSQL_USER: homestead
-            MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: secret
-            SERVICE_TAGS: dev
-            SERVICE_NAME: mysql
-        networks:
-            - laravel
-    redis:
-        image: redis:alpine
-        container_name: redis
-        ports:
-            - 6379:6379
-        volumes:
-            - ./src:/var/www/html:delegated
-        networks:
-            - laravel
     php:
         build:
             context: .
             dockerfile: php.dockerfile
         container_name: php
         volumes:
-            - ./src:/var/www/html:delegated
+            - ./src:/var/www/html
         ports:
             - "9000:9000"
         networks:
-            - laravel
+            - shared
+    # npm:
+    #     build:
+    #         context: .
+    #         dockerfile: node.dockerfile
+    #     container_name: node_shared
+    #     tty: true
+    #     ports:
+    #         - 8080:8080
+    #     volumes:
+    #         - ./src:/var/www/html
+    #     # volumes:
+    #     #  - ./src:/var/www/html
+    #     # command: npm run serve
+    #     networks:
+    #         - shared
 
-    composer:
-        build:
-            context: .
-            dockerfile: composer.dockerfile
-        container_name: composer
-        volumes:
-            - ./src:/var/www/html
-        working_dir: /var/www/html
-        depends_on:
-            - php
-        user: laravel
-        networks:
-            - laravel
-        entrypoint: ['composer', '--ignore-platform-reqs']
+    # composer:
+    #     build:
+    #         context: .
+    #         dockerfile: composer.dockerfile
+    #     container_name: composer
+    #     volumes:
+    #         - ./src:/var/www/html
+    #     working_dir: /var/www/html
+    #     depends_on:
+    #         - php
+    #     user: laravel
+    #     networks:
+    #         - shared
+    #     entrypoint: ['composer', '--ignore-platform-reqs']
 
-    npm:
-        image: node:13.7
-        container_name: npm
-        volumes:
-          - ./src:/var/www/html
-        working_dir: /var/www/html
-        entrypoint: ['npm']
+    # npm:
+    #     image: node
+    #     container_name: npm
+    #     volumes:
+    #       - ./src:/var/www/html
+    #     working_dir: /var/www/html
+    #     entrypoint: ['npm']
 
-    artisan:
-        build:
-            context: .
-            dockerfile: php.dockerfile
-        container_name: artisan
-        volumes:
-            - ./src:/var/www/html:delegated
-        depends_on:
-            - mysql
-        working_dir: /var/www/html
-        user: laravel
-        entrypoint: ['php', '/var/www/html/artisan']
-        networks:
-            - laravel
-
+    # artisan:
+    #     build:
+    #         context: .
+    #         dockerfile: php.dockerfile
+    #     container_name: artisan
+    #     volumes:
+    #         - ./src:/var/www/html:delegated
+    #     working_dir: /var/www/html
+    #     user: laravel
+    #     entrypoint: ['php', '/var/www/html/artisan']
+    #     networks:
+    #         - shared
 ```
 
 ### composer.dockerfile
@@ -577,7 +533,7 @@ server {
     listen 80;
     index index.php index.html;
     server_name localhost;
-    root /var/www/html/public;
+    root /var/www/html/laravel/public;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
