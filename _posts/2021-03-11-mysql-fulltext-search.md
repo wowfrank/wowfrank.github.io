@@ -313,7 +313,7 @@ The following examples illustrate how to use boolean full-text operators in the 
 **To search for rows that contain both words: mysql and tutorial**
 
 ```
-‘+mysql \+tutorial’
+‘+mysql +tutorial’
 ```
 
 **To search for rows that contain the word “mysql”, but put the higher rank for the rows that contain “tutorial”:**
@@ -325,13 +325,13 @@ The following examples illustrate how to use boolean full-text operators in the 
 **To search for rows that contain the word “mysql” but not “tutorial”**
 
 ```
-‘+mysql \-tutorial’
+‘+mysql -tutorial’
 ```
 
 **To search for rows that contain the word “mysql” and rank the row lower if it contains the word “tutorial”.**
 
 ```
-‘+mysql \~tutorial’
+‘+mysql ~tutorial’
 ```
 
 **To search for rows that contain the words “mysql” and “tutorial”, or “mysql” and “training” in whatever order, but put the rows that contain “mysql tutorial” higher than “mysql training”.**
@@ -618,3 +618,21 @@ In this example, the term “mysqld" is converted into ngram phrases: "my" "ys" 
 The ngram parser excludes tokens that contain the stopword in the stopword list. For example, suppose the ngram_token_size is 2 and document contains "abc". The ngram parser will tokenize the document to "ab" and "bc".  If "b" is a stopword, ngram will exclude both "ab" and "bc" because they contain "b".
 
 Note that you must define your own stopword list if the language is other than English. In addition, the stopwords with lengths that are greater than ngram_token_size are ignored.
+
+## Laravel Full Text Search
+
+```php
+Product::whereRaw('MATCH (title, content) AGAINST (?)' , [$search])->get();
+```
+
+is equivalent to 
+
+```sql
+SELECT * FROM products WHERE match(title, content) againt ($search);
+```
+
+In order for this to work, you will need to add Full-Text index against your table columns in MySQL.
+
+```php
+DB::statement('ALTER TABLE products ADD FULLTEXT fulltext_index (title, content)');
+```
