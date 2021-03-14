@@ -259,6 +259,16 @@ RUN docker-php-source extract \
     && rm -rf /tmp/*
 
 RUN docker-php-ext-enable exif
+
+# Install mongodb extension
+# RUN apk --update add --virtual build-dependencies build-base openssl-dev autoconf \
+#  && pecl install mongodb \
+#  && docker-php-ext-enable mongodb
+
+# Install redis extension
+# RUN apk add --update --no-cache autoconf g++ make \
+#	&& pecl install redis \
+#	&& docker-php-ext-enable redis
 ```
 
 ### php/www.conf
