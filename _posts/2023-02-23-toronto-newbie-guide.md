@@ -13,8 +13,6 @@ categories: ['Canada', 'Life']
 
 严格意义上的多伦多，仅指“多伦多市”，然而实际在生活中，我们常说的多伦多指的是“大多伦多地区”（Greater Toronto Area），简称“大多地区”或“GTA”。大多地区除多伦多市外，还包括Peel（皮尔区）、York（约克区）、Durham（杜林区）和Halton（荷顿区）这几个区
 
-![Greater Toronto Area]({{site.baseurl}}/assets/img/2023-02-23/2021-03-28-cover-image-of-toronto-newbie-guide.jpg)
-
 为什么要先讲“多伦多”的定义呢？
 
 这是因为虽同属“大多地区”，但各区之间的公交系统是不一样的，收费也不同。如果你所乘坐的公交需要跨区，那你就需要付2个区域的费用，即便实际上你还是在同一辆车上
