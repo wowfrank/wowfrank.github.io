@@ -1,662 +1,256 @@
 ---
 layout: post
-title: "Toronto Newbie Guide"
+title: "多伦多出行完全指南（公交、租车打车、自行车、推荐APP+费用全覆盖）"
 date: "2023-02-23 00:07:00 +0800"
 description: "Toronto Newbie Guide, including bus, taxi, bike, and etc" # (optional)
 img: "2021-03-28-cover-image-of-toronto-newbie-guide.jpg" # Add image post (optional)
-fig-caption: "18 Tips to Optimize Your Laravel Database Queries" # Add figcaption (optional)
-tags: ['Programming', 'Laravel']
-categories: ['Programming', 'Laravel']
+fig-caption: "" # Add figcaption (optional)
+tags: ['Canada', 'Life']
+categories: ['Canada', 'Life']
 ---
 
 ## 出行指南前言说明
 
 严格意义上的多伦多，仅指“多伦多市”，然而实际在生活中，我们常说的多伦多指的是“大多伦多地区”（Greater Toronto Area），简称“大多地区”或“GTA”。大多地区除多伦多市外，还包括Peel（皮尔区）、York（约克区）、Durham（杜林区）和Halton（荷顿区）这几个区
 
-![Greater Toronto Area]({{site.baseurl}}/assets/img/2023-02-23/2021-03-28-cover-image-of-toronto-newbie-guide.jpg )
+![Greater Toronto Area]({{site.baseurl}}/assets/img/2023-02-23/2021-03-28-cover-image-of-toronto-newbie-guide.jpg)
 
-## 
+为什么要先讲“多伦多”的定义呢？
 
-This tip mainly focuses on improving the memory usage of your application when dealing with large datasets.
+这是因为虽同属“大多地区”，但各区之间的公交系统是不一样的，收费也不同。如果你所乘坐的公交需要跨区，那你就需要付2个区域的费用，即便实际上你还是在同一辆车上
 
-If your application needs to process a large set of records, instead of retrieving all at once, you can retrieve a
-a subset of results and process them in groups.
+![Greater Toronto Area]({{site.baseurl}}/assets/img/2023-02-23/v2-c8ecad20a7ef92d5725b0a803e57fd59_720w.webp)
 
-To retrieve many results from a table called posts, we would usually do like below.
+简单来说，在这张图上。每跨一个颜色的区域，就等于进入了另一个收费区
 
-```php
-$posts = Post::all(); // when using eloquent
-$posts = DB::table('posts')->get(); // when using query builder
+所以，如果某天你跟着导航走，上车给了钱，结果下车司机叫你再给一次钱，千万不要惊讶，这是因为你已经跨区了。而每个区的收费又不一样，所以你有可能两次给的钱还不一样
 
-foreach ($posts as $post){
- // Process posts
-}
-```
+## 出行必备工具指南
 
-The above examples will retrieve all the records from the posts table and process them. What if this table has 1 million rows? We will quickly run out of memory.
+Presto就是大多地区的公交卡啦！基本是人手必备。有了Presto，即便跨区坐公交也都可以用它支付，非常方便！而且还有折扣
 
-To avoid issues when dealing with large datasets, we can retrieve a subset of results and process them as below.
+购买渠道：
 
-### Option 1: Using chunk
+- 你可以在Shoppers（多伦多最多的便利店）或地铁里的小店铺买，直接到结账处给店员说你需要Presto，他就会拿给你
 
-```php
-// when using eloquent
-$posts = Post::chunk(100, function($posts){
-    foreach ($posts as $post){
-     // Process posts
-    }
-});
+- 金额：$6/张（仅卡费，不含任何乘车费用！）
 
-// when using query builder
-$posts = DB::table('posts')->chunk(100, function ($posts){
-    foreach ($posts as $post){
-     // Process posts
-    }
-});
-```
+### ❓如何充值：
 
-The above example retrieves 100 records from the posts table, processes them, retrieves another 100 records, and processes them. This iteration will continue until all the records are processed.
+1.地铁里的presto机器充值，实时到账，支持银行卡和现金
+2.在[presto官网](http://Prestocard.ca)或App充值，支持银行卡
+3.在shoppers充值
+4.在客户服务点（可上官网查询具体地点）充值
 
-This approach will create more database queries but be more memory efficient. Usually, the processing of large datasets should be doe in the background. So it is ok to make more queries when running in the background to avoid running out of memory when processing large datasets.
+### ✏️小提示和建议：
 
-### Option 2: Using cursor
+1.官网充值并非实时到账，但在官网上可以查询余额。因此建议买卡后一定上官网注册下
+2.卡中余额为负值时，Presto将在你下次充值时额外收取$0.25手续费。因此建议在官网开通自动充值服务，即当余额低于一个数值时，Presto将会自动从你的银行卡内扣除一定金额进行充值
+3.有绿、黑两种颜色的卡，功能和价格都一样，只是黑色的卡是新出的而已
 
-```php
-// when using eloquent
-foreach (Post::cursor() as $post){
-   // Process a single post
-}
+1.公交导航APP
 
-// when using query builder
-foreach (DB::table('posts')->cursor() as $post){
-   // Process a single post
-}
-```
+○ Google map
 
-The above example will make a single database query, retrieve all the records from the table, and hydrate Eloquent models one by one. This approach will make only one database query to retrieve all the posts. But uses php generator to optimize the memory usage.
+推荐理由：Google Map不用说了吧，必备工具！
 
-### when can you use this?
+○ Transit（必下必下！）
 
-Though this greatly optimizes the memory usage on the application level, Since we are retrieving all the entries from a table, the memory usage on the database instance will still be higher.
+推荐理由：Transit必须是多伦多最好用的通勤工具！除了好看的界面、清晰的路线、准确的下一班车等待时间预估，它还可直接连接多伦多的Bike Share（后面会讲这个）！你可以清楚看到每个自行车桩的位置在哪、是否有可用的车，而且可以直接在App上进行购买 同时，App上还能直接打Uber
 
-It is better to use a cursor If your web app running your application has less memory, and the database instance has more memory. However, if your database instance does not have enough memory, it is better to stick to chunks.
+2.打车APP
 
-### option 3: Using chunkById
+○ Uber
 
-```php
-// when using eloquent
-$posts = Post::chunkById(100, function($posts){
-    foreach ($posts as $post){
-     // Process posts
-    }
-});
+○ Lyft
 
-// when using query builder
-$posts = DB::table('posts')->chunkById(100, function ($posts){
-    foreach ($posts as $post){
-     // Process posts
-    }
-});
-```
+推荐理由：Uber和Lyft都是很好用的打车工具，他们的价格比出租车 便宜，同时还可以选更经济实惠的拼车，并且两个App经常都会有一些优惠券可以领。所以到底用哪个？谁便宜用谁！
 
-The major difference between chunk and chunkById is that chunk retrieves based on offset and limit. Whereas
-chunkById retrieves database results based on an id field. This id field usually be an integer field, and in most cases it would be an auto-incrementing field.
+3.开车必备APP
 
-The queries made by chunk and chunkById were as follows.
+○ Waze
 
-**chunk**
+推荐理由：很好用的开车路线导航工具，不仅可以避开拥堵并且还提醒你什么地方可能会有警察 ‍♀️（多伦多没那么多电子眼 ，所以都是警察直接抓各种超速啊、违章啊）最关键的是，它长得也很好看
 
-```sql
-select * from posts offset 0 limit 100
-select * from posts offset 101 limit 100
-```
+○ GreenP
 
-**chunkById**
+推荐理由：多伦多必备停车缴费工具。这是多伦多街边停车桩上官方推荐的App。它比直接在停车桩上支付更好的是，当你的停车时间快到了但又想续时间，可以直接在App上续，非常方便
 
-```sql
-select * from posts order by id asc limit 100
-select * from posts where id > 100 order by id asc limit 100
-```
+只要你看到停车桩或停车牌上有GreenP的Logo，就都可以用它支付
 
-Generally, using a limit with offset is slower, and we should try to avoid using it. This article explains in detail the problem with using offset.
+输入自己车辆信息后，直接在App上输入停车桩或停车指示牌上标注的停车区域的数字编号，然后选择需要停的时长即可。付费后无需将任何凭证放置车上，系统会自动告诉警察你已付费
 
-As chunkById is using the id field which is an integer, and the query is using a where clause, the query will be much faster.
+4.租车APP
 
-### When can you use chunkById?
+○ Enterprise（分时租赁+按天租）
 
-If your database table has a primary key column column, which is an auto-incrementing field.
+○ Zipcar（分时租赁）
 
-## Select only the columns you need
+推荐理由：其实使用这两款App时都有过不太愉快的体验，但相比之下觉得他们还是性价比最高的。后面会详细讲这两款软件
 
-Usually to retrieve results from a database table, we would do the following.
+## 大多地区主要公交及价格
 
-```php
-$posts = Post::find(1); //When using eloquent
-$posts = DB::table('posts')->where('id','=',1)->first(); //When using query builder
-```
+1.「UP」 Union Pearson Express机场快线 ✈️
 
-The above code will result in a query as below
+- 范围：这条线是机场往返市区的专线
 
-```sql
-select * from posts where id = 1 limit 1
-```
+- 价格：从Downtown的Union到皮尔逊机场单次价格为12.35，持Presto享受优惠价$9.25！
 
-As you can see, the query is doing a select \*. This means it is retrieving all the columns from the database table.
+![Union Pearson Express]({{site.baseurl}}/assets/img/2023-02-23/v2-acccfbe2a70b5fc38940a33dbad664b3_720w.webp)
 
-This is fine if we really need all the columns from the table.
+![Union Pearson Express]({{site.baseurl}}/assets/img/2023-02-23/v2-734b3d7974c2865632128fb3db9abb8e_720w.jpg)
 
-Instead, if we need only specific columns(id, title), we can retrieve only those columns as below.
+营运时间：凌晨4:55-第二天凌晨1：00
 
-```php
-$posts = Post::select(['id','title'])->find(1); //When using eloquent
-$posts = DB::table('posts')->where('id','=',1)->select(['id','title'])->first(); //When using query builder
-```
+![Union Pearson Express]({{site.baseurl}}/assets/img/2023-02-23/v2-acd5559f0e0a181767206f0b015bb671_720w.webp)
 
-The above code will result in a query as below
+新到多伦多的小伙伴最先接触到的应该是这条交通线，有点类似于市区到机场的专线火车 的感觉。价格也比从机场打Uber到downtown的价格（大概要$40多）要便宜很多。同时中途还有停靠站。如果行李不太多，建议可乘坐这条线
 
-```sql
-select id,title from posts where id = 1 limit 1
-```
+2.街车及巴士
 
-## Use pluck when you need exactly one or two columns from the database
+范围：
 
-> This tip focuses more on the time spent after the results are retrieved from the database. This does not affect the actual query time.
+- 街车 只在多伦多downtown有，也是多伦多城市的标志之一。老的街车已正式退役，现在都换成了庞巴迪制造的新街车
 
-As I mentioned above, to retrieve specific columns, we would do
+- 巴士 覆盖范围就很广了，只是跟之前说的一样，每个区的巴士名字有些不一样，价格也有点不一样
 
-```php
-$posts = Post::select(['title','slug'])->get(); //When using eloquent
-$posts = DB::table('posts')->select(['title','slug'])->get(); //When using query builder
-```
+价格：
 
-When the above code is executed, it does the following behind the scenes.
+- 多伦多市TTC单次票$3.25（Presto $3.10）
 
-- Executes select title, slug from posts query on the database
+- 密西沙加miWAY单次票$3.75
 
-- Creates a new Post model object for each row it retrieved(For query builder, it creates a PHP standard object)
+- 约克区YRT单次票$4.25（Presto $3.88）
 
-- Creates a new collection with the Post models
+- 基本都是同一区域内持Presto可2小时内无限换乘
 
-- Returns the collection
+月卡及更多详细费用看下图
 
-Now, to access the results, we would do
+![Tickets & Fares]({{site.baseurl}}/assets/img/2023-02-23/v2-6697b6e93a9428b35a1675898db91af4_720w.webp)
 
-```php
-foreach ($posts as $post){
-    // $post is a Post model or php standard object
-    $post->title;
-    $post->slug;
-}
-```
+![Tickets & Fares]({{site.baseurl}}/assets/img/2023-02-23/v2-43ad7e507b8add5e98e2874d382890dc_720w.webp)
 
-The above approach has an additional overhead of hydrating Post model for each and every row and creating a collection for these objects. This would be best if you really need the Post model instance instead of the data.
+![Tickets & Fares]({{site.baseurl}}/assets/img/2023-02-23/v2-9f4d74e642ddc5ad42cc4ee698383803_720w.webp)
 
-But if all that you need is those two values, you can do the following.
+营运时间：
 
-```php
-$posts = Post::pluck('title', 'slug'); //When using eloquent
-$posts = DB::table('posts')->pluck('title','slug'); //When using query builder
-```
+- 街车 是24小时运营大多数
 
-When the above code is executed, it does the following behind the scenes.
+- 巴士 运营时间在早上6:00（周日是8:00）—— 第二天凌晨1:00
 
-- Executes select title, slug from posts query on the database
+![Tickets & Fares]({{site.baseurl}}/assets/img/2023-02-23/v2-5d798a1479265e36d4d25b1f21226206_720w.jpg)
 
-- Creates an array with title as array value and slug as array key.
+街车和巴士是大多地区主要交通工具，运营的时间也很长，而且还有很多夜间专线。如果坐的距离跨区了，就按照车上司机的语音提示，下车的时候再拿Presto刷一下付跨区费就好（正常情况是上车刷一次卡就好，下车无需再刷）
 
-- Returns the array(array format: [ slug => title, slug => title ])
+另外如果你常坐车或家人朋友要来旅游，还可购买日卡、周卡、月卡、年卡等Pass，可以在指定时间内无限乘坐
 
-Now, to access the results, we would do
+3.地铁
 
-```php
-foreach ($posts as $slug => $title){
-    // $title is the title of a post
-    // $slug is the slug of a post
-}
-```
+范围：
 
-If you want to retrieve only one column, you can do
+- 多伦多的地铁覆盖范围不大（基本就在多伦多市），而且只有4条线（严格意义上来讲其实只有3条）
 
-```php
-$posts = Post::pluck('title'); //When using eloquent
-$posts = DB::table('posts')->pluck('title'); //When using query builder
-foreach ($posts as  $title){
-    // $title is the title of a post
-}
-```
+![Metro]({{site.baseurl}}/assets/img/2023-02-23/v2-fc1c6f91717cbc36b4afea7c8f57e00c_720w.webp)
 
-The above approach eliminates the creation of Post objects for every row. Thus reducing the memory usage and
-time spent on processing the query results.
+价格：
 
-> I would recommend using the above approach on new code only. I personally feel going back and refactoring your code to follow the above tip is not worthy of the time spent on it. Refactor existing code only if your code is processing large datasets or if you have free time to spare.
+- 单次票$3.25（Presto $3.10）
 
-## Count rows using a query instead of a collection
+- *地铁也属于TTC，所以价格也一样，同时月卡等Pass里也包含地铁
 
-To count the total no of rows in a table, we would normally do
+营运时间：
 
-```php
-$posts = Post::all()->count(); //When using eloquent
-$posts = DB::table('posts')->get()->count(); //When using query builder
-```
+- 早上6:00（周日是8:00）—— 第二天凌晨1:30
 
-This will generate the following query
+![Metro & Fares]({{site.baseurl}}/assets/img/2023-02-23/v2-647d2f8cfc0744511a5334dcb40640ab_720w.webp)
 
-```sql
-select * from posts
-```
+地铁是很多上班族通勤的重要工具，但多伦多的地铁也经常因为这样那样的问题延迟啊、停运啊，如果碰到这种情况不要觉得奇怪，因为这是多伦多地铁的日常。去年冬天某天早上延迟了3个小时，全城上班迟到
 
-The above approach will retrieve all the rows from the table, load them into a collection object, and counts the results. This works fine when there are less rows in the database table. But we will quickly run out of memory as the table grows.
+另外，多伦多的地铁只需要进站时刷卡，出站时直接走过栅栏就行，它会自己开。我第一次下地铁后以为跟中国一样还要再刷一次卡，傻傻地在栅栏前看了半天刷卡的地方在哪
 
-Instead of the above approach, we can directly count the total no of rows on the database itself.
+4.GO train & GO bus
 
-```php
-$posts = Post::count(); //When using eloquent
-$posts = DB::table('posts')->count(); //When using query builder
-```
+范围：
 
-This will generate the following query
+- 火车是覆盖范围最广的交通路线，整个大多地区都有它
 
-```sql
-select count(*) from posts
-```
+价格和营运时间：
 
-Counting rows in sql is a slow process and performs poorly when the database table has so many rows. It is better to avoid counting of rows as much as possible.
+- GO系列的价格和运营时间都不是固定的，具体需上官网查询https://www.gotransit.com/en/
 
-## Avoid N+1 queries by eager loading relationship
+![GO train & GO bus]({{site.baseurl}}/assets/img/2023-02-23/v2-fc1c6f91717cbc36b4afea7c8f57e00c_720w.webp)
 
-You might have heard of this tip a million times. So I will keep it as short and simple as possible. Let's assume you have the following scenario
+由于多伦多发展越来越快，所以越来越多的人都住在离downtown较远的地方，这个时候就得乘坐GO Train或GO Bus通勤。如果你坐上了GO系列的交通工具，就代表着你要去的地方离多伦多市比较远
 
-```php
-class PostController extends Controller
-{
-    public function index()
-    {
-        $posts = Post::all();
-        return view('posts.index', ['posts' => $posts ]);
-    }
-}
-// posts/index.blade.php file
+5.Bike Share
 
-@foreach($posts as $post)
-    <li>
-        <h3>{{ $post->title }}</h3>
-        <p>Author: {{ $post->author->name }}</p>
-    </li>
-@endforeach
-```
+范围：基本只覆盖在downtown和稍微往北的区域 价格：单次$3.25，年卡$99（税前）经常会有办年卡20-40%off的优惠
 
-The above code is retrieving all the posts and displaying the post title and its author on the webpage, and it assumes you have an author relationship on your post model.
+![Bike Share]({{site.baseurl}}/assets/img/2023-02-23/v2-35ac074330af2111008472f2c38ae2b7_720w.webp)
 
-Executing the above code will result in running following queries.
+营运时间：24小时 Bike Share就是多伦多的共享单车（3档变速哦）啦，都是有桩的。如果你主要在市中心区域通勤或者才来多伦多，强烈推荐你使用。但是要注意！估计是怕自行车被偷，所以政府要求你每30分钟都要还一次车，不然会收取额外费用
 
-```sql
-select * from posts // Assume this query returned 5 posts
-select * from authors where id = { post1.author_id }
-select * from authors where id = { post2.author_id }
-select * from authors where id = { post3.author_id }
-select * from authors where id = { post4.author_id }
-select * from authors where id = { post5.author_id }
-```
+⚠️ 大多地区公交小提示 ⚠️
 
-As you can see, we have one query to retrieve posts, and 5 queries to retrieve authors of the posts(Since we assumed we have 5 posts.) So for every post it retrieved, it is making one separate query to retrieve its author.
+1.如果暂时没有Presto或忘带了，用现金付款后一定记得拿一张POP(Proof-of-Payment）付款凭证，这样也可享受换乘，最关键的是，如果有查票的人来，你没有presto也没拿POP，将会被罚$425！ps.街车和地铁可直接去POP的机器拿凭证，如果坐巴士，可找司机要
 
-So if there are N number of posts, it will make N+1 queries( 1 query to retrieve posts and N queries to retrieve the author for each post). This is commonly known as N+1 query problem.
+2.Bike Share不支持Presto支付！其他全都支持，并且用Presto都有折扣
 
-To avoid this, eager load the author's relationship on posts as below.
+## 大多地区租车指南
 
-```php
-$posts = Post::all(); // Avoid doing this
-$posts = Post::with(['author'])->get(); // Do this instead
-```
+人在江湖飘，都得到处跑。在好山好水好寂寞的加拿大，不到处看看确实有点可惜。这里将介绍分时租赁和常规租车两种方式，以便适应不同的场景
 
-Executing the above code will result in running the following queries.
+分时租赁顾名思义就是按小时来租车啦如果你需要一个车去买菜啊、临时去机场接个盆友啊等等情况，就选择分时租赁，用几个小时就租几个小时
 
-```sql
-select * from posts // Assume this query returned 5 posts
-select * from authors where id in( { post1.author_id }, { post2.author_id }, { post3.author_id }, { post4.author_id }, { post5.author_id } )
-```
+推荐公司：Zipcar & Enterprise Car share
 
-## Eager load nested relationship
+费用：费用包含两部分，会员费+租车费
 
-From the above example, consider the author belongs to a team, and you wish to display the team name as well. So in the blade file you would do as below.
+会员费：如果你想分时租赁，前提是必须先成为这些公司的会员。会员费Zipcar是$7/月，Enterprise基础版是$45/年
 
-```php
-@foreach($posts as $post)
-    <li>
-        <h3>{{ $post->title }}</h3>
-        <p>Author: {{ $post->author->name }}</p>
-        <p>Author's Team: {{ $post->author->team->name }}</p>
-    </li>
-@endforeach
-```
+租车费：根据车型不同，价格从$6/小时起，一般价格在$12/小时左右。费用里已包含了200km的油费
 
-Now doing the below
+✏️使用方式：
 
-```php
-$posts = Post::with(['author'])->get();
-```
+1.按照规定注册并成为会员后，公司会给你寄送一张会员卡，之后就是用这张卡来开车、锁车和还车
+2.在app上预定取车点、取车时间及还车时间（哪里取车哪里还车），然后到时候后去预定的点自助取车
+3.用卡打开车门后计时就开始了，如果中途要延长租车时间，必须在App上延长，多一分钟就会收取你违约费用
+4.用完车将车停在取车的地点，然后用卡片锁车。租车就完成，后面公司会将账单发你
 
-Will result in following queries
+如果你要出去玩儿或有其他用途，需要用车几天，就选择这种按天租的。算下来它的价格很便宜
 
-```sql
-select * from posts // Assume this query returned 5 posts
-select * from authors where id in( { post1.author_id }, { post2.author_id }, { post3.author_id }, { post4.author_id }, { post5.author_id } )
-select * from teams where id = { author1.team_id }
-select * from teams where id = { author2.team_id }
-select * from teams where id = { author3.team_id }
-select * from teams where id = { author4.team_id }
-select * from teams where id = { author5.team_id }
-```
+推荐公司：Enterprise rent-a-car对，还是Enterprise这家公司，但它的分时租赁和常规租车业务是分开的，所以网站和App也都是不一样的
 
-As you can see, even though we are eager loading authors relationship, it is still making more queries. Because we are not eager loading the team relationship on authors.
+费用：
 
-We can fix this by doing the following.
+- 大概在$30-70/天，租的越久越便宜，经常会有折扣，价格很划算
 
-```php
-$posts = Post::with(['author.team'])->get();
-```
+- *费用不含油费，还车时要保证车内还有油
 
-Executing the above code will result in running following queries.
+- *费用也不包含保险，如果你的信用卡没有自带保险，需要自己购买保险
 
-```sql
-select * from posts // Assume this query returned 5 posts
-select * from authors where id in( { post1.author_id }, { post2.author_id }, { post3.author_id }, { post4.author_id }, { post5.author_id } )
-select * from teams where id in( { author1.team_id }, { author2.team_id }, { author3.team_id }, { author4.team_id }, { author5.team_id } )
-```
+✏️使用方式：
 
-By eager loading the nested relationship, we reduce the total number of queries from 11 to 3.
+1.上App或官网选择取车点、取车时间和还车点、还车时间（可异地还车）
+2.到点去他们办公室，在工作人员的帮助下办理一定手续后即可拿到车
+3.用车完之后在规定的时间内将车还到之前预约的还车地点即可
 
-## Do not load belongsTo relationship if you just need its id
+‍♂️个人体验：为什么只推荐这两家？因为他们的价格最划算，而且车和服务点都很多。其他像AVIS这样的租车公司，价格会比较高。租车本来图的是方便和实惠，所以如果你没有特殊需求，这两家就够用了，而且有活动时他们的价格会更棒
 
-Imagine you have two tables posts and authors. Posts table has a column author_id which represents a belongsTo relationship on the authors table.
+但注意，我租车的时候碰到过开不了车门、车无法启动或还车后系统还在计费的情况，这个时候你要及时找客服，不要认栽。记住，在北美是爱哭的孩子才有糖吃！
 
-To get the author id of a post, we would normally do
+## 大多地区打车指南
 
-```php
-$post = Post::findOrFail(<post id>);
-$post->author->id; 
-```
+打车这个就简单啦！当然就是用Uber和Lyft咯～打出租车比他们更贵，所以不推荐
 
-This would result in two queries being executed.
+在街上你可以看到很多车都是贴着Uber和Lyft两个logo在跑，所以这两个平台的车应该都差不多，哪个便宜就用哪个。但是！作为前Uber员工，我强烈推荐你在价格相同的情况下使用Uber打车！Uber的界面设计和交互设计都比Lyft好看太多啦！
 
-```sql
-select * from posts where id = <post id> limit 1
-select * from authors where id = <post author id> limit 1
-```
+费用：在北美打车还是很贵的，所以依然推荐乘坐公交。另外打车不是一定要给小费～
 
-Instead, you can directly get the author id by doing the following.
+‍♂️分享一下我的邀请码，还没注册的可用一下
 
-```php
-$post = Post::findOrFail(<post id>);
-$post->author_id; // posts table has a column author_id which stores id of the author
-```
+Uber邀请码：tf45qh 前三次乘车每次优惠$2
 
-When can I use the above approach?
+Lyft邀请码：qiyuan46105 可获最高$50乘车优惠
 
-You can use the above approach when you are confident that a row always exists in authors table if it is referenced in posts table.
-
-## Avoid unnecessary queries
-
-Oftentimes, we make database queries that are not necessary. Consider the below example.
-
-```php
-<?php
-
-class PostController extends Controller
-{
-    public function index()
-    {
-        $posts = Post::all();
-        $private_posts = PrivatePost::all();
-        return view('posts.index', ['posts' => $posts, 'private_posts' => $private_posts ]);
-    }
-}
-```
-
-The above code is retrieving rows from two different tables(ex: posts, private_posts) and passing them to view.
-
-The view file looks as below.
-
-```php
-// posts/index.blade.php
-
-@if( request()->user()->isAdmin() )
-    <h2>Private Posts</h2>
-    <ul>
-        @foreach($private_posts as $post)
-            <li>
-                <h3>{{ $post->title }}</h3>
-                <p>Published At: {{ $post->published_at }}</p>
-            </li>
-        @endforeach
-    </ul>
-@endif
-
-<h2>Posts</h2>
-<ul>
-    @foreach($posts as $post)
-        <li>
-            <h3>{{ $post->title }}</h3>
-            <p>Published At: {{ $post->published_at }}</p>
-        </li>
-    @endforeach
-</ul>
-```
-
-As you can see above, $private_posts is visible to only a user who is an admin. Rest all the users cannot see
-these posts.
-
-The problem here is, when we are doing
-
-```php
-$posts = Post::all();
-$private_posts = PrivatePost::all();
-```
-
-We are making two queries. One to get the records from posts table and another to get the records
-from private_posts table.
-
-Records from private_posts table are visible only to the admin user. But we are still making the query to retrieve these records for all the users even though they are not visible.
-
-We can modify our logic to below to avoid this extra query.
-
-```php
-$posts = Post::all();
-$private_posts = collect();
-if( request()->user()->isAdmin() ){
-    $private_posts = PrivatePost::all();
-}
-```
-
-By changing our logic to the above, we are making two queries for the admin user and one query for all other users.
-
-##  Merge similar queries
-
-We sometimes need to make queries to retrieve different kinds of rows from the same table.
-
-```php
-$published_posts = Post::where('status','=','published')->get();
-$featured_posts = Post::where('status','=','featured')->get();
-$scheduled_posts = Post::where('status','=','scheduled')->get();
-```
-
-The above code is retrieving rows with a different status from the same table. The code will result in making
-following queries.
-
-```sql
-select * from posts where status = 'published'
-select * from posts where status = 'featured'
-select * from posts where status = 'scheduled'
-```
-
-As you can see, it is making three different queries to the same table to retrieve the records. We can refactor this code to make only one database query.
-
-```php
-$posts =  Post::whereIn('status',['published', 'featured', 'scheduled'])->get();
-$published_posts = $posts->where('status','=','published');
-$featured_posts = $posts->where('status','=','featured');
-$scheduled_posts = $posts->where('status','=','scheduled');
-```
-
-```sql
-select * from posts where status in ( 'published', 'featured', 'scheduled' )
-```
-
-The above code is making one query to retrieve all the posts which has any of the specified status and creating separate collections for each status by filtering the returned posts by their status. So we will still have three different variables with their status and will be making only one query.
-
-## Add index to frequently queried columns
-
-If you are making queries by adding a where condition on a string based column, it is better to add an index to the column. Queries are much faster when querying rows with an index column.
-
-```php
-$posts = Post::where('status','=','published')->get();
-```
-
-In the above example, we are querying records by adding a where condition to the status column. We can improve the performance of the query by adding the following database migration.
-
-```php
-Schema::table('posts', function (Blueprint $table) {
-   $table->index('status');
-});
-```
-
-## Use simplePaginate instead of Paginate
-
-When paginating results, we would usually do
-
-```php
-$posts = Post::paginate(20);
-```
-
-This will make two queries, the first to retrieve the paginated results and a second to count the total no of rows in the table. Counting rows in a table is a slow operation and will negatively affect the query performance.
-
-So why does laravel count the total no of rows?
-
-To generate pagination links, Laravel counts the total no of rows. So, when the pagination links are generated, you know before-hand, how many pages will be there, and what is the past page number. So you can navigate to what ever the page you want easily.
-
-On the other hand, doing simplePaginate will not count the total no of rows and the query will be much faster than the paginate approach. But you will lose the ability to know the last page number and able to jump to different pages.
-
-If your database table has so many rows, it is better to avoid paginate and do simplePaginate instead.
-
-```php
-$posts = Post::paginate(20); // Generates pagination links for all the pages
-$posts = Post::simplePaginate(20); // Generates only next and previous pagination links
-```
-
-### When to use paginate vs simple paginate?
-
-Look at the below comparison table and determine if paginate or simple paginate is right for you
-
-|       |   paginate / simplePaginate   |
-|:------|:------------------------------|
-|database table has only few rows and does not grow large	|paginate / simplePaginate|
-|database table has so many rows and grows quickly	|simplePaginate|
-|it is mandatory to provide the user option to jump to specific pages	|paginate|
-|it is mandatory to show the user total no of results	|paginate|
-|not actively using pagination links	|simplePaginate|
-|UI/UX does not affect from switching numbered pagination links to next / previous pagination links	|simplePaginate|
-|Using "load more" button or "infinite scrolling" for pagination	|simplePaginate|
-
-## Avoid using leading wildcards(LIKE keyword)
-
-When trying to query results which match a specific pattern, we would usually go with
-
-```sql
-select * from table_name where column like %keyword%
-```
-
-The above query will result in a full table scan. If We know the keyword occurs at the beginning of the column value,
-
-We can query the results as below.
-
-```sql
-select * from table_name where column like keyword%
-```
-
-##  avoid using SQL functions in where clause
-
-It is always better to avoid SQL functions in where clause as they result in full table scan. Let's look at the below example. To query results based on the certain date, we would usually do
-
-```php
-$posts = POST::whereDate('created_at', '>=', now() )->get();
-```
-
-This will result in a query similar to below
-
-```sql
-select * from posts where date(created_at) >= 'timestamp-here'
-````
-
-The above query will result in a full table scan, because the where condition isn't applied until the date function is evaluated.
-
-We can refactor this to avoid the date sql function as below
-
-```php
-$posts = Post::where('created_at', '>=', now() )->get();
-```
-
-```sql
-select * from posts where created_at >= 'timestamp-here'
-```
-
-## avoid adding too many columns to a table
-
-It is better to limit the total no of columns in a table. Relational databases like mysql, can be leveraged to split the tables with so many columns into multiple tables. They can be joined together by using their primary and foreign keys.
-
-Adding too many columns to a table will increase the individual record length and will slow down the table scan. When you are doing a select *  query, you will end up retrieving a bunch of columns which you really do not need.
-
-## separate columns with text data type into their own table
-
-> This tip is from personal experience and is not a standard way of architecting your database tables. I recommend to ollow this tip only if your table has too many records or will grow rapidly.
-
-If a table has columns which stores large amounts of data(ex: columns with a datatype of TEXT), it is better to separate them into their own table or into a table which will be less frequently asked.
-
-When the table has columns with large amounts of data in it, the size of an individual record grows really high. I ersonally observed it affected the query time on one of our projects.
-
-Consider a case where you have a table called posts with a column of content which stores the blog post content.
-
-The content for blog post will be really huge and often times, you need this data only if a person is viewing this particular blog post.
-
-So separating this column from the posts table will drastically improve the query performance when there are too many posts.
-
-## Better way to retrieve latest rows from a table
-
-When we want to retrieve latest rows from a table, we would often do
-
-```php
-$posts = Post::latest()->get();
-// or $posts = Post::orderBy('created_at', 'desc')->get();
-```
-
-The above approach will produce the following sql query.
-
-```sql
-select * from posts order by created_at desc
-```
-
-The query is basically ordering the rows in descending order based on the created_at column. Since created_at column is a string based column, it is often slower to order the results this way.
-
-If your database table has an auto incrementing primary key id, then in most cases, the latest row will always have the highest id. Since id field is an integer field and also a primary key, it is much faster to order the results based on this key. So the better way to retrieve latest rows is as below.
-
-```php
-$posts = Post::latest('id')->get();
-// or $posts = Post::orderBy('id', 'desc')->get();
-```
-
-```sql
-select * from posts order by id desc
-```
-
-## optimize MySQL inserts
-
-We so far looked into optimizing select queries for retrieving results from a database. Most cases we only need to optimize the read queries. But sometimes we find a need to optimize insert and update queries. I found an interesting article on optimizing mysql inserts which will helps in optimizling slow inserts and updates.
-
-## Inspect and optimize queries
-
-There is no one universal solution when optimizing queries in laravel. Only you know what your application is doing, how many queries it is making, how many of them are actually in use. So inspecting the queries made by your application will help you determine and reduce the total number of queries made.
-
-There are certain tools which helps you in inspecting the queries made on each and every page.
-
-> Note: It is recommended not to run any of these tools on your production environment. Running these on your production apps will degrade your application performance and when compromised, unauthorized users will get access to sensitive information.
-
-#### 源自[laravel news - 18 Tips to Optimize Your Laravel Database Queries](https://laravel-news.com/18-tips-to-optimize-your-laravel-database-queries)
+#### 源自[多伦多出行完全指南](https://zhuanlan.zhihu.com/p/82464683)
