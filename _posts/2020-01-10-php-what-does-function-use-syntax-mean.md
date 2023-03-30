@@ -3,7 +3,7 @@ layout: post
 title: "PHP: What Does function ...() use () syntax mean?"
 date: 2020-01-10 00:00:00 +0800
 description: "PHP: What Does function ...() use () syntax mean?" # (optional)
-img:  # Add image post (optional)
+img:  "2020-01-10-cover-image-php-function-use-syntax.png" # Add image post (optional)
 fig-caption: "PHP: What Does function ...() use () syntax mean?" # Add figcaption (optional)
 tags: ['PHP','use']
 categories: ['Programming', 'PHP']
