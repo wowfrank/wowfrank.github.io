@@ -155,4 +155,6 @@ categories: ['编程随想', '阮晓寰', '极客', '煽动颠覆国家政权']
 
 阮晓寰年迈的父母也为儿子呼吁：“我们不理解，曾经对国家做出这么多贡献的青年，只是发表了些对腐败与现实不满的看法，就被这样对待。他只是想国家更好，人民更幸福。这样的判决我们不能接受！”他们年事已高，担心等不到被重判的独子回家。
 
+### 备注：CNN报道 [An influential Chinese blogger disappeared from the internet. This woman says she knows why](https://edition.cnn.com/2023/03/29/china/china-blogger-sentenced-program-think-intl-mic-hnk/index.html)
+
 #### 源自[从阮晓寰到“编程随想”：一个普通公民和“极客”如何成了“国家的敌人”？](https://ngocn2.org/article/2023-03-29-program-think-enemy-of-the-state/) 发布于 2023-03-29
