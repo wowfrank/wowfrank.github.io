@@ -3,7 +3,7 @@ layout: post
 title: "The Difference Between static and self in PHP (Notes) "
 date: 2020-02-16 00:00:00 +0800
 description: "The Difference Between static and self in PHP" # (optional)
-img:  # Add image post (optional)
+img:  "2020-02-16-cover-image-php-static-vs-self.jpg" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
 tags: ['static','self', 'PHP']
 categories: ['Programming', 'PHP']
