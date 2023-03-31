@@ -29,7 +29,8 @@ categories: ['python', 'programming language']
 
     1. Standard library imports.
     1. Related third party imports.
-    1. Local application/library specific imports.
+    1. Local application/library specific imports.  
+    
     You should put a blank line between each group of imports.
 15. Absolute imports are recommended
 16. When importing a class from a class-containing module, it’s usually okay to spell this
@@ -201,6 +202,17 @@ categories: ['python', 'programming language']
    1. can act as the key in a dictionary
    2. allows duplicate elements
    3. faster
+
+# Keyword
+
+## Global
+
+1. A global keyword is a keyword that allows a user to modify a variable outside the current scope
+2. If a variable is assigned a value anywhere within the function’s body, it’s assumed to be a local unless explicitly declared as global
+3. Variables that are only referenced inside a function are implicitly global
+4. We use a global keyword to use a global variable inside a function
+5. There is no need to use global keywords outside a function
+6. To access a global variable inside a function, there is no need to use a global keyword
 
 ![编程随想]({{site.baseurl}}/assets/img/2023-03-30/bc-10.jpg)
 
