@@ -25,17 +25,19 @@ categories: ['python', 'programming language']
 12. Code in the core Python distribution should always use UTF-8, and should not have an encoding declaration
 13. Imports should usually be on separate lines
 14. Imports are always put at the top of the file, just after any module comments and docstrings, and before module globals and constants.
+
 Imports should be grouped in the following order:
     1. Standard library imports.
-    1. Related third party imports.
-    1. Local application/library specific imports.
+    2. Related third party imports.
+    3. Local application/library specific imports
+   
 You should put a blank line between each group of imports.
-15. Absolute imports are recommended
-16. When importing a class from a class-containing module, it’s usually okay to spell this
-17. Wildcard imports (from <module> import *) should be avoided
-18. Module level “dunders” (i.e. names with two leading and two trailing underscores) such as __all__, __author__, __version__, etc. should be placed after the module docstring but before any import statements except from __future__ imports
-19. single-quoted strings and double-quoted strings are the same
-20. Avoid extraneous whitespace in the following situations
+1.  Absolute imports are recommended
+2.  When importing a class from a class-containing module, it’s usually okay to spell this
+3.  Wildcard imports (from <module> import *) should be avoided
+4.  Module level “dunders” (i.e. names with two leading and two trailing underscores) such as __all__, __author__, __version__, etc. should be placed after the module docstring but before any import statements except from __future__ imports
+5.  single-quoted strings and double-quoted strings are the same
+6.  Avoid extraneous whitespace in the following situations
     1.  Immediately inside parentheses, brackets or braces: 
     ```python
     # Correct: 
@@ -83,9 +85,9 @@ You should put a blank line between each group of imports.
     y             = 2
     long_variable = 3
     ```
-21. Avoid trailing whitespace anywhere
-22. Always surround these binary operators with a single space on either side
-23. If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies)
+7.  Avoid trailing whitespace anywhere
+8.  Always surround these binary operators with a single space on either side
+9.  If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies)
     ```python
     # Correct:
     i = i + 1
@@ -100,7 +102,7 @@ You should put a blank line between each group of imports.
     hypot2 = x * x + y * y
     c = (a + b) * (a - b)
     ```
-24. Function annotations should use the normal rules for colons and always have spaces around the -> arrow if present
+10. Function annotations should use the normal rules for colons and always have spaces around the -> arrow if present
     ```python
     # Correct:
     def munge(input: AnyStr): ...
@@ -109,7 +111,7 @@ You should put a blank line between each group of imports.
     def munge(input:AnyStr): ...
     def munge()->PosInt: ...
     ```
-25. Don’t use spaces around the = sign when used to indicate a keyword argument, or when used to indicate a default value for an unannotated function parameter
+11. Don’t use spaces around the = sign when used to indicate a keyword argument, or when used to indicate a default value for an unannotated function parameter
     ```python
     # Correct:
     def complex(real, imag=0.0):
@@ -125,7 +127,7 @@ You should put a blank line between each group of imports.
     def munge(input: AnyStr=None): ...
     def munge(input: AnyStr, limit = 1000): ...
     ```
-26. Compound statements (multiple statements on the same line) are generally discouraged
+12. Compound statements (multiple statements on the same line) are generally discouraged
     ```python
     # Correct:
     if foo == 'blah':
@@ -140,25 +142,25 @@ You should put a blank line between each group of imports.
     if foo == 'blah': do_blah_thing()
     do_one(); do_two(); do_three()
     ```
-27. While sometimes it’s okay to put an if/for/while with a small body on the same line, never do this for multi-clause statements. Also avoid folding such long lines
-28. Trailing commas are usually optional, except they are mandatory when making a tuple of one element
-29. Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes!
-30. Block comments generally apply to some (or all) code that follows them, and are indented to the same level as that code
-31. Use inline comments sparingly
-32. Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line
-33. Names that are visible to the user as public parts of the API should follow conventions that reflect usage rather than implementation.
-34. Modules should have short, all-lowercase names. Underscores can be used in the module name if it improves readability
-35. Class names should normally use the CapWords convention.
-36. Names of type variables introduced in PEP 484 should normally use CapWords preferring short names
-37. Because exceptions should be classes, the class naming convention applies here
-38. Function names should be lowercase, with words separated by underscores as necessary to improve readability.
-39. Variable names follow the same convention as function names.
-40. Always use self for the first argument to instance methods.
-41. Always use cls for the first argument to class methods.
-42. Use the function naming rules: lowercase with words separated by underscores as necessary to improve readability.
-43. Use one leading underscore only for non-public methods and instance variables.
-44. To avoid name clashes with subclasses, use two leading underscores to invoke Python’s name mangling rules.
-45. Constants are usually defined on a module level and written in all capital letters with underscores separating words.
+13. While sometimes it’s okay to put an if/for/while with a small body on the same line, never do this for multi-clause statements. Also avoid folding such long lines
+14. Trailing commas are usually optional, except they are mandatory when making a tuple of one element
+15. Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes!
+16. Block comments generally apply to some (or all) code that follows them, and are indented to the same level as that code
+17. Use inline comments sparingly
+18. Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line
+19. Names that are visible to the user as public parts of the API should follow conventions that reflect usage rather than implementation.
+20. Modules should have short, all-lowercase names. Underscores can be used in the module name if it improves readability
+21. Class names should normally use the CapWords convention.
+22. Names of type variables introduced in PEP 484 should normally use CapWords preferring short names
+23. Because exceptions should be classes, the class naming convention applies here
+24. Function names should be lowercase, with words separated by underscores as necessary to improve readability.
+25. Variable names follow the same convention as function names.
+26. Always use self for the first argument to instance methods.
+27. Always use cls for the first argument to class methods.
+28. Use the function naming rules: lowercase with words separated by underscores as necessary to improve readability.
+29. Use one leading underscore only for non-public methods and instance variables.
+30. To avoid name clashes with subclasses, use two leading underscores to invoke Python’s name mangling rules.
+31. Constants are usually defined on a module level and written in all capital letters with underscores separating words.
 
 # Data Types
 
