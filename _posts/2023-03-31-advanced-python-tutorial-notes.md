@@ -26,11 +26,9 @@ categories: ['python', 'programming language']
 13. Imports should usually be on separate lines
 14. Imports are always put at the top of the file, just after any module comments and docstrings, and before module globals and constants.
 Imports should be grouped in the following order:
-
     1. Standard library imports.
     1. Related third party imports.
     1. Local application/library specific imports.
-   
 You should put a blank line between each group of imports.
 15. Absolute imports are recommended
 16. When importing a class from a class-containing module, it’s usually okay to spell this
