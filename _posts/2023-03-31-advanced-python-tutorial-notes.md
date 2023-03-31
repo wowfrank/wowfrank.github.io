@@ -25,13 +25,12 @@ categories: ['python', 'programming language']
 12. Code in the core Python distribution should always use UTF-8, and should not have an encoding declaration
 13. Imports should usually be on separate lines
 14. Imports are always put at the top of the file, just after any module comments and docstrings, and before module globals and constants.  
-Imports should be grouped in the following order:
+    Imports should be grouped in the following order:
 
     1. Standard library imports.
     1. Related third party imports.
     1. Local application/library specific imports.
-   
-You should put a blank line between each group of imports.  
+    You should put a blank line between each group of imports.
 15. Absolute imports are recommended
 16. When importing a class from a class-containing module, it’s usually okay to spell this
 17. Wildcard imports (from <module> import *) should be avoided
@@ -172,10 +171,26 @@ You should put a blank line between each group of imports.
 
 1. list
     1. allows different data types
-    2. allows duplicate  element
-    3. 
+    2. allows duplicate  elements
+    3. slice -> my_list[start:stop:step]
+       1. start is the first element position to include
+       2. stop is exclusive, meaning that the element at position stop won’t be included.
+       3. step is the step size. more on this later
+       4. start, stop, and step are all optional
+       5. Negative values can be used too
+    4. comprehensions
+    ```python
+    [ <expression> for item in list if <conditional> ]
+    [x for x in range(1,10) if x % 2 == 0]
+    ```
+    5. 
 2. dictionaries
+   1. comprehensions
+   ```python
+   {x: x**2 for x in (2, 4, 6)}
+   ```
 3. sets
+   1. no duplicate elements
    
 ## Immutable
 
@@ -183,6 +198,9 @@ You should put a blank line between each group of imports.
 2. booleans
 3. strings
 4. tuples
+   1. can act as the key in a dictionary
+   2. allows duplicate elements
+   3. faster
 
 ![编程随想]({{site.baseurl}}/assets/img/2023-03-30/bc-10.jpg)
 
