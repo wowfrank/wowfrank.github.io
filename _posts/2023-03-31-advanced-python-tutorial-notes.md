@@ -16,9 +16,9 @@ categories: ['python', 'programming language']
 3. All variables should start with a lowercase letter, for example,  var = 4
 4. Functions begin with lowercase
 5. Classes begins with a capital letter
-6. The first letter of a variable, function, or class must be one of the letters (a-z) or (A-Z). Numbers or special characters such as & and% are not allowed
+6. The first letter of a variable, function, or class must be one of the letters (a-z) or (A-Z). Numbers or special characters such as & and % are not allowed
 7. Special characters cannot be used in names
-8. There are reserved words, such as and, if, else, break, import, and more, which are not allowed in naming. All reserved words can be found here
+8. There are reserved words, such as and, if, else, break, import, and more, which are not allowed in naming
 9. Limit all lines to a maximum of 79 characters
 10. Surround top-level function and class definitions with two blank lines
 11. Method definitions inside a class are surrounded by a single blank line
@@ -28,13 +28,13 @@ categories: ['python', 'programming language']
     Imports should be grouped in the following order:
 
     1. Standard library imports.
-    1. Related third party imports.
-    1. Local application/library specific imports.  
+    2. Related third party imports.
+    3. Local application/library specific imports.  
     
     You should put a blank line between each group of imports.
 15. Absolute imports are recommended
 16. When importing a class from a class-containing module, it’s usually okay to spell this
-17. Wildcard imports (from <module> import *) should be avoided
+17. Wildcard imports (from \<module\> import *) should be avoided
 18. Module level “dunders” (i.e. names with two leading and two trailing underscores) such as \_\_all\_\_, \_\_author\_\_, \_\_version\_\_, etc. should be placed after the module docstring but before any import statements except from \_\_future\_\_ imports
 19. single-quoted strings and double-quoted strings are the same
 20. Avoid extraneous whitespace in the following situations
@@ -211,7 +211,7 @@ categories: ['python', 'programming language']
 
 Python’s collections module provides a rich set of specialized container data types carefully designed to approach specific programming problems in a Pythonic and efficient way. The module also provides wrapper classes that make it safer to create custom classes that behave similar to the built-in types dict, list, and str.
 
-# Keyword
+# Keywords
 
 ## Global
 
