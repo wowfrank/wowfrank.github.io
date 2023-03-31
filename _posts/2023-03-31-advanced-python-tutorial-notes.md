@@ -9,7 +9,7 @@ tags: ['python', 'programming language']
 categories: ['python', 'programming language']
 ---
 
-# Rules
+# Rules | Conventions
 
 1. Python is case-sensitive, which means, for example, Name and name have different meanings
 2. Use 4 spaces per indentation level
@@ -172,7 +172,7 @@ categories: ['python', 'programming language']
 
 1. list
     1. allows different data types
-    2. allows duplicate  elements
+    2. allows duplicate elements
     3. slice -> my_list[start:stop:step]
        1. start is the first element position to include
        2. stop is exclusive, meaning that the element at position stop won’t be included.
@@ -184,24 +184,32 @@ categories: ['python', 'programming language']
     [ <expression> for item in list if <conditional> ]
     [x for x in range(1,10) if x % 2 == 0]
     ```
-    5. 
+    5. ordered
 2. dictionaries
    1. comprehensions
    ```python
    {x: x**2 for x in (2, 4, 6)}
    ```
+   2. unordered
 3. sets
    1. no duplicate elements
+   2. unordered
    
 ## Immutable
 
 1. numbers
 2. booleans
 3. strings
+   1. ordered
 4. tuples
    1. can act as the key in a dictionary
    2. allows duplicate elements
-   3. faster
+   3. ordered
+   4. faster
+
+## Collections
+
+Python’s collections module provides a rich set of specialized container data types carefully designed to approach specific programming problems in a Pythonic and efficient way. The module also provides wrapper classes that make it safer to create custom classes that behave similar to the built-in types dict, list, and str.
 
 # Keyword
 
@@ -214,7 +222,7 @@ categories: ['python', 'programming language']
 5. There is no need to use global keywords outside a function
 6. To access a global variable inside a function, there is no need to use a global keyword
 
-![编程随想]({{site.baseurl}}/assets/img/2023-03-30/bc-10.jpg)
+![Advanced Python Tutorial]({{site.baseurl}}/assets/img/2023-03-30/bc-10.jpg)
 
 
 
