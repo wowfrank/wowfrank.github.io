@@ -35,7 +35,7 @@ categories: ['python', 'programming language']
 15. Absolute imports are recommended
 16. When importing a class from a class-containing module, it’s usually okay to spell this
 17. Wildcard imports (from <module> import *) should be avoided
-18. Module level “dunders” (i.e. names with two leading and two trailing underscores) such as __all__, __author__, __version__, etc. should be placed after the module docstring but before any import statements except from __future__ imports
+18. Module level “dunders” (i.e. names with two leading and two trailing underscores) such as \_\_all\_\_, \_\_author\_\_, \_\_version\_\_, etc. should be placed after the module docstring but before any import statements except from \_\_future\_\_ imports
 19. single-quoted strings and double-quoted strings are the same
 20. Avoid extraneous whitespace in the following situations
     1.  Immediately inside parentheses, brackets or braces: 
