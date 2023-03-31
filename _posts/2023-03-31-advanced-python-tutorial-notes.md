@@ -39,21 +39,21 @@ categories: ['python', 'programming language']
 19. single-quoted strings and double-quoted strings are the same
 20. Avoid extraneous whitespace in the following situations
     1.  Immediately inside parentheses, brackets or braces: 
-    ```python
+    ```python:
     # Correct: 
     spam(ham[1], {eggs: 2}) 
     # Wrong: 
     spam( ham[ 1 ], { eggs: 2 } )
     ```
     2.  Between a trailing comma and a following close parenthesis: 
-    ```python
+    ```python:
     # Correct: 
     foo = (0,) 
     # Wrong: 
     bar = (0, )
     ```
     3.  Immediately before a comma, semicolon, or colon: 
-    ```python
+    ```python:
     # Correct: 
     if x == 4: print(x, y); x, y = y, x 
     # Wrong: 
@@ -61,21 +61,21 @@ categories: ['python', 'programming language']
     ```
     4.  However, in a slice the colon acts like a binary operator, and should have equal amounts on either side (treating it as the operator with the lowest priority)
     5.  Immediately before the open parenthesis that starts the argument list of a function call: 
-    ```python
+    ```python:
     # Correct: 
     spam(1) 
     # Wrong: 
     spam (1)
     ```
     6.  Immediately before the open parenthesis that starts an indexing or slicing: 
-    ```python
+    ```python:
     # Correct: 
     dct['key'] = lst[index] 
     # Wrong: 
     dct ['key'] = lst [index]
     ```
     7.  More than one space around an assignment (or other) operator to align it with another:
-    ```python
+    ```python:
     # Correct:
     x = 1
     y = 2
@@ -88,7 +88,7 @@ categories: ['python', 'programming language']
 21. Avoid trailing whitespace anywhere
 22. Always surround these binary operators with a single space on either side
 23. If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies)
-    ```python
+    ```python:
     # Correct:
     i = i + 1
     submitted += 1
@@ -103,7 +103,7 @@ categories: ['python', 'programming language']
     c = (a + b) * (a - b)
     ```
 24. Function annotations should use the normal rules for colons and always have spaces around the -> arrow if present
-    ```python
+    ```python:
     # Correct:
     def munge(input: AnyStr): ...
     def munge() -> PosInt: ...
@@ -112,7 +112,7 @@ categories: ['python', 'programming language']
     def munge()->PosInt: ...
     ```
 25. Don’t use spaces around the = sign when used to indicate a keyword argument, or when used to indicate a default value for an unannotated function parameter
-    ```python
+    ```python:
     # Correct:
     def complex(real, imag=0.0):
         return magic(r=real, i=imag)
@@ -128,7 +128,7 @@ categories: ['python', 'programming language']
     def munge(input: AnyStr, limit = 1000): ...
     ```
 26. Compound statements (multiple statements on the same line) are generally discouraged
-    ```python
+    ```python:
     # Correct:
     if foo == 'blah':
         do_blah_thing()
@@ -161,6 +161,10 @@ categories: ['python', 'programming language']
 43. Use one leading underscore only for non-public methods and instance variables.
 44. To avoid name clashes with subclasses, use two leading underscores to invoke Python’s name mangling rules.
 45. Constants are usually defined on a module level and written in all capital letters with underscores separating words.
+46. We can make an instance variable private by adding double underscores (\_\_) before its name
+47. We can make an instance variable protected by adding single underscores (\_) before its name
+48. All objects share class or static variables
+49. All variables which are assigned a value in the class declaration are class variables. And variables that are assigned values inside methods are instance variables
 
 
 
@@ -180,14 +184,14 @@ categories: ['python', 'programming language']
        4. start, stop, and step are all optional
        5. Negative values can be used too
     4. comprehensions
-    ```python
+    ```python:
     [ <expression> for item in list if <conditional> ]
     [x for x in range(1,10) if x % 2 == 0]
     ```
     5. ordered
 2. dictionaries
    1. comprehensions
-   ```python
+   ```python:
    {x: x**2 for x in (2, 4, 6)}
    ```
    2. unordered
