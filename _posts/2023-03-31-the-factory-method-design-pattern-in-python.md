@@ -335,6 +335,71 @@ You can now look at the serialization problem from previous examples and provide
 
 # An Object Serialization Example
 
+The basic requirements for the example above are that you want to serialize Song objects into their string representation. It seems the application provides features related to music, so it is plausible that the application will need to serialize other type of objects like Playlist or Album.
+
+Ideally, the design should support adding serialization for new objects by implementing new classes without requiring changes to the existing implementation. The application requires objects to be serialized to multiple formats like JSON and XML, so it seems natural to define an interface Serializer that can have multiple implementations, one per format.
+
+The interface implementation might look something like this:
+
+```python
+# In serializers.py
+
+import json
+import xml.etree.ElementTree as et
+
+class JsonSerializer:
+    def __init__(self):
+        self._current_object = None
+
+    def start_object(self, object_name, object_id):
+        self._current_object = {
+            'id': object_id
+        }
+
+    def add_property(self, name, value):
+        self._current_object[name] = value
+
+    def to_str(self):
+        return json.dumps(self._current_object)
+
+
+class XmlSerializer:
+    def __init__(self):
+        self._element = None
+
+    def start_object(self, object_name, object_id):
+        self._element = et.Element(object_name, attrib={'id': object_id})
+
+    def add_property(self, name, value):
+        prop = et.SubElement(self._element, name)
+        prop.text = value
+
+    def to_str(self):
+        return et.tostring(self._element, encoding='unicode')
+```
+
+```
+Note: The example above doesn’t implement a full Serializer interface, but it should be good enough for our purposes and to demonstrate Factory Method.
+```
+
+The Serializer interface is an abstract concept due to the dynamic nature of the Python language. Static languages like Java or C# require that interfaces be explicitly defined. In Python, any object that provides the desired methods or functions is said to implement the interface. The example defines the Serializer interface to be an object that implements the following methods or functions:
+
+- start_object(object_name, object_id)
+- add_property(name, value)
+- to_str()
+This interface is implemented by the concrete classes JsonSerializer and XmlSerializer.
+
+The original example used a SongSerializer class. For the new application, you will implement something more generic, like ObjectSerializer:
+
+```python
+# In serializers.py
+
+class ObjectSerializer:
+    def serialize(self, serializable, format):
+        serializer = factory.get_serializer(format)
+        serializable.serialize(serializer)
+        return serializer.to_str()
+```
 
 
 ![Advanced Python Tutorial]({{site.baseurl}}/assets/img/2023-03-30/bc-10.jpg)
