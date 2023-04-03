@@ -47,18 +47,67 @@ In addition, all patterns can be categorized by their _intent_, or purpose. This
    
     These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.
 
-  - Abstract Factory: Creates an instance of several families of classes  
-    - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
-    - A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
-    - The new operator considered harmful
-  - Builder: Separates object construction from its representation 
-    - Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-    - Parse a complex representation, create one of several targets.
-  - Factory Method: Creates an instance of several derived classes
-  - Object Pool: Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
-  - Prototype: A fully initialized instance to be copied or cloned
-  - Singleton: A class of which only a single instance can exist
+    - Abstract Factory: Creates an instance of several families of classes  
+        - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+        - A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
+        - The new operator considered harmful
+    - Builder: Separates object construction from its representation 
+        - Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+        - Parse a complex representation, create one of several targets.
+    - Factory Method: Creates an instance of several derived classes
+        - Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+        - Defining a "virtual" constructor.
+        - The new operator considered harmful.
+    - Object Pool: Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
+        - Object pooling can offer a significant performance boost; it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
+    - Prototype: A fully initialized instance to be copied or cloned
+        - Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+        - Co-opt one instance of a class for use as a breeder of all future instances.
+        - The new operator considered harmful.
+    - Singleton: A class of which only a single instance can exist
+        - Ensure a class has only one instance, and provide a global point of access to it.
+        - Encapsulated "just-in-time initialization" or "initialization on first use".
 
+        ```python
+        """
+        Ensure a class only has one instance, and provide a global point of
+        access to it.
+        """
+
+
+        class Singleton(type):
+            """
+            Define an Instance operation that lets clients access its unique
+            instance.
+            """
+
+            def __init__(cls, name, bases, attrs, **kwargs):
+                super().__init__(name, bases, attrs)
+                cls._instance = None
+
+            def __call__(cls, *args, **kwargs):
+                if cls._instance is None:
+                    cls._instance = super().__call__(*args, **kwargs)
+                return cls._instance
+
+
+        class MyClass(metaclass=Singleton):
+            """
+            Example class.
+            """
+
+            pass
+
+
+        def main():
+            m1 = MyClass()
+            m2 = MyClass()
+            assert m1 is m2
+
+
+        if __name__ == "__main__":
+            main()
+        ```
 
 - **Structural patterns** explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.
   
