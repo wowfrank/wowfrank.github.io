@@ -51,19 +51,382 @@ In addition, all patterns can be categorized by their _intent_, or purpose. This
         - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
         - A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
         - The **_new_** operator considered harmful
+        
+        ```python
+        """
+        Provide an interface for creating families of related or dependent
+        objects without specifying their concrete classes.
+        """
+
+        import abc
+
+
+        class AbstractFactory(metaclass=abc.ABCMeta):
+            """
+            Declare an interface for operations that create abstract product
+            objects.
+            """
+
+            @abc.abstractmethod
+            def create_product_a(self):
+                pass
+
+            @abc.abstractmethod
+            def create_product_b(self):
+                pass
+
+
+        class ConcreteFactory1(AbstractFactory):
+            """
+            Implement the operations to create concrete product objects.
+            """
+
+            def create_product_a(self):
+                return ConcreteProductA1()
+
+            def create_product_b(self):
+                return ConcreteProductB1()
+
+
+        class ConcreteFactory2(AbstractFactory):
+            """
+            Implement the operations to create concrete product objects.
+            """
+
+            def create_product_a(self):
+                return ConcreteProductA2()
+
+            def create_product_b(self):
+                return ConcreteProductB2()
+
+
+        class AbstractProductA(metaclass=abc.ABCMeta):
+            """
+            Declare an interface for a type of product object.
+            """
+
+            @abc.abstractmethod
+            def interface_a(self):
+                pass
+
+
+        class ConcreteProductA1(AbstractProductA):
+            """
+            Define a product object to be created by the corresponding concrete
+            factory.
+            Implement the AbstractProduct interface.
+            """
+
+            def interface_a(self):
+                pass
+
+
+        class ConcreteProductA2(AbstractProductA):
+            """
+            Define a product object to be created by the corresponding concrete
+            factory.
+            Implement the AbstractProduct interface.
+            """
+
+            def interface_a(self):
+                pass
+
+
+        class AbstractProductB(metaclass=abc.ABCMeta):
+            """
+            Declare an interface for a type of product object.
+            """
+
+            @abc.abstractmethod
+            def interface_b(self):
+                pass
+
+
+        class ConcreteProductB1(AbstractProductB):
+            """
+            Define a product object to be created by the corresponding concrete
+            factory.
+            Implement the AbstractProduct interface.
+            """
+
+            def interface_b(self):
+                pass
+
+
+        class ConcreteProductB2(AbstractProductB):
+            """
+            Define a product object to be created by the corresponding concrete
+            factory.
+            Implement the AbstractProduct interface.
+            """
+
+            def interface_b(self):
+                pass
+
+
+        def main():
+            for factory in (ConcreteFactory1(), ConcreteFactory2()):
+                product_a = factory.create_product_a()
+                product_b = factory.create_product_b()
+                product_a.interface_a()
+                product_b.interface_b()
+
+
+        if __name__ == "__main__":
+            main()
+        ```
     - Builder: Separates object construction from its representation 
         - Separate the construction of a complex object from its representation so that the same construction process can create different representations.
         - Parse a complex representation, create one of several targets.
+        
+        ```python
+        """
+        Separate the construction of a complex object from its representation so
+        that the same construction process can create different representations.
+        """
+
+        import abc
+
+
+        class Director:
+            """
+            Construct an object using the Builder interface.
+            """
+
+            def __init__(self):
+                self._builder = None
+
+            def construct(self, builder):
+                self._builder = builder
+                self._builder._build_part_a()
+                self._builder._build_part_b()
+                self._builder._build_part_c()
+
+
+        class Builder(metaclass=abc.ABCMeta):
+            """
+            Specify an abstract interface for creating parts of a Product
+            object.
+            """
+
+            def __init__(self):
+                self.product = Product()
+
+            @abc.abstractmethod
+            def _build_part_a(self):
+                pass
+
+            @abc.abstractmethod
+            def _build_part_b(self):
+                pass
+
+            @abc.abstractmethod
+            def _build_part_c(self):
+                pass
+
+
+        class ConcreteBuilder(Builder):
+            """
+            Construct and assemble parts of the product by implementing the
+            Builder interface.
+            Define and keep track of the representation it creates.
+            Provide an interface for retrieving the product.
+            """
+
+            def _build_part_a(self):
+                pass
+
+            def _build_part_b(self):
+                pass
+
+            def _build_part_c(self):
+                pass
+
+
+        class Product:
+            """
+            Represent the complex object under construction.
+            """
+
+            pass
+
+
+        def main():
+            concrete_builder = ConcreteBuilder()
+            director = Director()
+            director.construct(concrete_builder)
+            product = concrete_builder.product
+
+
+        if __name__ == "__main__":
+            main()
+        ```
     - Factory Method: Creates an instance of several derived classes
         - Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
         - Defining a "virtual" constructor.
         - The **_new_** operator considered harmful.
+        
+        ```python
+        """
+        Define an interface for creating an object, but let subclasses decide
+        which class to instantiate. Factory Method lets a class defer
+        instantiation to subclasses.
+        """
+
+        import abc
+
+
+        class Creator(metaclass=abc.ABCMeta):
+            """
+            Declare the factory method, which returns an object of type Product.
+            Creator may also define a default implementation of the factory
+            method that returns a default ConcreteProduct object.
+            Call the factory method to create a Product object.
+            """
+
+            def __init__(self):
+                self.product = self._factory_method()
+
+            @abc.abstractmethod
+            def _factory_method(self):
+                pass
+
+            def some_operation(self):
+                self.product.interface()
+
+
+        class ConcreteCreator1(Creator):
+            """
+            Override the factory method to return an instance of a
+            ConcreteProduct1.
+            """
+
+            def _factory_method(self):
+                return ConcreteProduct1()
+
+
+        class ConcreteCreator2(Creator):
+            """
+            Override the factory method to return an instance of a
+            ConcreteProduct2.
+            """
+
+            def _factory_method(self):
+                return ConcreteProduct2()
+
+
+        class Product(metaclass=abc.ABCMeta):
+            """
+            Define the interface of objects the factory method creates.
+            """
+
+            @abc.abstractmethod
+            def interface(self):
+                pass
+
+
+        class ConcreteProduct1(Product):
+            """
+            Implement the Product interface.
+            """
+
+            def interface(self):
+                pass
+
+
+        class ConcreteProduct2(Product):
+            """
+            Implement the Product interface.
+            """
+
+            def interface(self):
+                pass
+
+
+        def main():
+            concrete_creator = ConcreteCreator1()
+            concrete_creator.product.interface()
+            concrete_creator.some_operation()
+
+
+        if __name__ == "__main__":
+            main()
+        ```
     - Object Pool: Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
         - Object pooling can offer a significant performance boost; it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
+        
+        ```python
+        """
+        Offer a significant performance boost; it is most effective in
+        situations where the cost of initializing a class instance is high, the
+        rate of instantiation of a class is high, and the number of
+        instantiations in use at any one time is low.
+        """
+
+
+        class ReusablePool:
+            """
+            Manage Reusable objects for use by Client objects.
+            """
+
+            def __init__(self, size):
+                self._reusables = [Reusable() for _ in range(size)]
+
+            def acquire(self):
+                return self._reusables.pop()
+
+            def release(self, reusable):
+                self._reusables.append(reusable)
+
+
+        class Reusable:
+            """
+            Collaborate with other objects for a limited amount of time, then
+            they are no longer needed for that collaboration.
+            """
+
+            pass
+
+
+        def main():
+            reusable_pool = ReusablePool(10)
+            reusable = reusable_pool.acquire()
+            reusable_pool.release(reusable)
+
+
+        if __name__ == "__main__":
+            main()
+        ```
     - Prototype: A fully initialized instance to be copied or cloned
         - Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
         - Co-opt one instance of a class for use as a breeder of all future instances.
         - The **_new_** operator considered harmful.
+        
+        ```python
+        """
+        Specify the kinds of objects to create using a prototypical instance,
+        and create new objects by copying this prototype.
+        """
+
+        import copy
+
+
+        class Prototype:
+            """
+            Example class to be copied.
+            """
+
+            pass
+
+
+        def main():
+            prototype = Prototype()
+            prototype_copy = copy.deepcopy(prototype)
+
+
+        if __name__ == "__main__":
+            main()
+        ```
     - Singleton: A class of which only a single instance can exist
         - Ensure a class has only one instance, and provide a global point of access to it.
         - Encapsulated "just-in-time initialization" or "initialization on first use".
@@ -117,6 +480,56 @@ In addition, all patterns can be categorized by their _intent_, or purpose. This
         - Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
         - Wrap an existing class with a new interface.
         - Impedance match an old component to a new system
+        
+        ```python
+        """
+        Convert the interface of a class into another interface clients expect.
+        Adapter lets classes work together that couldn't otherwise because of
+        incompatible interfaces.
+        """
+
+        import abc
+
+
+        class Target(metaclass=abc.ABCMeta):
+            """
+            Define the domain-specific interface that Client uses.
+            """
+
+            def __init__(self):
+                self._adaptee = Adaptee()
+
+            @abc.abstractmethod
+            def request(self):
+                pass
+
+
+        class Adapter(Target):
+            """
+            Adapt the interface of Adaptee to the Target interface.
+            """
+
+            def request(self):
+                self._adaptee.specific_request()
+
+
+        class Adaptee:
+            """
+            Define an existing interface that needs adapting.
+            """
+
+            def specific_request(self):
+                pass
+
+
+        def main():
+            adapter = Adapter()
+            adapter.request()
+
+
+        if __name__ == "__main__":
+            main()
+    ```
     - Bridge: Separates an object’s interface from its implementation
         - Decouple an abstraction from its implementation so that the two can vary independently.
         - Publish interface in an inheritance hierarchy, and bury implementation in its own inheritance hierarchy.
