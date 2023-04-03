@@ -158,4 +158,4 @@ In addition, all patterns can be categorized by their _intent_, or purpose. This
 #### 参考
 
   - [DESIGN PATTERNS in PYTHON](https://refactoring.guru/design-patterns/python)
-  - [Design Patterns](https://sourcemaking.com/design_patterns)
+  - 有具体代码例子 [Design Patterns](https://sourcemaking.com/design_patterns)
