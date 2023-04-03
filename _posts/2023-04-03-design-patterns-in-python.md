@@ -48,13 +48,13 @@ In addition, all patterns can be categorized by their _intent_, or purpose. This
 
   - Abstract Factory
   Creates an instance of several families of classes  
-      - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
-      - A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
-      - The new operator considered harmful
+    - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+    - A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
+    - The new operator considered harmful
   - Builder
   Separates object construction from its representation 
-      - Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-      - Parse a complex representation, create one of several targets.
+    - Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+    - Parse a complex representation, create one of several targets.
   - Factory Method
   Creates an instance of several derived classes
   - Object Pool
