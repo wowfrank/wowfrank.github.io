@@ -226,8 +226,35 @@ Python’s collections module provides a rich set of specialized container data 
 5. There is no need to use global keywords outside a function
 6. To access a global variable inside a function, there is no need to use a global keyword
 
-![Advanced Python Tutorial]({{site.baseurl}}/assets/img/2023-03-30/bc-10.jpg)
+## lambda
 
+```python
+add10 = lambda x: x + 10
+print(add10(5))
 
+def add10_func(x):
+    return x + 10
+```
 
-#### 源自[从阮晓寰到“编程随想”：一个普通公民和“极客”如何成了“国家的敌人”？](https://ngocn2.org/article/2023-03-29-program-think-enemy-of-the-state/) 发布于 2023-03-29
+## map
+
+map(func, seq)
+
+```python
+a = [1, 2, 3, 4, 5]
+b = map(lambda x: x*2, a)
+
+c = [x*2 for x in a]
+```
+
+## filter
+
+filter(func, seq)
+
+```python
+a = [1, 2, 3, 4, 5 , 6]
+b = map(lambda x: x%2==0, a)
+
+c = [x for x in a if x%2==0]
+```
+

@@ -900,5 +900,4 @@ Also, [Heads First Design Patterns: A Brain-Friendly Guide](https://realpython.c
 Wikipedia has a good catalog of [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern) with links to pages for the most common and useful patterns.
 
 
-
-#### 源自[The Factory Method Pattern and Its Implementation in Python](https://realpython.com/factory-method-python/#:~:text=Factory%20Method%20is%20a%20creational,interface%20to%20perform%20its%20tasks.)
+#### 源自[The Factory Method Pattern and Its Implementation in Python](https://realpython.com/factory-method-python/#:~:text=Factory%20Method%20is%20a%20creational,interface%20to%20perform%20its%20tasks)
