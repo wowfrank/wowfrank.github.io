@@ -43,22 +43,26 @@ The most universal and high-level patterns are **architectural patterns**. Devel
 
 In addition, all patterns can be categorized by their _intent_, or purpose. This book covers three main groups of patterns:
 
-- **Creational patterns** provide object creation mechanisms that increase flexibility and reuse of existing code.
+- **Creational patterns** provide object creation mechanisms that increase flexibility and reuse of existing code.  
+  These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.
 
-These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.
-
-    - Abstract Factory
-    Creates an instance of several families of classes
-    - Builder
-    Separates object construction from its representation
-    - Factory Method
-    Creates an instance of several derived classes
-    - Object Pool
-    Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
-    - Prototype
-    A fully initialized instance to be copied or cloned
-    - Singleton
-    A class of which only a single instance can exist
+  - Abstract Factory
+  Creates an instance of several families of classes  
+      - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+      - A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
+      - The new operator considered harmful
+  - Builder
+  Separates object construction from its representation 
+      - Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+      - Parse a complex representation, create one of several targets.
+  - Factory Method
+  Creates an instance of several derived classes
+  - Object Pool
+  Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
+  - Prototype
+  A fully initialized instance to be copied or cloned
+  - Singleton
+  A class of which only a single instance can exist
 
 
 - **Structural patterns** explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.
