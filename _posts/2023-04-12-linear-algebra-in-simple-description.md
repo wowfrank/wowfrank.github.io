@@ -57,12 +57,12 @@ categories: ['math', 'linear algebra']
 
 向量空间**_V_**是一个集合，其元素是向量。该集合对于其元素向量的加法及数乘两种运算封闭。即：
 
-- 若a∈V, b∈V，则a+b∈V
+- 若$a∈V$, b∈V，则a+b∈V
 - 若a∈V, k∈R，则ka∈V
 
 > 你可能不知道，向量空间又叫线性空间。
 
-向量空间并不一定是$R^{n}$，也可以是它们的子集。下面几个空间也是向量空间：
+向量空间并不一定是$R^n$，也可以是它们的子集。下面几个空间也是向量空间：
 
 ![Linear Algebra]({{site.baseurl}}/assets/img/2023-04-12/v2-4874d0bce36816a344721d32ad1ca59a_720w.webp)
 
@@ -101,6 +101,26 @@ categories: ['math', 'linear algebra']
 
 ![Linear Algebra]({{site.baseurl}}/assets/img/2023-04-12/v2-fe0437b8aa6016d0c4512dfbaec9fefa_720w.webp)
 
+向量空间的基：如果一个线性无关的向量组 
+ 张成向量空间 
+ ，则称向量组 
+ 是空间 
+ 的一个基。
+
+基有这么个性质： 
+ 中的任何向量 
+ 都可被唯一地表示为：
+
+![Linear Algebra]({{site.baseurl}}/assets/img/2023-04-12/v2-81583779a40d6308026e5089984d172b_720w.webp)
+
+**向量空间的维度**：就是一组基的向量个数。
+
+
+其中 
+（
+ 就相当于 
+ 在这组基中的坐标。如果 
+ 是标准基（或自然基），其实就变成直角坐标系了。
 
 
 
