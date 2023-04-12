@@ -64,6 +64,45 @@ categories: ['math', 'linear algebra']
 
 向量空间并不一定是$R^{n}$，也可以是它们的子集。下面几个空间也是向量空间：
 
+![Linear Algebra]({{site.baseurl}}/assets/img/2023-04-12/v2-4874d0bce36816a344721d32ad1ca59a_720w.webp)
+
+向量组：就是 
+ 中的一组向量。显然，它们是同维度的。
+
+向量组合：对 
+ 中的一组向量 
+ ，指定一组实数 
+, 那么向量
+ 称为该向量组的线性组合，或者说 
+ 能被这组向量线性表示。
+
+举个例子：对于 
+ 这三个向量：
+
+![Linear Algebra]({{site.baseurl}}/assets/img/2023-04-12/v2-17a4364803773016eabf7924def5aec8_720w.webp)
+
+那么黄色就是 
+ 的线性组合：
+
+![Linear Algebra]({{site.baseurl}}/assets/img/2023-04-12/v2-857cc37336ed6222982c77e01f0f1564_720w.webp)
+
+线性相关与线性无关：向量组中的任一向量都不能被其它向量线性表示，就说向量组线性无关；否则就是线性相关。
+
+再举个例子： 
+ 是线性无关的， 
+黄
+ 是线性相关的。
+
+张成空间：一个向量组 
+ 的所有线性组合构成的集合 
+ （显然是个向量空间），称为该向量组的张成空间，记为 
+ . 或称该向量组张成 
+ 。
+
+![Linear Algebra]({{site.baseurl}}/assets/img/2023-04-12/v2-fe0437b8aa6016d0c4512dfbaec9fefa_720w.webp)
+
+
+
 
 
 
