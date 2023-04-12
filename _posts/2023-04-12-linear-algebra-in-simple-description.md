@@ -57,8 +57,8 @@ categories: ['math', 'linear algebra']
 
 向量空间**_V_**是一个集合，其元素是向量。该集合对于其元素向量的加法及数乘两种运算封闭。即：
 
-- 若$a∈V$, b∈V，则a+b∈V
-- 若a∈V, k∈R，则ka∈V
+- 若$a \in V$, $b \in V$，则$a+b \in V$
+- 若$a \in V$, $k \in R$，则$ka \in V$
 
 > 你可能不知道，向量空间又叫线性空间。
 
