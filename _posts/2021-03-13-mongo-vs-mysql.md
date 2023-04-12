@@ -6,7 +6,7 @@ description: "MongoDB vs MySQL: A Comparative Study on Databases" # (optional)
 img: 2021-03-13-cover-image-of-mongo-vs-mysql.png # Add image post (optional)
 fig-caption: "MongoDB vs MySQL: A Comparative Study on Databases" # Add figcaption (optional)
 tags: ['Programming', 'MySQL', 'MongoDB']
-categories: ['Programming', 'MySQL', 'MongoDB']
+categories: ['Database', 'MySQL', 'MongoDB']
 ---
 
 ## Introduction

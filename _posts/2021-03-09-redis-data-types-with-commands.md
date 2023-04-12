@@ -5,8 +5,8 @@ date: 2021-03-09 00:07:00 +0800
 description: "Redis Data Types With Commands: Comprehensive Guid" # (optional)
 img: 2021-03-09-cover-image-of-redis-data-types-with-commands.png # Add image post (optional)
 fig-caption: "Redis Data Types With Commands: Comprehensive Guid" # Add figcaption (optional)
-tags: ['Programming', 'REDIS']
-categories: ['Programming', 'REDIS']
+tags: ['Programming', 'Redis']
+categories: ['Database', 'Redis']
 ---
 
 ## Introduction

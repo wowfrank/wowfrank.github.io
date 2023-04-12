@@ -5,8 +5,8 @@ date: 2021-03-28 00:07:00 +0800
 description: "18 Tips to Optimize Your Laravel Database Queries" # (optional)
 img: 2021-03-28-cover-image-of-18-tips-to-optimize-your-laravel-database-queries.png # Add image post (optional)
 fig-caption: "18 Tips to Optimize Your Laravel Database Queries" # Add figcaption (optional)
-tags: ['Programming', 'Laravel']
-categories: ['Programming', 'Laravel']
+tags: ['Programming', 'Laravel', 'PHP']
+categories: ['Programming', 'PHP', 'Laravel']
 ---
 
 If your application is running slow or making a lot of database queries, follow the below performance optimization tips to improve your application loading time.

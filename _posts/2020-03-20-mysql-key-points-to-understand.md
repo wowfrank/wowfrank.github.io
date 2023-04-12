@@ -6,7 +6,7 @@ description: 可能是全网最好的MySQL重要知识点 # Add post description
 img: live-streaming-code-encapsulation.jpg # Add image post (optional)
 fig-caption: 可能是全网最好的MySQL重要知识点 # Add figcaption (optional)
 tags: ['MySQL']
-categories: ['MySQL']
+categories: ['Database', 'MySQL']
 ---
 
 > 出处：[可能是全网最好的MySQL重要知识点](https://segmentfault.com/a/1190000019619667) 作者：Snailclimb 

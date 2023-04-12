@@ -6,7 +6,7 @@ description: "鸡尾酒调制配方大全，6分钟学会在家调酒" # (option
 img: "2023-03-30-cover-image-cocktail-tutorial.jpg" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
 tags: ['调酒', '鸡尾酒']
-categories: ['调酒', '鸡尾酒']
+categories: ['cocktail']
 ---
 
 **这是阉割版，仅仅记录了一些我需要的内容，详情请参考原博文**。

@@ -5,8 +5,8 @@ date: 2021-03-21 00:07:00 +0800
 description: "Create own custom helper functions / Classes in Laravel" # (optional)
 img: 2021-03-21-cover-image-of-laravel-custom-helpers.png # Add image post (optional)
 fig-caption: "Create own custom helper functions / Classes in Laravel" # Add figcaption (optional)
-tags: ['Programming', 'Laravel']
-categories: ['Programming', 'Laravel']
+tags: ['Programming', 'Laravel', 'PHP']
+categories: ['Programming', 'PHP', 'Laravel']
 ---
 
 As a programmer, we all need to write some helper functions to reduce repetitive code to speed up our development. Normally Helper functions are the generalised functions to avoid repeating codes.

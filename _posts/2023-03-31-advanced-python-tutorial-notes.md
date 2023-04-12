@@ -5,8 +5,8 @@ date: "2023-03-31 00:09:00 +0800"
 description: "Advanced Python Tutorial Notes" # (optional)
 img: "2023-03-31-cover-advanced-python-tutorial-notes.jpg" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
-tags: ['python', 'programming language']
-categories: ['python', 'programming language']
+tags: ['python', 'programming language'， 'python']
+categories: ['python']
 ---
 
 # Rules | Conventions

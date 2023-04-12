@@ -6,7 +6,7 @@ description: "Design Patterns in Python" # (optional)
 img: "2023-04-03-cover-image-design-patterns-in-python.png" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
 tags: ['python', 'programming language', 'design pattern']
-categories: ['python', 'programming language', 'design pattern']
+categories: ['python', 'design pattern']
 ---
 
 # What's a design pattern?

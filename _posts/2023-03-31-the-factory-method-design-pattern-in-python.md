@@ -6,7 +6,7 @@ description: "The Factory Method Pattern in Python" # (optional)
 img: "2023-03-31-cover-image-the-factory-method-design-pattern-in-python.webp" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
 tags: ['python', 'programming language', 'design pattern']
-categories: ['python', 'programming language', 'design pattern']
+categories: ['python', 'design pattern']
 ---
 
 # Definition

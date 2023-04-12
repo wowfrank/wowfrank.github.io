@@ -6,7 +6,7 @@ description: "OOP: Extends VS Implements" # (optional)
 img: oop-implements-and-extends.jpg # Add image post (optional)
 fig-caption: "OOP: Extends VS Implements" # Add figcaption (optional)
 tags: ['Programming', 'Golang', 'PHP', 'JAVA']
-categories: ['Programming', 'Golang', 'PHP', 'JAVA']
+categories: ['Programming']
 ---
 
 ## OOP: Extends VS Implements (OverView)

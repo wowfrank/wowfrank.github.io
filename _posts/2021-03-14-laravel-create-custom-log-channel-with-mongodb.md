@@ -6,7 +6,7 @@ description: "How to Create Custom Log Channel With MongoDb in Laravel" # (optio
 img: 2021-03-14-cover-image-of-log-channels-stacks-laravel-header.png # Add image post (optional)
 fig-caption: "How to Create Custom Log Channel With MongoDb in Laravel" # Add figcaption (optional)
 tags: ['Programming', 'Laravel', 'MongoDB', 'Log']
-categories: ['Programming', 'Laravel', 'MongoDB', 'Log']
+categories: ['Programming', 'PHP', 'Laravel']
 ---
 
 ## First Comes First

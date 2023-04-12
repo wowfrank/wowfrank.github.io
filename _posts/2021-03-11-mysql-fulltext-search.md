@@ -6,7 +6,7 @@ description: "MySQL Full-Text Search" # (optional)
 img: 2021-03-11-cover-image-of-mysql-fulltext-search.jpg # Add image post (optional)
 fig-caption: "MySQL Full-Text Search" # Add figcaption (optional)
 tags: ['Programming', 'MySQL']
-categories: ['Programming', 'MySQL']
+categories: ['Database', 'MySQL']
 ---
 
 ## Introduction

@@ -5,8 +5,8 @@ date: 2021-03-07 00:07:00 +0800
 description: "Working with JSON in MYSQL" # (optional)
 img: 2021-03-07-cover-image-of-working-with-json-in-mysql.png # Add image post (optional)
 fig-caption: "Working with JSON in MYSQL" # Add figcaption (optional)
-tags: ['Programming', 'JSON']
-categories: ['Programming', 'JSON']
+tags: ['Programming', 'JSON', 'MySQL']
+categories: ['MySQL', 'JSON']
 ---
 
 ## Introduction

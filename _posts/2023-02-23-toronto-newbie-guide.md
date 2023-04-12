@@ -5,7 +5,7 @@ date: "2023-02-23 00:07:00 +0800"
 description: "Toronto Newbie Guide, including bus, taxi, bike, and etc" # (optional)
 img: "2021-03-28-cover-image-of-toronto-newbie-guide.jpg" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
-tags: ['Canada', 'Life']
+tags: ['Canada', 'Life', 'Toronto']
 categories: ['Canada', 'Life']
 ---
 

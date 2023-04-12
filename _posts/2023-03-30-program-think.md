@@ -6,7 +6,7 @@ description: "从阮晓寰到“编程随想”：一个普通公民和“极客
 img: "2023-03-30-cover-image-program-think.jpeg" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
 tags: ['编程随想', '阮晓寰', '极客', '煽动颠覆国家政权']
-categories: ['编程随想', '阮晓寰', '极客', '煽动颠覆国家政权']
+categories: ['思想自由']
 ---
 
 > 这是一个什么样的世界？一个以优秀来形容都觉得欠缺的人才，就这样被判刑7年。我深深的有一种兔死狐悲的感觉，想为他发声，却不敢，也没有能力。<!--more-->就记录一下这篇文章，以提醒自己，同时也思考一下：
