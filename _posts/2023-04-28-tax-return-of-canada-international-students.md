@@ -58,7 +58,7 @@ categories: ['Canada', 'Life']
 
 ![加拿大报税]({{site.baseurl}}/assets/img/2023-04-23/v2-b1cafa4d617e2ffbc0fba7a4db97166a_720w.webp)
 
-第一次报税所需材料
+## 第一次报税所需材料
 
 1. **社会保险号(Social Insurance Number)**  
    也就是俗称的工卡号所有post-secondary的学签都允许学生校外打工。学生需要去Service Canada 办理并取得工卡号。如果学生是第一次报税，又没有社会保险卡号，则需要向税务局申请Individual Tax Number(ITN),即临时税号，一个0开头的9位号码。
