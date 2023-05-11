@@ -50,44 +50,47 @@ print(response)
 ## Prompting Principles
 
 1. Principle 1: Write clear and specific instructions
-  - Tactic 1: Use delimiters to clearly indicate distinct parts of the input: ```, """, \< \>, \<tag\> \<\/tag\>, :
+  - Tactic 1: Use delimiters to clearly indicate distinct parts of the input: ```, """, \< \>, \<tag\> \</tag\>, :
     - eg:
-   ```python
-   prompt = f"""
-   Summarize the text delimited by triple backticks \ 
-   into a single sentence.
-   ```{text}```
-   """
-   ```
+      ```python
+      prompt = f"""
+      Summarize the text delimited by triple backticks \ 
+      into a single sentence.
+      ```{text}```
+      """
+      ```
+
   - Ask for a structured output: JSON, HTML
     - eg:
-   ```python
-   prompt = f"""
-   Generate a list of three made-up book titles along \ 
-   with their authors and genres. 
-   Provide them in JSON format with the following keys: 
-   book_id, title, author, genre.
-   """
-   ```
+      ```python
+      prompt = f"""
+      Generate a list of three made-up book titles along \ 
+      with their authors and genres. 
+      Provide them in JSON format with the following keys: 
+      book_id, title, author, genre.
+      """
+      ```
+
   - Ask the model to check whether conditions are satisfied
     - eg:
-   ```python
-   prompt = f"""
-   You will be provided with text delimited by triple quotes. 
-   If it contains a sequence of instructions, \ 
-   re-write those instructions in the following format:
+      ```python
+      prompt = f"""
+      You will be provided with text delimited by triple quotes. 
+      If it contains a sequence of instructions, \ 
+      re-write those instructions in the following format:
 
-   Step 1 - ...
-   Step 2 - …
-   …
-   Step N - …
+      Step 1 - ...
+      Step 2 - …
+      …
+      Step N - …
 
-   If the text does not contain a sequence of instructions, \ 
-   then simply write \"No steps provided.\"
+      If the text does not contain a sequence of instructions, \ 
+      then simply write \"No steps provided.\"
 
-   \"\"\"{text_1}\"\"\"
-   """
-   ```
+      \"\"\"{text_1}\"\"\"
+      """
+      ```
+      
   - "Few-shot" prompting
     - eg:
    ```python
