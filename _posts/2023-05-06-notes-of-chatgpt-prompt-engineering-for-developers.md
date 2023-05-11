@@ -133,6 +133,7 @@ print(response)
       ```
 
   - Instruct the model to work out its own solution before rushing to a conclusion
+      
       ```python
       prompt = f"""
       Your task is to determine if the student's solution \
