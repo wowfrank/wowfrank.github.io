@@ -9,7 +9,43 @@ tags: ['ChatGPT', 'Prompt', 'AI']
 categories: ['ChatGPT', 'AI']
 ---
 
+## Setup
 
+```python
+import os
+import openai
+from dotenv import load_dotenv, find_dotenv
+_ = load_dotenv(find_dotenv()) # read local .env file
+
+openai.api_key  = os.getenv('OPENAI_API_KEY')
+
+def get_completion(prompt, model="gpt-3.5-turbo"):
+    messages = [{"role": "user", "content": prompt}]
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        temperature=0, # this is the degree of randomness of the model's output
+    )
+    return response.choices[0].message["content"]
+
+def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0):
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        temperature=temperature, # this is the degree of randomness of the model's output
+    )
+#     print(str(response.choices[0].message))
+    return response.choices[0].message["content"]
+
+messages =  [  
+{'role':'system', 'content':'You are an assistant that speaks like Shakespeare.'},    
+{'role':'user', 'content':'tell me a joke'},   
+{'role':'assistant', 'content':'Why did the chicken cross the road'},   
+{'role':'user', 'content':'I don\'t know'}  ]
+
+response = get_completion_from_messages(messages, temperature=1)
+print(response)
+```
 
 ## Prompting Principles
 
@@ -227,7 +263,7 @@ categories: ['ChatGPT', 'AI']
    ```python
    ```
 
-### Inferring
+## Inferring
 
 1. Sentiment (positive/negative)
    1. eg:
@@ -251,55 +287,248 @@ categories: ['ChatGPT', 'AI']
    """
    ```
 3. Extract product and company name from customer reviews
-4. Doing multiple tasks at once
-5. Inferring topics
+   1. Doing multiple tasks at once, eg:
+   ```python
+   prompt = f"""
+   Identify the following items from the review text: 
+   - Sentiment (positive or negative)
+   - Is the reviewer expressing anger? (true or false)
+   - Item purchased by reviewer
+   - Company that made the item
 
-### 以前的税没有退，现在过期了吗？
+   The review is delimited with triple backticks. \
+   Format your response as a JSON object with \
+   "Sentiment", "Anger", "Item" and "Brand" as the keys.
+   If the information isn't present, use "unknown" \
+   as the value.
+   Make your response as short as possible.
+   Format the Anger value as a boolean.
 
-没有过期！可以往前申报5年的税务，但是需要用纸质表格并且邮寄申报。
+   Review text: '''{lamp_review}'''
+   """
+   ```
+4. Inferring 5 topics
+   1. eg:
+   ```python
+   prompt = f"""
+   Determine five topics that are being discussed in the \
+   following text, which is delimited by triple backticks.
 
-![加拿大报税]({{site.baseurl}}/assets/img/2023-04-23/v2-3188f8da803b5cb7bbf5340248eb835b_720w.webp)
+   Make each item one or two words long. 
 
-## 留学生报税可以得到的补贴或者是退税
+   Format your response as a list of items separated by commas.
 
-- **货劳税/统一销售税补贴(GST/HST CREDIT)**  
-  加拿大的移民、国际留学生，逗留半年以上的访问学者、探亲人士，都可申请该项补贴。值得注意的是这项补贴即使您有权得到，您仍须申请。如不申请，政府不会主动付给您这项补贴。所以留学生要想收到这项补贴，首先必须要完成报税，并且这一部分补贴是免税的。
-- **住房补贴**  
-  安省居民，也包括含国际留学生，如果支付了房租并且无收入或者低收入可以得到部分房租补贴。如果要申请该项补贴，须提供：居住地址、居住时间、交付的房租数额、房东姓名(或房产公司名称)。如果您在一年中居住过不同的地方，每个地方都要填写。需要提醒大家的是，尽管报税时是不需要提供房租收据的，但是申报这项补贴者一定要保留好房租收据，因为税务局有可能在退给申请者此项补贴后向申请者来信索要房租收据。如果申请者不能提供收据，税务局会要求申请者退回补贴并且加收利息。如果您在留学期间购买了房产，那么就您缴纳的地税(Property Tax)部分，根据您的收入情况，同样可以得到相应比例的住房补贴。
-- **学费的申报 (TUITION FEECREDIT)**  
-  这一块是留学生需要重点关注的地方，因为留学的费用累计起来往往是一笔很大的数目。如果您报了学费，以后一旦您有了收入而需要交税时，学费就会帮助您多退税。简单计算一下，如果您留学期间一共花了$70,000元，您毕业后年均收入40,000万元，则这项抵扣通常能节省您约15000元。还有加拿大税局有一个非常人性化的规定，即使您当年没有收入或收入不够，如果你已婚或有孩子，您还可以将您的学费的Credit Tansfer给您的配偶或孩子。
+   Text sample: '''{story}'''
+   """
+   ```
 
-![加拿大报税]({{site.baseurl}}/assets/img/2023-04-23/v2-b1cafa4d617e2ffbc0fba7a4db97166a_720w.webp)
+## Transforming
 
-## 第一次报税所需材料
+1. Translation
+   1. eg:
+   ```python
+   prompt = f"""
+   Translate the following English text to Spanish: \ 
+   ```Hi, I would like to order a blender```
+   """
+   ```
+   2. eg:
+   ```python
+   prompt = f"""
+   Tell me which language this is: 
+   ```Combien coûte le lampadaire?```
+   """
+   ``` 
+   3. eg:
+   ```python
+   prompt = f"""
+   Translate the following text to Spanish and French in both the \
+   formal and informal forms: 
+   'Would you like to order a pillow?'
+   """
+   ```
+2. Universal Translator
+   1. eg:
+   ```python
+   user_messages = [
+      "La performance du système est plus lente que d'habitude.",  # System performance is slower than normal         
+      "Mi monitor tiene píxeles que no se iluminan.",              # My monitor has pixels that are not lighting
+      "Il mio mouse non funziona",                                 # My mouse is not working
+      "Mój klawisz Ctrl jest zepsuty",                             # My keyboard has a broken control key
+      "我的屏幕在闪烁"                                               # My screen is flashing
+   ] 
+   for issue in user_messages:
+      prompt = f"Tell me what language this is: ```{issue}```"
+      lang = get_completion(prompt)
+      print(f"Original message ({lang}): {issue}")
 
-1. **社会保险号(Social Insurance Number)**  
-   也就是俗称的工卡号所有post-secondary的学签都允许学生校外打工。学生需要去Service Canada 办理并取得工卡号。如果学生是第一次报税，又没有社会保险卡号，则需要向税务局申请Individual Tax Number(ITN),即临时税号，一个0开头的9位号码。
-2. **T2202A或者T2202**  
-   这个是学校给学生开具的一个用于学费报税的表格一般学生可以在学校的网站上下载,也可以直接找学生办公室索要或要求补开已丢失的收据。学费的报税属于不可退回的Credit,但是在学生毕业后有收入时才可以起到抵减收入的作用，从而达到少纳税的目的。
-3. **T4，T4A，T5等收入证明**  
-   T4：如果学生在校外工作，公司会在年初给学生开一张T4表。T4A：奖学金收入T5：银行利息收入，这是银行给学生邮寄的一张T5表格。只有学生的利息多于50元，银行才会给学生邮寄这个T5表格。所以不需要担心没有收到。无论什么表，只有带有“For income tax purposes”，都要妥善保存，报税时会用到。
-4. **房租收据，地税(Property Tax)**  
-   这是一个支付了房租并且无收入或者低收入可以得到部分房租补贴。如果要申请该项补贴，需提供：居住地址，居住时间，支付的房租数额，房东姓名(或房产公司名称)和联系方式。如果学生在一年中居住过不同的地方，每个地方都要填写。尽管报税时是不需要提供房租收据，但是一定要保留好房租收据，因为税务局有可能在退给申请者房租补贴后，向申请者来信索要房租收据。地税是针对留学期间购买了房产，需要提供你的地税单据，同样可以得到相应比例的住房补贴。
-5. **邮寄地址或支票**  
-   方便CRA给学生寄支票或者直接将退税金额转到学生的银行账户
+      prompt = f"""
+      Translate the following  text to English \
+      and Korean: ```{issue}```
+      """
+      response = get_completion(prompt)
+      print(response, "\n")
+   ```
+3. Tone Transformation
+   1. eg:
+   ```python
+   prompt = f"""
+   Translate the following from slang to a business letter: 
+   'Dude, This is Joe, check out this spec on this standing lamp.'
+   """
+   ```
+4. Format Conversion
+   1. eg:
+   ```python
+   data_json = { "resturant employees" :[ 
+      {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
+      {"name":"Bob", "email":"bob32@gmail.com"},
+      {"name":"Jai", "email":"jai87@gmail.com"}
+   ]}
 
-![加拿大报税]({{site.baseurl}}/assets/img/2023-04-23/v2-ae7882cb06191fc508907ec270345845_720w.webp)
+   prompt = f"""
+   Translate the following python dictionary from JSON to an HTML \
+   table with column headers and title: {data_json}
+   """
+   ```
+5. Spellcheck/Grammar check
+   1. eg:
+   ```python
+   text = [ 
+   "The girl with the black and white puppies have a ball.",  # The girl has a ball.
+   "Yolanda has her notebook.", # ok
+   "Its going to be a long day. Does the car need it’s oil changed?",  # Homonyms
+   "Their goes my freedom. There going to bring they’re suitcases.",  # Homonyms
+   "Your going to need you’re notebook.",  # Homonyms
+   "That medicine effects my ability to sleep. Have you heard of the butterfly affect?", # Homonyms
+   "This phrase is to cherck chatGPT for speling abilitty"  # spelling
+   ]
+   for t in text:
+      prompt = f"""Proofread and correct the following text
+      and rewrite the corrected version. If you don't find
+      and errors, just say "No errors found". Don't use 
+      any punctuation around the text:
+      ```{t}```"""
+      response = get_completion(prompt)
+      print(response)
+   ```
 
-## 报税流程
+## Expanding
 
-1. 下载免费报税软件 [StudioTax](http://www.studiotax.com/en/)
-1. 准备好SIN号、住址、学费单T2202A
-1. 有收入的同学要准备T4、T4A、T3、T5以及奖学金等单据
-1. 按照软件步骤填写就好
-1. 打印出来寄到税务局或NETFLE在线递交即可。
+1. Customize the automated reply to a customer email
+   1. eg: 
+   ```python
+   prompt = f"""
+   You are a customer service AI assistant.
+   Your task is to send an email reply to a valued customer.
+   Given the customer email delimited by ```, \
+   Generate a reply to thank the customer for their review.
+   If the sentiment is positive or neutral, thank them for \
+   their review.
+   If the sentiment is negative, apologize and suggest that \
+   they can reach out to customer service. 
+   Make sure to use specific details from the review.
+   Write in a concise and professional tone.
+   Sign the email as `AI customer agent`.
+   Customer review: ```{review}```
+   Review sentiment: {sentiment}
+   """
+   ```
+2. Remind the model to use details from the customer's email
+   1. eg:
+   ```python
+   prompt = f"""
+   You are a customer service AI assistant.
+   Your task is to send an email reply to a valued customer.
+   Given the customer email delimited by ```, \
+   Generate a reply to thank the customer for their review.
+   If the sentiment is positive or neutral, thank them for \
+   their review.
+   If the sentiment is negative, apologize and suggest that \
+   they can reach out to customer service. 
+   Make sure to use specific details from the review.
+   Write in a concise and professional tone.
+   Sign the email as `AI customer agent`.
+   Customer review: ```{review}```
+   Review sentiment: {sentiment}
+   """
+   ```
 
-### 打印的话注意：
+## Chatbot
 
-- 把pdf打印出来检查一下姓名，地址，SIN号是否正确，在最后签上字和日期。
-- 填上银行转账的信息，税务局会把钱打到你的账户，不填的话税务局会给你寄支票，然后和学费单2202A拷贝一起用信封寄到税务局。
-- 税务局地址如下：
-  International Tax Services Office
-  Canada Revenue AgencyPost Office Box 9769, Station TOttawa ON K1G 3Y4CANADA
+1. OrderBot
+   1. eg:
+   ```python
+   import panel as pn  # GUI
+   pn.extension()
+
+   panels = [] # collect display 
+
+   context = [ {'role':'system', 'content':"""
+   You are OrderBot, an automated service to collect orders for a pizza restaurant. \
+   You first greet the customer, then collects the order, \
+   and then asks if it's a pickup or delivery. \
+   You wait to collect the entire order, then summarize it and check for a final \
+   time if the customer wants to add anything else. \
+   If it's a delivery, you ask for an address. \
+   Finally you collect the payment.\
+   Make sure to clarify all options, extras and sizes to uniquely \
+   identify the item from the menu.\
+   You respond in a short, very conversational friendly style. \
+   The menu includes \
+   pepperoni pizza  12.95, 10.00, 7.00 \
+   cheese pizza   10.95, 9.25, 6.50 \
+   eggplant pizza   11.95, 9.75, 6.75 \
+   fries 4.50, 3.50 \
+   greek salad 7.25 \
+   Toppings: \
+   extra cheese 2.00, \
+   mushrooms 1.50 \
+   sausage 3.00 \
+   canadian bacon 3.50 \
+   AI sauce 1.50 \
+   peppers 1.00 \
+   Drinks: \
+   coke 3.00, 2.00, 1.00 \
+   sprite 3.00, 2.00, 1.00 \
+   bottled water 5.00 \
+   """} ]  # accumulate messages
+
+   inp = pn.widgets.TextInput(value="Hi", placeholder='Enter text here…')
+   button_conversation = pn.widgets.Button(name="Chat!")
+
+   interactive_conversation = pn.bind(collect_messages, button_conversation)
+
+   dashboard = pn.Column(
+      inp,
+      pn.Row(button_conversation),
+      pn.panel(interactive_conversation, loading_indicator=True, height=300),
+   )
+
+   dashboard
+
+   messages =  context.copy()
+   messages.append(
+   {'role':'system', 'content':'create a json summary of the previous food order. Itemize the price for each item\
+   The fields should be 1) pizza, include size 2) list of toppings 3) list of drinks, include size   4) list of sides include size  5)total price '},    
+   )
+   #The fields should be 1) pizza, price 2) list of toppings 3) list of drinks, include size include price  4) list of sides include size include price, 5)total price '},    
+
+   response = get_completion_from_messages(messages, temperature=0)
+   print(response)
+
+   def collect_messages(_):
+      prompt = inp.value_input
+      inp.value = ''
+      context.append({'role':'user', 'content':f"{prompt}"})
+      response = get_completion_from_messages(context) 
+      context.append({'role':'assistant', 'content':f"{response}"})
+      panels.append(
+         pn.Row('User:', pn.pane.Markdown(prompt, width=600)))
+      panels.append(
+         pn.Row('Assistant:', pn.pane.Markdown(response, width=600, style={'background-color': '#F6F6F6'})))
+   
+      return pn.Column(*panels)
+   ```
 
 #### 源自[ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
