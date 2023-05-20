@@ -3,7 +3,7 @@ layout: post
 title: "Notes of Data Structures and Algorithms in Python"
 date: "2023-05-16 01:09:00 +0800"
 description: "Data Structures and Algorithms in Python" # (optional)
-img: "2023-05-06-cover-image-notes-of-chatgpt-prompt-engineering-for-developers.jpg" # Add image post (optional)
+img: "2023-05-06-cover-image-notes-of-python-data-structures-and-algorithms.png" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
 tags: ['Data Structure', 'Algorithm', 'Python']
 categories: ['Python']
