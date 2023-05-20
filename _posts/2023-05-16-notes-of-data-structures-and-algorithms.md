@@ -21,8 +21,6 @@ def factorial(n):
     return 1 if n <= 1 else n * factorial(n - 1)
 ```
 
-![Binary Search Tree (BST)]({{site.baseurl}}/assets/img/2023-05-16/quicksort-recurrsion.webp)
-
 ```python
 import statistics
 
@@ -50,6 +48,8 @@ def quicksort(numbers: list = []):
             quicksort(items_greater)
         )
 ```
+
+![Binary Search Tree (BST)]({{site.baseurl}}/assets/img/2023-05-16/quicksort-recurrsion.webp)
 
 ## Linear Search VS Binary Search
 
