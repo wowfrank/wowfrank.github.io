@@ -13,7 +13,7 @@ categories: ['Python']
 
 Recursive functions typically follow this pattern:
 
-- There are one or more base cases that are directly solvable without the need for further recursion.
+- There are one or more base cases that are directly solvable without the need for further recursion. <!--more-->
 - Each recursive call moves the solution progressively closer to a base case.
 
 ```python
