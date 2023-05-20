@@ -300,3 +300,19 @@ Self-balancing in AVL trees is achieved by tracking the **_balance factor_** (di
 
 Dictonary in Python is **not** Binary Search Tree structure. It uses **Hash Tables**.
 
+### Hash Table
+
+A hash function performs hashing by turning any data into a fixed-size sequence of bytes called the hash value or the hash code. It’s a number that can act as a digital fingerprint or a digest, usually much smaller than the original data, which lets you verify its integrity. If you’ve ever fetched a large file from the Internet, such as a disk image of a Linux distribution, then you may have noticed an MD5 or SHA-2 checksum on the download page.
+
+Aside from verifying data integrity and solving the dictionary problem, hash functions help in other fields, including security and cryptography. For example, you typically store hashed passwords in databases to mitigate the risk of data leaks. Digital signatures involve hashing to create a message digest before encryption. Blockchain transactions are another prime example of using a hash function for cryptographic purposes.
+
+While there are many hashing algorithms, they all share a few common properties that you’re about to discover in this section. Implementing a good hash function correctly is a difficult task that may require the understanding of advanced math involving prime numbers. Fortunately, you don’t usually need to implement such an algorithm by hand.
+
+Python comes with a built-in hashlib module, which provides a variety of well-known cryptographic hash functions, as well as less secure checksum algorithms. The language also has a global hash() function, used primarily for quick element lookup in dictionaries and sets. You can study how it works first to learn about the most important properties of hash functions.
+
+How Hash Function Works?
+
+- It should always map large keys to small keys.
+- It should always generate values between 0 to m-1 where **m** is the _size of the hash table_.
+- It should uniformly distribute large keys into hash table slots.
+
