@@ -9,6 +9,8 @@ tags: ['ChatGPT', 'Prompt', 'AI']
 categories: ['ChatGPT', 'AI']
 ---
 
+In the development of large language models or LLMs, there have been broadly two types of LLMs, which I'm going to refer to as base LLMs and instruction-tuned LLMs. <!--more-->
+
 ## Setup
 
 ```python
