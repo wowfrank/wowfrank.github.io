@@ -291,3 +291,12 @@ def isBST(root):
     prev = None
     return isBSTUtil(root, prev)
 ```
+
+## Self-Balanceing Binary Trees and AVL Trees
+
+A self-balancing binary tree remains balanced after every insertion or deletion. Several decades of research has gone into creating self-balancing binary trees, and many approaches have been devised e.g. B-trees, Red Black Trees and AVL (Adelson-Velsky Landis) Trees.
+
+Self-balancing in AVL trees is achieved by tracking the **_balance factor_** (difference between the height of the left subtree and the right subtree) for each node and _rotating_ unbalanced subtrees along the path of insertion/deletion to balance them.
+
+Dictonary in Python is **not** Binary Search Tree structure. It uses **Hash Tables**.
+
