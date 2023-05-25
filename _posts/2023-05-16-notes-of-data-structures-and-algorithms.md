@@ -316,3 +316,22 @@ How Hash Function Works?
 - It should always generate values between 0 to m-1 where **m** is the _size of the hash table_.
 - It should uniformly distribute large keys into hash table slots.
 
+## Bubble Sort
+
+- Time complexity: O(n**2)
+- Space complexity: O(n)
+
+## Insertsion and Merge Sort
+
+Divide and Conqur
+
+- Time complexity: O(n*logn)
+- Space complexity: O(n)
+
+space and memory allocation are more expensive than comparison and swap.
+
+## Quick Sort
+
+- Time complexity: O(n**2) ~ O(n*logn)
+- Space complexity: O(1)
+
