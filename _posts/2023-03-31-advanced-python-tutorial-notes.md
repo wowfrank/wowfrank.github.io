@@ -244,8 +244,11 @@ def connect_to_next_port(self, minimum: int) -> int:
 |  Frozenset    |  No       |  Yes          |  No                   |  No       |
 
 ![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-1.png)
+
 ![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-2.png)
+
 ![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-3-1024x409.png)
+
 ![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-4-1024x791.jpg)
 
 ## Collections
