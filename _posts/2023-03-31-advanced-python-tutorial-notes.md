@@ -235,6 +235,8 @@ def connect_to_next_port(self, minimum: int) -> int:
    3. ordered
    4. **faster**
 
+### comparison
+
 |  Data Type    |  Ordered  |  Iterable     |  Duplicate Elements   |  Mutable  |
 |:--           :|:---:      |:---:          |:---:                  |:---:      |
 |  List         |  Yes      |  Yes          |  Yes                  |  Yes      |
