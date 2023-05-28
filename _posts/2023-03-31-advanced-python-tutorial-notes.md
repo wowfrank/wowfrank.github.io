@@ -235,13 +235,13 @@ def connect_to_next_port(self, minimum: int) -> int:
    3. ordered
    4. **faster**
 
-|  Data Type  |  Ordered  |  Iterable  |  Duplicate Elements  |  Mutable  |
-|---|---|---|---|---|
-|  List  |  Yes  |  Yes  |  Yes  |  Yes  |
-|  Dictionary  |  No  |  Yes  |  Values only  |  Keys only  |
-|  Tuple |  Yes  |  Yes  |  Yes  |  No  |
-|  Set |  No  |  Yes  |  No  |  Yes  |
-|  Frozenset |  No  |  Yes  |  No  |  No  |
+|  Data Type    |  Ordered  |  Iterable     |  Duplicate Elements   |  Mutable  |
+|:--           :|:---:      |:---:          |:---:                  |:---:      |
+|  List         |  Yes      |  Yes          |  Yes                  |  Yes      |
+|  Dictionary   |  No       |  Yes          |  Values only          |  Keys only  |
+|  Tuple        |  Yes      |  Yes          |  Yes                  |  No       |
+|  Set          |  No       |  Yes          |  No                   |  Yes      |
+|  Frozenset    |  No       |  Yes          |  No                   |  No       |
 
 ![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-1.png)
 ![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-2.png)
