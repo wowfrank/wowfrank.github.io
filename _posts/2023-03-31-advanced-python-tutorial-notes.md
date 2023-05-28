@@ -235,6 +235,19 @@ def connect_to_next_port(self, minimum: int) -> int:
    3. ordered
    4. faster
 
+|  Data Type  |  Ordered  |  Iterable  |  Unique  |  Immutable  |  Mutable  |
+|---|---|---|---|---|---|
+|  List  |  Yes  |  Yes  |  No  |  No  |  Yes  |
+|  Dictionary  |  No  |  Yes  |  Keys only  |  Keys only  |  Keys only  |
+|  Tuple |  Yes  |  Yes  |  No  |  Yes  |  No  |
+|  Set |  No  |  Yes  |  Yes  |  No  |  Yes  |
+|  Frozenset |  No  |  Yes  |  Yes  |  Yes  |  No  |
+
+![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-1.png)
+![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-2.png)
+![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-3-1024x409.png)
+![Python Data Type]({{site.baseurl}}/assets/img/2023-03-31/python-list-tuple-set-array-dict-4-1024x791.jpg)
+
 ## Collections
 
 Python’s collections module provides a rich set of specialized container data types carefully designed to approach specific programming problems in a Pythonic and efficient way. The module also provides wrapper classes that make it safer to create custom classes that behave similar to the built-in types dict, list, and str.
