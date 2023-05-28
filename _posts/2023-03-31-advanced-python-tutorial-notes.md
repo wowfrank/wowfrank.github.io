@@ -233,7 +233,7 @@ def connect_to_next_port(self, minimum: int) -> int:
    1. can act as the key in a dictionary
    2. allows duplicate elements
    3. ordered
-   4. faster
+   4. **faster**
 
 |  Data Type  |  Ordered  |  Iterable  |  Duplicate Elements  |  Immutable  |  Mutable  |
 |---|---|---|---|---|---|
