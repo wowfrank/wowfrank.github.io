@@ -13,7 +13,7 @@ categories: ['Python']
 
 Recursive functions typically follow this pattern:
 
-- There are one or more base cases that are directly solvable without the need for further recursion. <!--more-->
+- There are one or more **base cases** that are directly solvable without the need for further recursion. <!--more-->
 - Each recursive call moves the solution progressively closer to a base case.
 
 ```python
@@ -25,28 +25,29 @@ def factorial(n):
 import statistics
 
 # Args: numbers is a list
-def quicksort(numbers: list = []):
+def quicksort(numbers: list = []) -> list:
+    # Base case
     if len(numbers) <= 1:
         return numbers
-    else:
-        pivot = statistics.median(
-            [
-                numbers[0],
-                numbers[len(numbers) // 2],
-                numbers[-1]
-            ]
-        )
-        items_less, pivot_items, items_greater = (
-            [n for n in numbers if n < pivot],
-            [n for n in numbers if n == pivot],
-            [n for n in numbers if n > pivot]
-        )
+        
+    pivot = statistics.median(
+        [
+            numbers[0],
+            numbers[len(numbers) // 2],
+            numbers[-1]
+        ]
+    )
+    items_less, pivot_items, items_greater = (
+        [n for n in numbers if n < pivot],
+        [n for n in numbers if n == pivot],
+        [n for n in numbers if n > pivot]
+    )
 
-        return (
-            quicksort(items_less) +
-            pivot_items +
-            quicksort(items_greater)
-        )
+    return (
+        quicksort(items_less) +
+        pivot_items +
+        quicksort(items_greater)
+    )
 ```
 
 ![Binary Search Tree (BST)]({{site.baseurl}}/assets/img/2023-05-16/quicksort-recurrsion.webp)
@@ -318,22 +319,83 @@ How Hash Function Works?
 
 ## Bubble Sort
 
-- Time complexity: O(n**2)
-- Space complexity: O(n)
+- Time Complexity: Best Case = Ω(N), Worst Case = O(N\*\*2), Average Case = Θ(N\*\*2)
+- Space Complexity: Worst Case = O(1)
 
-## Insertsion and Merge Sort
+## Insertsion Sort
+
+- Time Complexity: Best Case = Ω(N), Worst Case = O(N\*\*2), Average Case = Θ(N\*\*2)
+- Space Complexity: Worst Case = O(1)
+
+## Merge Sort
 
 Divide and Conqur
 
-- Time complexity: O(n*logn)
-- Space complexity: O(n)
+- Time Complexity: Best Case = Ω(NlogN), Worst Case = O(NlogN), Average Case = Θ(NlogN)
+- Space Complexity: Worst Case = O(N)
 
 space and memory allocation are more expensive than comparison and swap.
 
+**Merge sort** is defined as a sorting algorithm that works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array.
+
 ## Quick Sort
 
-- Time complexity: O(n**2) ~ O(n*logn)
-- Space complexity: O(1)
+- Divide the collection in two (roughly) equal parts by taking a pseudo-random element and using it as a pivot.
+- Elements smaller than the pivot get moved to the left of the pivot, and elements larger than the pivot to the right of it.
+- This process is repeated for the collection to the left of the pivot, as well as for the array of elements to the right of the pivot until the whole array is sorted.
+
+- Time Complexity: Best Case = Ω(NlogN), Worst Case = O(N\*\*2), Average Case = Θ(NlogN)
+- Space Complexity: Worst Case = O(logN)
+
+```python
+def partition(array, start, end):
+    pivot = array[start]
+    low = start + 1
+    high = end
+
+    while True:
+        # If the current value we're looking at is larger than the pivot
+        # it's in the right place (right side of pivot) and we can move left,
+        # to the next element.
+        # We also need to make sure we haven't surpassed the low pointer, since that
+        # indicates we have already moved all the elements to their correct side of the pivot
+        while low <= high and array[high] >= pivot:
+            high = high - 1
+
+        # Opposite process of the one above
+        while low <= high and array[low] <= pivot:
+            low = low + 1
+
+        # We either found a value for both high and low that is out of order
+        # or low is higher than high, in which case we exit the loop
+        if low <= high:
+            array[low], array[high] = array[high], array[low]
+            # The loop continues
+        else:
+            # We exit out of the loop
+            break
+
+    array[start], array[high] = array[high], array[start]
+
+    return high
+
+def quick_sort(array, start, end):
+    if start >= end:
+        return
+
+    p = partition(array, start, end)
+    quick_sort(array, start, p-1)
+    quick_sort(array, p+1, end)
+
+array = [29,99,27,41,66,28,44,78,87,19,31,76,58,88,83,97,12,21,44]
+
+quick_sort(array, 0, len(array) - 1)
+print(array)
+```
+
+[Quicksort in Python](https://stackabuse.com/quicksort-in-python/)
+
+[Quicksort algorithm in Python (Step By Step)](https://likegeeks.com/python-quicksort/)
 
 ## Dynamic Programming Algorithm
 
