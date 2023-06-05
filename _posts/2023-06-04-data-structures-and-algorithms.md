@@ -39,6 +39,7 @@ Data structure is a storage that is used to store and organize data. It is a way
             1. Skewed Binary Tree: A skewed binary tree is a pathological/degenerate tree in which the tree is either dominated by the left nodes or the right nodes. 
             1. Balanced Binary Tree: It is a type of binary tree in which the difference between the height of the left and the right subtree for each node is either 0 or 1.
         - Binary Search Tree
+            
             The properties that separate a binary search tree from a regular binary tree is:
 
             1. All nodes of left subtree are less than the root node
@@ -50,6 +51,7 @@ Data structure is a storage that is used to store and organize data. It is a way
             ![Binary Search Tree]({{site.baseurl}}/assets/img/2023-06-04/bst-vs-not-bst.webp)
 
         - AVL Tree
+            
             AVL tree is a self-balancing **binary search tree** in which each node maintains extra information called a **balance factor** whose value is either -1, 0 or +1.
             
             Balance Factor = (Height of Left Subtree - Height of Right Subtree) or (Height of Right Subtree - Height of Left Subtree)
@@ -67,6 +69,7 @@ Data structure is a storage that is used to store and organize data. It is a way
             ![AVL Tree Right Rotation]({{site.baseurl}}/assets/img/2023-06-04/avl-tree-leftright-rotate-2.png)
 
         - B-Tree
+            
             B-tree is a special type of self-balancing search tree in which each node can contain more than one key and can have more than two children. It is also known as a height-balanced m-way tree.
 
             ![B Tree]({{site.baseurl}}/assets/img/2023-06-04/b-tree.webp)
