@@ -74,7 +74,13 @@ Data structure is a storage that is used to store and organize data. It is a way
 
             ![B Tree]({{site.baseurl}}/assets/img/2023-06-04/b-tree.webp)
 
-            **B-tree Properties**:
+            The **order** of the tree represents the maximum number of children a tree’s node could have. So when we say we have a B-Tree of order N, It means every node of that B-Tree can have a maximum of N children. For example, _a Binary Search Tree is a tree of **order 2** since each node has at most 2 children.
+
+            The **degree** of a tree represents the maximum degree of a node in the tree. Recall for a given node, its degree is equal to the number of its children.
+
+            **Degree** represents the **lower** bound on the number of children a node in the B Tree can have (except for the root). i.e the **minimum number** of children possible. Whereas the **Order** represents the **upper** bound on the number of children. ie. the **maximum number** possible.
+
+            **B-tree of Order n Properties**:
             
             1. For each node x, the keys are stored in increasing order.
             1. In each node, there is a boolean value x.leaf which is true if x is a leaf.
@@ -92,7 +98,7 @@ Data structure is a storage that is used to store and organize data. It is a way
 
             ![B+ Search Tree]({{site.baseurl}}/assets/img/2023-06-04/search-tree.webp)
 
-            **Properties of a B+ Tree**:
+            **Properties of a B+ Tree of Order m**:
 
             1. All leaves are at the same level.
             1. The root has **at least 2** children.
