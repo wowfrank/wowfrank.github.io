@@ -63,10 +63,12 @@ Data structure is a storage that is used to store and organize data. It is a way
             Left-Right and Right-Left Rotate:
 
             ![AVL Tree Left Rotation]({{site.baseurl}}/assets/img/2023-06-04/avl-tree-leftright-rotate-1.png)
-            
+
             ![AVL Tree Right Rotation]({{site.baseurl}}/assets/img/2023-06-04/avl-tree-leftright-rotate-2.png)
 
         - B-Tree
+            B-tree is a special type of self-balancing search tree in which each node can contain more than one key and can have more than two children. It is also known as a height-balanced m-way tree.
+            
         - B+ Tree
         - Red-Black Tree
 
@@ -138,3 +140,7 @@ Advantages:
 - It makes efficient use of memory caches.
 
 ## 
+
+
+
+#### 源自[Data Structure and Algorithms](https://www.programiz.com/dsa/algorithm)
