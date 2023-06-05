@@ -68,11 +68,23 @@ Data structure is a storage that is used to store and organize data. It is a way
 
         - B-Tree
             B-tree is a special type of self-balancing search tree in which each node can contain more than one key and can have more than two children. It is also known as a height-balanced m-way tree.
+
+            ![B Tree]({{site.baseurl}}/assets/img/2023-06-04/b-tree.webp)
+
+            B-tree Properties:
             
+            1. For each node x, the keys are stored in increasing order.
+            1. In each node, there is a boolean value x.leaf which is true if x is a leaf.
+            1. If **n** is the order of the tree, each internal node can contain at most **n - 1** keys along with a pointer to each child.
+            1. Each node except root can have **at most n** children and **at least n/2** children.
+            1. All leaves have the same depth (i.e. height-h of the tree).
+            1. The root has at least **2** children and contains a minimum of **1** key.
+            1. If **n ≥ 1**, then for any **n-key** B-tree of height h and minimum degree t ≥ 2, h ≥ logt^(n+1)/2.
+
         - B+ Tree
         - Red-Black Tree
 
-### Linear Vs Non-linear Data Structures
+## Linear Vs Non-linear Data Structures
 
 | Linear Data Structures    | Non Linear Data Structures |
 |   :-----  |   :-----  |
@@ -101,7 +113,7 @@ f(n) = cost of the work done outside the recursive call,
 Here, a ≥ 1 and b > 1 are constants, and f(n) is an asymptotically positive function.
 ```
 
-### Master Theorem
+**Master Theorem**
 
 If a ≥ 1 and b > 1 are constants and f(n) is an asymptotically positive function, then the time complexity of a recursive relation is given by
 
@@ -138,8 +150,6 @@ Advantages:
 - The complexity for the multiplication of two matrices using the naive method is O(n3), whereas using the divide and conquer approach (i.e. Strassen's matrix multiplication) is O(n^2.8074). This approach also simplifies other problems, such as the Tower of Hanoi.
 - This approach is **suitable for multiprocessing systems**.
 - It makes efficient use of memory caches.
-
-## 
 
 
 
