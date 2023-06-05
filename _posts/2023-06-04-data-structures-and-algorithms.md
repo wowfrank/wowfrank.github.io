@@ -32,8 +32,40 @@ Data structure is a storage that is used to store and organize data. It is a way
         - Adjacency List
     2. Trees Data Structure
         - Binary Tree
+            1. Full Binary Tree: A full Binary tree is a special type of binary tree in which every parent node/internal node has either two or no children.
+            1. Perfect Binary Tree: A perfect binary tree is a type of binary tree in which every internal node has exactly two child nodes and all the leaf nodes are at the same level.
+            1. Complete Binary Tree: A complete binary tree is just like a full binary tree, but with two major differences
+            1. Degenerate or Pathological Binary Tree: A degenerate or pathological tree is the tree having a single child either left or right.
+            1. Skewed Binary Tree: A skewed binary tree is a pathological/degenerate tree in which the tree is either dominated by the left nodes or the right nodes. 
+            1. Balanced Binary Tree: It is a type of binary tree in which the difference between the height of the left and the right subtree for each node is either 0 or 1.
         - Binary Search Tree
+            The properties that separate a binary search tree from a regular binary tree is:
+
+            1. All nodes of left subtree are less than the root node
+            1. All nodes of right subtree are more than the root node
+            1. Both subtrees of each node are also BSTs i.e. they have the above two properties
+
+            _In the graph below, The binary tree on the right isn't a binary search tree because the right subtree of the node "3" contains a value smaller than it._
+
+            ![Binary Search Tree]({{site.baseurl}}/assets/img/2023-06-04/bst-vs-not-bst.webp)
+
         - AVL Tree
+            AVL tree is a self-balancing **binary search tree** in which each node maintains extra information called a **balance factor** whose value is either -1, 0 or +1.
+            
+            Balance Factor = (Height of Left Subtree - Height of Right Subtree) or (Height of Right Subtree - Height of Left Subtree)
+
+            AVL tree got its name after its inventor Georgy Adelson-Velsky and Landis.
+
+            An example of a balanced avl tree is
+
+            ![AVL Tree]({{site.baseurl}}/assets/img/2023-06-04/avl-tree-final-tree-1_0_2.webp)
+
+            Left-Right and Right-Left Rotate:
+
+            ![AVL Tree Left Rotation]({{site.baseurl}}/assets/img/2023-06-04/avl-tree-leftright-rotate-1.png)
+            
+            ![AVL Tree Right Rotation]({{site.baseurl}}/assets/img/2023-06-04/avl-tree-leftright-rotate-2.png)
+
         - B-Tree
         - B+ Tree
         - Red-Black Tree
