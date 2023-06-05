@@ -74,7 +74,7 @@ Data structure is a storage that is used to store and organize data. It is a way
 
             ![B Tree]({{site.baseurl}}/assets/img/2023-06-04/b-tree.webp)
 
-            B-tree Properties:
+            **B-tree Properties**:
             
             1. For each node x, the keys are stored in increasing order.
             1. In each node, there is a boolean value x.leaf which is true if x is a leaf.
@@ -85,6 +85,20 @@ Data structure is a storage that is used to store and organize data. It is a way
             1. If **n ≥ 1**, then for any **n-key** B-tree of height h and minimum degree t ≥ 2, h ≥ logt^(n+1)/2.
 
         - B+ Tree
+
+            An important concept to be understood before learning B+ tree is multilevel indexing. In multilevel indexing, the index of indices is created as in figure below.
+
+            ![B+ Tree]({{site.baseurl}}/assets/img/2023-06-04/multilevel-indexing.webp)
+
+            ![B+ Search Tree]({{site.baseurl}}/assets/img/2023-06-04/search-tree.webp)
+
+            **Properties of a B+ Tree**:
+
+            1. All leaves are at the same level.
+            1. The root has **at least 2** children.
+            1. Each node except root can have a maximum of **m** children and **at least m/2** children.
+            1. Each node can contain a maximum of **m - 1** keys and a minimum of **⌈m/2⌉ - 1** keys.
+
         - Red-Black Tree
 
 ## Linear Vs Non-linear Data Structures
@@ -98,6 +112,18 @@ Data structure is a storage that is used to store and organize data. It is a way
 | The time complexity increase with the data size. | Time complexity remains the same.
 | Example: Arrays, Stack, Queue | Example: Tree, Graph, Map |
 
+
+## Comparison between a B-tree and a B+ Tree
+
+![B+ Tree]({{site.baseurl}}/assets/img/2023-06-04/B-tree-compare.webp)
+
+![B+ Tree]({{site.baseurl}}/assets/img/2023-06-04/B+tree-compare.webp)
+
+The data pointers are present only at the leaf nodes on a B+ tree whereas the data pointers are present in the internal, leaf or root nodes on a B-tree.
+
+The leaves are not connected with each other on a B-tree whereas they are connected on a B+ tree.
+
+Operations on a B+ tree are **faster** than on a B-tree.
 
 ## Master Theorem
 
