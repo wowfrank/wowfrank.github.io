@@ -5,7 +5,7 @@ date: "2023-06-04 01:09:00 +0800"
 description: "Data Structures and Algorithms" # (optional)
 img: "2023-06-04-cover-image-data-structures-and-algorithms.png" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
-tags: ['Data Structure', 'Algorithm']
+tags: ['Data Structures and Algorithms', 'DSA', 'Algorithm']
 categories: ['DSA']
 ---
 
@@ -26,8 +26,50 @@ Data structure is a storage that is used to store and organize data. It is a way
     4. Linked List Data Structure
 - Non-linear data structure
     1. Graph Data Structure
+
+        More precisely, a graph is a data structure (V, E) that consists of
+
+        - A collection of vertices V
+        - A collection of edges E, represented as ordered pairs of vertices (u,v)
+        
+        ![Vertices and Edges]({{site.baseurl}}/assets/img/2023-06-04/graph-vertices-edges_0.webp)
+
+        ```
+        In the graph:
+
+        V = {0, 1, 2, 3}
+        E = {(0,1), (0,2), (0,3), (1,2)}
+        G = {V, E}
+        ```
+
+        ### Graph Representation
+
+        1. Adjacency Matrix: is a 2D array of V x V vertices
+
+        ![Adjacency Matrix]({{site.baseurl}}/assets/img/2023-06-04/adjacency-matrix_1.webp)
+
+        2. Adjacency List: an array of linked lists
+
+        ![Adjacency List]({{site.baseurl}}/assets/img/2023-06-04/adjacency-list.webp)
+
+
+        Types:
         - Spanning Tree and Minimum Spanning Tree
+
+        The total number of spanning trees with n vertices that can be created from a complete graph is equal to n^(n-2). The edges may or may not have **weights** assigned to them.
+        
+        A minimum spanning tree is a spanning tree in which the sum of the weight of the edges is as minimum as possible.
+
         - Strongly Connected Components
+
+        A strongly connected component is the portion of a directed graph in which there is a path from each vertex to another vertex. It is applicable only on a directed graph.
+
+        ![Strongly Connected Components]({{site.baseurl}}/assets/img/2023-06-04/scc-strongly-connected-components.webp)
+
+        These components can be found using **Kosaraju's Algorithm**.
+
+
+
         - Adjacency Matrix
         - Adjacency List
     2. Trees Data Structure
@@ -186,6 +228,90 @@ Advantages:
 - This approach is **suitable for multiprocessing systems**.
 - It makes efficient use of memory caches.
 
+## Depth First Search (DFS) Algorithm
+
+Depth first Search or Depth first traversal is a recursive algorithm for searching all the vertices of a graph or tree data structure.
+
+The purpose of the algorithm is to mark each vertex as visited while avoiding cycles.
+
+The DFS algorithm works as follows:
+
+1. Start by putting any one of the graph's vertices on top of a stack.
+1. Take the top item of the stack and add it to the visited list.
+1. Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to the top of the stack.
+1. Keep repeating steps 2 and 3 until the stack is empty.
+
+Let's see how the Depth First Search algorithm works with an example. 
+
+We use an undirected graph with 5 vertices.
+
+![Undirected graph with 5 vertices]({{site.baseurl}}/assets/img/2023-06-04/graph-dfs-step-0.webp)
+
+We start from vertex 0, the DFS algorithm starts by putting it in the Visited list and putting all its adjacent vertices in the **stack** (Last In First Out).
+
+![Visit the element and put it in the visited list]({{site.baseurl}}/assets/img/2023-06-04/graph-dfs-step-1.webp)
+
+Next, we visit the element at the top of stack i.e. 1 and go to its adjacent nodes. Since 0 has already been visited, we visit 2 instead.
+
+![Visit the element at the top of stack]({{site.baseurl}}/assets/img/2023-06-04/graph-dfs-step-2.webp)
+
+Vertex 2 has an **unvisited adjacent vertex** in 4, so we add that to the top of the stack and visit it.
+
+![Visit the element at the top of stack]({{site.baseurl}}/assets/img/2023-06-04/graph-dfs-step-3.webp)
+
+![Visit the element at the top of stack]({{site.baseurl}}/assets/img/2023-06-04/graph-dfs-step-4.webp)
+
+After we visit the last element 3, it doesn't have any unvisited adjacent nodes, so we have completed the Depth First Traversal of the graph.
+
+![Visit the element at the top of stack]({{site.baseurl}}/assets/img/2023-06-04/graph-dfs-step-5.webp)
+
+## Kosaraju's Algorithm
+
+Kosaraju's Algorithm is based on the depth-first search algorithm implemented twice.
+
+Three steps are involved.
+
+1. Perform a depth first search on the whole graph.
+
+    Let us start from vertex-0, visit all of its child vertices, and mark the visited vertices as done. If a vertex leads to an already visited vertex, then push this vertex to the stack.
+
+    For example: Starting from vertex-0, go to vertex-1, vertex-2, and then to vertex-3. Vertex-3 leads to already visited vertex-0, so push the source vertex (ie. vertex-3) into the stack.
+
+    ![DFS on the graph]({{site.baseurl}}/assets/img/2023-06-04/scc-step-1.webp)
+
+    Go to the previous vertex (vertex-2) and visit its child vertices i.e. vertex-4, vertex-5, vertex-6 and vertex-7 sequentially. Since there is nowhere to go from vertex-7, push it into the stack.
+
+    ![DFS on the graph]({{site.baseurl}}/assets/img/2023-06-04/scc-step-2.webp)
+
+    Go to the previous vertex (vertex-6) and visit its child vertices. But, all of its child vertices are visited, so push it into the stack.
+
+    ![Stacking]({{site.baseurl}}/assets/img/2023-06-04/scc-step-3.webp)
+
+    Similarly, a final stack is created.
+
+    ![Final Stack]({{site.baseurl}}/assets/img/2023-06-04/scc-step-43.webp)
+
+1. Reverse the original graph.
+
+    ![DFS on reversed graph]({{site.baseurl}}/assets/img/2023-06-04/scc-reversed-graph.webp)
+
+1. Perform depth-first search on the reversed graph.
+
+    Start from the top vertex of the stack. Traverse through all of its child vertices. Once the already visited vertex is reached, one strongly connected component is formed.
+
+    For example: Pop vertex-0 from the stack. Starting from vertex-0, traverse through its child vertices (vertex-0, vertex-1, vertex-2, vertex-3 in sequence) and mark them as visited. The child of vertex-3 is already visited, so these visited vertices form one **strongly connected component** (SCC).
+
+    ![Start from the top and traverse through all the vertices]({{site.baseurl}}/assets/img/2023-06-04/scc-reversed-step-1.webp)
+
+    Go to the stack and pop the top vertex if already visited. Otherwise, choose the top vertex from the stack and traverse through its child vertices as presented above.
+
+    ![Pop the top vertex if already visited]({{site.baseurl}}/assets/img/2023-06-04/reversed-step-2_0.webp)
+
+    ![Strongly connected component]({{site.baseurl}}/assets/img/2023-06-04/reversed-step-3_0.webp)
+
+1. Thus, the strongly connected components are:
+
+    ![All strongly connected components]({{site.baseurl}}/assets/img/2023-06-04/scc-final-graph.webp)
 
 
 #### 源自[Data Structure and Algorithms](https://www.programiz.com/dsa/algorithm)
