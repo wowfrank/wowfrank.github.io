@@ -42,7 +42,7 @@ Data structure is a storage that is used to store and organize data. It is a way
         G = {V, E}
         ```
 
-        ### Graph Representation
+        **Graph Representation**
 
         1. Adjacency Matrix: is a 2D array of V x V vertices
 
@@ -273,7 +273,7 @@ The purpose of the algorithm is to mark each vertex as visited while avoiding cy
 
 The algorithm works as follows:
 
-- Start by putting any one of the graph's vertices at the back of a queue.
+- Start by putting any one of the graph's vertices at the back of a *queue*.
 - Take the front item of the queue and add it to the visited list.
 - Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to the back of the queue.
 - Keep repeating steps 2 and 3 until the queue is empty.
@@ -303,8 +303,6 @@ Only 4 remains in the queue since the only adjacent node of 3 i.e. 0 is already 
 ![Visit last remaining item in the queue to check if it has unvisited neighbors]({{site.baseurl}}/assets/img/2023-06-04/graph-bfs-step-5.webp)
 
 Since the queue is empty, we have completed the Breadth First Traversal of the graph.
-
-
 
 ## Kosaraju's Algorithm
 
