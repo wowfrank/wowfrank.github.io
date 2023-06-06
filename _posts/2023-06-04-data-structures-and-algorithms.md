@@ -265,6 +265,47 @@ After we visit the last element 3, it doesn't have any unvisited adjacent nodes,
 
 ![Visit the element at the top of stack]({{site.baseurl}}/assets/img/2023-06-04/graph-dfs-step-5.webp)
 
+## Breadth First Search (BFS) Algorithm
+
+Breadth First Traversal or Breadth First Search is a recursive algorithm for searching all the vertices of a graph or tree data structure.
+
+The purpose of the algorithm is to mark each vertex as visited while avoiding cycles.
+
+The algorithm works as follows:
+
+- Start by putting any one of the graph's vertices at the back of a queue.
+- Take the front item of the queue and add it to the visited list.
+- Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to the back of the queue.
+- Keep repeating steps 2 and 3 until the queue is empty.
+
+The graph might have two different disconnected parts so to make sure that we cover every vertex, we can also run the BFS algorithm on every node. Let's see how the Breadth First Search algorithm works with an example. 
+
+We use an undirected graph with 5 vertices.
+
+![Undirected graph with 5 vertices]({{site.baseurl}}/assets/img/2023-06-04/graph-bfs-step-0.webp)
+
+We start from vertex 0, the BFS algorithm starts by putting it in the Visited list and putting all its adjacent vertices in the **queue**(First In First Out).
+
+![Visit start vertex and add its adjacent vertices to queue]({{site.baseurl}}/assets/img/2023-06-04/graph-bfs-step-1.webp)
+
+Next, we visit the element at the front of queue i.e. 1 and go to its adjacent nodes. Since 0 has already been visited, we visit 2 instead.
+
+![Visit the first neighbour of start node 0, which is 1]({{site.baseurl}}/assets/img/2023-06-04/graph-bfs-step-2_2.webp)
+
+Vertex 2 has an unvisited adjacent vertex in 4, so we add that to the back of the queue and visit 3, which is at the front of the queue.
+
+![Visit 2 which was added to queue earlier to add its neighbours]({{site.baseurl}}/assets/img/2023-06-04/graph-bfs-step-3.webp)
+
+![4 remains in the queue]({{site.baseurl}}/assets/img/2023-06-04/graph-bfs-step-4.webp)
+
+Only 4 remains in the queue since the only adjacent node of 3 i.e. 0 is already visited. We visit it.
+
+![Visit last remaining item in the queue to check if it has unvisited neighbors]({{site.baseurl}}/assets/img/2023-06-04/graph-bfs-step-5.webp)
+
+Since the queue is empty, we have completed the Breadth First Traversal of the graph.
+
+
+
 ## Kosaraju's Algorithm
 
 Kosaraju's Algorithm is based on the depth-first search algorithm implemented twice.
@@ -312,6 +353,9 @@ Three steps are involved.
 1. Thus, the strongly connected components are:
 
     ![All strongly connected components]({{site.baseurl}}/assets/img/2023-06-04/scc-final-graph.webp)
+
+## Bellman Ford's Algorithm
+
 
 
 #### 源自[Data Structure and Algorithms](https://www.programiz.com/dsa/algorithm)
