@@ -356,4 +356,4 @@ Three steps are involved.
 
 
 
-#### 源自[Data Structure and Algorithms](https://www.programiz.com/dsa/algorithm)
+#### 源自[Data Structures and Algorithms](https://www.programiz.com/dsa/algorithm)
