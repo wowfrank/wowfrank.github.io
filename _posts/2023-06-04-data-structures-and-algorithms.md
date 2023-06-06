@@ -328,7 +328,7 @@ Three steps are involved.
 
     Similarly, a final stack is created.
 
-    ![Final Stack]({{site.baseurl}}/assets/img/2023-06-04/scc-step-43.webp)
+    ![Final Stack]({{site.baseurl}}/assets/img/2023-06-04/scc-step-4.webp)
 
 1. Reverse the original graph.
 
