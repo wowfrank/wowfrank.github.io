@@ -68,8 +68,6 @@ Data structure is a storage that is used to store and organize data. It is a way
 
         These components can be found using **Kosaraju's Algorithm**.
 
-
-
         - Adjacency Matrix
         - Adjacency List
     2. Trees Data Structure
@@ -354,6 +352,26 @@ Three steps are involved.
 
 ## Bellman Ford's Algorithm
 
+Bellman Ford algorithm works by overestimating the length of the path from the starting vertex to all other vertices. Then it iteratively relaxes those estimates by finding new paths that are shorter than the previously overestimated paths.
 
+By doing this repeatedly for all vertices, we can guarantee that the result is optimized.
+
+![Step-1 for Bellman Ford's algorithm]({{site.baseurl}}/assets/img/2023-06-04/Bellman-Ford-Algorithm-1.webp)
+
+![Step-2 for Bellman Ford's algorithm]({{site.baseurl}}/assets/img/2023-06-04/Bellman-Ford-Algorithm-2.webp)
+
+![Step-3 for Bellman Ford's algorithm]({{site.baseurl}}/assets/img/2023-06-04/Bellman-Ford-Algorithm-3.webp)
+
+![Step-4 for Bellman Ford's algorithm]({{site.baseurl}}/assets/img/2023-06-04/Bellman-Ford-Algorithm-4.webp)
+
+![Step-5 for Bellman Ford's algorithm]({{site.baseurl}}/assets/img/2023-06-04/Bellman-Ford-Algorithm-5.webp)
+
+![Step-6 for Bellman Ford's algorithm]({{site.baseurl}}/assets/img/2023-06-04/Bellman-Ford-Algorithm-6.webp)
+
+## Bellman Ford vs Dijkstra
+
+Bellman Ford's algorithm and Dijkstra's algorithm are very similar in structure. While Dijkstra looks only to the immediate neighbors of a vertex, Bellman goes through each edge in every iteration.
+
+![Bellman Ford's Algorithm vs Dijkstra's Algorithm]({{site.baseurl}}/assets/img/2023-06-04/bellman-ford-vs-dijkstra.webp)
 
 #### 源自[Data Structures and Algorithms](https://www.programiz.com/dsa/algorithm)
