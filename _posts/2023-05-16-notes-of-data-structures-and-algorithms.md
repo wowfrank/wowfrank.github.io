@@ -319,12 +319,12 @@ How Hash Function Works?
 
 ## Bubble Sort
 
-- Time Complexity: Best Case = Ω(N), Worst Case = O(N\*\*2), Average Case = Θ(N\*\*2)
+- Time Complexity: Best Case = Ω(N), Worst Case = O(N^2), Average Case = Θ(N^2)
 - Space Complexity: Worst Case = O(1)
 
 ## Insertsion Sort
 
-- Time Complexity: Best Case = Ω(N), Worst Case = O(N\*\*2), Average Case = Θ(N\*\*2)
+- Time Complexity: Best Case = Ω(N), Worst Case = O(N^2), Average Case = Θ(N^2)
 - Space Complexity: Worst Case = O(1)
 
 ## Merge Sort
@@ -344,7 +344,7 @@ space and memory allocation are more expensive than comparison and swap.
 - Elements smaller than the pivot get moved to the left of the pivot, and elements larger than the pivot to the right of it.
 - This process is repeated for the collection to the left of the pivot, as well as for the array of elements to the right of the pivot until the whole array is sorted.
 
-- Time Complexity: Best Case = Ω(NlogN), Worst Case = O(N\*\*2), Average Case = Θ(NlogN)
+- Time Complexity: Best Case = Ω(NlogN), Worst Case = O(N^2), Average Case = Θ(NlogN)
 - Space Complexity: Worst Case = O(logN)
 
 ```python
