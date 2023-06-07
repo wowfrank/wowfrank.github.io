@@ -374,4 +374,32 @@ Bellman Ford's algorithm and Dijkstra's algorithm are very similar in structure.
 
 ![Bellman Ford's Algorithm vs Dijkstra's Algorithm]({{site.baseurl}}/assets/img/2023-06-04/bellman-ford-vs-dijkstra.webp)
 
+## Sorting and Searching Algorithms
+
+- Bubble Sort
+
+    Bubble sort is a sorting algorithm that compares two adjacent elements and swaps them until they are in the intended order.
+
+- Selection Sort
+
+    Selection sort is a sorting algorithm that selects **the smallest element** from an unsorted list in each iteration and places that element **at the beginning** of the unsorted list.
+
+- Insertion Sort
+
+    Insertion sort is a sorting algorithm that places an unsorted element **at its suitable place** in each iteration.
+
+- Merge Sort
+
+    
+
+- Quicksort
+- Counting Sort
+- Radix Sort
+- Bucket Sort
+- Heap Sort
+- Shell Sort
+- Linear Search
+- Binary Search
+
+
 #### 源自[Data Structures and Algorithms](https://www.programiz.com/dsa/algorithm)
