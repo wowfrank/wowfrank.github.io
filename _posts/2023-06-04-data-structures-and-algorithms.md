@@ -522,7 +522,7 @@ Bellman Ford's algorithm and Dijkstra's algorithm are very similar in structure.
 
 ## Time Complexities of all Sorting Algorithms
 
-|Algorithm	|Time Complexity	                |Space Complexity|
+|Algorithm	|Time Complexity||	                |Space Complexity|
 | 	        |Best	|Average	|Worst	        |Worst|
 |:--        |:--    |:--        |:--            |:--      |
 |Selection Sort	|Ω(n^2)	|θ(n^2)	|O(n^2)	|O(1)|
