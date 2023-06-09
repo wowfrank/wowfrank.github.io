@@ -513,9 +513,70 @@ Bellman Ford's algorithm and Dijkstra's algorithm are very similar in structure.
 
 - Quicksort
 
+    Quicksort is a sorting algorithm based on the divide and conquer approach where
+
+    1. An array is divided into subarrays by selecting a pivot element (element selected from the array). While dividing the array, the pivot element should be positioned in such a way that elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.
+    1. The left and right subarrays are also divided using the same approach. This process continues until each subarray contains a single element.
+    1. At this point, elements are already sorted. Finally, elements are combined to form a sorted array.
+
+    - Time Complexity: Best Case = Ω(n log(n)), Worst Case = O(n^2), Average Case = Θ(n log(n))
+    - Space Complexity: Worst Case = O(n)
 
 - Counting Sort
-- Radix Sort
+
+    Counting sort is a sorting algorithm that sorts the elements of an array by counting the number of occurrences of each unique element in the array. The count is stored in an auxiliary array and the sorting is done by mapping the count as an index of the auxiliary array.
+
+    ![Counting sort]({{site.baseurl}}/assets/img/2023-06-04/Counting-sort-4_1.png)
+
+    ```python
+    def counting_sort(array):
+        """
+        Counting sort is a sorting algorithm that sorts the elements of an array by counting the number of occurrences of each element.
+
+        Args:
+            array: The array to be sorted.
+
+        Returns:
+            A sorted array.
+        """
+
+        # Find the maximum element in the array.
+        max_element = max(array)
+        size = len(array)
+
+        # Create a count array to store the number of occurrences of each element.
+        count_array = [0] * (max_element + 1)
+
+        # Increment the count of each element in the count array.
+        for element in array:
+            count_array[element] += 1
+
+        # For each element in the countArray, sum up its value with the value of the previous 
+        # element, and then store that value as the value of the current element
+        for i in range(1, max_element + 1):
+            count_array[i] += count_array[i - 1]
+
+        # Create a sorted array by adding the elements from the count array.
+        sorted_array = [0] * size
+        i = size - 1
+        while i >= 0:
+            sorted_array[count_array[current_element] - 1] = array[i]
+            count_array[array[i]] -= 1
+            i -= 1
+
+        return sorted_array
+        ```
+
+    - Time Complexity: Best Case = Ω(n + k), Worst Case = O(n + k), Average Case = Θ(n + k)
+    - Space Complexity: Worst Case = O(k)
+
+- Radix Sort+
+
+    Radix sort is a sorting algorithm that sorts the elements by first grouping the individual digits of the same place value. Then, sort the elements according to their increasing/decreasing order.
+
+    - Time Complexity: Best Case = Ω(nk), Worst Case = O(nk), Average Case = Θ(nk)
+    - Space Complexity: Worst Case = O(n + k)
+
 - Bucket Sort
 - Heap Sort
 - Shell Sort
