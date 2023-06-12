@@ -594,15 +594,76 @@ Bellman Ford's algorithm and Dijkstra's algorithm are very similar in structure.
 |Heap Sort	|Ω(n log(n))	|θ(n log(n))	|O(n log(n))	|O(1)|
 |Quick Sort	|Ω(n log(n))	|θ(n log(n))	|O(n^2)	        |O(n)|
 |Merge Sort	|Ω(n log(n))	|θ(n log(n))	|O(n log(n))	|O(n)|
-|Bucket Sort	|Ω(n +k)	|θ(n +k)	    |O(n^2)	        |O(n)|
+|Bucket Sort	|Ω(n + k)	|θ(n + k)	    |O(n^2)	        |O(n)|
 |Radix Sort	|Ω(nk)	        |θ(nk)	        |O(nk)	        |O(n + k)|
-|Count Sort	|Ω(n +k)	|θ(n +k)	|O(n +k)	|O(k)|
+|Count Sort	|Ω(n + k)	|θ(n + k)	|O(n + k)	|O(k)|
 |Shell Sort	|Ω(n log(n))	|θ(n log(n))	|O(n^2)	|O(1)|
 |Tim Sort	|Ω(n)	|θ(n log(n))	|O(n log (n))	|O(n)|
 |Tree Sort	|Ω(n log(n))	|θ(n log(n))	|O(n^2)	|O(n)|
 |Cube Sort	|Ω(n)	|θ(n log(n))	|O(n log(n))	|O(n)|
 
 ## Greedy Algorithm
+
+A greedy algorithm is an approach for solving a problem by selecting the best option available at the moment. It doesn't worry whether the current best result will bring the overall optimal result.
+
+The algorithm never reverses the earlier decision even if the choice is wrong. It works in a top-down approach.
+
+1. To begin with, the solution set (containing answers) is empty.
+1. At each step, an item is added to the solution set until a solution is reached.
+1. If the solution set is feasible, the current item is kept.
+1. Else, the item is rejected and never considered again.
+
+## Ford-Fulkerson Algorithm
+
+Ford-Fulkerson algorithm is a greedy approach for calculating the maximum possible flow in a network or a graph.
+
+A term, **flow network**, is used to describe a network of vertices and edges with a **source (S)** and a **sink (T)**. Each vertex, except **S** and **T**, can receive and send an equal amount of stuff through it. **S** can only send and **T** can only receive stuff.
+
+We can visualize the understanding of the algorithm using a flow of liquid inside a network of pipes of different capacities. Each pipe has a certain capacity of liquid it can transfer at an instance. For this algorithm, we are going to find how much liquid can be flowed from the source to the sink at an instance using the network.
+
+![Flow network graph]({{site.baseurl}}/assets/img/2023-06-04/flow-network.webp)
+
+**Augmenting Path**: It is the path available in a flow network.
+
+**Residual Graph**: It represents the flow network that has additional possible flow.
+
+**Residual Capacity**: It is the capacity of the edge after subtracting the flow from the maximum capacity.
+
+1. Initialize the flow in all the edges to 0.
+1. While there is an augmenting path between the source and the sink, add this path to the flow.
+1. Update the residual graph.
+
+![Flow network graph example]({{site.baseurl}}/assets/img/2023-06-04/flow-network-example.webp)
+
+Select any arbitrary path from S to T. In this step, we have selected path S-A-B-T.
+
+![Find a path]({{site.baseurl}}/assets/img/2023-06-04/flow-network-1.webp)
+
+The minimum capacity among the three edges is 2 (B-T). Based on this, update the flow/capacity for each path.
+
+![Update the capacities]({{site.baseurl}}/assets/img/2023-06-04/flow-network-1-update.webp)
+
+Select another path S-D-C-T. The minimum capacity among these edges is 3 (S-D).
+
+![Find next path]({{site.baseurl}}/assets/img/2023-06-04/flow-network-2.webp)
+
+Update the capacities according to this.
+
+![Update the capacities]({{site.baseurl}}/assets/img/2023-06-04/flow-network-2-update.webp)
+
+Now, let us consider the reverse-path B-D as well. Selecting path S-A-B-D-C-T. The minimum residual capacity among the edges is 1 (D-C).
+
+![Find next path]({{site.baseurl}}/assets/img/2023-06-04/flow-network-3.webp)
+
+Updating the capacities.
+
+![Update the capacities]({{site.baseurl}}/assets/img/2023-06-04/flow-network-3-update.webp)
+
+The capacity for forward and reverse paths are considered separately.
+
+Adding all the flows = 2 + 3 + 1 = 6, which is the maximum possible flow on the flow network.
+
+> Note that if the capacity for any edge is full, then that path cannot be used.
 
 
 
