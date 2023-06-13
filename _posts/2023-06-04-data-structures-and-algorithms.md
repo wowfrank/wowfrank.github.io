@@ -530,15 +530,13 @@ Bellman Ford's algorithm and Dijkstra's algorithm are very similar in structure.
 
     ```python
     def counting_sort(array):
-        """
-        Counting sort is a sorting algorithm that sorts the elements of an array by counting the number of occurrences of each element.
+        # Counting sort is a sorting algorithm that sorts the elements of an array 
+        # by counting the number of occurrences of each element.
+        # Args:
+        #    array: The array to be sorted.
 
-        Args:
-            array: The array to be sorted.
-
-        Returns:
-            A sorted array.
-        """
+        # Returns:
+        #    A sorted array.
 
         # Find the maximum element in the array.
         max_element = max(array)
