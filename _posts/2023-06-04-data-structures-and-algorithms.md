@@ -665,6 +665,48 @@ Adding all the flows = 2 + 3 + 1 = 6, which is the maximum possible flow on the 
 
 > Note that if the capacity for any edge is full, then that path cannot be used.
 
+## Dijkstra’s Algorithm
+
+Dijkstra’s algorithm is a popular search algorithm used to determine the shortest path between two nodes in a graph. Recall that Dijkstra’s algorithm operates on graphs, meaning that it can address a problem only if it can be represented in a graph-like structure.
+
+There are several paths from Reykjavik to Belgrade that go through other cities:
+
+- Reykjavik –> Oslo –> Berlin –> Belgrade
+- Reykjavik –> London –> Berlin –> Rome –> Athens –> Belgrade
+- Reykjavik –> London –> Berlin –> Rome –> Athens –> Moscow –> Belgrade
+
+Each of these paths end in Belgrade, but they all have different values.
+
+Before diving into the code, let’s start with a high-level illustration of Dijkstra’s algorithm.
+
+First, we initialize the algorithm as follows:
+
+- We set Reykjavik as the starting node.
+- We set the distances between Reykjavik and all other cities to infinity, except for the distance between Reykjavik and itself, which we set to 0.
+
+After that, we iteratively execute the following steps:
+
+- We choose the node with the smallest value as the “current node” and visit all of its neighboring nodes. As we visit each neighbor, we update their tentative distance from the starting node.
+- Once we visit all of the current node’s neighbors and update their distances, we mark the current node as “visited.” Marking a node as “visited” means that we’ve arrived at its final cost.
+- We go back to step one. The algorithm loops until it visits all the nodes in the graph. 
+
+In our example, we start by marking Reykjavik as the “current node” since its value is 0. We proceed by visiting Reykjavik’s two neighboring nodes: London and Oslo. At the beginning of the algorithm, their values are set to infinity, but as we visit the nodes, we update the value for London to 4, and Oslo to 5.
+
+We then mark Reykjavik as “visited.” We know that its final cost is zero, and we don’t need to visit it again. We continue with the next node with the lowest value, which is London.
+
+We visit all of London’s neighboring nodes which we haven’t marked as “visited.” London’s neighbors are Reykjavik and Berlin, but we ignore Reykjavik because we’ve already visited it. Instead, we update Berlin’s value by adding the value of the edge connecting London and Berlin (3) to the value of London (4), which gives us a value of 7.
+
+We mark London as visited and choose the next node: Oslo. We visit Oslo’s neighbors and update their values. It turns out that we can better reach Berlin through Oslo (with a value of 6) than through London, so we update its value accordingly. We also update the current value of Moscow from infinity to 8.
+
+We mark Oslo as “visited” and update its final value to 5. Between Berlin and Moscow, we choose Berlin as the next node because its value (6) is lower than Moscow’s (8). We proceed as before: We visit Rome and Belgrade and update their tentative values, before marking Berlin as “visited” and moving on to the next city.
+
+Note that we’ve already found a path from Reykjavik to Belgrade with a value of 15! But is it the best one?
+
+Ultimately, it’s not. We’ll skip the rest of the steps, but you get the drill. The best path turns out to be:
+
+- Reykjavik –> Oslo –> Berlin –> Rome –> Athens –> Belgrade, with a value of 11.
+
+
 
 
 #### 源自[Data Structures and Algorithms](https://www.programiz.com/dsa/algorithm)
