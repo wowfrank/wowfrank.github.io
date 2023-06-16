@@ -647,6 +647,8 @@ We can visualize the understanding of the algorithm using a flow of liquid insid
 
 ![Flow network graph]({{site.baseurl}}/assets/img/2023-06-04/flow-network.webp)
 
+[Ford-Fulkerson Algorithm for Maximum Flow Problem](https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/)
+
 **Augmenting Path**: It is the path available in a flow network.
 
 **Residual Graph**: It represents the flow network that has additional possible flow.
