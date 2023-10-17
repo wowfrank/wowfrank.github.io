@@ -178,6 +178,14 @@ The planning, implementation, and control of activities that apply quality manag
 1. Connected to service levels: Data quality reporting and issues management should be incorporated into SLA.
 1. Systematically enforced: System owners must systematically enforce data quality requirements.
 
+### Policy
+
+1. Purpose, scope and applicability of the policy
+1. Definitions of terms
+1. Responsibilities of the Data Quality program
+1. Responsibilities of other stakeholders
+1. Reporting
+1. Implementation of the policy, including links to risk, preventative measures, compliance, data protection, and data security
 
 ## Data Security
 
