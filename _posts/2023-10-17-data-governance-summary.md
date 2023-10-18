@@ -46,7 +46,7 @@ categories: ['Data Management']
 
 Data Governance is a system of rights and accountabilities, and the enforcement of authority over the management of all data and data-related assets of the organization.
 
-Data policies are directives that codify principles and management intent into fundamental rules governing the creation, acquisition, integrity, security, quality, and use of data and information.
+**Data policies** are directives that codify principles and management intent into fundamental rules governing the creation, acquisition, integrity, security, quality, and use of data and information.
 
 1. **Data Architecture**: Enterprise data models, tool standards, and system naming conventions
 1. **Data Modelling & Design**: Data model management procedures, data modelling naming conventions, definition standards, standard domains, and standard abbreviations.
@@ -99,15 +99,15 @@ A **Metadata Repository** refers to the physical tables in which the Metadata is
 1. **Enterprise perspective**: Take an enterprise perspective to ensure future extensibility, but implement through iterative and incremental delivery to bring value.
 1. **Socialization**: Communicate the necessity of Metadata and the purpose of each type of Metadata; socialization of the value of Metadata will encourage business use and, as importantly, the contribution of business expertise.
 1. **Access**: Ensure staff members know how to access and use Metadata.
-1. **Quality | Accountability**: Recognize that Metadata is often produced through existing processes (data modelling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
+1. **Quality \| Accountability**: Recognize that Metadata is often produced through existing processes (data modelling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
 1. **Audit**: Set, enforce, and audit standards for Metadata to simplify integration and enable use.
-1. **Improvement | Standards**: Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date.
+1. **Improvement \| Standards**: Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date.
 
 ![Metadata Repository MetaModel]({{site.baseurl}}/assets/img/2023-10-17/metadata-repositiory-metamodel.png)
 
 ## Reference & Master Data
 
-1. **Master Data Management**: entails contril over Master Data values and identifiers that enable consistent use, across systems, of the most accurate and timely data about essential business entities. The goals of MDM include ensuring availability of accurate, current values while reducing risks associated with ambiguous identifiers (those identified with more than one instance of an entity and those that refer to more than one entity).
+1. **Master Data Management**: entails control over Master Data values and identifiers that enable consistent use, across systems, of the most accurate and timely data about essential business entities. The goals of MDM include ensuring availability of accurate, current values while reducing risks associated with ambiguous identifiers (those identified with more than one instance of an entity and those that refer to more than one entity).
 1. **Reference Data Management**: entails control over defined domain values and their definition. The goal of RDM is to ensure the organization has access to a complete set of accurate and current values for each concept represented.
 
 ![Key Processing Steps For MDM]({{site.baseurl}}/assets/img/2023-10-17/key-processing-steps-for-mdm.png)
@@ -342,12 +342,22 @@ Definition, planning, development, and execution of security policies and proced
 
 ### Principles
 
-1. **Collaboration**
-2. **Enterprise approach**
-3. **Proactive management**
-4. **Clear accountability**
-5. **Metadata-driven**
-6. **Reduce risk by reducing exposure**
+1. **Collaboration**: Data Security is a collaborative effort involving IT security administrators, data stewards/data governance, internal and external audit teams, and the legal department.
+2. **Enterprise approach**: Data Security standards and policies must be applied consistently across the entire organization.
+3. **Proactive management**: Success in data security management depends on being proactive and dynamic, engaging all stakeholders, managing change, and overcoming organizational or cultural bottlenecks such as traditional separation of responsibilities between information security, information technology, data administration, and business stakeholders.
+4. **Clear accountability**: Roles and responsibilities must be clearly defined, including the 'chain of custody' for data across organizations and roles.
+5. **Metadata-driven**: Security classification for data elements is an essential part of data definitions.
+6. **Reduce risk by reducing exposure**: Minimize sensitive/confidential data proliferation, especially to non-production environments.
+
+### Security Processes
+
+4 A's
+
+1. Access
+1. Audit
+1. Authentication
+1. Authorization
+1. entitlement
 
 ## Data Privacy
 
@@ -378,7 +388,11 @@ The exercise of monitoring, and enforcement, and shared decision-making over pri
 
 ## Document & Content Management
 
-Planning, implementation, and control activities for lifecycle management of data and information found in any form or medium
+Planning, implementation, and control activities for lifecycle management of data and information found in any form or medium.
+
+Document and Content Management entails controlling the capture, storage, access, and use of data and information stored outside relational databases.
+
+Its focus is on maintaining the quality, security, integrity of and enabling access to documents and other **unstructured** information.
 
 ### Goals
 
@@ -393,3 +407,6 @@ Planning, implementation, and control activities for lifecycle management of dat
 
 ![E-Discovery Reference Model]({{site.baseurl}}/assets/img/2023-10-17/e-discovery-reference-model.png)
 
+Volume -> Relevance
+
+As e-discovery progresses, the volume of discoverable data and information is greatly reduced as their relevance is greatly increased.
