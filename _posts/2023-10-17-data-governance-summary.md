@@ -84,6 +84,8 @@ Metadata includes information about technical and business processes, data rules
 
 A **Metadata Repository** refers to the physical tables in which the Metadata is stored.
 
+![Metadata Repository MetaModel]({{site.baseurl}}/assets/img/2023-10-17/metadata-repository-metamodel.png)
+
 ### Types
 
 1. Business Metadata
@@ -97,13 +99,19 @@ A **Metadata Repository** refers to the physical tables in which the Metadata is
 1. **Enterprise perspective**: Take an enterprise perspective to ensure future extensibility, but implement through iterative and incremental delivery to bring value.
 1. **Socialization**: Communicate the necessity of Metadata and the purpose of each type of Metadata; socialization of the value of Metadata will encourage business use and, as importantly, the contribution of business expertise.
 1. **Access**: Ensure staff members know how to access and use Metadata.
-1. **Quality**: Recognize that Metadata is often produced through existing processes (data modelling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
+1. **Quality | Accountability**: Recognize that Metadata is often produced through existing processes (data modelling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
 1. **Audit**: Set, enforce, and audit standards for Metadata to simplify integration and enable use.
-1. **Improvement**: Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date.
+1. **Improvement | Standards**: Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date.
 
 ![Metadata Repository MetaModel]({{site.baseurl}}/assets/img/2023-10-17/metadata-repositiory-metamodel.png)
 
 ## Reference & Master Data
+
+1. **Master Data Management**: entails contril over Master Data values and identifiers that enable consistent use, across systems, of the most accurate and timely data about essential business entities. The goals of MDM include ensuring availability of accurate, current values while reducing risks associated with ambiguous identifiers (those identified with more than one instance of an entity and those that refer to more than one entity).
+1. **Reference Data Management**: entails control over defined domain values and their definition. The goal of RDM is to ensure the organization has access to a complete set of accurate and current values for each concept represented.
+
+![Key Processing Steps For MDM]({{site.baseurl}}/assets/img/2023-10-17/key-processing-steps-for-mdm.png)
+
 
 ### Principles
 
@@ -121,6 +129,111 @@ A **Metadata Repository** refers to the physical tables in which the Metadata is
 1. **Formalization**: A data model documents a concise definition of data structures and relationships. It enables assessment of how data is affected by implemented business rules, for current as-is states or desired target states. Formal definition imposes a disciplined structure to data that reduces the possibility of data anomalies occurring when accessing and persisting data. By illustrating the structures and relationships in the data, a data model makes data easier to consume.
 1. **Scope Definition**: A data model can help explain the boundaries for data context and implementation of purchased application packages, projects, initiatives, or existing systems.
 1. **Knowledge retention/documentation**: A data model can preserve corporate memory regarding a system or project by capturing knowledge in an explicit form. It serves as documentation for future projects to use as the as-is version. Data models help us understand an organization or business area, an existing application, or the impact of modifying an existing data structure. The data mode becomes a reusable map to help business professionals, project managers, analysts, modellers, and developers understand data structure within the environment. In much the same way as mapmaker learned and documented a geographic landscape for others to use for navigation, the modeller enables others to understand an information landscape.
+
+### 1NF (First Normal Form) Rules
+
+- A table is referred to as being in its First Normal Form if atomicity of the table is 1.
+- Here, **atomicity** states that a single cell cannot hold multiple values. It must hold only a single-valued attribute.
+- The First normal form disallows the multi-valued attribute, composite attribute, and their combinations.
+
+example:
+
+| roll_no |name | course | age |  gender |
+|:---|:---|:---|:---|:---|
+|  1 |  Rahul |  c/c++ | 22  | m  |
+|  2 |  Harsh |  java/php |  24 | f  |
+|  3 |  Sahil |  python/c++ |  19 | f  |
+|  4 |  Adam |  javascript |  40 |  m |
+
+In the students record table, you can see that the course column has two values. Thus it does not follow the First Normal Form. Now, if you use the First Normal Form to the above table, you get the below table as a result.
+
+### 2NF (Second Normal Form) Rules
+
+- The first condition for the table to be in Second Normal Form is that the table has to be in First Normal Form.
+- The table should not possess partial dependency.
+- The partial dependency here means the proper subset of the candidate key should give a non-prime attribute.
+
+example:
+
+| cust_id  | store_id  | store_location  |
+|:---|:---|:---|
+|  1 | D1  |  Toronto |
+|  2 |   D3|  Miami |
+|  3 | T1  |  Florida |
+
+The Location table possesses a composite primary key cust_id, storeid. The non-key attribute is store_location. In this case, store_location only depends on storeid, which is a part of the primary key. Hence, this table does not fulfill the second normal form.
+
+### 3NF (Third Normal Form) Rules
+
+- The first condition for the table to be in Third Normal Form is that the table should be in the Second Normal Form.
+- The second condition is that there should be no transitive dependency for non-prime attributes, which indicates that non-prime attributes (which are not a part of the candidate key) should not depend on other non-prime attributes in a table. Therefore, a transitive dependency is a functional dependency in which A → C (A determines C) indirectly, because of A → B and B → C (where it is not the case that B → A).
+- The third Normal Form ensures the reduction of data duplication. It is also used to achieve data integrity.
+
+| stu_id  |  name | sub_id  |  sub | address |
+|:---|:---|:---|:---|:---|
+| 1  | Arun  |  11 | SQL  | Delhi  |
+|  2 | Varun  | 12  |  Jave | Bangalore  |
+| 3  |  Harsh |  21 | Python  | Delhi  |
+| 4  | Keshav  | 21  | Python  |  Kochi |
+
+In the above student table, stu_id determines subid, and subid determines sub. Therefore, stu_id determines sub via subid. This implies that the table possesses a transitive functional dependency, and it does not fulfill the third normal form criteria.
+
+### Boyce CoddNormal Form (BCNF)
+
+- The first condition for the table to be in Boyce Codd Normal Form is that the table should be in the third normal form. 
+- Secondly, every Right-Hand Side (RHS) attribute of the functional dependencies should depend on the super key of that particular table.
+
+|  stu_id |  subject |  professor |
+|:---|:---|:---|
+|  1 |  Python |  Prof. Mishra |
+|  2 |  C++ |  Prof. Anand |
+|  3 |  JAVA | Prof. Kanth  |
+|  4 | DBMS  | Prof. James  |
+
+The subject table follows these conditions:
+
+- Each student can enroll in multiple subjects.
+- Multiple professors can teach a particular subject.
+- For each subject, it assigns a professor to the student.
+
+In the above table, student_id and subject together form the primary key because using student_id and subject; you can determine all the table columns.
+
+Another important point to be noted here is that one professor teaches only one subject, but one subject may have two professors.
+
+Which exhibit there is a dependency between subject and professor, i.e. subject depends on the professor's name.
+
+to
+
+The table is in 1st Normal form as all the column names are unique, all values are atomic, and all the values stored in a particular column are of the same domain.
+
+The table also satisfies the 2nd Normal Form, as there is no Partial Dependency.
+
+And, there is no Transitive Dependency; hence, the table also satisfies the 3rd Normal Form.
+
+This table follows all the Normal forms except the Boyce Codd Normal Form.
+
+As you can see stuid, and subject forms the primary key, which means the subject attribute is a prime attribute.
+
+However, there exists yet another dependency - professor → subject.
+
+BCNF does not follow in the table as a subject is a prime attribute, the professor is a non-prime attribute.
+
+To transform the table into the BCNF, you will divide the table into two parts. One table will hold stuid which already exists and the second table will hold a newly created column profid.
+
+|  stu_id   | pro_id  |
+|:---|:---|
+|  1 |  3 |
+|  2 |  1 |
+|  3 |  3 |
+|  4 |  5 |
+
+|  pro_id |  subject |  professor |
+|:---|:---|:---|
+|  1 |  Python |  Prof. Mishra |
+|  2 |  C++ |  Prof. Anand |
+|  3 |  JAVA | Prof. Kanth  |
+|  4 | DBMS  | Prof. James  |
+
 
 ## Data Architecture
 
@@ -181,6 +294,10 @@ Data S&O includes the design, implementation and support of stored data, to maxi
 4. **Utilize database standards to support requirements**
 5. **Set expectations for the DBA role in project work**
 
+A **distributed system's components** can be classified depending on the autonomy of the component systems into two types: **federated (autonomous)** or **non-federated (non-autonomous)**
+
+Federation provisions data without additional persistence or duplication of source data. A federated database system maps multiple autonomous database systems into a single federated database. The constituent  databases, sometimes geographically separated, are interconnected via a computer network. They remain autonomous yet participate in a federation to allow partial and controlled sharing of their data. Federation provides an alternative to merging disparate databases. There is no actual data integration in the constituent database because of data federation; instead, data interoperability manages the view of the federated databases as one large object. In contrast, a non-federated database system is an integration of component DBMS's that are not autonomous; they aer controlled, managed and governed by a centralized DBMS.
+
 ## Data Quality
 
 The planning, implementation, and control of activities that apply quality management techniques to data, in order to assure it is fit for consumption and meets the needs of data consumers.
@@ -193,7 +310,7 @@ The planning, implementation, and control of activities that apply quality manag
 
 ### Principles
 
-1. **Criticality**: A DQ program should focus on the data most critical to the enterprise and its customers. Priorities for imporovement should be based on the criticality of the data and on the level of risk if data is not correct
+1. **Criticality**: A DQ program should focus on the data most critical to the enterprise and its customers. Priorities for improvement should be based on the criticality of the data and on the level of risk if data is not correct
 1. **Lifecycle Management**: The quality of data should be managed across the data lifecycle, from creation or procurement through disposal. This includes managing data as it moves within and between systems.
 1. **Prevention**: This focus of a DQ program should be on preventing data errors and conditions that reduce the usability of data; it should not be focus on simply correcting records.
 1. **Root cause remediation**: Improving the quality of data goes beyond correcting errors. Problems with the quality of data should be understood and addressed at their root causes, rather than just their symptoms. Because these causes are often related to process or system design, improving data quality often requires changes to processes and the systems that support them.
@@ -275,3 +392,4 @@ Planning, implementation, and control activities for lifecycle management of dat
 2. Experts in handling of Records and Content should be fully engaged in policy and planning, and should comply with regulations and best practices
 
 ![E-Discovery Reference Model]({{site.baseurl}}/assets/img/2023-10-17/e-discovery-reference-model.png)
+
