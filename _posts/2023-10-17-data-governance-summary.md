@@ -405,6 +405,8 @@ Its focus is on maintaining the quality, security, integrity of and enabling acc
 1. Everyone must create, use, retrieve, and dispose of records in accordance with the established policies and procedures
 2. Experts in handling of Records and Content should be fully engaged in policy and planning, and should comply with regulations and best practices
 
+**E-discovery** is the process of finding electronic records that might serve as evidence in a legal action. As the technology for creating, storing, and using data has developed, the volume of ESI has increased exponentially. Some of this data will undoubtedly end up in litigation or regulatory requests.
+
 ![E-Discovery Reference Model]({{site.baseurl}}/assets/img/2023-10-17/e-discovery-reference-model.png)
 
 Volume -> Relevance
