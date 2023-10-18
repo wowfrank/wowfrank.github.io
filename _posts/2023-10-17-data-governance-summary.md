@@ -46,34 +46,60 @@ categories: ['Data Management']
 
 Data Governance is a system of rights and accountabilities, and the enforcement of authority over the management of all data and data-related assets of the organization.
 
+Data policies are directives that codify principles and management intent into fundamental rules governing the creation, acquisition, integrity, security, quality, and use of data and information.
+
+1. **Data Architecture**: Enterprise data models, tool standards, and system naming conventions
+1. **Data Modelling & Design**: Data model management procedures, data modelling naming conventions, definition standards, standard domains, and standard abbreviations.
+1. **Data Storage and Operations**: Tool standards, standards for database recovery and business continuity, database performance, data retention, and external data acquisition.
+1. **Data Security**: Data access security standards, monitoring and audit procedures, storage security standards, and training requirements
+1. **Data integration and Interoperability**: Standard methods and tools used for data integration and interoperability.
+1. **Documents and Content**: Content management standards and procedures, including use of enterprise taxonomies, support for legal discovery, document and email retention periods, electronic signatures, and report distribution approaches.
+1. **Reference and Master Data**: Reference Data Management control procedures, systems of data records, assertions establishing and mandating use, standards for entity resolution.
+1. **Data Warehousing and Business Intelligence**: Tool standard, processing standards and procedures, report and visualization formatting standards, standards for Big Data handling.
+1. **Metadata**: Standard business and technical Metadata to be captured, Metadata integration procedures and usage
+1. **Data Quality**: Data quality rules, standard measurement methodologies, data remediation standards and procedures
+1. **Big Data and Data Science**: Data source Identification authority, acquisition, system of record, sharing and refresh.
+
 ### Strategic Alignment
 
-1. Accountability: roles and responsibilities in the defined organizational chart
-1. Data Inventory: data stewards to maintain the inventory of all data using metadata tools
-1. Business Processes: establish processes for managing data in massive storage and data analysis tools
-1. Policies, Procedures and Rules: define data protection, classification, compliance and security
+1. **Accountability**: roles and responsibilities in the defined organizational chart
+1. **Data Inventory**: data stewards to maintain the inventory of all data using metadata tools
+1. **Business Processes**: establish processes for managing data in massive storage and data analysis tools
+1. **Policies, Procedures and Rules**: define data protection, classification, compliance and security
 
 ### Principles
 
-1. Leadership and Strategy
-1. Business-driven
-1. Shared responsibility
-1. Multi-layered
-1. Framework-based
-1. Principle-based
+1. **Leadership and Strategy**: Successful Data Governance starts with visionary and committed leadership. Data management activities are guided by a data strategy that is itself driven by the enterprise business strategy.
+1. **Business-driven**: Data Governance is a business program, and, as such, must govern IT decisions related to data as much as it governs business interaction with data.
+1. **Shared responsibility**: Across all Data Management Knowledge Areas, data governance is a shared responsibility between business data stewards and technical data management professionals.
+1. **Multi-layered**: Data governance occurs at both the enterprise and local levels and often at levels in between.
+1. **Framework-based**: because data governance activities require coordination across functional areas, the DG program must establish an operating framework that defines accountabilities and interactions.
+1. **Principle-based**: Guiding principles are the foundation of DG activities, and especially of DG policy. Often, organizations develop policy without formal principles - they are trying to solve particular problems. Principles can sometimes be reverse-engineered from policy. However, it is best to articulate a core set of principles and best practices as part of policy work. Reference to principles can mitigate potential resistance. Additional guiding principles will emerge over time within an organization. Publish them in a shared internal environment along with other data governance artifacts.
+
+![Data Governance Organization Parts]({{site.baseurl}}/assets/img/2023-10-17/data-governance-organization-parts.png)
 
 ## Metadata Management
 
+Metadata includes information about technical and business processes, data rules and constraints, and logical and physical data structures. It describes the data itself(e.g., databases, data elements, data models), the concepts the data represents (e.g., business processes, application systems, software code, technology infrastructure), and the connections (relationships) between the data and concepts. Metadata helps an organization understand its data, its systems, and its workflows.
+
+A **Metadata Repository** refers to the physical tables in which the Metadata is stored.
+
+### Types
+
+1. Business Metadata
+1. Technical Metadata
+1. Operational Metadata
+
 ### Principles
 
-1. Organizational commitment
-1. Strategy
-1. Enterprise perspective
-1. Socialization
-1. Access
-1. Quality
-1. Audit
-1. Improvement
+1. **Organizational commitment**L Secure organizational commitment (senior management support and funding) to Metadata management as part of an overall strategy to manage data as an enterprise asset.
+1. **Strategy**: Develop a Metadata strategy that accounts for how Metadata will be created, maintained, integrated, and accessed. The strategy should drive requirements, which should be defined before evaluating, purchasing, and installing Metadata management products. The Metadata strategy must align with business priorities.
+1. **Enterprise perspective**: Take an enterprise perspective to ensure future extensibility, but implement through iterative and incremental delivery to bring value.
+1. **Socialization**: Communicate the necessity of Metadata and the purpose of each type of Metadata; socialization of the value of Metadata will encourage business use and, as importantly, the contribution of business expertise.
+1. **Access**: Ensure staff members know how to access and use Metadata.
+1. **Quality**: Recognize that Metadata is often produced through existing processes (data modelling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
+1. **Audit**: Set, enforce, and audit standards for Metadata to simplify integration and enable use.
+1. **Improvement**: Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date.
 
 ![Metadata Repository MetaModel]({{site.baseurl}}/assets/img/2023-10-17/metadata-repositiory-metamodel.png)
 
@@ -81,20 +107,20 @@ Data Governance is a system of rights and accountabilities, and the enforcement 
 
 ### Principles
 
-1. Shared Data
-1. Ownership
-1. Quality
-1. Stewardship
-1. Controlled Change
-1. Authority
+1. **Shared Data**
+1. **Ownership**
+1. **Quality**
+1. **Stewardship**
+1. **Controlled Change**
+1. **Authority**
 
 ## Data Modelling & Design
 
 ### Principles
 
-1. Formalization: A data model documents a concise definition of data structures and relationships. It enables assessment of how data is affected by implemented business rules, for current as-is states or desired target states. Formal definition imposes a disciplined structure to data that reduces the possibility of data anomalies occurring when accessing and persisting data. By illustrating the structures and relationships in the data, a data model makes data easier to consume.
-1. Scope Definition: A data model can help explain the boundaries for data context and implementation of purchased application packages, projects, initiatives, or existing systems.
-1. Knowledge retention/documentation: A data model can preserve corporate memory regarding a system or project by capturing knowledge in an explicit form. It serves as documentation for future projects to use as the as-is version. Data models help us understand an organization or business area, an existing application, or the impact of modifying an existing data structure. The data mode becomes a reusable map to help business professionals, project managers, analysts, modellers, and developers understand data structure within the environment. In much the same way as mapmaker learned and documented a geographic landscape for others to use for navigation, the modeller enables others to understand an information landscape.
+1. **Formalization**: A data model documents a concise definition of data structures and relationships. It enables assessment of how data is affected by implemented business rules, for current as-is states or desired target states. Formal definition imposes a disciplined structure to data that reduces the possibility of data anomalies occurring when accessing and persisting data. By illustrating the structures and relationships in the data, a data model makes data easier to consume.
+1. **Scope Definition**: A data model can help explain the boundaries for data context and implementation of purchased application packages, projects, initiatives, or existing systems.
+1. **Knowledge retention/documentation**: A data model can preserve corporate memory regarding a system or project by capturing knowledge in an explicit form. It serves as documentation for future projects to use as the as-is version. Data models help us understand an organization or business area, an existing application, or the impact of modifying an existing data structure. The data mode becomes a reusable map to help business professionals, project managers, analysts, modellers, and developers understand data structure within the environment. In much the same way as mapmaker learned and documented a geographic landscape for others to use for navigation, the modeller enables others to understand an information landscape.
 
 ## Data Architecture
 
@@ -111,12 +137,12 @@ Data Governance is a system of rights and accountabilities, and the enforcement 
 
 ### Readiness Assessment/Risk Assessment
 
-1. Lack of management support: Any reorganization of the enterprise during the planned execution of the project will affect the architecture process. For example, new decision makers may question the process and be tempted to withdraw from opportunities for participants to continue their work on the Data Architecture. It is by establishing support among management that an architecture process can survive reorganization. Therefore, be certain to enlist into the Data Architecture development process more than one member of top-level management, or at least senior management, who understand the benefits of Data Architecture.
-1. No proven record of accomplishment: Having a sponsor is essential to the success of the effort, as is his or her confidence in those carrying out the Data Architecture function. Enlist the help of a senior architect colleague to help carry out the most important steps.
-1. Apprehensive sponsor: If the sponsor requires all communication to pass through them, it may be an indication that that person is uncertain of their role, has interests other than the objectives of the Data Architecture process, or is uncertain of the data architect's capability. Regardless of the reason, the sponsor must allow the project manager and data architect to take the leading roles in the project. Try to establish independence in the workplace, along with the sponsor's confidence.
-1. Counter-productive executive decision: It may be the case that although management understands the value of a well-organized Data Architecture, they do not know how to achieve it. Therefore, they may make decisions that counteract the data architect's efforts. This is not a sign of disloyal management but rather an indication that the data architect needs to communicate more clearly or frequently with management.
-1. Culture shock: Consider how the working culture will change among those who will be affected by the Data Architecture. Try to imagine how easy or difficult it will be for the employees to change their behaviour within the organization.
-1. Inexperienced project leader: Make sure that the project manager has experience with Enterprise Data Architecture particularly if the project has a heavy data component. If this is not the case, encourage the sponsor to change or educate the project manager
+1. **Lack of management support**: Any reorganization of the enterprise during the planned execution of the project will affect the architecture process. For example, new decision makers may question the process and be tempted to withdraw from opportunities for participants to continue their work on the Data Architecture. It is by establishing support among management that an architecture process can survive reorganization. Therefore, be certain to enlist into the Data Architecture development process more than one member of top-level management, or at least senior management, who understand the benefits of Data Architecture.
+1. **No proven record of accomplishment**: Having a sponsor is essential to the success of the effort, as is his or her confidence in those carrying out the Data Architecture function. Enlist the help of a senior architect colleague to help carry out the most important steps.
+1. **Apprehensive sponsor**: If the sponsor requires all communication to pass through them, it may be an indication that that person is uncertain of their role, has interests other than the objectives of the Data Architecture process, or is uncertain of the data architect's capability. Regardless of the reason, the sponsor must allow the project manager and data architect to take the leading roles in the project. Try to establish independence in the workplace, along with the sponsor's confidence.
+1. **Counter-productive executive decision**: It may be the case that although management understands the value of a well-organized Data Architecture, they do not know how to achieve it. Therefore, they may make decisions that counteract the data architect's efforts. This is not a sign of disloyal management but rather an indication that the data architect needs to communicate more clearly or frequently with management.
+1. **Culture shock**: Consider how the working culture will change among those who will be affected by the Data Architecture. Try to imagine how easy or difficult it will be for the employees to change their behaviour within the organization.
+1. **Inexperienced project leader**: Make sure that the project manager has experience with Enterprise Data Architecture particularly if the project has a heavy data component. If this is not the case, encourage the sponsor to change or educate the project manager
 Dominance of a one-dimensional view: Sometimes the owner of one business application might tend to dictate their view about the overall enterprise-level Data Architecture at the expense of a more well-balanced, all-inclusive view.
 
 ## Data Integration & Interoperability
@@ -149,11 +175,11 @@ Data S&O includes the design, implementation and support of stored data, to maxi
 
 ### Principles
 
-1. Identify and act on automation opportunities: automate database development processes, developing tools, and processes that shorten each development cycle, reduce errors and rework, and minimize the impact on the development team. In this way, DBAs can adapt to more iterative approaches to application development. This improvement work should be done in collaboration with data modelling and Data Architecture.
-2. Build with reuse in mind: Develop and promote the use of abstracted and reusable data objects that prevent applications from being tightly coupled to database schemas. A number of mechanisms exist to this end, including database views, triggers, functions and stored procedures, application data objects and data-access layers, XML and XSLT, ADO.NET typed data sets, and web services. The DBA should be able to assess the best approach virtualizing data. The end goal is to make using the database as quick, easy, and painless as possible
-3. Understand and appropriately apply best practices: DBAs should promote database standards and best practices as requirements, but be flexible enough to deviate from them if given acceptable reasons for these deviations. Database standards should never be a threat to the success of a project.
-4. Utilize database standards to support requirements
-5. Set expectations for the DBA role in project work
+1. **Identify and act on automation opportunities**: automate database development processes, developing tools, and processes that shorten each development cycle, reduce errors and rework, and minimize the impact on the development team. In this way, DBAs can adapt to more iterative approaches to application development. This improvement work should be done in collaboration with data modelling and Data Architecture.
+2. **Build with reuse in mind**: Develop and promote the use of abstracted and reusable data objects that prevent applications from being tightly coupled to database schemas. A number of mechanisms exist to this end, including database views, triggers, functions and stored procedures, application data objects and data-access layers, XML and XSLT, ADO.NET typed data sets, and web services. The DBA should be able to assess the best approach virtualizing data. The end goal is to make using the database as quick, easy, and painless as possible
+3. **Understand and appropriately apply best practices**: DBAs should promote database standards and best practices as requirements, but be flexible enough to deviate from them if given acceptable reasons for these deviations. Database standards should never be a threat to the success of a project.
+4. **Utilize database standards to support requirements**
+5. **Set expectations for the DBA role in project work**
 
 ## Data Quality
 
@@ -167,16 +193,16 @@ The planning, implementation, and control of activities that apply quality manag
 
 ### Principles
 
-1. Criticality: A DQ program should focus on the data most critical to the enterprise and its customers. Priorities for imporovement should be based on the criticality of the data and on the level of risk if data is not correct
-1. Lifecycle Management: The quality of data should be managed across the data lifecycle, from creation or procurement through disposal. This includes managing data as it moves within and between systems.
-1. Prevention: This focus of a DQ program should be on preventing data errors and conditions that reduce the usability of data; it should not be focus on simply correcting records.
-1. Root cause remediation: Improving the quality of data goes beyond correcting errors. Problems with the quality of data should be understood and addressed at their root causes, rather than just their symptoms. Because these causes are often related to process or system design, improving data quality often requires changes to processes and the systems that support them.
-1. Governance: Data Governance activities must support the development of high quality data and DQ program activities must support and sustain a governed data environment.
-1. Standards-driven: All stakeholders in the data lifecycle have data quality requirements. To the degree possible, these requirements should be defined in the form of measurable standards and expectations against which the quality of data can be measured.
-1. Objective measurement and transparency: Data quality levels need to be measured objectively and consistently. Measurements and measurement methodology should be shared with stakeholders since they are the arbiters of quality.
-1. Embedded in business processes: Business process owners are responsible for the quality of data produced through their process. They must enforce data quality standards in their processes.
-1. Connected to service levels: Data quality reporting and issues management should be incorporated into SLA.
-1. Systematically enforced: System owners must systematically enforce data quality requirements.
+1. **Criticality**: A DQ program should focus on the data most critical to the enterprise and its customers. Priorities for imporovement should be based on the criticality of the data and on the level of risk if data is not correct
+1. **Lifecycle Management**: The quality of data should be managed across the data lifecycle, from creation or procurement through disposal. This includes managing data as it moves within and between systems.
+1. **Prevention**: This focus of a DQ program should be on preventing data errors and conditions that reduce the usability of data; it should not be focus on simply correcting records.
+1. **Root cause remediation**: Improving the quality of data goes beyond correcting errors. Problems with the quality of data should be understood and addressed at their root causes, rather than just their symptoms. Because these causes are often related to process or system design, improving data quality often requires changes to processes and the systems that support them.
+1. **Governance**: Data Governance activities must support the development of high quality data and DQ program activities must support and sustain a governed data environment.
+1. **Standards-driven**: All stakeholders in the data lifecycle have data quality requirements. To the degree possible, these requirements should be defined in the form of measurable standards and expectations against which the quality of data can be measured.
+1. **Objective measurement and transparency**: Data quality levels need to be measured objectively and consistently. Measurements and measurement methodology should be shared with stakeholders since they are the arbiters of quality.
+1. **Embedded in business processes**: Business process owners are responsible for the quality of data produced through their process. They must enforce data quality standards in their processes.
+1. **Connected to service levels**: Data quality reporting and issues management should be incorporated into SLA.
+1. **Systematically enforced**: System owners must systematically enforce data quality requirements.
 
 ### Policy
 
@@ -199,12 +225,12 @@ Definition, planning, development, and execution of security policies and proced
 
 ### Principles
 
-1. Collaboration
-2. Enterprise approach
-3. Proactive management
-4. Clear accountability
-5. Metadata-driven
-6. Reduce risk by reducing exposure
+1. **Collaboration**
+2. **Enterprise approach**
+3. **Proactive management**
+4. **Clear accountability**
+5. **Metadata-driven**
+6. **Reduce risk by reducing exposure**
 
 ## Data Privacy
 
@@ -220,16 +246,16 @@ The exercise of monitoring, and enforcement, and shared decision-making over pri
 
 ### Principles
 
-1. Be Accountable. Be responsible, by contractual or other means, for all personal information under your control.
-2. Identify the Purpose
-3. Obtain Consent
-4. Limit Collection
-5. Limit Use, Disclosure and Retention
-6. Be Accurate
-7. Use Appropriate Safeguards
-8. Be Open
-9. Give Individuals Access
-10. Provide Recourse
+1. **Be Accountable. Be responsible, by contractual or other means, for all personal information under your control**.
+2. **Identify the Purpose**
+3. **Obtain Consent**
+4. **Limit Collection**
+5. **Limit Use, Disclosure and Retention**
+6. **Be Accurate**
+7. **Use Appropriate Safeguards**
+8. **Be Open**
+9. **Give Individuals Access**
+10. **Provide Recourse**
 
 ![Principles of Data Privacy]({{site.baseurl}}/assets/img/2023-10-17/principles-of-data-privacy.png)
 
