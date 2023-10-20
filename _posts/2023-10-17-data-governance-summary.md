@@ -1,3 +1,5 @@
+
+
 ---
 layout: post
 title: "Data Governance Framework Summary"
@@ -13,6 +15,10 @@ categories: ['Data Management']
 > The only pity is that it lasted only 20 days, but the professor tried his best to keep us learning.
 
 ## Data Management 
+
+### Business Drivers
+
+1. enable organizations to get value from their datasets
 
 ### Principles
 
@@ -46,6 +52,12 @@ categories: ['Data Management']
 
 Data Governance is a system of rights and accountabilities, and the enforcement of authority over the management of all data and data-related assets of the organization.
 
+### Business Drivers
+
+1. reduce risk
+1. improve processes
+
+
 **Data policies** are directives that codify principles and management intent into fundamental rules governing the creation, acquisition, integrity, security, quality, and use of data and information.
 
 1. **Data Architecture**: Enterprise data models, tool standards, and system naming conventions
@@ -78,7 +90,26 @@ Data Governance is a system of rights and accountabilities, and the enforcement 
 
 ![Data Governance Organization Parts]({{site.baseurl}}/assets/img/2023-10-17/data-governance-organization-parts.png)
 
+### Metrics
+
+1. Value
+1. Effectiveness
+1. Sustainability
+
 ## Metadata Management
+
+### Business Drivers
+
+1. increase confidence in data by providing context and enabling the measurement of data quality
+1. increase the value of strategic information by enabling multiple uses
+1. improve operational efficiency by identifying redundant data and processes
+1. prevent the use of out-of-date or incorrect data
+1. reduce data-oriented research time
+1. improve communication between data consumers and IT professionals
+1. create accurate impact analysis thus reduce the risk of project failure
+1. improve time-to-market by reducing system development life-cycle time
+1. reduce training cost and lower the impact turnover through thorough documentation of data context, history, and origin
+1. support regulatory compliance
 
 Metadata includes information about technical and business processes, data rules and constraints, and logical and physical data structures. It describes the data itself(e.g., databases, data elements, data models), the concepts the data represents (e.g., business processes, application systems, software code, technology infrastructure), and the connections (relationships) between the data and concepts. Metadata helps an organization understand its data, its systems, and its workflows.
 
@@ -105,6 +136,17 @@ A **Metadata Repository** refers to the physical tables in which the Metadata is
 
 ![Metadata Repository MetaModel]({{site.baseurl}}/assets/img/2023-10-17/metadata-repositiory-metamodel.png)
 
+### Metrics
+
+1. **Metadata repository completeness**: Compare ideal coverage of the enterprise oMetadata to actual coverage.
+1. **Metadata Management Maturity**:
+1. **Stweard reprensentation**
+1. **Metadata usage**
+1. **Business Glossary activity**
+1. **Master Data service data compliance**
+1. **Metadata documentation quality**
+1. **Metadata repository availability**
+
 ## Reference & Master Data
 
 1. **Master Data Management**: entails control over Master Data values and identifiers that enable consistent use, across systems, of the most accurate and timely data about essential business entities. The goals of MDM include ensuring availability of accurate, current values while reducing risks associated with ambiguous identifiers (those identified with more than one instance of an entity and those that refer to more than one entity).
@@ -112,6 +154,12 @@ A **Metadata Repository** refers to the physical tables in which the Metadata is
 
 ![Key Processing Steps For MDM]({{site.baseurl}}/assets/img/2023-10-17/key-processing-steps-for-mdm.png)
 
+### Business Drivers
+
+1. meet organizational data requirements
+1. manage data quality
+1. manage the costs of data integration
+1. reduce risk
 
 ### Principles
 
@@ -123,6 +171,13 @@ A **Metadata Repository** refers to the physical tables in which the Metadata is
 1. **Authority**
 
 ## Data Modelling & Design
+
+### Business Drivers
+
+1. provide common vocabulary
+1. capture and document explicit knowledge about an organization's data and systems
+1. server as a primary communications tool during projects
+1. provide the starting point for customization, integraion, or even replacement of an application
 
 ### Principles
 
@@ -237,6 +292,14 @@ To transform the table into the BCNF, you will divide the table into two parts. 
 
 ## Data Architecture
 
+### Business Drivers
+
+1. strategically prepare organizations to quickly evovle their products, services, and data to take advantage of business opportunities inherent in emerging technologies
+1. translate business needs into data and system requirements so that processes consistently have the data they require
+1. manage complex data and information delivery throughout the enterprise
+1. facilitate alignment between business and IT
+1. act as an agent for change, transformation, and agility
+
 ### Business Processes
 
 1. A process is a set of interrelated actions and activities performed to achieve a pre-specified product, result, or service
@@ -262,6 +325,10 @@ Dominance of a one-dimensional view: Sometimes the owner of one business applica
 
 DII describes processes related to the movement and consolidation of data within and between data stores, applications and organizations. Integration consolidates data into consistent forms, either physical or virtual. Data interoperability is the ability for multiple systems to communicate.
 
+### Business Drivers
+
+1. the need to manage data movement efficiently
+
 ### Goals
 
 1. Make data available in the format and timeframe needed by data consumers, both human and system
@@ -279,6 +346,10 @@ DII describes processes related to the movement and consolidation of data within
 ## Data Storage & Operations
 
 Data S&O includes the design, implementation and support of stored data, to maximize its value through its lifecycle, from creation/acquisition to disposal
+
+### Business Drivers
+
+1. business continuity
 
 ### Goals
 
@@ -301,6 +372,21 @@ Federation provisions data without additional persistence or duplication of sour
 ## Data Quality
 
 The planning, implementation, and control of activities that apply quality management techniques to data, in order to assure it is fit for consumption and meets the needs of data consumers.
+
+### Business Drivers
+
+1. increase the value of organizational data and opportunities to use it
+1. reduce risk and cost associate with poor data quality
+1. improve organizational efficiency and productivity
+1. protect and enhance the organization's reputation
+
+### Business Drivers
+
+1. increase the value of data and opportunities to use it
+1. reduce risks and costs
+1. improve organizational efficiency and productivity
+1. protect and enhance the organizatino's reputation
+
 
 ### Goals
 
@@ -333,6 +419,12 @@ The planning, implementation, and control of activities that apply quality manag
 ## Data Security
 
 Definition, planning, development, and execution of security policies and procedures to provide proper authentication, authorization access, and auditing of data and information assets
+
+### Business Drivers
+
+1. risk reduction
+1. business growth
+1. security as an asset
 
 ### Goals
 
@@ -394,6 +486,11 @@ Document and Content Management entails controlling the capture, storage, access
 
 Its focus is on maintaining the quality, security, integrity of and enabling access to documents and other **unstructured** information.
 
+### Business Drivers
+
+1. regulatory compliance
+1. ability to respond to litigation and e-discovery
+
 ### Goals
 
 1. Comply with legal obligations, and customer expectations regarding Records management
@@ -412,3 +509,4 @@ Its focus is on maintaining the quality, security, integrity of and enabling acc
 Volume -> Relevance
 
 As e-discovery progresses, the volume of discoverable data and information is greatly reduced as their relevance is greatly increased.
+
