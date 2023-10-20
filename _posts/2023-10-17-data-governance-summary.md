@@ -1,5 +1,3 @@
-
-
 ---
 layout: post
 title: "Data Governance Framework Summary"
@@ -125,7 +123,7 @@ A **Metadata Repository** refers to the physical tables in which the Metadata is
 
 ### Principles
 
-1. **Organizational commitment**L Secure organizational commitment (senior management support and funding) to Metadata management as part of an overall strategy to manage data as an enterprise asset.
+1. **Organizational commitment** Secure organizational commitment (senior management support and funding) to Metadata management as part of an overall strategy to manage data as an enterprise asset.
 1. **Strategy**: Develop a Metadata strategy that accounts for how Metadata will be created, maintained, integrated, and accessed. The strategy should drive requirements, which should be defined before evaluating, purchasing, and installing Metadata management products. The Metadata strategy must align with business priorities.
 1. **Enterprise perspective**: Take an enterprise perspective to ensure future extensibility, but implement through iterative and incremental delivery to bring value.
 1. **Socialization**: Communicate the necessity of Metadata and the purpose of each type of Metadata; socialization of the value of Metadata will encourage business use and, as importantly, the contribution of business expertise.
@@ -379,14 +377,6 @@ The planning, implementation, and control of activities that apply quality manag
 1. reduce risk and cost associate with poor data quality
 1. improve organizational efficiency and productivity
 1. protect and enhance the organization's reputation
-
-### Business Drivers
-
-1. increase the value of data and opportunities to use it
-1. reduce risks and costs
-1. improve organizational efficiency and productivity
-1. protect and enhance the organizatino's reputation
-
 
 ### Goals
 
