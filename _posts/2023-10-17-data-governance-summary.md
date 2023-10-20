@@ -1,5 +1,3 @@
-
-
 ---
 layout: post
 title: "Data Governance Framework Summary"
