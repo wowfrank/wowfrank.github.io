@@ -5,7 +5,7 @@ date: "2023-10-24 01:09:00 +0800"
 description: "Principle Component Analysis Explained" # (optional)
 img: "2023-10-24-cover-image-principal-component-analysis.png" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
-tags: ['Machine Learning', 'PCA', 'Dimension Reduction]
+tags: ['Machine Learning', 'PCA', 'Dimension Reduction']
 categories: ['Machine Learning']
 ---
 
