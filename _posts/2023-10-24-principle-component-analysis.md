@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Principe Component Analysis Explained"
+title: "Principle Component Analysis Explained"
 date: "2023-10-24 01:09:00 +0800"
-description: "Data Governance Framework Summary" # (optional)
+description: "Principle Component Analysis Explained" # (optional)
 img: "2023-10-24-cover-image-principal-component-analysis.png" # Add image post (optional)
 fig-caption: "" # Add figcaption (optional)
 tags: ['Machine Learning', 'PCA', 'Dimension Reduction]
