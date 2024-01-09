@@ -85,7 +85,7 @@ divide(2,0)
 
 ## 5 Useful Decorators
 
-1. `staticmethod`: This decorator is used to define a static method within a class. Static methods don't depend on the instance state and can be called on the class itself. They are often used to group related utility functions that don't need access to instance-specific data.
+1. staticmethod: This decorator is used to define a static method within a class. Static methods don't depend on the instance state and can be called on the class itself. They are often used to group related utility functions that don't need access to instance-specific data.
 
 ```python
 class SampleClass:
